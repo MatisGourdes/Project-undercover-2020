@@ -4,17 +4,17 @@ Team: Theo Portmann, Michael Schaetzel, Lucas Lagel, Maxime Roellinger, Gourdes 
 
 ## Inhaltsverzeichnis:
 
-1. [Abstrakt](https://github.com/MatisGourdes/Project-undercover-2020#abstrakt)
+1. [Abstrakt](https://github.com/MatisGourdes/Project-undercover-2020#1abstrakt)
 
-2. [Das Spiel](https://github.com/MatisGourdes/Project-undercover-2020#das-spiel)
+2. [Das Spiel](https://github.com/MatisGourdes/Project-undercover-2020#2das-spiel)
 
-3. [Anforderungen](https://github.com/MatisGourdes/Project-undercover-2020#anforderungen)
+3. [Anforderungen](https://github.com/MatisGourdes/Project-undercover-2020#3anforderungen)
 
-4. [Timeline](https://github.com/MatisGourdes/Project-undercover-2020#timeline)
+4. [Timeline](https://github.com/MatisGourdes/Project-undercover-2020#4timeline)
 
 5. [Blabla](https://github.com/MatisGourdes/Project-undercover-2020#5blabla) 
 
-6. [User Stories](https://github.com/MatisGourdes/Project-undercover-2020#6user-story)
+6. [User Stories](https://github.com/MatisGourdes/Project-undercover-2020#6user-stories)
 
 7. [Dokumentation Sprint 1](https://github.com/MatisGourdes/Project-undercover-2020#7documentation-sprint-1)
 - [Taskliste der User Stories (mit Schätzung)](https://github.com/MatisGourdes/Project-undercover-2020#--taskliste-der-user-stories-mit-schätzung)
@@ -96,8 +96,8 @@ Design Artefakte: UML – Unified Modelling Language (z.B draw.io)
 | Sprint | Zeit | Deadline | Arbeit |
 |----------|---------------------|----------------|--------------------|
 | Sprint 0 | 02.11.2020 - 20.11.2020 | 20.11.2020 | Review mit Demo, Retrospektive, Planning 1 und 2 |
-| Sprint 1 | 20.11.2020 - 04.12.2020 | 04.12.2020 | Review mit Demo, Retrospektive, Planning 1 und 2 |
-| Sprint 2 | 04.12.2020 - 15.12.2020 | 15.12.2020 | Präsentation und finale Abgabe |
+| Sprint 1 | 20.11.2020 - 04.12.2020 | 04.12.2020 | Umsetzung MVP |
+| Sprint 2 | 04.12.2020 - 15.12.2020 | 15.12.2020 | Umsetzung Ausbaustufen |
 
 ## 5.Blabla
 
