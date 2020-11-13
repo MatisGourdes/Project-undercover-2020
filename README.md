@@ -4,36 +4,36 @@ Team: Theo Portmann, Michael Schaetzel, Lucas Lagel, Maxime Roellinger, Gourdes 
 
 ## Inhaltsverzeichnis:
 
-1. [Abstrakt](https://github.com/MatisGourdes/Project-undercover-2020#1abstrakt)
+1. [Abstrakt](https://github.com/MatisGourdes/Project-undercover-2020#1-abstrakt)
 
-2. [Das Spiel](https://github.com/MatisGourdes/Project-undercover-2020#2das-spiel)
+2. [Das Spiel](https://github.com/MatisGourdes/Project-undercover-2020#2-das-spiel)
 
-3. [Anforderungen](https://github.com/MatisGourdes/Project-undercover-2020#3anforderungen)
+3. [Anforderungen](https://github.com/MatisGourdes/Project-undercover-2020#3-anforderungen)
 
-4. [Timeline](https://github.com/MatisGourdes/Project-undercover-2020#4timeline)
+4. [Timeline](https://github.com/MatisGourdes/Project-undercover-2020#4-timeline)
 
-5. [Blabla](https://github.com/MatisGourdes/Project-undercover-2020#5blabla) 
+5. [Diagramm Klassen](https://github.com/MatisGourdes/Project-undercover-2020#5-diagramm-klassen) 
 
-6. [User Stories](https://github.com/MatisGourdes/Project-undercover-2020#6user-stories)
+6. [User Stories](https://github.com/MatisGourdes/Project-undercover-2020#6-user-stories)
 
-7. [Dokumentation Sprint 1](https://github.com/MatisGourdes/Project-undercover-2020#7documentation-sprint-1)
-- [Taskliste der User Stories (mit Schätzung)](https://github.com/MatisGourdes/Project-undercover-2020#--taskliste-der-user-stories-mit-schätzung)
+7. [Dokumentation Sprint 1](https://github.com/MatisGourdes/Project-undercover-2020#7-documentation-sprint-1)
+- [Taskliste der User Stories](https://github.com/MatisGourdes/Project-undercover-2020#--taskliste-der-user-stories)
 - [Anreicherung der User Stories]()
 - [UML Package, Klassen- und Sequenzdiagramme]()
 - [Dokumentation wichtiger Code Snippets]()
 - [Testfaelle bedingt durch Aktzeptanzkriterium]()
 
-8. [Dokumentatin Sprint 2](https://github.com/MatisGourdes/Project-undercover-2020#8documentation-sprint-2)
+8. [Dokumentatin Sprint 2](https://github.com/MatisGourdes/Project-undercover-2020#-8documentation-sprint-2)
 - [Taskliste der User Stories (mit Schätzung)]()
 - [Anreicherung der User Stories]()
 - [UML Package, Klassen- und Sequenzdiagramme]()
 - [Dokumentation wichtiger Code Snippets]()
 - [Testfaelle bedingt durch Aktzeptanzkriterium]()
 
-## 1.Abstrakt
+## 1. Abstrakt
 Im Rahmen des Moduls SWE und Informatik II entwickeln die Studierenden eine etwas komplexere Software, um den zuvor gelernten Stoff durch die Implementierung einer lauffähigen Applikation zu vertieften. Dabei wird die Komplexität der Applikation abgestimmt auf die individuellen Vorkenntnisse der Studierenden.
 
-## 2.Das Spiel
+## 2. Das Spiel
 
 Undercover ist ein Multiplayer-Spiel, bei welchem jedem Spieler einer der folgenden Rollen zugewiesen wird:
 
@@ -71,7 +71,7 @@ Solange keines der untenstehenden Ereignisse vorkommt, geht es in der nächsten 
 ### Visuelle Darstellung des Spielvorgangs:
 ![Bild Das Spiel](https://github.com/MatisGourdes/Project-undercover-2020/blob/master/Documentation/Undercover_mindmap.png?raw=true)
 
-## 3.Anforderungen
+## 3. Anforderungen
 Programmiersprache: Java
 
 Test Coverage mit Unit Tests: Normal mindestens 70%, für diese Aufgabe 50% ist genügend
@@ -92,16 +92,16 @@ Planung: Langfristige Planung mit Releaseplan, kurzfristige Planung pro Sprint
 
 Design Artefakte: UML – Unified Modelling Language (z.B draw.io)
 
-## 4.Timeline
+## 4. Timeline
 | Sprint | Zeit | Deadline | Arbeit |
 |----------|---------------------|----------------|--------------------|
 | Sprint 0 | 02.11.2020 - 20.11.2020 | 20.11.2020 | Review mit Demo, Retrospektive, Planning 1 und 2 |
 | Sprint 1 | 20.11.2020 - 04.12.2020 | 04.12.2020 | Umsetzung MVP |
 | Sprint 2 | 04.12.2020 - 15.12.2020 | 15.12.2020 | Umsetzung Ausbaustufen |
 
-## 5.Blabla
-
-## 6.User Stories
+## 5. Diagramm Klassen
+![Diagramm Klassen](https://github.com/MatisGourdes/Project-undercover-2020/blob/master/Documentation/KlassenDiagramm.png)
+## 6. User Stories
 | Priorisierung | User Story  1 | Story Points | 
 |:--------------:|:------------------------------------------------:|:---------------:|
 | 3 | *Spiel Regeln erklären* | 2 Stunden |
@@ -158,9 +158,9 @@ Design Artefakte: UML – Unified Modelling Language (z.B draw.io)
 | | Als Spieler möchte ich jedes neuen Spiel ein anderes Wort, sodass ich mehrmals mit verschiedenen Wörter spielen kann  |
 
 
-## 7.Documentation Sprint 1
-### - Taskliste der User Stories (mit Schätzung)
+## 7. Documentation Sprint 1
+### - Taskliste der User Stories 
 
 
-## 8.Documentation Sprint 2
+## 8. Documentation Sprint 2
 
