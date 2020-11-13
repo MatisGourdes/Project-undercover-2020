@@ -133,27 +133,27 @@ Design Artefakte: UML – Unified Modelling Language (z.B draw.io)
 | | Als Spieler möchte ich ein Wort empfangen, um eine Runde spielen zu können. |
 
 | Priorisierung | User Story  7 | Story Points | 
-|:--------------:|:-----------------------------------:|:---------------:|
+|:--------------:|:-----------------------------------------------:|:---------------:|
 | 3 | *Wort eingeben* | 4 Stunden |
 | | Als Spieler möchte ich in jede runde ein Wort eingeben und dass er in einer Tabeller erscheint. |
 
 | Priorisierung | User Story  8 | Story Points | 
-|:--------------:|:-----------------------------------:|:---------------:|
+|:--------------:|:-----------------------------------------------:|:---------------:|
 | 1 | *Wahl eine Person zu entfernen* | 5 Stunden |
 | | Als Spieler möchte ich die Möglichkeit haben an jede Runde ein anderen Spieler zu wählen um den Entfernen. |
 
 | Priorisierung | User Story  9 | Story Points | 
-|:--------------:|:-----------------------------------:|:---------------:|
+|:--------------:|:-----------------------------------------------:|:---------------:|
 | 1 | *Wort raten* | 2 Stunden |
 | | Als Spieler(Mr White) möchte ich versuchen den Wort zu raten , wenn ich angeklagt wurde um eine Runde zu gewinnen. |
 
 | Priorisierung | User Story  10 | Story Points | 
-|:--------------:|:-----------------------------------:|:---------------:|
+|:--------------:|:-----------------------------------------------:|:---------------:|
 | 3 | *Spiel ende* | 4 Stunden |
 | | Als Spieler möchte ich wissen wer gewonnen hat und wieder auf den Hauptmenü kommen. |
 
 | Priorisierung | User Story  11 | Story Points | 
-|:--------------:|:-----------------------------------:|:---------------:|
+|:--------------:|:------------------------------------------------:|:---------------:|
 | 2 | *Wort raten* | 3 Stunden |
 | | Als Spieler möchte ich jedes neuen Spiel ein anderes Wort, sodass ich mehrmals mit verschiedenen Wörter spielen kann  |
 
@@ -173,5 +173,6 @@ Design Artefakte: UML – Unified Modelling Language (z.B draw.io)
 | Task 8 | Programm um eine personn zu Entfernen | User Story 8 |
 | Task 9 | Mr White will Wort eingeben (javafx) | User Story 8 |
 | Task 10 | Programm und verschiedene möglichkeiten für Mr White | User Story 8 |
+
 ## 8. Documentation Sprint 2
 
