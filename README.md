@@ -69,7 +69,7 @@ Solange keines der untenstehenden Ereignisse vorkommt, geht es in der nächsten 
 - Mr White gewinnen, wenn sie das Wort der Citizen erraten. Dies darf nur geschehen, nachdem sie ausgeschlossen wurden.
 
 ### Visuelle Darstellung des Spielvorgangs:
-![Bild Das Spiel](https://github.com/MatisGourdes/Project-undercover-2020/blob/main/documentation/Undercover_mindmap.png?raw=true)
+![Bild Das Spiel](https://github.com/MatisGourdes/Project-undercover-2020/blob/master/Documentation/Undercover_mindmap.png?raw=true)
 
 ## 3.Anforderungen
 Programmiersprache: Java
