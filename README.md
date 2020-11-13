@@ -23,7 +23,7 @@ Team: Theo Portmann, Michael Schaetzel, Lucas Lagel, Maxime Roellinger, Gourdes 
 - [Dokumentation wichtiger Code Snippets]()
 - [Testfaelle bedingt durch Aktzeptanzkriterium]()
 
-8. [Dokumentatin Sprint 2](https://github.com/MatisGourdes/Project-undercover-2020#-8documentation-sprint-2)
+8. [Dokumentatin Sprint 2](https://github.com/MatisGourdes/Project-undercover-2020#8-documentation-sprint-2)
 - [Taskliste der User Stories (mit Schätzung)]()
 - [Anreicherung der User Stories]()
 - [UML Package, Klassen- und Sequenzdiagramme]()
@@ -161,6 +161,17 @@ Design Artefakte: UML – Unified Modelling Language (z.B draw.io)
 ## 7. Documentation Sprint 1
 ### - Taskliste der User Stories 
 
-
+|  | Task | User Story |
+|:---------:|:------------:|:------------:|
+| Task 1 | Rahmen Hauptmenü | User Story 2 |
+| Task 2 | Javafx Seite Hauptmenü | User Story 2 |
+| Task 3 | Klasse Rollen | User Story 2 |
+| Task 4 | Zuweisung der Rolle zu ein Spieler | User Story 4 |
+| Task 5 | Javafx Jeder Spieler kriegt ein Wort | User Story 6 |
+| Task 6 | Programm um Wörte Austeilen | User Story 6 |
+| Task 7 | Auswahl ein Spieler zu entfernen(javafx) | User Story 8 |
+| Task 8 | Programm um eine personn zu Entfernen | User Story 8 |
+| Task 9 | Mr White will Wort eingeben (javafx) | User Story 8 |
+| Task 10 | Programm und verschiedene möglichkeiten für Mr White | User Story 8 |
 ## 8. Documentation Sprint 2
 
