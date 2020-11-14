@@ -15,7 +15,7 @@
          <children>
             <ImageView fitHeight="203.0" fitWidth="175.0" pickOnBounds="true" preserveRatio="true" x="150.0">
                <image>
-                  <Image url="hat_logo.png" />
+                  <Image url="@hat_logo.png" />
                </image>
                <viewport>
                   <Rectangle2D minX="150.0" minY="90.0" />
