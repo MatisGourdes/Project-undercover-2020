@@ -16,7 +16,7 @@ import java.io.IOException;
 
 public class Controller {
    // private Button Spielen = new Button();
-
+@FXML
     // Wechseln zu Spielregeln View
     public void switchToSpielregeln(ActionEvent event) throws IOException {
         Parent spielRegelnParent = FXMLLoader.load(getClass().getResource("spielRegeln.fxml"));

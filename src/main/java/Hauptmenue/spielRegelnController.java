@@ -12,7 +12,8 @@ import java.io.IOException;
 
 public class spielRegelnController {
     // Zurück zur Hauptmenü View
-    public void switchBackToHauptmenu(ActionEvent event) throws IOException {
+    @FXML
+    private void switchBackToHauptmenu(ActionEvent event) throws IOException {
         Parent spielRegelnParent = FXMLLoader.load(getClass().getResource("hauptmenue.fxml"));
         Scene spielRegelnScene = new Scene(spielRegelnParent);
         //get stage info
@@ -20,5 +21,14 @@ public class spielRegelnController {
         window.setScene(spielRegelnScene);
         window.setTitle("Undercover");
         window.show();
+    }
+    //Zeige die Mindmap
+    @FXML
+    private void showMindmap(ActionEvent event) throws IOException {
+        Parent gameMindmapParent = FXMLLoader.load(getClass().getResource("mindmap.fxml"));
+        Stage MindmapStage = new Stage();
+        MindmapStage.setScene(new Scene(gameMindmapParent));
+        MindmapStage.setTitle("Mindmap");
+        MindmapStage.show();
     }
 }
