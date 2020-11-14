@@ -18,6 +18,7 @@ public class spielRegelnController {
         //get stage info
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
         window.setScene(spielRegelnScene);
+        window.setTitle("Undercover");
         window.show();
     }
 }
