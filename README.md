@@ -126,7 +126,7 @@ Priorisierung:  1 = Basis‐Merkmal Priorität
                 
 | Name | User Story | Priorisierung | Story Points | Akzeptanzkriterium |
 |:----------:|:---------------------:|:---------------:|:---------:|:-----:|
-| 1. *Spiel Regeln erklären* | Als Spieler möchte ich die Spiel Regeln sehen können. Wenn ich auf den Hauptmenü bin. | 3 | 2 Stunden | |
+| 1. *Spiel Regeln erklären* | Als Spieler möchte ich die Spiel Regeln sehen können. Wenn ich auf den Hauptmenü bin. | 2 | 2 Stunden | |
 | 2. *Hauptmenü Seite* | Als Spieler möchte ich ein Hauptmenü haben, damit ich das Spiel starten kann. | 1 | 3 Stunden | |
 | 3. *Mitspielerzahl wählen* | Als Spieler, möchte ich die Anzahl  Spieler und den Namen jedes Mitspielers einstellen können, um eine Runde zu erstellen. | 2 | 4 Stunden | |
 | 4. *Rolle zuteilen* | Als Spieler möchte ich eine Rolle zugewiesen werden (ohne es zu wissen), um eine Runde spielen zu können. | 1 | 5 Stunden | |
@@ -145,18 +145,34 @@ Priorisierung:  1 = Basis‐Merkmal Priorität
 ## 7. Documentation Sprint 1
 ### - Taskliste der User Stories 
 
-|  | Task | User Story |
-|:---------:|:------------:|:------------:|
-| Task 1 | Rahmen Hauptmenü | User Story 2 |
-| Task 2 | Javafx Seite Hauptmenü | User Story 2 |
-| Task 3 | Klasse Rollen | User Story 2 |
-| Task 4 | Zuweisung der Rolle zu ein Spieler | User Story 4 |
-| Task 5 | Javafx Jeder Spieler kriegt ein Wort | User Story 6 |
-| Task 6 | Programm um Wörte Austeilen | User Story 6 |
-| Task 7 | Auswahl ein Spieler zu entfernen(javafx) | User Story 8 |
-| Task 8 | Programm um eine personn zu Entfernen | User Story 8 |
-| Task 9 | Mr White will Wort eingeben (javafx) | User Story 8 |
-| Task 10 | Programm und verschiedene möglichkeiten für Mr White | User Story 8 |
+|  | Task | User Story | Zeitaufwandschätzung |
+|:---------:|:------------:|:------------:|:---------:|
+| Task 1 | Rahmen Hauptmenü | User Story 2 | 1 Stunde |
+| Task 2 | Javafx Seite Hauptmenü | User Story 2 | 2 Stunde |
+| Task 3 | Klasse Rollen | User Story 4 | 3 Stunden |
+| Task 4 | Zuweisung der Rolle zu ein Spieler | User Story 4 | 2 Stunden |
+| Task 5 | Javafx Jeder Spieler kriegt ein Wort | User Story 6 | 2 Stunden |
+| Task 6 | Programm um Wörte Austeilen | User Story 6 | 3 Stunden |
+| Task 7 | Auswahl ein Spieler zu entfernen(javafx) | User Story 8 | 2 Stunden |
+| Task 8 | Programm um eine personn zu Entfernen | User Story 8 | 3 Stunden |
+| Task 9 | Mr White will Wort eingeben (javafx) | User Story 9 | 1 Stunde |
+| Task 10 | Programm und verschiedene möglichkeiten für Mr White | User Story 9 | 1 Stunde |
 
 ## 8. Documentation Sprint 2
+### - Taskliste der User Stories 
+|  | Task | User Story | Zeitaufwandschätzung |
+|:---------:|:------------:|:------------:|:---------:|
+| Task 11 | Regeln Schreiben | User Story 1 | 1/2 Stunde |
+| Task 12 | MindMap machen für Github und Javafx | User Story 1 | 1/2 Stunde |
+| Task 13 | Regeln auf den Hauptmenü implementieren | User Story 1 | 1 Stunde |
+| Task 14 | Anzahl der Spieler ändern | User Story 3 | 2 Stunden |
+| Task 15 | Task 11 Javafx implementierung auf den Hauptmenü | User Story 3 | 2 Stunden |
+| Task 16 | Befehle/ Einleitungen in eine Klasse Schreiben | User Story 5 | 1 Stunde |
+| Task 17 | Befehle in Javafx implementieren | User Story 5 | 1 Stunde |
+| Task 18 | Vector Programm der die Eingegebene Wôrter speichert | User Story 7 | 2 Stunden |
+| Task 19 | Tabelle mit alle eingegebene Wôrter (javafx) | User Story 7 | 2 Stunden |
+| Task 20 | Javafx Spiel ende Seite | User Story 10 | 2 Stunden |
+| Task 21 | Programm um zu anzeigen wer gewonnen hat | User Story 10 | 2 Stunden |
+| Task 22 | Eine Wörter Liste machen | User Story 11 | 1 Stunde |
+| Task 23 | Text datei einlesen um an Jede Runde ein anderes Wort zu haben | User Story 11 | 2 Stunde |
 
