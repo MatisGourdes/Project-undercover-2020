@@ -127,7 +127,7 @@ Priorisierung:  1 = Basis‐Merkmal Priorität
 |:----------:|:---------------------:|:---------------:|:---------:|:-----:|
 | 1. *Spiel Regeln erklären* | Als Spieler möchte ich die Spiel Regeln sehen können. Wenn ich auf den Hauptmenü bin. | 2 | 2 Stunden | Die Spiel Regeln sind verfügbar |
 | 2. *Hauptmenü Seite* | Als Spieler möchte ich ein Hauptmenü haben, damit ich das Spiel starten kann. | 1 | 3 Stunden | Vom Hauptmenü den Spiel starten können |
-| 3. *Mitspielerzahl wählen* | Als Spieler, möchte ich die Anzahl  Spieler und den Namen jedes Mitspielers einstellen können, um eine Runde zu erstellen. | 2 | 4 Stunden | von 4 bis 8 Spieler einstellen können |
+| 3. *Mitspielerzahl wählen* | Als Spieler, möchte ich die Anzahl  Spieler und den Namen jedes Mitspielers einstellen können, um eine Runde zu erstellen. | 2 | 4 Stunden | Von 4 bis 8 Spieler einstellen können |
 | 4. *Rolle zuteilen* | Als Spieler möchte ich eine Rolle zugewiesen werden (ohne es zu wissen), um eine Runde spielen zu können. | 1 | 5 Stunden | Jede Spieler kriegt eine Rolle |
 | 5. *Einleitung* | Als Spieler möchte ich wissen wer als nächstes dran kommt. Ich möchte auch dass der Computer erklärt an jeden Schritt was wir machen müssen. | 2 | 2 Stunden | Verständliche Anzeigen |
 | 6. *Wörterverteilung* | Als Spieler möchte ich ein Wort empfangen, um eine Runde spielen zu können. | 1 | 5 Stunden | Jeder Spieler bekommt ein Wort |
@@ -135,7 +135,7 @@ Priorisierung:  1 = Basis‐Merkmal Priorität
 | 8. *Wahl eine Person zu entfernen* | Als Spieler möchte ich die Möglichkeit haben an jede Runde ein anderen Spieler zu wählen um den Entfernen. | 1 | 5 Stunden | Eine Person kann entfernt sein |
 | 9. *Wort raten* | Als Spieler(Mr White) möchte ich versuchen den Wort zu raten , wenn ich angeklagt wurde um eine Runde zu gewinnen. | 1 | 2 Stunden | Textfeld + Wort raten |
 | 10. *Spiel ende* | Als Spieler möchte ich wissen wer gewonnen hat und wieder auf den Hauptmenü kommen. | 3 | 4 Stunden | Scene mit Resultat und Hauptmenü Taste |
-| 11. *Verschiedene Wörter* | Als Spieler möchte ich jedes neuen Spiel ein anderes Wort, sodass ich mehrmals mit verschiedenen Wörter spielen kann. | 2 | 3 Stunden | mehr als 30 verschiedene Wörter|
+| 11. *Verschiedene Wörter* | Als Spieler möchte ich jedes neuen Spiel ein anderes Wort, sodass ich mehrmals mit verschiedenen Wörter spielen kann. | 2 | 3 Stunden | Mehr als 30 verschiedene Wörter|
 
 ### Diagramm von alle Klassen
 ![Diagramm Klassen](https://github.com/MatisGourdes/Project-undercover-2020/blob/master/Documentation/KlassenDiagramm.png)
