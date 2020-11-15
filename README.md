@@ -6,9 +6,9 @@ Team: Theo Portmann, Michael Schaetzel, Lucas Lagel, Maxime Roellinger, Gourdes 
 
 1. [Abstrakt](https://github.com/MatisGourdes/Project-undercover-2020#1-abstrakt)
 
-2. [Das Spiel](https://github.com/MatisGourdes/Project-undercover-2020#2-das-spiel)
+2. [Anforderungen](https://github.com/MatisGourdes/Project-undercover-2020#2-anforderungen)
 
-3. [Anforderungen](https://github.com/MatisGourdes/Project-undercover-2020#3-anforderungen)
+3. [Das Spiel](https://github.com/MatisGourdes/Project-undercover-2020#3-das-spiel)
 
 4. [Timeline](https://github.com/MatisGourdes/Project-undercover-2020#4-timeline)
 
@@ -31,9 +31,36 @@ Team: Theo Portmann, Michael Schaetzel, Lucas Lagel, Maxime Roellinger, Gourdes 
 - [Testfaelle bedingt durch Aktzeptanzkriterium]()
 
 ## 1. Abstrakt
-Im Rahmen des Moduls SWE und Informatik II entwickeln die Studierenden eine etwas komplexere Software, um den zuvor gelernten Stoff durch die Implementierung einer lauffähigen Applikation zu vertieften. Dabei wird die Komplexität der Applikation abgestimmt auf die individuellen Vorkenntnisse der Studierenden.
+Unser Team besteht aus Mechatronik-Trinational Studierenden.Im Rahmen des Moduls SWE und Informatik II entwickeln wir eine etwas komplexere Software, um den zuvor gelernten Stoff durch die Implementierung einer lauffähigen Applikation zu vertiefen. Dabei wird die Komplexität der Applikation abgestimmt auf die individuellen Vorkenntnisse der Studierenden. 
+Zeitspanne der Bearbeitung: Herbstsemester 2020.
 
-## 2. Das Spiel
+
+## 2. Einleitung
+### Ziele
+Das Ziel mit diesem Projekt ist es, als Studierende, unsere Kenntnisse in Programmierung anzuwenden und als Team den Vincent-Driessen Workflow (mittels Jira und GitHub) auszuüben.
+Demzufolge haben wir uns entschlossen, ein Spiel zu programmieren: Undercover.
+
+### ANFORDERUNGEN 
+- Die Programmierung soll in JAVA erfolgen mittels Eclipse und IntelliJ, mit grafischen Benutzerinterface mittels JavaFx. 
+- Das Code soll uber die entschprechenden Unit Test verfugen.
+- Das Projekt soll auf Github veroffentlich werden.
+- Die Buildautomatisierung soll mit MAVEN erfolgen.
+
+- Epic und User Stories mit Akzeptanzkriterien (Agile Workflow)
+- Aufwandschätzung: Story Points für User Stories und Stundenschätzung pro Sprint und Task
+- Planung: Langfristige Planung mit Releaseplan, kurzfristige Planung pro Sprint
+- Design Artefakte: UML – Unified Modelling Language 
+
+
+### MVP (Minimal Viable Project):
+Das MVP besteht also aus : *(siehe User Stories mit Priorisierung 1)*
+- Ein Hauptmenü um den Spiel zu starten und Zugang zu den Spielgregeln zu haben.
+- Eine JavaFx Szene, auf welcher Ein Wort und eine Rolle für jeden Spieler gegeben werden kann.
+- Eine JavaFx Szene, auf welcher jeder Spieler den Namen des ausgeschlossenen Spielers eingeben kann.
+- Eine JavaFx Szene für Mr White, damit er das Wort raten kann, nachdem er angeklagt wurde.
+- Java Klassen, die die genannten Szenen steuern.
+
+## 3. Das Spiel
 
 Undercover ist ein Multiplayer-Spiel, bei welchem jedem Spieler einer der folgenden Rollen zugewiesen wird:
 
@@ -70,34 +97,6 @@ Solange keines der untenstehenden Ereignisse vorkommt, geht es in der nächsten 
 
 ### Visuelle Darstellung des Spielvorgangs:
 ![Bild Das Spiel](https://github.com/MatisGourdes/Project-undercover-2020/blob/master/Documentation/Undercover_mindmap.png?raw=true)
-
-## 3. Einleitung
-Im Rahmen von unserem Software Projektarbeit mochten wir ihnen ein Spiel, das wir in Team entwickelt haben: UNDERCOVER. Sie kennen vielleicht das Spiel schon aber wenn nicht, machen Sie ihnen keine Sorgen wir werden alles erklären.
-Damit werden Sie sicher eine schöne Zeit mit ihren Freunden verbringen.Achtung  Es ist sehr interaktiv ! ( vous me dites si c eclaté au sol la ) 
-
-### ZIEL
-Das Ziel mit diesem Projekt ist, als Studierende, unsere Kenntnisse in Programmieren zu anwenden und als Team arbeiten zu lernen.
-Wir wollen also eine Interface Programmieren das die Spieler begleitet.
-
-### ANFORDERUNGEN 
-Die Programmierung soll in JAVA erfolgen. (JavaFx)
-Das Code soll uber die entschprechenden Unit Test verfugen.
-Das Projekt soll auf Github veroffentlich werden.
-Die Buildautomatisierung soll mit MAVEN erfolgen.
-
-Epic und User Stories mit Akzeptanzkriterien
-Aufwandschätzung: Story Points für User Stories und Stundenschätzung pro Sprint und Task
-Planung: Langfristige Planung mit Releaseplan, kurzfristige Planung pro Sprint
-Design Artefakte: UML – Unified Modelling Language 
-
-
-### MVP (Minimal Valuable Project):
-Das MVP besteht also aus : (siehe User Stories mit Priorisierung 1)
-Ein Hauptmenu um den Spiel zu starten.
-Eine Seite aufdem Ein Wort und eine Rolle fur jede Spieler gegeben wird.
-Eine Seite wo jede Spieler ein anderen Spieler wahlen kann um ihm zu entfernen.
-Eine Seite für Mr White um zu versuchen den Wort zu raten nachdem er angeklagt wurde.
-
 
 ## 4. Timeline
 | Sprint | Zeit | Deadline | Arbeit |
@@ -156,7 +155,7 @@ Priorisierung:  1 = Basis‐Merkmal Priorität
 | Task 7 | Auswahl ein Spieler zu entfernen(javafx) | User Story 8 | 2 Stunden |
 | Task 8 | Programm um eine personn zu Entfernen | User Story 8 | 3 Stunden |
 | Task 9 | Mr White will Wort eingeben (javafx) | User Story 9 | 1 Stunde |
-| Task 10 | Programm und verschiedene möglichkeiten für Mr White | User Story 9 | 1 Stunde |
+| Task 10 | Mr White gewinnt oder Spiel geht weiter | User Story 9 | 1 Stunde |
 
 ## 8. Documentation Sprint 2
 ### - Taskliste der User Stories 
@@ -166,7 +165,7 @@ Priorisierung:  1 = Basis‐Merkmal Priorität
 | Task 12 | MindMap machen für Github und Javafx | User Story 1 | 1/2 Stunde |
 | Task 13 | Regeln auf den Hauptmenü implementieren | User Story 1 | 1 Stunde |
 | Task 14 | Anzahl der Spieler ändern | User Story 3 | 2 Stunden |
-| Task 15 | Task 11 Javafx implementierung auf den Hauptmenü | User Story 3 | 2 Stunden |
+| Task 15 | Task 14 Javafx implementierung auf den Hauptmenü | User Story 3 | 2 Stunden |
 | Task 16 | Befehle/ Einleitungen in eine Klasse Schreiben | User Story 5 | 1 Stunde |
 | Task 17 | Befehle in Javafx implementieren | User Story 5 | 1 Stunde |
 | Task 18 | Vector Programm der die Eingegebene Wôrter speichert | User Story 7 | 2 Stunden |
