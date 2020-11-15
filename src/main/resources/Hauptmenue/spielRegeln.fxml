@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="500.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Hauptmenue.spielRegelnController">
+   <children>
+      <Button layoutX="52.0" layoutY="24.0" mnemonicParsing="false" onAction="#switchBackToHauptmenu" text="Hauptmenü" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="5.0" />
+      <AnchorPane AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="40.0">
+         <children>
+            <ScrollPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <content>
+                  <Label alignment="CENTER" prefWidth="500.0" text="Undercover ist ein Multiplayer-Spiel, bei welchem jedem Spieler einer der folgenden Rollen zugewiesen wird:&#10;&#10;- &quot;Citizen&quot; : der Spieler bekommt ein Wort, das auch die anderen Citizen bekommen. &#10;- &quot;Undercover&quot; : der Undercover bekommt auch ein Wort, welches aber ein Synonym des Worts der Citizen.&#10;- &quot;Mr White&quot; : bekommt kein Wort. Der Mr White muss das Wort der Citizen erraten und versuchen, sich in die Masse zu verbergen.&#10;&#10;Bemerkenswert können sich Citizen und Undercover voneinander nicht unterscheiden; sie haben zwar ein Wort bekommen, wissen aber nicht ob es das zu erratende Wort ist. &#10;Jeder Spieler wird nacheinander ein Synonym seines Worts geben, hier müssen die Mr White ein Wort finden, welches sich daran genug annähert, damit die anderen nicht erraten, dass sie keine Wörter bekommen haben. Am Ende jeder Runde dürfen alle Spieler miteinander diskutieren und wählen, wer vom Spiel ausgeschlossen werden muss. Das Ziel der Citizen ist es, alle Undercover und alle Mr White vom Spiel zu entfernen. Das Gewinn sichern sich die Mr White, wenn sie - als sie ausgeschlossen werden - das Wort der Citizen erraten. Die Undercover gewinnen, wenn nur noch Undercover spielen und alle anderen ausgeschlossen wurden. &#10;So verläuft das Spiel:&#10;&#10;Als erstes darf jeder sein Nickname eingeben. Dabei werden im Hintergrund vom Programm die Rollen willkürlich zugewiesen. Am Anfang des Spiels bekommt jeder Spieler ein Wort (oder nicht!), dann darf das Spiel beginnen. Das Programm besagt, wer anfangen soll. Diese Person spricht dann als erstes, die nächste Person ist diejenige rechts davon usw. &#10;&#10;Achtung: Es darf kein Wort mehrmals eingegeben werden!&#10;&#10;Wenn jeder gesprochen hat und sein Wort im Programm eingegeben hat ist die Runde zu Ende. Die Wahl beginnt. Die Spieler wissen anfangs nicht mit wem sie zusammenarbeiten müssen, alle diskutieren und entscheiden, wer entlassen wird. Den Namen der ausgeschlossenen Person wird im Komputer eingetippt, seine Rolle wird bekanntgegeben. Solange keines der untenstehenden Ereignisse vorkommt, geht es in der nächsten Runde mit der selben Vorgehensweise.&#10;&#10;Ende des Spiels:&#10;- Citizen gewinnen, wenn es nur noch Citizen gibt. (es wird anfangs bekanntgegeben, wieviel Undercover und Mr White im Spiel sind)&#10;- Undercover gewinnen, wenn es nur noch Undercover gibt.&#10;- Mr White gewinnen, wenn sie das Wort der Citizen erraten. Dies darf nur geschehen, nachdem sie ausgeschlossen wurden.&#10;" textOverrun="CLIP" wrapText="true">
+                     <font>
+                        <Font name="Verdana" size="15.0" />
+                     </font>
+                  </Label>
+               </content>
+            </ScrollPane>
+         </children>
+      </AnchorPane>
+      <Label layoutX="146.0" layoutY="4.0" text="Undercover : Spielregeln">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Button layoutX="418.0" layoutY="5.0" mnemonicParsing="false" onAction="#showMindmap" text="Mindmap" />
+   </children>
+</AnchorPane>
