@@ -72,32 +72,32 @@ Solange keines der untenstehenden Ereignisse vorkommt, geht es in der nächsten 
 ![Bild Das Spiel](https://github.com/MatisGourdes/Project-undercover-2020/blob/master/Documentation/Undercover_mindmap.png?raw=true)
 
 ## 3. Einleitung
-### Anforderung
-Programmiersprache: Java
+Im Rahmen von unserem Software Projektarbeit mochten wir ihnen ein Spiel, das wir in Team entwickelt haben: UNDERCOVER. Sie kennen vielleicht das Spiel schon aber wenn nicht, machen Sie ihnen keine Sorgen wir werden alles erklären.
+Damit werden Sie sicher eine schöne Zeit mit ihren Freunden verbringen.Achtung  Es ist sehr interaktiv ! ( vous me dites si c eclaté au sol la ) 
 
-Test Coverage mit Unit Tests: Normal mindestens 70%, für diese Aufgabe 50% ist genügend
+### ZIEL
+Das Ziel mit diesem Projekt ist, als Studierende, unsere Kenntnisse in Programmieren zu anwenden und als Team arbeiten zu lernen.
+Wir wollen also eine Interface Programmieren das die Spieler begleitet.
 
-Blackbox Testing: Manuell mit Testfällen und Protokoll
+### ANFORDERUNGEN 
+Die Programmierung soll in JAVA erfolgen. (JavaFx)
+Das Code soll uber die entschprechenden Unit Test verfugen.
+Das Projekt soll auf Github veroffentlich werden.
+Die Buildautomatisierung soll mit MAVEN erfolgen.
 
-Source Code Management: GitHub
-
-Git-Workflow: Vincent Driessen
-
-Build Automation: Maven oder Gradle
-
-Vorgehensmodell: Scrum Anforderungen:
-
-Epic und User Stories mit Akzeptanzkriterien Aufwandschätzung: Story Points für User Stories und Stundenschätzung pro Sprint und Task
-
+Epic und User Stories mit Akzeptanzkriterien
+Aufwandschätzung: Story Points für User Stories und Stundenschätzung pro Sprint und Task
 Planung: Langfristige Planung mit Releaseplan, kurzfristige Planung pro Sprint
+Design Artefakte: UML – Unified Modelling Language 
 
-Design Artefakte: UML – Unified Modelling Language (z.B draw.io)
-### Randbedingungen
-- Die Programmierung der Anwendung soll in JAVA erfolgen.
-- Die Klassen des Programms sollen über die entsprechenden Unit-Tests verfügen.
-- Das Projekt soll auf GitHub veröffentlich werden.
-- Die Buildautomatisierung soll mit MAVEN erfolgen.
-- Das Programm soll mittels einer dafür erstellten JAR-Datei und dem Befehl java-jar xxxxx.jar ausgeführt werden können.
+
+### MVP (Minimal Valuable Project):
+Das MVP besteht also aus : (siehe User Stories mit Priorisierung 1)
+Ein Hauptmenu um den Spiel zu starten.
+Eine Seite aufdem Ein Wort und eine Rolle fur jede Spieler gegeben wird.
+Eine Seite wo jede Spieler ein anderen Spieler wahlen kann um ihm zu entfernen.
+Eine Seite für Mr White um zu versuchen den Wort zu raten nachdem er angeklagt wurde.
+
 
 ## 4. Timeline
 | Sprint | Zeit | Deadline | Arbeit |
