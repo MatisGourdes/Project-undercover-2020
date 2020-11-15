@@ -71,7 +71,8 @@ Solange keines der untenstehenden Ereignisse vorkommt, geht es in der nächsten 
 ### Visuelle Darstellung des Spielvorgangs:
 ![Bild Das Spiel](https://github.com/MatisGourdes/Project-undercover-2020/blob/master/Documentation/Undercover_mindmap.png?raw=true)
 
-## 3. Anforderungen
+## 3. Einleitung
+###Anforderung
 Programmiersprache: Java
 
 Test Coverage mit Unit Tests: Normal mindestens 70%, für diese Aufgabe 50% ist genügend
@@ -91,6 +92,12 @@ Epic und User Stories mit Akzeptanzkriterien Aufwandschätzung: Story Points fü
 Planung: Langfristige Planung mit Releaseplan, kurzfristige Planung pro Sprint
 
 Design Artefakte: UML – Unified Modelling Language (z.B draw.io)
+### Randbedingungen
+- Die Programmierung der Anwendung soll in JAVA erfolgen.
+- Die Klassen des Programms sollen über die entsprechenden Unit-Tests verfügen.
+- Das Projekt soll auf GitHub veröffentlich werden.
+- Die Buildautomatisierung soll mit MAVEN erfolgen.
+- Das Programm soll mittels einer dafür erstellten JAR-Datei und dem Befehl java-jar xxxxx.jar ausgeführt werden können.
 
 ## 4. Timeline
 | Sprint | Zeit | Deadline | Arbeit |
@@ -99,63 +106,40 @@ Design Artefakte: UML – Unified Modelling Language (z.B draw.io)
 | Sprint 1 | 20.11.2020 - 04.12.2020 | 04.12.2020 | Umsetzung MVP |
 | Sprint 2 | 04.12.2020 - 15.12.2020 | 15.12.2020 | Umsetzung Ausbaustufen |
 
-## 5. Diagramm Klassen
-![Diagramm Klassen](https://github.com/MatisGourdes/Project-undercover-2020/blob/master/Documentation/KlassenDiagramm.png)
+## 5. Build Anleitung
+Git clone:  https://github.com/MatisGourdes/Project-undercover-2020
+In Git program: 
+1. Speichern Sie Ihre src Datei von Ihre Git Projekt auf Ihre Rechner.
+2. Löschen Sie Ihre src Datei von Ihre Git Projekt.
+3. Fügen Sie die pom.xml Datei mit die geeignete Initialiesierung in das Git Projekt.
+4. Fügen Sie die src Ordner von einen Maven Projekt in das Git Projekt.
+5. Klicken Sie auf den rechten Maus Taste in "trinat-EBAE": ->Configure ->Convert to Maven.
+6. Fügen Sie Ihre eigene Package in das Ordner src/main/java.
+7. Klicken Sie auf den rechten Maus Taste in "trinat-EBAE": ->Run as ->Maven clean.
+8. Klicken Sie auf den rechten Maus Taste in "trinat-EBAE": ->Run as ->Maven install.
+9. Prüfen Sie in das Ordner "target" ob Sie eine Datei .jar haben.
+
 ## 6. User Stories
-| Priorisierung | User Story  1 | Story Points | 
-|:--------------:|:------------------------------------------------:|:---------------:|
-| 3 | *Spiel Regeln erklären* | 2 Stunden |
-| | Als Spieler möchte ich die Spiel Regeln sehen können. Wenn ich auf den Hauptmenü bin. |
+Priorisierung:  1 = Basis‐Merkmal Priorität 
+                2 = Leistungs‐Merkmal Priorität
+                3 = Begeisterungs‐Merkmal Priorität
+                
+| Name | User Story | Priorisierung | Story Points | Akzeptanzkriterium |
+|:----------:|:---------------------:|:---------------:|:---------:|:-----:|
+| 1. *Spiel Regeln erklären* | Als Spieler möchte ich die Spiel Regeln sehen können. Wenn ich auf den Hauptmenü bin. | 3 | 2 Stunden | |
+| 2. *Hauptmenü Seite* | Als Spieler möchte ich ein Hauptmenü haben, damit ich das Spiel starten kann. | 1 | 3 Stunden | |
+| 3. *Mitspielerzahl wählen* | Als Spieler, möchte ich die Anzahl  Spieler und den Namen jedes Mitspielers einstellen können, um eine Runde zu erstellen. | 2 | 4 Stunden | |
+| 4. *Rolle zuteilen* | Als Spieler möchte ich eine Rolle zugewiesen werden (ohne es zu wissen), um eine Runde spielen zu können. | 1 | 5 Stunden | |
+| 5. *Einleitung* | Als Spieler möchte ich wissen wer als nächstes dran kommt. Ich möchte auch dass der Komputer erklärt an jeden Schritt was wir machen müssen. | 2 | 2 Stunden | |
+| 6. *Wörterverteilung* | Als Spieler möchte ich ein Wort empfangen, um eine Runde spielen zu können. | 1 | 5 Stunden | |
+| 7. *Wort eingeben* | Als Spieler möchte ich in jede runde ein Wort eingeben und dass er in einer Tabeller erscheint. | 3 | 4 Stunden | |
+| 8. *Wahl eine Person zu entfernen* | Als Spieler möchte ich die Möglichkeit haben an jede Runde ein anderen Spieler zu wählen um den Entfernen. | 1 | 5 Stunden | |
+| 9. *Wort raten* | Als Spieler(Mr White) möchte ich versuchen den Wort zu raten , wenn ich angeklagt wurde um eine Runde zu gewinnen. | 1 | 2 Stunden | |
+| 10. *Spiel ende* | Als Spieler möchte ich wissen wer gewonnen hat und wieder auf den Hauptmenü kommen. | 3 | 4 Stunden | |
+| 11. *Verschiedene Worter* | Als Spieler möchte ich jedes neuen Spiel ein anderes Wort, sodass ich mehrmals mit verschiedenen Wörter spielen kann. | 2 | 3 Stunden | |
 
-| Priorisierung | User Story  2 | Story Points | 
-|:--------------:|:------------------------------------------------:|:---------------:|
-| 1 | *Hauptmenü Seite* | 3 Stunden |
-| | Als Spieler möchte ich ein Hauptmenü haben, damit ich das Spiel starten kann. |
-  
-| Priorisierung | User Story  3 | Story Points | 
-|:--------------:|:------------------------------------------------:|:---------------:|
-| 2 | *Mitspielerzahl wählen* | 4 Stunden |
-| | Als Spieler, möchte ich die Anzahl  Spieler und den Namen jedes Mitspielers einstellen können, um eine Runde zu erstellen. |
-
-| Priorisierung | User Story  4 | Story Points | 
-|:--------------:|:------------------------------------------------:|:---------------:|
-| 1 | *Rolle zuteilen* | 5 Stunden |
-| | Als Spieler möchte ich eine Rolle zugewiesen werden (ohne es zu wissen), um eine Runde spielen zu können. |
-
-| Priorisierung | User Story  5 | Story Points | 
-|:--------------:|:-----------------------------------------------:|:---------------:|
-| 2 | *Einleitung* | 2 Stunden |
-| | Als Spieler möchte ich wissen wer als nächstes dran kommt.Ich möchte auch dass der Komputer erklärt an jeden Schritt was wir machen müssen. |
-
-| Priorisierung | User Story  6 | Story Points | 
-|:--------------:|:-----------------------------------------------:|:---------------:|
-| 1 | *Wörterverteilung* | 5 Stunden |
-| | Als Spieler möchte ich ein Wort empfangen, um eine Runde spielen zu können. |
-
-| Priorisierung | User Story  7 | Story Points | 
-|:--------------:|:-----------------------------------------------:|:---------------:|
-| 3 | *Wort eingeben* | 4 Stunden |
-| | Als Spieler möchte ich in jede runde ein Wort eingeben und dass er in einer Tabeller erscheint. |
-
-| Priorisierung | User Story  8 | Story Points | 
-|:--------------:|:-----------------------------------------------:|:---------------:|
-| 1 | *Wahl eine Person zu entfernen* | 5 Stunden |
-| | Als Spieler möchte ich die Möglichkeit haben an jede Runde ein anderen Spieler zu wählen um den Entfernen. |
-
-| Priorisierung | User Story  9 | Story Points | 
-|:--------------:|:-----------------------------------------------:|:---------------:|
-| 1 | *Wort raten* | 2 Stunden |
-| | Als Spieler(Mr White) möchte ich versuchen den Wort zu raten , wenn ich angeklagt wurde um eine Runde zu gewinnen. |
-
-| Priorisierung | User Story  10 | Story Points | 
-|:--------------:|:-----------------------------------------------:|:---------------:|
-| 3 | *Spiel ende* | 4 Stunden |
-| | Als Spieler möchte ich wissen wer gewonnen hat und wieder auf den Hauptmenü kommen. |
-
-| Priorisierung | User Story  11 | Story Points | 
-|:--------------:|:------------------------------------------------:|:---------------:|
-| 2 | *Wort raten* | 3 Stunden |
-| | Als Spieler möchte ich jedes neuen Spiel ein anderes Wort, sodass ich mehrmals mit verschiedenen Wörter spielen kann  |
+### Diagramm von alle Klassen
+![Diagramm Klassen](https://github.com/MatisGourdes/Project-undercover-2020/blob/master/Documentation/KlassenDiagramm.png)
 
 
 ## 7. Documentation Sprint 1
