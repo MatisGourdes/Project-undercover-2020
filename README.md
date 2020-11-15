@@ -112,11 +112,19 @@ In Git program:
 2. Löschen Sie Ihre src Datei von Ihrem Git Projekt.
 3. Fügen Sie die pom.xml Datei mit dem geeignete Initialisierung in das Git Projekt.
 4. Fügen Sie die src Ordner von einem Maven Projekt in das Git Projekt.
-5. Klicken Sie auf den rechten Maus Taste in "trinat-EBAE": ->Configure ->Convert to Maven.
+5. Klicken Sie auf den rechten Maus Taste in "Undercover": ->Configure ->Convert to Maven.
 6. Fügen Sie Ihre eigene Package in das Ordner src/main/java.
-7. Klicken Sie auf den rechten Maus Taste in "trinat-EBAE": ->Run as ->Maven clean.
-8. Klicken Sie auf den rechten Maus Taste in "trinat-EBAE": ->Run as ->Maven install.
+7. Klicken Sie auf den rechten Maus Taste in "Undercover": ->Run as ->Maven clean.
+8. Klicken Sie auf den rechten Maus Taste in "Undercover": ->Run as ->Maven install.
 9. Prüfen Sie in das Ordner "target" ob Sie eine Datei .jar haben.
+Oder
+1. Gehen sie auf unsere Github repository.
+2. Speichern Sie die Datei auf Ihre Rechner.
+3. Entpacken Sie die Datei und Setzen sie an den gewünschten Ort. 
+4. Stellen Sie sicher, dass Sie eine javaFx Runtime-Umgebung haben.
+5. Doppelklicken Sie auf den Datei Paket
+6. Doppelklicken Sie auf  Undercoverlauncher.jar um den Software zu starten.
+
 
 ## 6. User Stories
 Priorisierung:  1 = Basis‐Merkmal Priorität 
