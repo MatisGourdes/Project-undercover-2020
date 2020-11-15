@@ -40,7 +40,7 @@ Zeitspanne der Bearbeitung: Herbstsemester 2020.
 Das Ziel mit diesem Projekt ist es, als Studierende, unsere Kenntnisse in Programmierung anzuwenden und als Team den Vincent-Driessen Workflow (mittels Jira und GitHub) auszuüben.
 Demzufolge haben wir uns entschlossen, ein Spiel zu programmieren: Undercover.
 
-### ANFORDERUNGEN 
+### Anforderungen
 - Die Programmierung soll in JAVA erfolgen mittels Eclipse und IntelliJ, mit grafischen Benutzerinterface mittels JavaFx. 
 - Das Code soll uber die entschprechenden Unit Test verfugen.
 - Das Projekt soll auf Github veroffentlich werden.
