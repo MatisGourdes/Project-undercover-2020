@@ -117,7 +117,7 @@ In Git program:
 7. Klicken Sie auf den rechten Maus Taste in "Undercover": ->Run as ->Maven clean.
 8. Klicken Sie auf den rechten Maus Taste in "Undercover": ->Run as ->Maven install.
 9. Prüfen Sie in das Ordner "target" ob Sie eine Datei .jar haben.
-Oder
+| Oder:
 1. Gehen sie auf unsere Github repository.
 2. Speichern Sie die Datei auf Ihre Rechner.
 3. Entpacken Sie die Datei und Setzen sie an den gewünschten Ort. 
