@@ -72,7 +72,7 @@ Solange keines der untenstehenden Ereignisse vorkommt, geht es in der nächsten 
 ![Bild Das Spiel](https://github.com/MatisGourdes/Project-undercover-2020/blob/master/Documentation/Undercover_mindmap.png?raw=true)
 
 ## 3. Einleitung
-###Anforderung
+### Anforderung
 Programmiersprache: Java
 
 Test Coverage mit Unit Tests: Normal mindestens 70%, für diese Aufgabe 50% ist genügend
