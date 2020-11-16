@@ -15,7 +15,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class Controller {
-    int SpielerZahl = 8; // Hier in der Variabel wächseln
+    int SpielerZahl = 8; //Programm ist bis Sprint 2 immer mit 8 Spieler, Hier in der Variabel wechseln
    // private Button Spielen = new Button();
 @FXML
     // Wechseln zu Spielregeln View
@@ -30,14 +30,14 @@ public class Controller {
     }
     @FXML
     public void startGame(ActionEvent event) throws IOException {
-        Person.DefineRolle(SpielerZahl);
-        Person.DefineAllAlive(SpielerZahl);
-        Person.ShowMyWork(SpielerZahl);
-        Parent getWordParent = FXMLLoader.load(getClass().getResource("GetWord.fxml"));
-        Scene getWordScene = new Scene(getWordParent);
+        Person.DefineRolle(SpielerZahl);// Programm definiert eine Random rolle für die Spieler von 0 bis 7
+        Person.DefineAllAlive(SpielerZahl);// Dieser programm definiert das alle Spieler am Leben sind
+        Person.ShowMyWork(SpielerZahl);// Ce programme est provisoire et donne les informations que les joueurs ne veront pas
+        Parent getNameParent = FXMLLoader.load(getClass().getResource("getName.fxml"));// Hier werden die Spieler Namen gefragt
+        Scene getNameScene = new Scene(getNameParent);
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        window.setScene(getWordScene);
-        window.setTitle("GetWord");
+        window.setScene(getNameScene);
+        window.setTitle("Name Eintragen");
         window.show();
     }
 }

@@ -17,9 +17,9 @@ public class Person {
 
   public static boolean[] StateArray= new boolean[8];
 
-public static void DefineAllAlive(int SpielerZahl) {
+public static void DefineAllAlive(int SpielerZahl) { //Nous allons définir si les personnes sont en vie ou non avec ce boolean
     for(int i=0; i<SpielerZahl;i++){
-        StateArray[i] = true;
+        StateArray[i] = true;// True = Spieler alive   False = has been ejected
     }
 }
 
