@@ -8,6 +8,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Slider;
+import javafx.scene.control.Spinner;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
@@ -32,6 +33,7 @@ public class Controller {
     public void startGame(ActionEvent event) throws IOException {
         Person.DefineRolle(SpielerZahl);// Programm definiert eine Random rolle für die Spieler von 0 bis 7
         Person.DefineAllAlive(SpielerZahl);// Dieser programm definiert das alle Spieler am Leben sind
+        Person.DefineRolleZuSpieler(SpielerZahl);
         Person.ShowMyWork(SpielerZahl);// Ce programme est provisoire et donne les informations que les joueurs ne veront pas
         Parent getNameParent = FXMLLoader.load(getClass().getResource("getName.fxml"));// Hier werden die Spieler Namen gefragt
         Scene getNameScene = new Scene(getNameParent);
