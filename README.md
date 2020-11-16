@@ -128,9 +128,9 @@ In Git program:
 
 
 ## 6. User Stories
-Priorisierung:  1 = Basis‐Merkmal Priorität 
-                2 = Leistungs‐Merkmal Priorität
-                3 = Begeisterungs‐Merkmal Priorität
+Priorisierung:  1 = Basis‐Merkmal
+                2 = Leistungs‐Merkmal
+                3 = Begeisterungs‐Merkmal
                 
 | Name | User Story | Priorisierung | Story Points | Akzeptanzkriterium |
 |:----------:|:---------------------:|:---------------:|:---------:|:-----:|
