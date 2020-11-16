@@ -27,4 +27,16 @@ public class Controller {
         window.setTitle("Spielregeln");
         window.show();
     }
+    @FXML
+    public void startGame(ActionEvent event) throws IOException {
+        Person.DefineRolle(SpielerZahl);
+        Person.DefineAllAlive(SpielerZahl);
+        Person.ShowMyWork(SpielerZahl);
+        Parent getWordParent = FXMLLoader.load(getClass().getResource("GetWord.fxml"));
+        Scene getWordScene = new Scene(getWordParent);
+        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        window.setScene(getWordScene);
+        window.setTitle("GetWord");
+        window.show();
+    }
 }
