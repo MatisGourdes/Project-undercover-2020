@@ -15,8 +15,9 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class Controller {
-   // private Button Spielen = new Button();
-@FXML
+    @FXML
+    private Button Spielen = new Button();
+
     // Wechseln zu Spielregeln View
     public void switchToSpielregeln(ActionEvent event) throws IOException {
         Parent spielRegelnParent = FXMLLoader.load(getClass().getResource("spielRegeln.fxml"));
@@ -25,6 +26,16 @@ public class Controller {
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
         window.setScene(spielRegelnScene);
         window.setTitle("Spielregeln");
+        window.show();
+    }
+    // Wechseln zu Spiel View
+    public void switchToSpiel(ActionEvent event) throws IOException {
+        Parent spielParent = FXMLLoader.load(getClass().getResource("wahl.fxml"));
+        Scene spielScene = new Scene(spielParent);
+        //get stage info
+        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+        window.setScene(spielScene);
+        window.setTitle("Undercover");
         window.show();
     }
 }

@@ -24,7 +24,7 @@ public class spielRegelnController {
     }
     //Zeige die Mindmap
     @FXML
-    private void showMindmap(ActionEvent event) throws IOException {
+    public void showMindmap() throws IOException {
         Parent gameMindmapParent = FXMLLoader.load(getClass().getResource("mindmap.fxml"));
         Stage MindmapStage = new Stage();
         MindmapStage.setScene(new Scene(gameMindmapParent));
