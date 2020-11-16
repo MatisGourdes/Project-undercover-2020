@@ -15,9 +15,9 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class Controller {
-    @FXML
-    private Button Spielen = new Button();
-
+    int SpielerZahl = 8; //Programm ist bis Sprint 2 immer mit 8 Spieler, Hier in der Variabel wechseln
+   // private Button Spielen = new Button();
+@FXML
     // Wechseln zu Spielregeln View
     public void switchToSpielregeln(ActionEvent event) throws IOException {
         Parent spielRegelnParent = FXMLLoader.load(getClass().getResource("spielRegeln.fxml"));
@@ -28,14 +28,16 @@ public class Controller {
         window.setTitle("Spielregeln");
         window.show();
     }
-    // Wechseln zu Spiel View
-    public void switchToSpiel(ActionEvent event) throws IOException {
-        Parent spielParent = FXMLLoader.load(getClass().getResource("wahl.fxml"));
-        Scene spielScene = new Scene(spielParent);
-        //get stage info
-        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
-        window.setScene(spielScene);
-        window.setTitle("Undercover");
+    @FXML
+    public void startGame(ActionEvent event) throws IOException {
+        Person.DefineRolle(SpielerZahl);// Programm definiert eine Random rolle für die Spieler von 0 bis 7
+        Person.DefineAllAlive(SpielerZahl);// Dieser programm definiert das alle Spieler am Leben sind
+        Person.ShowMyWork(SpielerZahl);// Ce programme est provisoire et donne les informations que les joueurs ne veront pas
+        Parent getNameParent = FXMLLoader.load(getClass().getResource("getName.fxml"));// Hier werden die Spieler Namen gefragt
+        Scene getNameScene = new Scene(getNameParent);
+        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        window.setScene(getNameScene);
+        window.setTitle("Name Eintragen");
         window.show();
     }
 }
