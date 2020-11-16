@@ -15,6 +15,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class Controller {
+    int SpielerZahl = 8; // Hier in der Variabel wächseln
    // private Button Spielen = new Button();
 @FXML
     // Wechseln zu Spielregeln View
