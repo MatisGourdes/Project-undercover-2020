@@ -84,72 +84,6 @@ public class Person {
 
     public static void DefineRolleZuSpieler(int SpielerZahl) {
         int Nombre;
-        switch (SpielerZahl) {
-            case 4:
-                Spieler[0] = "Player 1";
-                Spieler[1] = "Player 2";
-                Spieler[2] = "Player 3";
-                Spieler[3] = "Player 4";
-
-                pioche maListe4=new pioche(4);
-                for(int i=0;i<4;i++)
-                {
-                    Nombre = maListe4.getPif();
-                    RolleInPlayerOrder[i] = Spieler[Nombre];
-
-                }
-
-            case 5:
-                Spieler[0] = "Player 1";
-                Spieler[1] = "Player 2";
-                Spieler[2] = "Player 3";
-                Spieler[3] = "Player 4";
-                Spieler[4] = "Player 5";
-                pioche maListe5=new pioche(5);
-                for(int i=0;i<5;i++)
-                {
-                    Nombre = maListe5.getPif();
-                    RolleInPlayerOrder[i] = Spieler[Nombre];
-
-                }
-
-
-                break;
-
-            case 6:
-                Spieler[0] = "Player 1";
-                Spieler[1] = "Player 2";
-                Spieler[2] = "Player 3";
-                Spieler[3] = "Player 4";
-                Spieler[4] = "Player 5";
-                Spieler[5] = "Player 6";
-                pioche maListe6=new pioche(6);
-                for(int i=0;i<6;i++)
-                {
-                    Nombre = maListe6.getPif();
-                    RolleInPlayerOrder[i] = Spieler[Nombre];
-                }
-
-                break;
-
-            case 7:
-                Spieler[0] = "Player 1";
-                Spieler[1] = "Player 2";
-                Spieler[2] = "Player 3";
-                Spieler[3] = "Player 4";
-                Spieler[4] = "Player 5";
-                Spieler[5] = "Player 6";
-                Spieler[6] = "Player 7";
-                pioche maListe7=new pioche(7);
-                for(int i=0;i<7;i++)
-                {
-                    Nombre = maListe7.getPif();
-                    RolleInPlayerOrder[i] = Spieler[Nombre];
-
-                }
-                break;
-
-            case 8:
                 Spieler[0] = "Player 1";
                 Spieler[1] = "Player 2";
                 Spieler[2] = "Player 3";
@@ -159,30 +93,20 @@ public class Person {
                 Spieler[6] = "Player 7";
                 Spieler[7] = "Player 8";
 
-                pioche maListe8=new pioche(8);
-                for(int i=0;i<8;i++)
+                pioche maListe=new pioche(SpielerZahl);
+                for(int i=0;i<SpielerZahl;i++)
                 {
-                    Nombre = maListe8.getPif();
+                    Nombre = maListe.getPif();
                     RolleInPlayerOrder[i] = Spieler[Nombre];
                 }
-                break;
-
-        }}
 
 
-
-
-
-
-
-
+        }
 
     public static void ShowMyWork(int SpielerZahl) {
     for(int i=0; i<SpielerZahl;i++){
         System.out.println( RolleInPlayerOrder[i]+"     Spieler: " + i + "    Alive?: " + StateArray[i] +"    Rolle : " + RolleArray[i]);
     }
 }
-
-
 }
 
