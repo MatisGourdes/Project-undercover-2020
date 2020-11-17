@@ -35,11 +35,11 @@ public class Controller {
         Person.DefineAllAlive(SpielerZahl);// Dieser programm definiert das alle Spieler am Leben sind
         Person.DefineRolleZuSpieler(SpielerZahl);
         Person.ShowMyWork(SpielerZahl);// Ce programme est provisoire et donne les informations que les joueurs ne veront pas
-        Parent getNameParent = FXMLLoader.load(getClass().getResource("getName.fxml"));// Hier werden die Spieler Namen gefragt
-        Scene getNameScene = new Scene(getNameParent);
+        Parent WortAusgabeParent = FXMLLoader.load(getClass().getResource("WortAusgabe.fxml"));// Hier werden die Spieler Namen gefragt
+        Scene WortAusgabeScene = new Scene(WortAusgabeParent);
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        window.setScene(getNameScene);
-        window.setTitle("Name Eintragen");
+        window.setScene(WortAusgabeScene);
+        window.setTitle("WortAusgabe");
         window.show();
     }
 }
