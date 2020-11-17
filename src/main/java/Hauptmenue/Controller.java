@@ -17,7 +17,7 @@ import java.io.IOException;
 
 public class Controller {
     int SpielerZahl = 8; //Programm ist bis Sprint 2 immer mit 8 Spieler, Hier in der Variabel wechseln
-   // private Button Spielen = new Button();
+
 @FXML
     // Wechseln zu Spielregeln View
     public void switchToSpielregeln(ActionEvent event) throws IOException {

@@ -3,6 +3,8 @@ package Hauptmenue;
 import net.bytebuddy.implementation.bind.MethodDelegationBinder;
 
 import java.util.Vector;
+import java.util.ArrayList;
+import java.util.Random;
 
 public class Person {
 
@@ -19,7 +21,8 @@ public class Person {
     public static String[] RolleInPlayerOrder= new String[8];// Hier sind die Die Rollen geordnet in die Player Reihe
 
   public static boolean[] StateArray= new boolean[8];
-    private static String Speicher;
+
+
 
     public static void DefineAllAlive(int SpielerZahl) { //Nous allons définir si les personnes sont en vie ou non avec ce boolean
     for(int i=0; i<SpielerZahl;i++){
@@ -32,7 +35,7 @@ public class Person {
         switch (SpielerZahl) {
             case 4:
                 RolleArray[0] = 0;
-                RolleArray[1] = 1;
+                RolleArray[1] = 0;
                 RolleArray[2] = 0;
                 RolleArray[3] = (int) (Math.random() * 2)+1;
             break;
@@ -73,15 +76,14 @@ public class Person {
                 RolleArray[4] = 1;
                 RolleArray[5] = (int) (Math.random() * 2)+1;
                 RolleArray[6] = (int) (Math.random() * 2);
-                RolleArray[7] = 3;
+                RolleArray[7] = 2;
                 break;
 
         }}
 
 
     public static void DefineRolleZuSpieler(int SpielerZahl) {
-        int random =(int) (Math.random() * 2);
-        int random2 =(int) (Math.random() * 2);
+        int Nombre;
         switch (SpielerZahl) {
             case 4:
                 Spieler[0] = "Player 1";
@@ -89,27 +91,13 @@ public class Person {
                 Spieler[2] = "Player 3";
                 Spieler[3] = "Player 4";
 
+                pioche maListe4=new pioche(4);
+                for(int i=0;i<4;i++)
+                {
+                    Nombre = maListe4.getPif();
+                    RolleInPlayerOrder[i] = Spieler[Nombre];
 
-
-                 if (random == 0) {Speicher = Spieler[0];
-                 Spieler[0] = Spieler[2];
-                 Spieler[2]=Speicher;}
-                 else if(random2 == 0){ Speicher = Spieler[1];
-                     Spieler[1] = Spieler[3];
-                     Spieler[3]=Speicher;}
-                 else if (random==1){Speicher = Spieler[2];
-                     Spieler[2] = Spieler[3];
-                     Spieler[3]=Speicher;}
-
-                 else{Speicher = Spieler[1];
-            Spieler[1] = Spieler[0];
-            Spieler[0]=Speicher;}
-
-        for(int i=0; i<4; i++) {
-            RolleInPlayerOrder[i]=Spieler[i];
-        }
-
-                break;
+                }
 
             case 5:
                 Spieler[0] = "Player 1";
@@ -117,30 +105,15 @@ public class Person {
                 Spieler[2] = "Player 3";
                 Spieler[3] = "Player 4";
                 Spieler[4] = "Player 5";
+                pioche maListe5=new pioche(5);
+                for(int i=0;i<5;i++)
+                {
+                    Nombre = maListe5.getPif();
+                    RolleInPlayerOrder[i] = Spieler[Nombre];
 
-
-                if (random == 0) {Speicher = Spieler[0];
-                    Spieler[0] = Spieler[2];
-                    Spieler[2]=Speicher;}
-                else if(random2 == 0){ Speicher = Spieler[1];
-                    Spieler[1] = Spieler[3];
-                    Spieler[3]=Speicher;}
-                else if (random==1){Speicher = Spieler[2];
-                    Spieler[2] = Spieler[3];
-                    Spieler[3]=Speicher;}
-                else if (random2==1){Speicher = Spieler[4];
-                    Spieler[4] = Spieler[3];
-                    Spieler[3]=Speicher;}
-                else{Speicher = Spieler[1];
-                    Spieler[1] = Spieler[0];
-                    Spieler[0]=Speicher;
-                    Speicher = Spieler[4];
-                    Spieler[4] = Spieler[0];
-                    Spieler[0]=Speicher;}
-
-                for(int i=0; i<5; i++) {
-                    RolleInPlayerOrder[i]=Spieler[i];
                 }
+
+
                 break;
 
             case 6:
@@ -150,38 +123,48 @@ public class Person {
                 Spieler[3] = "Player 4";
                 Spieler[4] = "Player 5";
                 Spieler[5] = "Player 6";
-
-                if (random == 0) {Speicher = Spieler[0];
-                    Spieler[0] = Spieler[2];
-                    Spieler[2]=Speicher;}
-                else if(random2 == 0){ Speicher = Spieler[1];
-                    Spieler[1] = Spieler[3];
-                    Spieler[3]=Speicher;}
-                else if (random==1){Speicher = Spieler[2];
-                    Spieler[2] = Spieler[3];
-                    Spieler[3]=Speicher;}
-                else if (random2==1){Speicher = Spieler[4];
-                    Spieler[4] = Spieler[3];
-                    Spieler[3]=Speicher;}
-                else{Speicher = Spieler[1];
-                    Spieler[1] = Spieler[0];
-                    Spieler[0]=Speicher;
-                    Speicher = Spieler[4];
-                    Spieler[4] = Spieler[0];
-                    Spieler[0]=Speicher;}
-
-                for(int i=0; i<5; i++) {
-                    RolleInPlayerOrder[i]=Spieler[i];
+                pioche maListe6=new pioche(6);
+                for(int i=0;i<6;i++)
+                {
+                    Nombre = maListe6.getPif();
+                    RolleInPlayerOrder[i] = Spieler[Nombre];
                 }
 
                 break;
 
             case 7:
+                Spieler[0] = "Player 1";
+                Spieler[1] = "Player 2";
+                Spieler[2] = "Player 3";
+                Spieler[3] = "Player 4";
+                Spieler[4] = "Player 5";
+                Spieler[5] = "Player 6";
+                Spieler[6] = "Player 7";
+                pioche maListe7=new pioche(7);
+                for(int i=0;i<7;i++)
+                {
+                    Nombre = maListe7.getPif();
+                    RolleInPlayerOrder[i] = Spieler[Nombre];
 
+                }
                 break;
 
             case 8:
+                Spieler[0] = "Player 1";
+                Spieler[1] = "Player 2";
+                Spieler[2] = "Player 3";
+                Spieler[3] = "Player 4";
+                Spieler[4] = "Player 5";
+                Spieler[5] = "Player 6";
+                Spieler[6] = "Player 7";
+                Spieler[7] = "Player 8";
 
+                pioche maListe8=new pioche(8);
+                for(int i=0;i<8;i++)
+                {
+                    Nombre = maListe8.getPif();
+                    RolleInPlayerOrder[i] = Spieler[Nombre];
+                }
                 break;
 
         }}
@@ -190,9 +173,13 @@ public class Person {
 
 
 
+
+
+
+
     public static void ShowMyWork(int SpielerZahl) {
     for(int i=0; i<SpielerZahl;i++){
-        System.out.println("Spieler: " + i + "    Alive?: " + StateArray[i] +"    Rolle : " + RolleArray[i]);
+        System.out.println( RolleInPlayerOrder[i]+"     Spieler: " + i + "    Alive?: " + StateArray[i] +"    Rolle : " + RolleArray[i]);
     }
 }
 
