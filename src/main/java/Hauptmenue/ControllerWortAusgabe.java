@@ -8,27 +8,33 @@ import javafx.event.ActionEvent;
 
         import java.io.IOException;
 
-public class ControllerWortAusgabe {
+public class ControllerWortAusgabe extends Controller {
+
 
     @FXML
     private Button btnWorter;
 
     @FXML
     private Label WortAusgabe;
-    int WortRandom;
+
     String printLabelWort;
 
+    int WortRandom= (int)(Math.random()*5);
 
 
-    public void SwitchToNextPLayer (ActionEvent event ) throws IOException {
-        WortRandom= (int)(Math.random()*5);
-        PrintWord();
+public void SwitchToNextPLayer(ActionEvent event) throws IOException {
 
-
-
+        for (int i = 0; i < spielerZahl; i++) {
+            PrintWord(i); // demander je veux mtn que ca continue quand j'appuie sur le bouton michael aide moi wsh
+           WortAusgabe.setText(" ");
+        }
     }
-    public void PrintWord(){
-        switch(Person.RolleArray[1]){// Ici changer le 1
+
+
+
+
+    public void PrintWord(int i){
+        switch(Person.RolleArray[i]){// Ici changer le 1
             case 0:
             printLabelWort = WortReserve.CitizenWort[WortRandom];
                 WortAusgabe.setText(printLabelWort);
