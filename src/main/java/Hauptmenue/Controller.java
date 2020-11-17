@@ -16,7 +16,8 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class Controller {
-    int SpielerZahl = 8; //Programm ist bis Sprint 2 immer mit 8 Spieler, Hier in der Variabel wechseln
+
+    int SpielerZahl =8; //Programm ist bis Sprint 2 immer mit 8 Spieler, Hier in der Variabel wechseln
 
 @FXML
     // Wechseln zu Spielregeln View
