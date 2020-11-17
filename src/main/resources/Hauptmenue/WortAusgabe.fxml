@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Hauptmenue.ControllerWortAusgabe">
+   <children>
+      <Button fx:id="btnWorter" layoutX="251.0" layoutY="182.0" mnemonicParsing="false" onAction="#SwitchToNextPLayer" prefHeight="64.0" prefWidth="100.0" text="Press " />
+      <Label fx:id="BefehleWortAusgabe" alignment="CENTER" contentDisplay="CENTER" layoutX="210.0" layoutY="80.0" prefHeight="64.0" prefWidth="181.0" text="Label" AnchorPane.topAnchor="80.0" />
+      <Label fx:id="WortAusgabe" alignment="CENTER" layoutX="247.0" layoutY="282.0" prefHeight="64.0" prefWidth="100.0" text="Label" />
+   </children>
+</AnchorPane>
