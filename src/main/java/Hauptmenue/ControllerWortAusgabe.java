@@ -8,7 +8,7 @@ import javafx.event.ActionEvent;
 
         import java.io.IOException;
 
-public class ControllerWortAusgabe extends Controller {
+public class ControllerWortAusgabe extends Controller  {
 
 
     @FXML
@@ -19,6 +19,9 @@ public class ControllerWortAusgabe extends Controller {
 
     @FXML
       private Label BefehleWortAusgabe;
+
+    @FXML
+            private Button HideWord ;
 
     String printLabelWort;
 
@@ -48,8 +51,8 @@ int i=0;
 
                      break;
              }
-           WortAusgabe.setText(" voici ton mot "+printLabelWort);
-    BefehleWortAusgabe.setText("salam "+(i+1));
+           WortAusgabe.setText(" Hier ist dein Wort :\n "+printLabelWort+"\n  Wenn du es gesehen hast press den Button unten recht um es zu verstecken");
+    BefehleWortAusgabe.setText("Hallo Spieler "+(i+1));
              i++;
         }
 
@@ -61,7 +64,11 @@ int i=0;
         return WortRandom;
     }
 
+public void switchToHide (ActionEvent event) throws IOException{
+    WortAusgabe.setText("");
 
+
+    }
 
 
 
