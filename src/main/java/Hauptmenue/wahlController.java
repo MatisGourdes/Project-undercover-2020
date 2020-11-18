@@ -2,7 +2,6 @@ package Hauptmenue;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
@@ -23,7 +22,7 @@ public class wahlController {
 
 
      */
-    /*
+
     Vector<String> vote = new Vector<>();
     int count = 1;
     public void wahl(ActionEvent event) throws IOException {
@@ -41,11 +40,10 @@ public class wahlController {
         }
 
     }
-    ancienne partie du code avec entrée du nom de joueur pour le vote
-    */
-    public void wahl(ActionEvent event) throws IOException{
-        for(int i = 0; i < anzahlSpieler; i++){
+
+   // public void wahl(ActionEvent event) throws IOException{
+     //   for(int i = 0; i < anzahlSpieler; i++){
 
         }
-    }
-}
+
+
