@@ -18,9 +18,6 @@ public class Person {
     // 0 = Citizen
     // 1 = Undercover
     // 2 = Mr White
-    public static String[] SpielerUngeordnet = new String[8];// Hier sind die Spieler wie im beispiel "Player 1" gespeichert in einer ungeordnete Reihe
-    //Hier später ändern um die namen der Spieler einzugeben
-
   public static boolean[] StateArray= new boolean[8];// Hier können wir wissen ob ein Spieler entfernt ist oder nicht
     // True =Alive
     //False = No more alive...;(
@@ -115,19 +112,11 @@ public class Person {
                 Spieler[5] = "Player 6";
                 Spieler[6] = "Player 7";
                 Spieler[7] = "Player 8";
-
-                pioche maListe = new pioche(SpielerZahl);
-                for(int i=0;i<SpielerZahl;i++)
-                {
-                    SpielerUngeordnet[i] = Spieler[maListe.getPif()];  // Die neue Klasse SpielerUngeordnet ist jetzt mit die Spieler gefüllt aber in eine Ungeordnete Reihe
-                }
-
-
         }
 
     public static void ShowMyWork(int SpielerZahl) {
     for(int i=0; i<SpielerZahl;i++){
-        System.out.println( "Reihe im Spiel: " + (i+1) + "  "+SpielerUngeordnet[i] + "    Alive?: " + StateArray[i] +"    Rolle : " + RolleArray[i]);
+        System.out.println( Spieler[i] + "    Alive?: " + StateArray[i] +"    Rolle : " + RolleArray[i]);
     }
 }
 }
