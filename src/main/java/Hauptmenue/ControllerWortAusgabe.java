@@ -44,12 +44,12 @@ int i=0;
 
                      break;
                  case 2 :
-
+                     printLabelWort = "  ";
 
                      break;
              }
            WortAusgabe.setText(" voici ton mot "+printLabelWort);
-    BefehleWortAusgabe.setText("salam "+i);
+    BefehleWortAusgabe.setText("salam "+(i+1));
              i++;
         }
 
