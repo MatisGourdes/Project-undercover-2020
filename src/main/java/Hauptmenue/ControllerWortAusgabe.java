@@ -55,7 +55,7 @@ int i=0;
                      break;
              }
 
-    BefehleWortAusgabe.setText("Hallo "+Person.SpielerUngeordnet[i]);
+    BefehleWortAusgabe.setText("Hallo "+Person.Spieler[i]);
              i++;
         }
 
