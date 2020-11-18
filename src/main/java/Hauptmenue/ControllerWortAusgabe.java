@@ -13,8 +13,6 @@ public class ControllerWortAusgabe extends Controller  {
 
     @FXML
     private Button btnWorter;
-    @FXML
-    private Button btnHide;
 
 
     @FXML
@@ -24,20 +22,22 @@ public class ControllerWortAusgabe extends Controller  {
       private Label BefehleWortAusgabe;
 
     @FXML
-            private Button HideWord ;
+            private Button HideWord;
 
     String printLabelWort;
 
     int WortRandom= (int)(Math.random()*5);
 
 int i=0;
-
+    boolean swich = false;
 
 
     public void SwitchToNextPLayer(ActionEvent event) throws IOException {
 
 
-
+   WortAusgabe.setText("");
+   HideWord.setText("click to show");
+   swich=false;
 
              switch(Person.RolleArray[i]){// Ici changer le 1
                  case 0:
@@ -55,7 +55,7 @@ int i=0;
                      break;
              }
 
-    BefehleWortAusgabe.setText("Hallo "+Person.SpielerUngeordnet[i]);
+    BefehleWortAusgabe.setText("Hallo "+Person.Spieler[i]);
              i++;
         }
 
@@ -68,15 +68,20 @@ int i=0;
     }
 
 public void swichToShow (ActionEvent event) throws IOException{
-        if (i>0) {
-            WortAusgabe.setText(" Hier ist dein Wort :\n " + printLabelWort + "\n  Wenn du es gesehen hast press den Button unten recht um es zu verstecken");
 
+        if (i>0) {
+
+            if (swich==false ) {
+                WortAusgabe.setText(" Hier ist dein Wort :\n " + printLabelWort + "\n  Wenn du es gesehen hast press den Button unten recht um es zu verstecken");
+                HideWord.setText("click to hide");
+            }
+          else { WortAusgabe.setText("");
+                HideWord.setText("click to show");
+            }
+
+     swich=!swich;
         }
     }
 
-public void swichToHideWord (ActionEvent event) throws IOException{
-    WortAusgabe.setText("");
-
-
-    }}
+}
 
