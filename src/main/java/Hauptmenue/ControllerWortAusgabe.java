@@ -25,7 +25,10 @@ public class ControllerWortAusgabe extends Controller {
     int WortRandom= (int)(Math.random()*5);
 
 int i=0;
-public void SwitchToNextPLayer(ActionEvent event) throws IOException {
+
+
+
+    public void SwitchToNextPLayer(ActionEvent event) throws IOException {
 
 
 
@@ -50,6 +53,13 @@ public void SwitchToNextPLayer(ActionEvent event) throws IOException {
              i++;
         }
 
+    public void setWortRandom(int wortRandom) {
+        WortRandom = wortRandom;
+    }
+
+    public int getWortRandom() {
+        return WortRandom;
+    }
 
 
 
