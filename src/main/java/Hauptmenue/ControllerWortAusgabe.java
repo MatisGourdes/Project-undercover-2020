@@ -52,7 +52,7 @@ int i=0;
                      break;
              }
            WortAusgabe.setText(" Hier ist dein Wort :\n "+printLabelWort+"\n  Wenn du es gesehen hast press den Button unten recht um es zu verstecken");
-    BefehleWortAusgabe.setText("Hallo Spieler "+(i+1));
+    BefehleWortAusgabe.setText("Hallo "+Person.SpielerUngeordnet[i]);
              i++;
         }
 
