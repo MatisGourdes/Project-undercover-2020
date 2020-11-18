@@ -6,9 +6,8 @@
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Hauptmenue.ControllerWortAusgabe">
    <children>
       <Button fx:id="btnWorter" layoutX="251.0" layoutY="182.0" mnemonicParsing="false" onAction="#SwitchToNextPLayer" prefHeight="64.0" prefWidth="100.0" text="Next PLayer" />
-      <Label fx:id="BefehleWortAusgabe" alignment="CENTER" contentDisplay="CENTER" layoutX="157.0" layoutY="77.0" prefHeight="64.0" prefWidth="286.0" text="Ich werde ihnen eihre Rolle geben" AnchorPane.topAnchor="77.0" />
+      <Label fx:id="BefehleWortAusgabe" alignment="CENTER" contentDisplay="CENTER" layoutX="157.0" layoutY="77.0" prefHeight="64.0" prefWidth="286.0" text="Ich werde ihnen ihre Rolle geben" AnchorPane.topAnchor="77.0" />
       <Label fx:id="WortAusgabe" alignment="CENTER" layoutX="14.0" layoutY="285.0" prefHeight="64.0" prefWidth="440.0" />
       <Button fx:id="HideWord" layoutX="426.0" layoutY="285.0" mnemonicParsing="false" onAction="#swichToShow" prefHeight="25.0" prefWidth="137.0" text="press to show word" />
-      <Button fx:id="btnHide" layoutX="421.0" layoutY="337.0" mnemonicParsing="false" onAction="#swichToHideWord" prefHeight="25.0" prefWidth="152.0" text="press to hide word " />
    </children>
 </AnchorPane>
