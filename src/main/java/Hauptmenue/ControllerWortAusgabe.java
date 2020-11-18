@@ -13,6 +13,9 @@ public class ControllerWortAusgabe extends Controller  {
 
     @FXML
     private Button btnWorter;
+    @FXML
+    private Button btnHide;
+
 
     @FXML
     private Label WortAusgabe;
@@ -51,7 +54,7 @@ int i=0;
 
                      break;
              }
-           WortAusgabe.setText(" Hier ist dein Wort :\n "+printLabelWort+"\n  Wenn du es gesehen hast press den Button unten recht um es zu verstecken");
+
     BefehleWortAusgabe.setText("Hallo "+Person.SpielerUngeordnet[i]);
              i++;
         }
@@ -64,14 +67,16 @@ int i=0;
         return WortRandom;
     }
 
-public void switchToHide (ActionEvent event) throws IOException{
+public void swichToShow (ActionEvent event) throws IOException{
+        if (i>0) {
+            WortAusgabe.setText(" Hier ist dein Wort :\n " + printLabelWort + "\n  Wenn du es gesehen hast press den Button unten recht um es zu verstecken");
+
+        }
+    }
+
+public void swichToHideWord (ActionEvent event) throws IOException{
     WortAusgabe.setText("");
 
 
-    }
-
-
-
-
-    }
+    }}
 
