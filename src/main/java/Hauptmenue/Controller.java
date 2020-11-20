@@ -24,6 +24,7 @@ public class Controller  {
     window.setTitle("Spielregeln");
     window.show();
     }
+
     @FXML
     public void startGame(ActionEvent event) throws IOException {
         Person.DefineRolle(SpielerZahl);// Programm definiert eine Random rolle für die Spieler von 0 bis 7
@@ -37,7 +38,15 @@ public class Controller  {
         window.setTitle("WortAusgabe");
         window.show();
     }
-
+    //Zeige die Mindmap
+    @FXML
+    public void showMindmap() throws IOException {
+        Parent gameMindmapParent = FXMLLoader.load(getClass().getResource("mindmap.fxml"));
+        Stage MindmapStage = new Stage();
+        MindmapStage.setScene(new Scene(gameMindmapParent));
+        MindmapStage.setTitle("Mindmap");
+        MindmapStage.show();
+    }
     @FXML
     private Label WortAusgabe;
 
