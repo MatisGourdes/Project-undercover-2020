@@ -16,8 +16,25 @@ public class Person2 {
         this.btn = btn;
         this.btn.setText(name);
         this.btn.setId(name);
+
+        rolleName(this.rolle);
     }
 
+public static String rolleName(int rolle){
+        String Rolle ="";
+        switch (rolle){
+            case 0:
+                Rolle = "Citizen";
+                break;
+            case 1:
+                Rolle = "Undercover";
+                break;
+            case 2:
+                Rolle = "Mr White";
+                break;
+        }
+        return Rolle;
+}
 
 
     public String getName() {

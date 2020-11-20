@@ -13,25 +13,33 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.Random;
 
 public class Controller {
     @FXML
     private Button Spielen = new Button();
 
     //test
-    static Person2 sp1 = new Person2("Spieler1", true, 2, new Button());
-   // static Person2 sp2 = new Person2("sp2", true, 0, new Button());
-    //static Person2 sp3 = new Person2("sp3", true, 0, new Button());
-   // static Person2 sp4 = new Person2("sp4", true, 2, new Button());
-@FXML
+    static Person2 sp1 = new Person2("Kevin", true, 2, new Button());
+    static Person2 sp2 = new Person2("Josué", true, 0, new Button());
+    static Person2 sp3 = new Person2("Suzon", true, 0, new Button());
+    static Person2 sp4 = new Person2("Jenny", true, 2, new Button());
+    @FXML
     Button sp1btn = sp1.btn;
-   // public static Button sp2btn = sp2.btn;
-   // public static Button sp3btn = sp3.btn;
-   // public static Button sp4btn = sp4.btn;
+    @FXML
+    Button sp2btn = sp2.btn;
+    @FXML
+    Button sp3btn = sp3.btn;
+    @FXML
+    Button sp4btn = sp4.btn;
 
 
-
-
+public void initialize(){
+    sp1btn.setText(sp1.getName());
+    sp2btn.setText(sp2.getName());
+    sp3btn.setText(sp3.getName());
+    sp4btn.setText(sp4.getName());
+}
     // Wechseln zu Spielregeln View
     public void switchToSpielregeln(ActionEvent event) throws IOException {
         Parent spielRegelnParent = FXMLLoader.load(getClass().getResource("spielRegeln.fxml"));
@@ -53,13 +61,33 @@ public class Controller {
         window.show();
     }
 
-    //Test
-    public void test(ActionEvent event) throws IOException{
-
-        sp1.setName("MORT");
-        sp1btn.setText(sp1.btn.getId());
-        sp1btn.setDisable(sp1.getStatus());
+    //Spieler1
+    public void wahlSp1(ActionEvent event) throws IOException{
+        sp1btn.setText(Person2.rolleName(sp1.getRolle()));
+        sp1btn.setDisable(true);
         sp1.setStatus(false);
+
+    }
+
+    //Spieler2
+    public void wahlSp2(ActionEvent event) throws IOException{
+        sp2btn.setText(Person2.rolleName(sp2.getRolle()));
+        sp2btn.setDisable(true);
+        sp2.setStatus(false);
+
+    }
+    //Spieler3
+    public void wahlSp3(ActionEvent event) throws IOException{
+        sp3btn.setText(Person2.rolleName(sp3.getRolle()));
+        sp3btn.setDisable(true);
+        sp3.setStatus(false);
+
+    }
+    //Spieler4
+    public void wahlSp4(ActionEvent event) throws IOException{
+        sp4btn.setText(Person2.rolleName(sp4.getRolle()));
+        sp4btn.setDisable(true);
+        sp3.setStatus(false);
 
     }
 

@@ -17,6 +17,9 @@ public class Main extends Application {
     }
 
     public static void main(String[] args) {
+// Init Wahl
+        //Controller.sp1.setName("Jacky");
+       // Controller.sp2.setName("Michel");
 
         launch(args);
     }
