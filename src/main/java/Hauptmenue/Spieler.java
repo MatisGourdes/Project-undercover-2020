@@ -2,14 +2,14 @@ package Hauptmenue;
 
 import javafx.scene.control.Button;
 
-public class Person2 {
+public class Spieler {
 
     private String name;
     public static Button btn;
     private boolean status;
     private int rolle, spielerNr;
 
-    public Person2(int spielerNr, String name, boolean status, int rolle, Button btn){
+    public Spieler(int spielerNr, String name, boolean status, int rolle, Button btn){
         this.spielerNr = spielerNr;
         this.name = name;
         this.status = status;
@@ -46,7 +46,6 @@ public static String rolleName(int rolle){
     public void setName(String name) {
         this.name = name;
     }
-
 
     public boolean getStatus() {
         return status;

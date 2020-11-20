@@ -5,13 +5,12 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Hauptmenue.Controller">
    <children>
-      <Button fx:id="add" layoutX="219.0" layoutY="74.0" mnemonicParsing="false" onAction="#addPlayer" text="Add" />
-      <Label fx:id="Name" layoutX="70.0" layoutY="112.0" text="SpielerName" />
-      <TextField fx:id="eingabeName" layoutX="70.0" layoutY="74.0" promptText="SpielerName" />
-      <Label fx:id="nbSpieler" layoutX="70.0" layoutY="136.0" prefHeight="17.0" prefWidth="58.0" text="#Spieler" />
-      <Label fx:id="Rolle" layoutX="154.0" layoutY="112.0" prefHeight="17.0" prefWidth="41.0" text="Rolle" />
+      <Button fx:id="addPlayerBtn" layoutX="491.0" layoutY="61.0" mnemonicParsing="false" onAction="#addPlayer" text="Add" />
+      <TextField fx:id="eingabeName" layoutX="342.0" layoutY="61.0" promptText="SpielerName" />
+      <Label fx:id="spielerNrLabel" layoutX="399.0" layoutY="37.0" prefHeight="17.0" prefWidth="83.0" text="Spieler Nr" />
+      <TextField fx:id="eingabeAnzahlSpieler" layoutX="75.0" layoutY="61.0" prefHeight="25.0" prefWidth="158.0" promptText="Zahl zw 4 und 8 eingeben" />
+      <Button fx:id="speichern" layoutX="128.0" layoutY="86.0" mnemonicParsing="false" onAction="#save" text="speichern" />
    </children>
 </AnchorPane>
