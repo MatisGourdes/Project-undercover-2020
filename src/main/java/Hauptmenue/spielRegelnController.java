@@ -13,7 +13,7 @@ import java.io.IOException;
 public class spielRegelnController {
     // Zurück zur Hauptmenü View
     @FXML
-    private void switchBackToHauptmenu(ActionEvent event) throws IOException {
+    private void switchBackToHauptmenu(ActionEvent event) throws IOException {// Ce bouton n'existe plus
         Parent spielRegelnParent = FXMLLoader.load(getClass().getResource("hauptmenue.fxml"));
         Scene spielRegelnScene = new Scene(spielRegelnParent);
         //get stage info
