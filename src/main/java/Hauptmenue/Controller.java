@@ -1,6 +1,5 @@
 package Hauptmenue;
 
-import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -8,7 +7,6 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -20,13 +18,11 @@ public class Controller  {
 @FXML
     // Wechseln zu Spielregeln View
     public void switchToSpielregeln(ActionEvent event) throws IOException {
-        Parent spielRegelnParent = FXMLLoader.load(getClass().getResource("spielRegeln.fxml"));
-        Scene spielRegelnScene = new Scene(spielRegelnParent);
-        //get stage info
-        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
-        window.setScene(spielRegelnScene);
-        window.setTitle("Spielregeln");
-        window.show();
+    Parent spielRegelnScene = FXMLLoader.load(getClass().getResource("spielRegeln.fxml"));
+    Stage window = new Stage();
+    window.setScene(new Scene(spielRegelnScene));
+    window.setTitle("Spielregeln");
+    window.show();
     }
     @FXML
     public void startGame(ActionEvent event) throws IOException {
@@ -58,7 +54,7 @@ public class Controller  {
     int i=0;
     boolean swich = false;
 
-
+int declic =1;
     public void SwitchToNextPLayer(ActionEvent event) throws IOException {
 
 
@@ -79,10 +75,11 @@ public class Controller  {
                 break;
         }
         BefehleWortAusgabe.setText("Hallo "+Person.Spieler[i]);
-        if(Person.Spieler[i].length()>(i)) {i++;}
+        if(7>=i && declic ==1) {if (i==7){i=7;
+        declic =0;}
+        else {i++;}}
 
-
-        else{ }// Hier geht der Programm weiter
+        else{ befehl(event); }// Hier geht der Programm weiter
 
     }
 
@@ -105,5 +102,14 @@ public class Controller  {
             swich=!swich;
         }
     }
-    }
 
+
+    public void befehl(ActionEvent event) throws IOException {
+        Parent befehlParent = FXMLLoader.load(getClass().getResource("AnfangRundeBefehl.fxml"));
+        Scene befehlScene = new Scene(befehlParent);
+        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        window.setScene(befehlScene);
+        window.setTitle("Wer fängt an?");
+        window.show();
+    }
+}
