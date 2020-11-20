@@ -1,21 +1,19 @@
 package Hauptmenue;
 
+import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Slider;
-import javafx.scene.control.Spinner;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class Controller {
+public class Controller  {
 
     int SpielerZahl =8; //Programm ist bis Sprint 2 immer mit 8 Spieler, Hier in der Variabel wechseln
 
@@ -43,4 +41,69 @@ public class Controller {
         window.setTitle("WortAusgabe");
         window.show();
     }
-}
+
+    @FXML
+    private Label WortAusgabe;
+
+    @FXML
+    private Label BefehleWortAusgabe;
+
+    @FXML
+    private Button HideWord;
+
+    String printLabelWort;
+
+    int WortRandom= (int)(Math.random()*10);// Hier die Nummer muss geändert sein falls wir mehr Wörter in der liste schreiben
+
+    int i=0;
+    boolean swich = false;
+
+
+    public void SwitchToNextPLayer(ActionEvent event) throws IOException {
+
+
+        WortAusgabe.setText("");
+        HideWord.setText("click to show");
+        swich=false;
+
+        switch(Person.RolleArray[i]){// Ici changer le 1
+            case 0:
+                printLabelWort = WortReserve.CitizenWort[WortRandom];
+
+                break;
+            case 1:
+                printLabelWort = WortReserve.UndercoverWort[WortRandom];
+                break;
+            case 2 :
+                printLabelWort = "Du bist Mr White, versuch dich nicht auffallen lassen  ";
+                break;
+        }
+        BefehleWortAusgabe.setText("Hallo "+Person.Spieler[i]);
+        if(Person.Spieler[i].length()>(i)) {i++;}
+
+
+        else{ }// Hier geht der Programm weiter
+
+    }
+
+
+
+
+
+    public void swichToShow (ActionEvent event) throws IOException{
+
+        if (i>0) {
+
+            if (swich==false ) {
+                WortAusgabe.setText( printLabelWort + "\n  Wenn du es gesehen hast press den Button unten recht um es zu verstecken");
+                HideWord.setText("click to hide");
+            }
+            else { WortAusgabe.setText("");
+                HideWord.setText("click to show");
+            }
+
+            swich=!swich;
+        }
+    }
+    }
+
