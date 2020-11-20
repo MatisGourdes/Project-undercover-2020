@@ -26,7 +26,7 @@
             </ImageView>
          </children>
       </HBox>
-      <HBox alignment="CENTER" layoutX="194.0" layoutY="269.0" AnchorPane.bottomAnchor="150.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="270.0">
+      <HBox alignment="CENTER" layoutX="194.0" layoutY="269.0" prefHeight="105.0" prefWidth="500.0" AnchorPane.bottomAnchor="150.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="270.0">
          <children>
             <Button fx:id="Spielen" mnemonicParsing="false" onAction="#switchToSpiel" prefHeight="71.0" prefWidth="111.0" text="Spielen!">
                <padding>
@@ -40,5 +40,6 @@
             <Label text="Roellinger Gourdes Lagel Schaetzel Portmann" />
          </children></HBox>
       <Button fx:id="sRegeln" mnemonicParsing="false" onAction="#switchToSpielregeln" prefHeight="28.0" prefWidth="81.0" text="Spielregeln" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+      <Button layoutX="223.0" layoutY="345.0" mnemonicParsing="false" onAction="#switchToAddSpieler" text="Settings" />
    </children>
 </AnchorPane>

@@ -7,23 +7,40 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.Slider;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import javafx.util.converter.NumberStringConverter;
 
 import java.io.IOException;
+import java.lang.reflect.Field;
 import java.util.Random;
+import java.util.Vector;
 
 public class Controller {
     @FXML
     private Button Spielen = new Button();
+    @FXML
+    private TextField txt;
+    @FXML
+    private Label nm;
+    @FXML
+    private Label rl;
+    @FXML
+    private Label nbSpieler;
+    private static int spielerNr = 0;
 
-    //test
-    static Person2 sp1 = new Person2("Kevin", true, 2, new Button());
-    static Person2 sp2 = new Person2("Josué", true, 0, new Button());
-    static Person2 sp3 = new Person2("Suzon", true, 0, new Button());
-    static Person2 sp4 = new Person2("Jenny", true, 2, new Button());
+
+    //personList
+    static Vector<Person2> spielerListe = new Vector<Person2>();
+
+
+    static Person2 sp1 = new Person2(1,"Kevin", true, 2, new Button());
+    static Person2 sp2 = new Person2(2, "Josué", true, 0, new Button());
+    static Person2 sp3 = new Person2(3,"Suzon", true, 0, new Button());
+    static Person2 sp4 = new Person2(4,"Jenny", true, 2, new Button());
     @FXML
     Button sp1btn = sp1.btn;
     @FXML
@@ -34,12 +51,12 @@ public class Controller {
     Button sp4btn = sp4.btn;
 
 
-public void initialize(){
-    sp1btn.setText(sp1.getName());
-    sp2btn.setText(sp2.getName());
-    sp3btn.setText(sp3.getName());
-    sp4btn.setText(sp4.getName());
-}
+    public void initialize(){
+        sp1btn.setText(sp1.getName());
+        sp2btn.setText(sp2.getName());
+        sp3btn.setText(sp3.getName());
+        sp4btn.setText(sp4.getName());
+    }
     // Wechseln zu Spielregeln View
     public void switchToSpielregeln(ActionEvent event) throws IOException {
         Parent spielRegelnParent = FXMLLoader.load(getClass().getResource("spielRegeln.fxml"));
@@ -52,7 +69,7 @@ public void initialize(){
     }
     // Wechseln zu Spiel View
     public void switchToSpiel(ActionEvent event) throws IOException {
-        Parent spielParent = FXMLLoader.load(getClass().getResource("test.fxml"));
+        Parent spielParent = FXMLLoader.load(getClass().getResource("wahl.fxml"));
         Scene spielScene = new Scene(spielParent);
         //get stage info
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -87,9 +104,46 @@ public void initialize(){
     public void wahlSp4(ActionEvent event) throws IOException{
         sp4btn.setText(Person2.rolleName(sp4.getRolle()));
         sp4btn.setDisable(true);
-        sp3.setStatus(false);
+        sp4.setStatus(false);
 
     }
+
+
+
+
+
+
+
+
+    //test ajout joueurs
+    // Wechseln zu AddSpielerview
+    public void switchToAddSpieler(ActionEvent event) throws IOException {
+        Parent spielParent = FXMLLoader.load(getClass().getResource("addSpieler.fxml"));
+        Scene spielScene = new Scene(spielParent);
+        //get stage info
+        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        window.setScene(spielScene);
+        window.setTitle("Undercover");
+        window.show();
+    }
+
+
+
+    public void addPlayer(ActionEvent event) throws IOException{
+
+
+        Person2 temp = new Person2(spielerNr, txt.getText(), true, (int)Math.random()*3, new Button());
+        spielerListe.add(temp);
+        nm.setText(spielerListe.elementAt(spielerNr).getName());
+        rl.setText(Person2.rolleName(spielerListe.elementAt(spielerNr).getRolle()));
+        nbSpieler.setText(String.valueOf(spielerListe.size()));
+        spielerNr++;
+        for (int i = 0; i < spielerListe.size(); i++){
+            System.out.println(spielerListe.elementAt(i).getName() + " " + Person2.rolleName(spielerListe.elementAt(i).getRolle()));
+        }
+        System.out.println("");
+    }
+
 
 
 }

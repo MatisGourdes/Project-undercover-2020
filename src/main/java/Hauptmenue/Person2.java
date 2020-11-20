@@ -7,9 +7,10 @@ public class Person2 {
     private String name;
     public static Button btn;
     private boolean status;
-    private int rolle;
+    private int rolle, spielerNr;
 
-    public Person2(String name, boolean status, int rolle, Button btn){
+    public Person2(int spielerNr, String name, boolean status, int rolle, Button btn){
+        this.spielerNr = spielerNr;
         this.name = name;
         this.status = status;
         this.rolle = rolle;
@@ -36,6 +37,7 @@ public static String rolleName(int rolle){
         return Rolle;
 }
 
+    public int getSpielerNr() { return spielerNr; }
 
     public String getName() {
         return name;
