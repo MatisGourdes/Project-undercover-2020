@@ -5,8 +5,10 @@ import javafx.event.ActionEvent;
         import javafx.fxml.FXML;
         import javafx.scene.control.Button;
         import javafx.scene.control.Label;
+import net.bytebuddy.implementation.bind.MethodDelegationBinder;
+import org.junit.jupiter.api.parallel.Resources;
 
-        import java.io.IOException;
+import java.io.IOException;
 
 public class ControllerWortAusgabe extends Controller  {
 
@@ -26,7 +28,7 @@ public class ControllerWortAusgabe extends Controller  {
 
     String printLabelWort;
 
-    int WortRandom= (int)(Math.random()*5);
+    int WortRandom= (int)(Math.random()*10);// Hier die Nummer muss geändert sein falls wir mehr Wörter in der liste schreiben
 
 int i=0;
     boolean swich = false;
@@ -50,13 +52,15 @@ int i=0;
 
                      break;
                  case 2 :
-                     printLabelWort = "  ";
+                     printLabelWort = "Du bist Mr White, versuch dich nicht auffallen lassen  ";
 
                      break;
              }
 
     BefehleWortAusgabe.setText("Hallo "+Person.Spieler[i]);
-             i++;
+            if(Person.Spieler[i].length()>(i)) {i++;}
+            else{ System.out.println("Hier geht der Spiel Weiter");// Hier zu nächste Funktion weiter
+            }
         }
 
     public void setWortRandom(int wortRandom) {
@@ -72,7 +76,7 @@ public void swichToShow (ActionEvent event) throws IOException{
         if (i>0) {
 
             if (swich==false ) {
-                WortAusgabe.setText(" Hier ist dein Wort :\n " + printLabelWort + "\n  Wenn du es gesehen hast press den Button unten recht um es zu verstecken");
+                WortAusgabe.setText( printLabelWort + "\n  Wenn du es gesehen hast press den Button unten recht um es zu verstecken");
                 HideWord.setText("click to hide");
             }
           else { WortAusgabe.setText("");
