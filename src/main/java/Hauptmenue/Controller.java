@@ -23,11 +23,11 @@ public class Controller {
     @FXML
     private Button Spielen = new Button();
     @FXML
-    private TextField txt;
+    private TextField eingabeName;
     @FXML
-    private Label nm;
+    private Label Name;
     @FXML
-    private Label rl;
+    private Label Rolle;
     @FXML
     private Label nbSpieler;
     private static int spielerNr = 0;
@@ -116,7 +116,7 @@ public class Controller {
 
 
     //test ajout joueurs
-    // Wechseln zu AddSpielerview
+    //Wechseln zu AddSpielerview
     public void switchToAddSpieler(ActionEvent event) throws IOException {
         Parent spielParent = FXMLLoader.load(getClass().getResource("addSpieler.fxml"));
         Scene spielScene = new Scene(spielParent);
@@ -128,16 +128,14 @@ public class Controller {
     }
 
 
-
     public void addPlayer(ActionEvent event) throws IOException{
-
-
-        Person2 temp = new Person2(spielerNr, txt.getText(), true, (int)Math.random()*3, new Button());
+        Person2 temp = new Person2(spielerNr, eingabeName.getText(), true, (int)Math.random()*3, new Button());
         spielerListe.add(temp);
-        nm.setText(spielerListe.elementAt(spielerNr).getName());
-        rl.setText(Person2.rolleName(spielerListe.elementAt(spielerNr).getRolle()));
+        Name.setText(spielerListe.elementAt(spielerNr).getName());
+        Rolle.setText(Person2.rolleName(spielerListe.elementAt(spielerNr).getRolle()));
         nbSpieler.setText(String.valueOf(spielerListe.size()));
         spielerNr++;
+
         for (int i = 0; i < spielerListe.size(); i++){
             System.out.println(spielerListe.elementAt(i).getName() + " " + Person2.rolleName(spielerListe.elementAt(i).getRolle()));
         }
