@@ -25,7 +25,7 @@ public class Controller {
     int declic = 1;
 
     @FXML
-    private Label befehlRundenAnfang;
+    private Label befehlAnfang;
 
     @FXML
     private Label WortAusgabe;
@@ -38,6 +38,8 @@ public class Controller {
 
     @FXML
     private Button btnWorter;
+
+
 
     @FXML
     // Wechseln zu Spielregeln View
@@ -79,6 +81,7 @@ public class Controller {
     public void SwitchToNextPLayer(ActionEvent event) throws IOException {
 
         btnWorter.setText("Nächste Spieler");
+        WortAusgabe.setText("");
         HideWord.setText("click to show");
         swich = false;
 
@@ -98,17 +101,17 @@ public class Controller {
         if (7 >= i && declic == 1) {
             if (i == 7) {
                 i = 7;
-                declic = 0;
-            } else {
-                i++;
-            }
-        } else {
+                declic = 0;}
+             else {i++;}
 
-            befehlWindow(event);
 
-        }
+        } else {befehlWindow(event);}
+
 
     }
+
+
+
 
 
     public void swichToShow(ActionEvent event) throws IOException {
@@ -135,12 +138,8 @@ public class Controller {
         window.setScene(befehlScene);
         window.setTitle("Wer fängt an?");
         window.show();
-        BefehlAusgabe(event);
-    }
-
-
-    public void BefehlAusgabe(ActionEvent event) throws IOException {
-        befehlRundenAnfang.setText("Player 1 fängt an");
 
     }
+
+
 }
