@@ -1,14 +1,15 @@
 package Hauptmenue;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -19,13 +20,18 @@ public class Controller {
     private Button addPlayerBtn = new Button();
     @FXML
     private TextField eingabeName;
-
     @FXML
     private Label spielerNrLabel;
     @FXML
     private TextField eingabeAnzahlSpieler;
     @FXML
     private Button speichern = new Button();
+    @FXML
+    private TableView<Spieler> tableViewSpieler;
+    @FXML
+    private TableColumn<Spieler, Integer> nrTableView;
+    @FXML
+    private TableColumn<Spieler, String> nameTableView;
 
     private double anzahlSpieler;
     private static int spielerNr = 1;
@@ -69,30 +75,48 @@ public class Controller {
         speichern.setDisable(true);
         spielerNrLabel.setText("Spieler 1:");
         addPlayerBtn.setDisable(false);
+        //initialise colonnes tableviewSpieler
+        nrTableView.setCellValueFactory(new PropertyValueFactory<Spieler, Integer>("spielerNr"));
+        nameTableView.setCellValueFactory(new PropertyValueFactory<Spieler, String>("name"));
     }
-// Spieler hinzufügen --> Ajouter tableau avec nom et numéro des joueurs ajoutés
-    public void addPlayer(ActionEvent event) throws IOException{
+    // Spieler hinzufügen
+    public void addPlayer(ActionEvent event) throws IOException {
+        Spieler temp = new Spieler(spielerNr, eingabeName.getText(), true, 0, new Button());
+        spielerListe.add(temp);
 
-        if(spielerNr < anzahlSpieler) {
-            Spieler temp = new Spieler(spielerNr, eingabeName.getText(), true, 0, new Button());
-            spielerListe.add(temp);
+        if (spielerNr < anzahlSpieler) {
             eingabeName.clear();
-            spielerNrLabel.setText("Spieler " + String.valueOf(spielerNr+1) + ":");
+            spielerNrLabel.setText("Spieler " + String.valueOf(spielerNr + 1) + ":");
 
         }
         else {
             addPlayerBtn.setDisable(true);
-            spielerNrLabel.setText("Tip top");
             eingabeName.setDisable(true);
+            spielerNrLabel.setText("Tip top");
+
+            // RolleZuweisung.randomRolle();
         }
         spielerNr++;
 
-        //vérifications print dans la console
-        for (int i = 0; i < spielerListe.size(); i++){
+        //debug
+        for (int i = 0; i < spielerListe.size(); i++) {
             System.out.println(spielerListe.elementAt(i).getSpielerNr() + ": " +
                     spielerListe.elementAt(i).getName() + " " + Spieler.rolleName(spielerListe.elementAt(i).getRolle()));
         }
         System.out.println("___");
+
+        //display in der Tabelle
+        tableViewSpieler.setItems(getPeople());
+    }
+
+    //display in der Tabelle
+    public ObservableList<Spieler> getPeople(){
+        ObservableList<Spieler> list = FXCollections.observableArrayList();
+        for (int i = 0; i < spielerListe.size(); i++) {
+            list.add(spielerListe.elementAt(i));
+        }
+        return list;
+
     }
 
 
