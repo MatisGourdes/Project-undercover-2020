@@ -107,7 +107,7 @@ public class Controller {
     }
     // Spieler hinzufügen
     public void addPlayer(ActionEvent event) throws IOException {
-        Spieler temp = new Spieler(spielerNr, eingabeName.getText(), true, 0, new Button());
+        Spieler temp = new Spieler(spielerNr, eingabeName.getText(), true, 4, new Button());
         spielerListe.add(temp);
 
         if (spielerNr < anzahlSpieler) {
@@ -120,7 +120,7 @@ public class Controller {
             eingabeName.setDisable(true);
             spielerNrLabel.setText("Tip top");
             // Zuweisung der Rollen
-            //RolleZuweisung.randomRolle();
+            RolleZuweisung.randomRolle();
         }
         spielerNr++;
 
@@ -159,88 +159,39 @@ public class Controller {
         window.setScene(spielScene);
         window.setTitle("Ende der Runde - Wahl");
         window.show();
+
     }
-    //Spieler rauswählen
+
+    //Tabelle neu Anzeigen
     @FXML
-    void spielerAusschliessenBtn(ActionEvent event) {
+    void setupTableViewVote(ActionEvent event) {
         //display in der Tabelle
         tableViewSpieler.setItems(getPeopleAlive());
+        //initialise colonnes tableviewSpieler
+        nrTableView.setCellValueFactory(new PropertyValueFactory<Spieler, Integer>("spielerNr"));
+        nameTableView.setCellValueFactory(new PropertyValueFactory<Spieler, String>("name"));
+        tableViewSpieler.setItems(getPeopleAlive());
+    }
+
+//Spieler wählen und entfernen
+    @FXML
+    void spielerAusschliessenBtn(ActionEvent event) {
         Spieler entfernt = tableViewSpieler.getSelectionModel().getSelectedItem();
         entfernt.setStatus(false);
+        System.out.println("voted out: " + entfernt.getName() + "- Rolle: " + Spieler.rolleName(entfernt.getRolle()));
     }
 
-    //display in der Tabelle der Spieler, die noch leben
+    //display in der Tabelle der Spieler, die noch alive sind
     public ObservableList<Spieler> getPeopleAlive(){
-        ObservableList<Spieler> list = FXCollections.observableArrayList();
+        ObservableList<Spieler> list2 = FXCollections.observableArrayList();
         for (int i = 0; i < spielerListe.size(); i++) {
             if(spielerListe.elementAt(i).getStatus()==true) {
-                list.add(spielerListe.elementAt(i));
+                list2.add(spielerListe.elementAt(i));
             }
         }
-        return list;
+        return list2;
 
     }
-   /*
-
-
-
-
-
-//ajout joueurs
-//Wechseln zu AddSpielerview
-public void switchToWahl(ActionEvent event) throws IOException {
-    Parent spielParent = FXMLLoader.load(getClass().getResource("wahl.fxml"));
-    Scene spielScene = new Scene(spielParent);
-    //get stage info
-    Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
-    window.setScene(spielScene);
-    window.setTitle("Wahl");
-    window.show();
-}
-
-    static Person2 sp1 = new Person2(1,"Kevin", true, 2, new Button());
-    static Person2 sp2 = new Person2(2, "Josué", true, 0, new Button());
-    static Person2 sp3 = new Person2(3,"Suzon", true, 0, new Button());
-    static Person2 sp4 = new Person2(4,"Jenny", true, 2, new Button());
-    @FXML
-    Button sp1btn = sp1.btn;
-    @FXML
-    Button sp2btn = sp2.btn;
-    @FXML
-    Button sp3btn = sp3.btn;
-    @FXML
-    Button sp4btn = sp4.btn;
-
-    //Spieler1
-    public void wahlSp1(ActionEvent event) throws IOException{
-        sp1btn.setText(Person2.rolleName(sp1.getRolle()));
-        sp1btn.setDisable(true);
-        sp1.setStatus(false);
-
-    }
-
-    //Spieler2
-    public void wahlSp2(ActionEvent event) throws IOException{
-        sp2btn.setText(Person2.rolleName(sp2.getRolle()));
-        sp2btn.setDisable(true);
-        sp2.setStatus(false);
-
-    }
-    //Spieler3
-    public void wahlSp3(ActionEvent event) throws IOException{
-        sp3btn.setText(Person2.rolleName(sp3.getRolle()));
-        sp3btn.setDisable(true);
-        sp3.setStatus(false);
-
-    }
-    //Spieler4
-    public void wahlSp4(ActionEvent event) throws IOException{
-        sp4btn.setText(Person2.rolleName(sp4.getRolle()));
-        sp4btn.setDisable(true);
-        sp4.setStatus(false);
-
-    }
-*/
 // Ajouter ICI ecran Mr White essai trouver mot
 
     // getter + setter pour accéder à la liste de joueurs (vecteur)
