@@ -10,11 +10,6 @@ import javafx.event.ActionEvent;
 
 public class ControllerWortAusgabe extends Controller  {
 
-
-    @FXML
-    private Button btnWorter;
-
-
     @FXML
     private Label WortAusgabe;
 
