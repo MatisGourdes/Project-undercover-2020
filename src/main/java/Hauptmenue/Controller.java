@@ -131,17 +131,16 @@ public class Controller {
             addPlayerBtn.setDisable(true);
             eingabeName.setDisable(true);
             spielerNrLabel.setText("Tip top");
-
+            for (int i = 0; i < spielerListe.size(); i++) {
+                System.out.println(spielerListe.elementAt(i).getSpielerNr() + ": " +
+                        spielerListe.elementAt(i).getName() + " " + Spieler.rolleName(spielerListe.elementAt(i).getRolle()));
+            }
             // RolleZuweisung.randomRolle();
         }
         spielerNr++;
 
         //debug
-        for (int i = 0; i < spielerListe.size(); i++) {
-            System.out.println(spielerListe.elementAt(i).getSpielerNr() + ": " +
-                    spielerListe.elementAt(i).getName() + " " + Spieler.rolleName(spielerListe.elementAt(i).getRolle()));
-        }
-        System.out.println("___");
+
 
         //display in der Tabelle
         tableViewSpieler.setItems(getPeople());
@@ -180,15 +179,12 @@ public class Controller {
         switch (spielerListe.elementAt(i).getRolle()) {// Ici changer le 1
             case 0:
                 printLabelWort = WortReserve.CitizenWort[WortRandom];
-                System.out.println(spielerListe.size());
                 break;
             case 1:
                 printLabelWort = WortReserve.UndercoverWort[WortRandom];
-
                 break;
             case 2:
                 printLabelWort = "Du bist Mr White, versuch dich nicht auffallen lassen  ";
-
                 break;
         }
         BefehleWortAusgabe.setText("Hallo " + spielerListe.elementAt(i).getName());
