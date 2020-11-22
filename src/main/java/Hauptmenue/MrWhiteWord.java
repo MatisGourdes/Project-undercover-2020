@@ -22,6 +22,7 @@ import javafx.event.ActionEvent;
 import java.io.IOException;
 import java.net.URL;
 
+import static Hauptmenue.Person.Spieler;
 import static Hauptmenue.WortReserve.CitizenWort;
 import static javafx.application.Application.launch;
 
@@ -59,13 +60,12 @@ System.out.println(WortReserve.CitizenWort[WortRandom]);
         if(wort.equalsIgnoreCase(WortReserve.CitizenWort[WortRandom])){
             System.out.println("Korrektes Wort");}
         else{
-            System.out.println("Falsches Wort");
+            System.out.println("Falsches Wort Citizen haben gewonnen");
 
 }
 
 
     }
-
 
 }
 
