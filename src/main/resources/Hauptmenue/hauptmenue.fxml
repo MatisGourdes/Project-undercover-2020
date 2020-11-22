@@ -26,9 +26,9 @@
             </ImageView>
          </children>
       </HBox>
-      <HBox alignment="CENTER" layoutX="194.0" layoutY="269.0" AnchorPane.bottomAnchor="150.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="270.0">
+      <HBox alignment="CENTER" layoutX="194.0" layoutY="269.0" prefHeight="105.0" prefWidth="500.0" AnchorPane.bottomAnchor="150.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="270.0">
          <children>
-            <Button fx:id="StartingGame"  mnemonicParsing="false" onAction="#startGame" prefHeight="71.0" prefWidth="111.0" text="Spielen!">
+            <Button fx:id="Spielen" mnemonicParsing="false" onAction="#switchToSpiel" prefHeight="71.0" prefWidth="111.0" text="Spielen!">
                <padding>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </padding>
