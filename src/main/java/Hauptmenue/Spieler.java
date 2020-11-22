@@ -21,7 +21,7 @@ public class Spieler {
         rolleName(this.rolle);
     }
 
-    public static String rolleName(int rolle){
+public static String rolleName(int rolle){
         String Rolle ="";
         switch (rolle){
             case 0:
@@ -35,7 +35,7 @@ public class Spieler {
                 break;
         }
         return Rolle;
-    }
+}
 
     public int getSpielerNr() { return spielerNr; }
 

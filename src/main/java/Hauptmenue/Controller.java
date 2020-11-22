@@ -63,6 +63,28 @@ public class Controller {
 
     @FXML
     private Button btnWorter;
+    private Button addPlayerBtn = new Button();
+    @FXML
+    private TextField eingabeName;
+    @FXML
+    private Label spielerNrLabel;
+    @FXML
+    private TextField eingabeAnzahlSpieler;
+    @FXML
+    private Button speichern = new Button();
+    @FXML
+    private TableView<Spieler> tableViewSpieler;
+    @FXML
+    private TableColumn<Spieler, Integer> nrTableView;
+    @FXML
+    private TableColumn<Spieler, String> nameTableView;
+    @FXML
+    private Button testVote;
+
+    private double anzahlSpieler;
+    private static int spielerNr = 1;
+    //Liste aller Spieler
+    static Vector<Spieler> spielerListe = new Vector<Spieler>();
 
 
     public void initialize(){
@@ -70,7 +92,7 @@ public class Controller {
 
     }
 
-    @FXML
+
     // Wechseln zu Spielregeln View
     public void switchToSpielregeln(ActionEvent event) throws IOException {
         Parent spielRegelnScene = FXMLLoader.load(getClass().getResource("spielRegeln.fxml"));
@@ -100,6 +122,7 @@ public class Controller {
         window.setScene(spielScene);
         window.setTitle("Init");
         window.show();
+
     }
 
     // Anzahl Spieler eingeben
@@ -139,7 +162,6 @@ public class Controller {
         }
         spielerNr++;
 
-        //debug
 
 
         //display in der Tabelle
@@ -212,6 +234,49 @@ public class Controller {
                 HideWord.setText("click to show");
             }
 
+            // WAHL
+// Wechseln zu Wahl View
+            public void switchToVote(ActionEvent event) throws IOException {
+                Parent spielParent = FXMLLoader.load(getClass().getResource("wahl.fxml"));
+                Scene spielScene = new Scene(spielParent);
+                //get stage info
+                Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                window.setScene(spielScene);
+                window.setTitle("Ende der Runde - Wahl");
+                window.show();
+
+            }
+
+            //Tabelle neu Anzeigen
+            @FXML
+            void setupTableViewVote(ActionEvent event) {
+                //display in der Tabelle
+                tableViewSpieler.setItems(getPeopleAlive());
+                //initialise colonnes tableviewSpieler
+                nrTableView.setCellValueFactory(new PropertyValueFactory<Spieler, Integer>("spielerNr"));
+                nameTableView.setCellValueFactory(new PropertyValueFactory<Spieler, String>("name"));
+                tableViewSpieler.setItems(getPeopleAlive());
+            }
+
+//Spieler wählen und entfernen
+            @FXML
+            void spielerAusschliessenBtn(ActionEvent event) {
+                Spieler entfernt = tableViewSpieler.getSelectionModel().getSelectedItem();
+                entfernt.setStatus(false);
+                System.out.println("voted out: " + entfernt.getName() + "- Rolle: " + Spieler.rolleName(entfernt.getRolle()));
+            }
+
+            //display in der Tabelle der Spieler, die noch alive sind
+            public ObservableList<Spieler> getPeopleAlive(){
+                ObservableList<Spieler> list2 = FXCollections.observableArrayList();
+                for (int i = 0; i < spielerListe.size(); i++) {
+                    if(spielerListe.elementAt(i).getStatus()==true) {
+                        list2.add(spielerListe.elementAt(i));
+                    }
+                }
+                return list2;
+
+            }
             swich = !swich;
         }
     }
@@ -235,4 +300,57 @@ public class Controller {
             Controller.spielerListe = spielerListe;
         }
 
+}
+    // WAHL
+// Wechseln zu Wahl View
+    public void switchToVote(ActionEvent event) throws IOException {
+        Parent spielParent = FXMLLoader.load(getClass().getResource("wahl.fxml"));
+        Scene spielScene = new Scene(spielParent);
+        //get stage info
+        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        window.setScene(spielScene);
+        window.setTitle("Ende der Runde - Wahl");
+        window.show();
+
+    }
+
+    //Tabelle neu Anzeigen
+    @FXML
+    void setupTableViewVote(ActionEvent event) {
+        //display in der Tabelle
+        tableViewSpieler.setItems(getPeopleAlive());
+        //initialise colonnes tableviewSpieler
+        nrTableView.setCellValueFactory(new PropertyValueFactory<Spieler, Integer>("spielerNr"));
+        nameTableView.setCellValueFactory(new PropertyValueFactory<Spieler, String>("name"));
+        tableViewSpieler.setItems(getPeopleAlive());
+    }
+
+    //Spieler wählen und entfernen
+    @FXML
+    void spielerAusschliessenBtn(ActionEvent event) {
+        Spieler entfernt = tableViewSpieler.getSelectionModel().getSelectedItem();
+        entfernt.setStatus(false);
+        System.out.println("voted out: " + entfernt.getName() + "- Rolle: " + Spieler.rolleName(entfernt.getRolle()));
+    }
+
+    //display in der Tabelle der Spieler, die noch alive sind
+    public ObservableList<Spieler> getPeopleAlive(){
+        ObservableList<Spieler> list2 = FXCollections.observableArrayList();
+        for (int i = 0; i < spielerListe.size(); i++) {
+            if(spielerListe.elementAt(i).getStatus()==true) {
+                list2.add(spielerListe.elementAt(i));
+            }
+        }
+        return list2;
+
+    }
+
+
+    // getter + setter pour accéder à la liste de joueurs (vecteur)
+    public static Vector<Spieler> getSpielerListe() {
+        return spielerListe;
+    }
+    public static void setSpielerListe(Vector<Spieler> spielerListe) {
+        Controller.spielerListe = spielerListe;
+    }
 }
