@@ -117,8 +117,8 @@ public class Controller {
             addPlayerBtn.setDisable(true);
             eingabeName.setDisable(true);
             spielerNrLabel.setText("Tip top");
-
-            // RolleZuweisung.randomRolle();
+            // Zuweisung der Rollen
+            RolleZuweisung.randomRolle();
         }
         spielerNr++;
 
