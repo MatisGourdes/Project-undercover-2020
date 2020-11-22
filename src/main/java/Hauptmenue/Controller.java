@@ -56,6 +56,30 @@ public class Controller {
         window.setTitle("Spielregeln");
         window.show();
     }
+
+    //Wechseln zu den Spielregeln
+    @FXML
+    private void switchBackToHauptmenu(ActionEvent event) throws IOException {
+        Parent spielRegelnParent = FXMLLoader.load(getClass().getResource("hauptmenue.fxml"));
+        Scene spielRegelnScene = new Scene(spielRegelnParent);
+        //get stage info
+        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+        window.setScene(spielRegelnScene);
+        window.setTitle("Undercover");
+        window.show();
+    }
+
+    //Zeige die Mindmap
+    @FXML
+    public void showMindmap() throws IOException {
+        Parent gameMindmapParent = FXMLLoader.load(getClass().getResource("mindmap.fxml"));
+        Stage MindmapStage = new Stage();
+        MindmapStage.setScene(new Scene(gameMindmapParent));
+        MindmapStage.setTitle("Mindmap");
+        MindmapStage.show();
+    }
+
+
     // Wechseln zu Spiel View
     public void switchToSpiel(ActionEvent event) throws IOException {
         Parent spielParent = FXMLLoader.load(getClass().getResource("addSpieler.fxml"));
