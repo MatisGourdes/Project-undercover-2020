@@ -1,6 +1,5 @@
 package Hauptmenue;
 
-import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -8,26 +7,51 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class Controller  {
+public class Controller {
 
-    int SpielerZahl =8; //Programm ist bis Sprint 2 immer mit 8 Spieler, Hier in der Variabel wechseln
+    int SpielerZahl = 8; //Programm ist bis Sprint 2 immer mit 8 Spieler, Hier in der Variabel wechseln
 
-@FXML
+    String printLabelWort;
+
+    int WortRandom = (int) (Math.random() * 10);// Hier die Nummer muss geändert sein falls wir mehr Wörter in der liste schreiben
+
+    int i = 0;
+    boolean swich = false;
+
+    int declic = 1;
+
+    @FXML
+    private Label befehlAnfang;
+
+    @FXML
+    private Label WortAusgabe;
+
+    @FXML
+    private Label BefehleWortAusgabe;
+
+    @FXML
+    private Button HideWord;
+
+    @FXML
+    private Button btnWorter;
+
+
+
+    @FXML
     // Wechseln zu Spielregeln View
     public void switchToSpielregeln(ActionEvent event) throws IOException {
-        Parent spielRegelnParent = FXMLLoader.load(getClass().getResource("spielRegeln.fxml"));
-        Scene spielRegelnScene = new Scene(spielRegelnParent);
-        //get stage info
-        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
-        window.setScene(spielRegelnScene);
+        Parent spielRegelnScene = FXMLLoader.load(getClass().getResource("spielRegeln.fxml"));
+        Stage window = new Stage();
+        window.setScene(new Scene(spielRegelnScene));
         window.setTitle("Spielregeln");
         window.show();
     }
+
+
     @FXML
     public void startGame(ActionEvent event) throws IOException {
         Person.DefineRolle(SpielerZahl);// Programm definiert eine Random rolle für die Spieler von 0 bis 7
@@ -42,31 +66,26 @@ public class Controller  {
         window.show();
     }
 
+
+    //Zeige die Mindmap
     @FXML
-    private Label WortAusgabe;
-
-    @FXML
-    private Label BefehleWortAusgabe;
-
-    @FXML
-    private Button HideWord;
-
-    String printLabelWort;
-
-    int WortRandom= (int)(Math.random()*10);// Hier die Nummer muss geändert sein falls wir mehr Wörter in der liste schreiben
-
-    int i=0;
-    boolean swich = false;
+    public void showMindmap() throws IOException {
+        Parent gameMindmapParent = FXMLLoader.load(getClass().getResource("mindmap.fxml"));
+        Stage MindmapStage = new Stage();
+        MindmapStage.setScene(new Scene(gameMindmapParent));
+        MindmapStage.setTitle("Mindmap");
+        MindmapStage.show();
+    }
 
 
     public void SwitchToNextPLayer(ActionEvent event) throws IOException {
 
-
+        btnWorter.setText("Nächste Spieler");
         WortAusgabe.setText("");
         HideWord.setText("click to show");
-        swich=false;
+        swich = false;
 
-        switch(Person.RolleArray[i]){// Ici changer le 1
+        switch (Person.RolleArray[i]) {// Ici changer le 1
             case 0:
                 printLabelWort = WortReserve.CitizenWort[WortRandom];
 
@@ -74,15 +93,20 @@ public class Controller  {
             case 1:
                 printLabelWort = WortReserve.UndercoverWort[WortRandom];
                 break;
-            case 2 :
+            case 2:
                 printLabelWort = "Du bist Mr White, versuch dich nicht auffallen lassen  ";
                 break;
         }
-        BefehleWortAusgabe.setText("Hallo "+Person.Spieler[i]);
-        if(Person.Spieler[i].length()>(i)) {i++;}
+        BefehleWortAusgabe.setText("Hallo " + Person.Spieler[i]);
+        if (7 >= i && declic == 1) {
+            if (i == 7) {
+                i = 7;
+                declic = 0;}
+             else {i++;}
 
 
-        else{ }// Hier geht der Programm weiter
+        } else {befehlWindow(event);}
+
 
     }
 
@@ -90,20 +114,32 @@ public class Controller  {
 
 
 
-    public void swichToShow (ActionEvent event) throws IOException{
+    public void swichToShow(ActionEvent event) throws IOException {
 
-        if (i>0) {
+        if (i > 0) {
 
-            if (swich==false ) {
-                WortAusgabe.setText( printLabelWort + "\n  Wenn du es gesehen hast press den Button unten recht um es zu verstecken");
+            if (swich == false) {
+                WortAusgabe.setText(printLabelWort + "\n  Wenn du es gesehen hast press den Button unten recht um es zu verstecken");
                 HideWord.setText("click to hide");
-            }
-            else { WortAusgabe.setText("");
+            } else {
+                WortAusgabe.setText("");
                 HideWord.setText("click to show");
             }
 
-            swich=!swich;
+            swich = !swich;
         }
     }
+
+
+    public void befehlWindow(ActionEvent event) throws IOException {
+        Parent befehlParent = FXMLLoader.load(getClass().getResource("AnfangRundeBefehl.fxml"));
+        Scene befehlScene = new Scene(befehlParent);
+        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        window.setScene(befehlScene);
+        window.setTitle("Wer fängt an?");
+        window.show();
+
     }
 
+
+}
