@@ -180,19 +180,20 @@ public class Controller {
         switch (spielerListe.elementAt(i).getRolle()) {// Ici changer le 1
             case 0:
                 printLabelWort = WortReserve.CitizenWort[WortRandom];
-
+                System.out.println(spielerListe.size());
                 break;
             case 1:
                 printLabelWort = WortReserve.UndercoverWort[WortRandom];
+
                 break;
             case 2:
                 printLabelWort = "Du bist Mr White, versuch dich nicht auffallen lassen  ";
+
                 break;
         }
         BefehleWortAusgabe.setText("Hallo " + spielerListe.elementAt(i).getName());
-        if (spielerListe.size() >= i && declic == 1) {
-            if (i == 7) {
-                i = 7;
+        if ((spielerListe.size()-1) >= i && declic == 1) {
+            if (i == (spielerListe.size()-1)) {
                 declic = 0;}
             else {i++;}
 
