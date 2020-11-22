@@ -48,43 +48,17 @@ public class Controller {
     boolean swich = false;
 
     int declic = 1;
-
     @FXML
     private Label befehlAnfang;
-
     @FXML
     private Label WortAusgabe;
-
     @FXML
     private Label BefehleWortAusgabe;
-
     @FXML
     private Button HideWord;
-
     @FXML
     private Button btnWorter;
-    private Button addPlayerBtn = new Button();
-    @FXML
-    private TextField eingabeName;
-    @FXML
-    private Label spielerNrLabel;
-    @FXML
-    private TextField eingabeAnzahlSpieler;
-    @FXML
-    private Button speichern = new Button();
-    @FXML
-    private TableView<Spieler> tableViewSpieler;
-    @FXML
-    private TableColumn<Spieler, Integer> nrTableView;
-    @FXML
-    private TableColumn<Spieler, String> nameTableView;
-    @FXML
-    private Button testVote;
 
-    private double anzahlSpieler;
-    private static int spielerNr = 1;
-    //Liste aller Spieler
-    static Vector<Spieler> spielerListe = new Vector<Spieler>();
 
 
     public void initialize(){
@@ -142,7 +116,7 @@ public class Controller {
 
     // Spieler hinzufügen
     public void addPlayer(ActionEvent event) throws IOException {
-        Spieler temp = new Spieler(spielerNr, eingabeName.getText(), true, 0, new Button());
+        Spieler temp = new Spieler(spielerNr, eingabeName.getText(), true, 4);
         spielerListe.add(temp);
 
         if (spielerNr < anzahlSpieler) {
@@ -158,11 +132,9 @@ public class Controller {
                 System.out.println(spielerListe.elementAt(i).getSpielerNr() + ": " +
                         spielerListe.elementAt(i).getName() + " " + Spieler.rolleName(spielerListe.elementAt(i).getRolle()));
             }
-            // RolleZuweisung.randomRolle();
+            RolleZuweisung.randomRolle();
         }
         spielerNr++;
-
-
 
         //display in der Tabelle
         tableViewSpieler.setItems(getPeople());
@@ -198,7 +170,7 @@ public class Controller {
         HideWord.setText("click to show");
         swich = false;
 
-        switch (spielerListe.elementAt(i).getRolle()) {// Ici changer le 1
+        switch (spielerListe.elementAt(i).getRolle()) {
             case 0:
                 printLabelWort = WortReserve.CitizenWort[WortRandom];
                 break;
@@ -219,6 +191,15 @@ public class Controller {
         }
         else {befehlWindow(event);}
     }
+    public void befehlWindow(ActionEvent event) throws IOException {
+        Parent befehlParent = FXMLLoader.load(getClass().getResource("AnfangRundeBefehl.fxml"));
+        Scene befehlScene = new Scene(befehlParent);
+        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        window.setScene(befehlScene);
+        window.setTitle("Wer fängt an?");
+        window.show();
+
+    }
 
 
     //Method um den Wort zu zeigen oder nicht wen er gegeben ist
@@ -233,74 +214,11 @@ public class Controller {
                 WortAusgabe.setText("");
                 HideWord.setText("click to show");
             }
-
-            // WAHL
-// Wechseln zu Wahl View
-            public void switchToVote(ActionEvent event) throws IOException {
-                Parent spielParent = FXMLLoader.load(getClass().getResource("wahl.fxml"));
-                Scene spielScene = new Scene(spielParent);
-                //get stage info
-                Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
-                window.setScene(spielScene);
-                window.setTitle("Ende der Runde - Wahl");
-                window.show();
-
-            }
-
-            //Tabelle neu Anzeigen
-            @FXML
-            void setupTableViewVote(ActionEvent event) {
-                //display in der Tabelle
-                tableViewSpieler.setItems(getPeopleAlive());
-                //initialise colonnes tableviewSpieler
-                nrTableView.setCellValueFactory(new PropertyValueFactory<Spieler, Integer>("spielerNr"));
-                nameTableView.setCellValueFactory(new PropertyValueFactory<Spieler, String>("name"));
-                tableViewSpieler.setItems(getPeopleAlive());
-            }
-
-//Spieler wählen und entfernen
-            @FXML
-            void spielerAusschliessenBtn(ActionEvent event) {
-                Spieler entfernt = tableViewSpieler.getSelectionModel().getSelectedItem();
-                entfernt.setStatus(false);
-                System.out.println("voted out: " + entfernt.getName() + "- Rolle: " + Spieler.rolleName(entfernt.getRolle()));
-            }
-
-            //display in der Tabelle der Spieler, die noch alive sind
-            public ObservableList<Spieler> getPeopleAlive(){
-                ObservableList<Spieler> list2 = FXCollections.observableArrayList();
-                for (int i = 0; i < spielerListe.size(); i++) {
-                    if(spielerListe.elementAt(i).getStatus()==true) {
-                        list2.add(spielerListe.elementAt(i));
-                    }
-                }
-                return list2;
-
-            }
             swich = !swich;
         }
     }
 
 
-    public void befehlWindow(ActionEvent event) throws IOException {
-        Parent befehlParent = FXMLLoader.load(getClass().getResource("AnfangRundeBefehl.fxml"));
-        Scene befehlScene = new Scene(befehlParent);
-        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        window.setScene(befehlScene);
-        window.setTitle("Wer fängt an?");
-        window.show();
-
-    }
-
-
-        public static Vector<Spieler> getSpielerListe() {
-            return spielerListe;
-        }
-        public static void setSpielerListe(Vector<Spieler> spielerListe) {
-            Controller.spielerListe = spielerListe;
-        }
-
-}
     // WAHL
 // Wechseln zu Wahl View
     public void switchToVote(ActionEvent event) throws IOException {
@@ -311,7 +229,6 @@ public class Controller {
         window.setScene(spielScene);
         window.setTitle("Ende der Runde - Wahl");
         window.show();
-
     }
 
     //Tabelle neu Anzeigen
@@ -344,8 +261,6 @@ public class Controller {
         return list2;
 
     }
-
-
     // getter + setter pour accéder à la liste de joueurs (vecteur)
     public static Vector<Spieler> getSpielerListe() {
         return spielerListe;
@@ -353,4 +268,6 @@ public class Controller {
     public static void setSpielerListe(Vector<Spieler> spielerListe) {
         Controller.spielerListe = spielerListe;
     }
+
+    //ENDE WAHL
 }
