@@ -157,6 +157,17 @@ public class Controller {
 
     }
 
+
+    public void startGame(ActionEvent event) throws IOException {
+        Parent WortAusgabeParent = FXMLLoader.load(getClass().getResource("WortAusgabe.fxml"));// Hier werden die Spieler Namen gefragt
+        Scene WortAusgabeScene = new Scene(WortAusgabeParent);
+        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        window.setScene(WortAusgabeScene);
+        window.setTitle("WortAusgabe");
+        window.show();
+    }
+
+
     //RENAME INTO SWITCHNEXTPLAYER TO GIVE WORD
     //Programm to give the word
     public void SwitchToNextPLayer(ActionEvent event) throws IOException {
@@ -179,19 +190,20 @@ public class Controller {
                 break;
         }
         BefehleWortAusgabe.setText("Hallo " + spielerListe.elementAt(i).getName());
-        if (7 >= i && declic == 1) {
+        if (spielerListe.size() >= i && declic == 1) {
             if (i == 7) {
                 i = 7;
                 declic = 0;}
             else {i++;}
 
 
-        } else {befehlWindow(event);}
+        }
+        else {befehlWindow(event);}
     }
 
 
     //Method um den Wort zu zeigen oder nicht wen er gegeben ist
-    public void swichToShow(ActionEvent event) throws IOException {
+    public void switchToShow(ActionEvent event) throws IOException {
 
         if (i > 0) {
 
