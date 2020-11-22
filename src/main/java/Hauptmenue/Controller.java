@@ -18,7 +18,6 @@ import java.util.Vector;
 public class Controller {
     @FXML
     private Button addPlayerBtn = new Button();
-
     @FXML
     private TextField eingabeName;
     @FXML
@@ -244,10 +243,10 @@ public class Controller {
 
     //Spieler wählen und entfernen
     @FXML
-    void spielerAusschliessenBtn(ActionEvent event) {
+    void spielerAusschliessen(ActionEvent event) {
         Spieler entfernt = tableViewSpieler.getSelectionModel().getSelectedItem();
         entfernt.setStatus(false);
-        System.out.println("voted out: " + entfernt.getName() + "- Rolle: " + Spieler.rolleName(entfernt.getRolle()));
+        System.out.println("voted out: " + entfernt.getName() + "- Rolle: " + Spieler.rolleName(entfernt.getRolle())); //debug
     }
 
     //display in der Tabelle der Spieler, die noch alive sind
