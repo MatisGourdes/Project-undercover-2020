@@ -64,6 +64,8 @@ public class Controller {
     @FXML
     private Button btnWorter;
 
+    @FXML
+    private Button startingGame;
 
     public void initialize(){
         addPlayerBtn.setDisable(true);
@@ -140,9 +142,7 @@ public class Controller {
         spielerNr++;
 
         //debug
-
-
-        //display in der Tabelle
+  //display in der Tabelle
         tableViewSpieler.setItems(getPeople());
     }
 

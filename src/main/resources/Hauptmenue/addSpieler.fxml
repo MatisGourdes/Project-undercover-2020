@@ -16,6 +16,6 @@
                 <TableColumn fx:id="nameTableView" prefWidth="123.33334350585938" text="Name" />
             </columns>
         </TableView>
-      <Button fx:id="StartingGame" layoutX="138.0" layoutY="235.0" mnemonicParsing="false" onAction="#startGame" prefHeight="73.0" prefWidth="106.0" text="Start Game" />
+      <Button fx:id="startingGame" layoutX="138.0" layoutY="235.0" mnemonicParsing="false" onAction="#startGame" prefHeight="73.0" prefWidth="106.0" text="Start Game" />
     </children>
 </AnchorPane>
