@@ -32,6 +32,8 @@ public class Controller {
     private TableColumn<Spieler, Integer> nrTableView;
     @FXML
     private TableColumn<Spieler, String> nameTableView;
+    @FXML
+    private Button testVote;
 
     private double anzahlSpieler;
     private static int spielerNr = 1;
@@ -118,7 +120,7 @@ public class Controller {
             eingabeName.setDisable(true);
             spielerNrLabel.setText("Tip top");
             // Zuweisung der Rollen
-            RolleZuweisung.randomRolle();
+            //RolleZuweisung.randomRolle();
         }
         spielerNr++;
 
@@ -146,8 +148,44 @@ public class Controller {
 
     //ajouter ICI ecran jeu
 
-    /*
-// WAHL
+
+    // WAHL
+// Wechseln zu Wahl View
+    public void switchToVote(ActionEvent event) throws IOException {
+        Parent spielParent = FXMLLoader.load(getClass().getResource("wahl.fxml"));
+        Scene spielScene = new Scene(spielParent);
+        //get stage info
+        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        window.setScene(spielScene);
+        window.setTitle("Ende der Runde - Wahl");
+        window.show();
+    }
+    //Spieler rauswählen
+    @FXML
+    void spielerAusschliessenBtn(ActionEvent event) {
+        //display in der Tabelle
+        tableViewSpieler.setItems(getPeopleAlive());
+        Spieler entfernt = tableViewSpieler.getSelectionModel().getSelectedItem();
+        entfernt.setStatus(false);
+    }
+
+    //display in der Tabelle der Spieler, die noch leben
+    public ObservableList<Spieler> getPeopleAlive(){
+        ObservableList<Spieler> list = FXCollections.observableArrayList();
+        for (int i = 0; i < spielerListe.size(); i++) {
+            if(spielerListe.elementAt(i).getStatus()==true) {
+                list.add(spielerListe.elementAt(i));
+            }
+        }
+        return list;
+
+    }
+   /*
+
+
+
+
+
 //ajout joueurs
 //Wechseln zu AddSpielerview
 public void switchToWahl(ActionEvent event) throws IOException {

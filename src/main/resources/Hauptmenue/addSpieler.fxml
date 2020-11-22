@@ -20,5 +20,6 @@
                 <TableColumn fx:id="nameTableView" prefWidth="123.33334350585938" text="Name" />
             </columns>
         </TableView>
+      <Button fx:id="testVote" layoutX="120.0" layoutY="243.0" mnemonicParsing="false" onAction="#switchToVote" text="testVote" />
     </children>
 </AnchorPane>
