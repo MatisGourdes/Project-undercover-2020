@@ -35,12 +35,13 @@ public class Controller {
 
     private double anzahlSpieler;
     private static int spielerNr = 1;
+    private static int spielerzahl = 0;
     //Liste aller Spieler
     static Vector<Spieler> spielerListe = new Vector<Spieler>();
+    private boolean inOrdnung = false;
 
 
-
-    public void initialize(){
+    public void initialize() {
         addPlayerBtn.setDisable(true);
 
     }
@@ -51,7 +52,7 @@ public class Controller {
         Parent spielRegelnParent = FXMLLoader.load(getClass().getResource("spielRegeln.fxml"));
         Scene spielRegelnScene = new Scene(spielRegelnParent);
         //get stage info
-        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
         window.setScene(spielRegelnScene);
         window.setTitle("Spielregeln");
         window.show();
@@ -63,7 +64,7 @@ public class Controller {
         Parent spielRegelnParent = FXMLLoader.load(getClass().getResource("hauptmenue.fxml"));
         Scene spielRegelnScene = new Scene(spielRegelnParent);
         //get stage info
-        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
         window.setScene(spielRegelnScene);
         window.setTitle("Undercover");
         window.show();
@@ -92,7 +93,7 @@ public class Controller {
     }
 
     // Anzahl Spieler eingeben
-    public void save(ActionEvent event) throws IOException{
+    public void save(ActionEvent event) throws IOException {
         anzahlSpieler = Integer.parseInt(eingabeAnzahlSpieler.getText());
         eingabeAnzahlSpieler.setDisable(true);
         speichern.setText("gespeichert !");
@@ -103,24 +104,33 @@ public class Controller {
         nrTableView.setCellValueFactory(new PropertyValueFactory<Spieler, Integer>("spielerNr"));
         nameTableView.setCellValueFactory(new PropertyValueFactory<Spieler, String>("name"));
     }
+
     // Spieler hinzufügen
     public void addPlayer(ActionEvent event) throws IOException {
-        Spieler temp = new Spieler(spielerNr, eingabeName.getText(), true, 0, new Button());
-        spielerListe.add(temp);
 
-        if (spielerNr < anzahlSpieler) {
-            eingabeName.clear();
-            spielerNrLabel.setText("Spieler " + String.valueOf(spielerNr + 1) + ":");
+        //spielerListe.add(temp);
 
-        }
-        else {
+
+        if (spielerzahl<=anzahlSpieler) {//ca c'est bon normalement
+            System.out.println( "anzahlSpieler = " + anzahlSpieler);
+            System.out.println( "spielerNr = " +spielerNr);
+            System.out.println( "spielerzahl = " +spielerzahl);
+            textEingabeUberprufen();
+
+            System.out.println( "spielerNr = " +spielerNr);
+            System.out.println( "spielerzahl = " +spielerzahl);
+            // eingabeName.clear();
+
+
+        } else if (spielerNr > anzahlSpieler) {
+            System.out.println( "spielerListe.size() = " +spielerListe.size());
             addPlayerBtn.setDisable(true);
             eingabeName.setDisable(true);
             spielerNrLabel.setText("Tip top");
             // Zuweisung der Rollen
             RolleZuweisung.randomRolle();
         }
-        spielerNr++;
+
 
         //debug
         for (int i = 0; i < spielerListe.size(); i++) {
@@ -131,10 +141,12 @@ public class Controller {
 
         //display in der Tabelle
         tableViewSpieler.setItems(getPeople());
+
+
     }
 
     //display in der Tabelle
-    public ObservableList<Spieler> getPeople(){
+    public ObservableList<Spieler> getPeople() {
         ObservableList<Spieler> list = FXCollections.observableArrayList();
         for (int i = 0; i < spielerListe.size(); i++) {
             list.add(spielerListe.elementAt(i));
@@ -209,8 +221,54 @@ public void switchToWahl(ActionEvent event) throws IOException {
     public static Vector<Spieler> getSpielerListe() {
         return spielerListe;
     }
+
     public static void setSpielerListe(Vector<Spieler> spielerListe) {
+
         Controller.spielerListe = spielerListe;
     }
-}
 
+
+    public void textEingabeUberprufen() {
+
+       if (eingabeName.getText().equals("")) { //Ist ewtas im Textfeld geschrieben?
+            System.out.println("Sie müssen etwas im Textfeld einschreiben");
+            inOrdnung = false;
+
+        }
+
+       // else if (!eingabeName.getText().equals("") && spielerListe.size()>=1) {//ICI ca va
+
+
+               /* if ( spielerListe.elementAt(b).getName().contains(eingabeName.getText()) || eingabeName.getText().equals("")) {
+                    System.out.println("Sie haben schon dieser Name eingegeben");
+                    eingabeName.clear();
+                    inOrdnung = false;
+                }
+                */
+       else{
+           inOrdnung = true;
+       }
+
+
+
+       //else {
+        //    inOrdnung = true;// Ohne diese esle{}; wenn inOrdnung einmal gleich false
+                             //gesetzt ist dann kann man kein Einträge mehr machen
+        //}
+
+       if (inOrdnung == true) {// Wenn die Eingaben richtig sind, dann sind sie an die Liste addiert
+
+           Spieler temp = new Spieler(spielerNr, eingabeName.getText(), true, 4, new Button());
+            spielerListe.add(temp);
+            spielerNrLabel.setText("Spieler " + String.valueOf(spielerNr + 1) + ":");
+            eingabeName.clear();
+            spielerNr++;
+           spielerzahl++;
+
+
+       }
+
+
+
+    }
+}
