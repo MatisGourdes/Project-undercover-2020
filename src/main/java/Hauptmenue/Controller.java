@@ -1,5 +1,6 @@
 package Hauptmenue;
 
+import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -12,10 +13,15 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.KeyCombination;
 import javafx.stage.Stage;
+
+import javax.swing.*;
 import java.io.IOException;
 import java.util.Vector;
 
 public class Controller {
+    @FXML
+    private Button addPlayerBtn = new Button();//Spieler addieren
+
     @FXML
     private TextField Input;
     @FXML
@@ -62,7 +68,8 @@ public class Controller {
 
 
     public void initialize(){
-        addPlayerBtn.setDisable(true); //Spieler darf erst addiert werden, wenn die Anzahl Spieler eingegeben wurde
+        addPlayerBtn.setDisable(true);//Spieler darf erst addiert werden, wenn die Anzahl Spieler eingegeben wurde
+
     }
 
 
@@ -150,9 +157,9 @@ public class Controller {
 
     }
 
-    //Wechseln zur Wortsausgabe für jeden Spieler
+
     public void startGame(ActionEvent event) throws IOException {
-        Parent WortAusgabeParent = FXMLLoader.load(getClass().getResource("WortAusgabe.fxml"));
+        Parent WortAusgabeParent = FXMLLoader.load(getClass().getResource("WortAusgabe.fxml"));// Hier werden die Spieler Namen gefragt
         Scene WortAusgabeScene = new Scene(WortAusgabeParent);
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
         window.setScene(WortAusgabeScene);
@@ -182,15 +189,18 @@ public class Controller {
                 break;
         }
         BefehleWortAusgabe.setText("Hallo " + spielerListe.elementAt(i).getName());
-        if ((spielerListe.size()-1) >= i && declic == 1) {
-            if (i == (spielerListe.size()-1)) {
-                declic = 0;}
-            else {i++;}
+        if ((spielerListe.size() - 1) >= i && declic == 1) {
+            if (i == (spielerListe.size() - 1)) {
+                declic = 0;
+            } else {
+                i++;
+            }
 
 
         }
         else {befehlWindow(event);}
     }
+
     public void befehlWindow(ActionEvent event) throws IOException {
         Parent befehlParent = FXMLLoader.load(getClass().getResource("AnfangRundeBefehl.fxml"));
         Scene befehlScene = new Scene(befehlParent);
@@ -204,7 +214,6 @@ public class Controller {
 
     //Method um den Wort zu zeigen oder nicht wen er gegeben ist
     public void switchToShow(ActionEvent event) throws IOException {
-
         if (i > 0) {
 
             if (swich == false) {
@@ -244,11 +253,11 @@ public class Controller {
 
     //Spieler wählen und entfernen
     @FXML
-    void spielerAusschliessen(ActionEvent event) {
+    void spielerAusschliessen(ActionEvent event) throws IOException {
         Spieler entfernt = tableViewSpieler.getSelectionModel().getSelectedItem();
+        entfernt.setStatus(false); //der Spieler wird ausgeschlossen
+        System.out.println("voted out: " + entfernt.getName() + "- Rolle: " + Spieler.rolleName(entfernt.getRolle())); //debug
 
-        entfernt.setStatus(false);
-        System.out.println("voted out: " + entfernt.getName() + "- Rolle: " + Spieler.rolleName(entfernt.getRolle()));
         if (entfernt.getRolle() == 2) {
 
             Parent spielParent = FXMLLoader.load(getClass().getResource("MrWhite.fxml"));
@@ -270,24 +279,26 @@ public class Controller {
             window.show(); }
 
 
-        entfernt.setStatus(false); //der Spieler wird ausgeschlossen
-        System.out.println("voted out: " + entfernt.getName() + "- Rolle: " + Spieler.rolleName(entfernt.getRolle())); //debug
     }
 
     //Zeige an, welche Spieler noch spielen
     public ObservableList<Spieler> showLebendigeSpieler(){
         ObservableList<Spieler> list2 = FXCollections.observableArrayList();
         for (int i = 0; i < spielerListe.size(); i++) {
-            if(spielerListe.elementAt(i).getStatus()==true) {
+            if (spielerListe.elementAt(i).getStatus() == true) {
                 list2.add(spielerListe.elementAt(i));
             }
         }
         return list2;
+
     }
-    // getter + setter pour accéder à la liste de joueurs (vecteur)
+    //ENDE WAHL
+
+    // getter + setter für den Zugang zur Spieler Liste
     public static Vector<Spieler> getSpielerListe() {
         return spielerListe;
     }
+
     public static void setSpielerListe(Vector<Spieler> spielerListe) {
         Controller.spielerListe = spielerListe;
     }
