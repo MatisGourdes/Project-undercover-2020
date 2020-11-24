@@ -306,7 +306,6 @@ public class Controller {
     //ENDE WAHL8
     @FXML
     public void valid(ActionEvent event) throws IOException {
-
         wort = Input.getText();
         System.out.println(printLabelWort);
         if (wort.equalsIgnoreCase(temp)) {
@@ -319,7 +318,6 @@ public class Controller {
         }
          else {
             System.out.println(WortReserve.CitizenWort[WortRandom]);
-
         }
 
 
@@ -327,9 +325,6 @@ public class Controller {
     }
     @FXML
     public void newgame(ActionEvent event) throws IOException{
-
-
-
         Parent spielParent = FXMLLoader.load(getClass().getResource("hauptmenue.fxml"));
         Scene spielScene = new Scene(spielParent);
 
@@ -338,8 +333,6 @@ public class Controller {
         window.setScene(spielScene);
         window.setTitle("UnderCover");
         window.show();
-
-
     }
 @FXML
     public void exit(ActionEvent event)throws IOException{
