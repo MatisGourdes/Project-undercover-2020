@@ -13,7 +13,6 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.KeyCombination;
 import javafx.stage.Stage;
-
 import javax.swing.*;
 import java.io.IOException;
 import java.util.Vector;
@@ -133,10 +132,8 @@ public class Controller {
 
 //Lucas
         if(spielerZahl < anzahlSpieler) {
-            System.out.println(spielerZahl );
-
             if ("".contentEquals(eingabeName.getText())){
-                System.out.println("Sie müssen eine Name eingeben");
+                spielerNrLabel.setText("Sie müssen eine Name eingeben");
                 inOrdnung = false;
                 eingabeName.clear();
             }
@@ -144,19 +141,16 @@ public class Controller {
                 inOrdnung = true;
             }
 
-            if (spielerZahl>=1) {
+            if (spielerListe.size()>0) {
                 for (int i = 0; i < spielerZahl; i++) {
 
                     if (spielerListe.elementAt(i).getName().contentEquals(eingabeName.getText())) {
-                        System.out.println("Schon eingegeben");
+                        spielerNrLabel.setText("Schon vorhanden !");
                         eingabeName.clear();
                         inOrdnung1 = false;
-
                     }
-
                     else {
                         inOrdnung1 = true;
-
                     }
                 }
             }
@@ -164,17 +158,16 @@ public class Controller {
             if (inOrdnung == true  && inOrdnung1 ==true){
                 Spieler temp = new Spieler(spielerNr, eingabeName.getText(), true, 4);
                 spielerListe.add(temp);
-                spielerNrLabel.setText("Spieler " + String.valueOf(spielerNr + 1) + ":");
+                spielerNrLabel.setText("Spieler " + (spielerNr + 1) + ":");
                 eingabeName.clear();
                 spielerNr++;
                 spielerZahl++;
             }
         }
+
         //fin Lucas
-        if (spielerNr < anzahlSpieler) {
-            eingabeName.clear();
-            spielerNrLabel.setText("Spieler " + (spielerNr + 1) + ":");
-        }
+        //début Théo
+
         else {
             addPlayerBtn.setDisable(true);
             eingabeName.setDisable(true);
@@ -199,7 +192,6 @@ public class Controller {
             list.add(spielerListe.elementAt(i));
         }
         return list;
-
     }
 
 
