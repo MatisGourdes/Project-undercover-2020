@@ -1,5 +1,6 @@
 package Hauptmenue;
 
+import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -17,67 +18,58 @@ import java.util.Vector;
 
 public class Controller {
     @FXML
-    private Button addPlayerBtn = new Button();
+    private Button addPlayerBtn = new Button();//Spieler addieren
 
     @FXML
-    private TextField eingabeName;
+    private TextField Input;
     @FXML
-    private Label spielerNrLabel;
+    private TextField eingabeName; //Name des Spielers eingeben
     @FXML
-    private TextField eingabeAnzahlSpieler;
+    private Label spielerNrLabel; //Label für die Anzeige des Spielers, als er sein Name eingibt
     @FXML
-    private Button speichern = new Button();
+    private TextField eingabeAnzahlSpieler; //Eingabe der Anzahl Mitspielern
     @FXML
-    private TableView<Spieler> tableViewSpieler;
+    private Button speichern = new Button(); //Speichern der Spieleranzahl
     @FXML
-    private TableColumn<Spieler, Integer> nrTableView;
+    private TableView<Spieler> tableViewSpieler; //Tabelle zur Anzeige der Spielers
     @FXML
-    private TableColumn<Spieler, String> nameTableView;
+    private TableColumn<Spieler, Integer> nrTableView; //Anzeige des Spielernummers in der Tabelle
+    @FXML
+    private TableColumn<Spieler, String> nameTableView; //Anzeise des Namens
 
-    private double anzahlSpieler;
-    private int spielerNr = 1;
-    private int spielerZahl = 0;
-    //Liste aller Spieler
-    static Vector<Spieler> spielerListe = new Vector<Spieler>();
+    private double anzahlSpieler; //Anzahl Spieler
+    private static int spielerNr = 1; //Variable für die Nummerierung der Spieler
+    private static Vector<Spieler> spielerListe = new Vector<Spieler>(); //Vektor zur Speicherung aller Spieler inkl. Daten
 
+    //commenter
     String printLabelWort;
-
-    int WortRandom = (int) (Math.random() * 10);// Hier die Nummer muss geändert sein falls wir mehr Wörter in der liste schreiben
-
-    int i = 0;
+    int SpielerIndex = 0;
     boolean swich = false;
-    boolean  inOrdnung = true;
-    boolean inOrdnung1 = true;
-    boolean bob = false;
 
-    int declic = 1;
+    static int WortRandom = (int)(Math.random() * 10);// Hier die Nummer muss geändert sein falls wir mehr Wörter in der liste schreiben
+    private static String temp = WortReserve.CitizenWort[WortRandom];
 
     @FXML
     private Label befehlAnfang;
-
     @FXML
     private Label WortAusgabe;
-
     @FXML
     private Label BefehleWortAusgabe;
-
     @FXML
     private Button HideWord;
-
     @FXML
     private Button btnWorter;
 
-    @FXML
-    private Button startingGame;
+
 
     public void initialize(){
-        addPlayerBtn.setDisable(true);
-
+        addPlayerBtn.setDisable(true);//Spieler darf erst addiert werden, wenn die Anzahl Spieler eingegeben wurde
 
     }
 
-    @FXML
+
     // Wechseln zu Spielregeln View
+    @FXML
     public void switchToSpielregeln(ActionEvent event) throws IOException {
         Parent spielRegelnScene = FXMLLoader.load(getClass().getResource("spielRegeln.fxml"));
         Stage window = new Stage();
@@ -106,92 +98,52 @@ public class Controller {
         window.setScene(spielScene);
         window.setTitle("Init");
         window.show();
+
     }
 
     // Anzahl Spieler eingeben
-    public void save(ActionEvent event) throws IOException{
-        try{
-            anzahlSpieler = Integer.parseInt(eingabeAnzahlSpieler.getText());
-            eingabeAnzahlSpieler.setDisable(true);
-            speichern.setText("gespeichert !");
-            speichern.setDisable(true);
-            spielerNrLabel.setText("Spieler 1:");
-            addPlayerBtn.setDisable(false);
-            //initialise colonnes tableviewSpieler
-            nrTableView.setCellValueFactory(new PropertyValueFactory<Spieler, Integer>("spielerNr"));
-            nameTableView.setCellValueFactory(new PropertyValueFactory<Spieler, String>("name"));
-        }
-        catch (NumberFormatException e){
-            eingabeAnzahlSpieler.clear();
-            System.out.println("Sie müssen eine Zahl eingeben, Ohne Buchstabe!!");
-        }
+    public void save(ActionEvent event) throws IOException {
+        anzahlSpieler = Integer.parseInt(eingabeAnzahlSpieler.getText());
+        eingabeAnzahlSpieler.setDisable(true);
+        speichern.setText("gespeichert !");
+        speichern.setDisable(true);
+        spielerNrLabel.setText("Spieler 1:");
+        addPlayerBtn.setDisable(false);
+        //Initialisierung der Spalten für die Tableview
+        nrTableView.setCellValueFactory(new PropertyValueFactory<Spieler, Integer>("spielerNr"));
+        nameTableView.setCellValueFactory(new PropertyValueFactory<Spieler, String>("name"));
     }
 
 
 
     // Spieler hinzufügen
     public void addPlayer(ActionEvent event) throws IOException {
+        Spieler temp = new Spieler(spielerNr, eingabeName.getText(), true, 4);
+        spielerListe.add(temp);
 
-        if(spielerZahl < anzahlSpieler) {
-            System.out.println(spielerZahl );
-
-            if ("".contentEquals(eingabeName.getText())){
-                System.out.println("Sie müssen eine Name eingeben");
-                inOrdnung = false;
-                eingabeName.clear();
-            }
-            else{
-                inOrdnung = true;
-            }
-
-            if (spielerZahl>=1) {
-                for (int i = 0; i < spielerZahl; i++) {
-
-                    if (spielerListe.elementAt(i).getName().contentEquals(eingabeName.getText())) {
-                        System.out.println("Schon eingegeben");
-                        eingabeName.clear();
-                        inOrdnung1 = false;
-
-                    }
-
-                    else {
-                        inOrdnung1 = true;
-
-                    }
-                }
-            }
-
-            if (inOrdnung == true  && inOrdnung1 ==true){
-                Spieler temp = new Spieler(spielerNr, eingabeName.getText(), true, 4, new Button());
-                spielerListe.add(temp);
-                spielerNrLabel.setText("Spieler " + String.valueOf(spielerNr + 1) + ":");
-                eingabeName.clear();
-                spielerNr++;
-                spielerZahl++;
-            }
+        if (spielerNr < anzahlSpieler) {
+            eingabeName.clear();
+            spielerNrLabel.setText("Spieler " + (spielerNr + 1) + ":");
         }
-
-
-
-        if (spielerZahl >= anzahlSpieler){
+        else {
             addPlayerBtn.setDisable(true);
             eingabeName.setDisable(true);
             spielerNrLabel.setText("Tip top");
+            //debug
             for (int i = 0; i < spielerListe.size(); i++) {
                 System.out.println(spielerListe.elementAt(i).getSpielerNr() + ": " +
                         spielerListe.elementAt(i).getName() + " " + Spieler.rolleName(spielerListe.elementAt(i).getRolle()));
             }
-            RolleZuweisung.randomRolle();
+            RolleZuweisung.randomRolle(); //Zuweisung der Rollen zu jeden eingetragenen Spieler
         }
+        spielerNr++;
 
-
-        //debug
-  //display in der Tabelle
-        tableViewSpieler.setItems(getPeople());
+        //display in der Tabelle
+        tableViewSpieler.setItems(showSpieler());
     }
 
     //display in der Tabelle
-    public ObservableList<Spieler> getPeople(){
+    public ObservableList<Spieler> showSpieler(){
         ObservableList<Spieler> list = FXCollections.observableArrayList();
         for (int i = 0; i < spielerListe.size(); i++) {
             list.add(spielerListe.elementAt(i));
@@ -208,7 +160,6 @@ public class Controller {
         window.setScene(WortAusgabeScene);
         window.setTitle("WortAusgabe");
         window.show();
-
     }
 
 
@@ -216,12 +167,14 @@ public class Controller {
     //Programm to give the word
     public void SwitchToNextPLayer(ActionEvent event) throws IOException {
 
+        boolean letzteRunde = true;
+
         btnWorter.setText("Nächste Spieler");
         WortAusgabe.setText("");
         HideWord.setText("click to show");
         swich = false;
 
-        switch (spielerListe.elementAt(i).getRolle()) {// Ici changer le 1
+        switch (spielerListe.elementAt(SpielerIndex).getRolle()) {
             case 0:
                 printLabelWort = WortReserve.CitizenWort[WortRandom];
                 break;
@@ -232,34 +185,18 @@ public class Controller {
                 printLabelWort = "Du bist Mr White, versuch dich nicht auffallen lassen  ";
                 break;
         }
-        BefehleWortAusgabe.setText("Hallo " + spielerListe.elementAt(i).getName());
-        if ((spielerListe.size()-1) >= i && declic == 1) {
-            if (i == (spielerListe.size()-1)) {
-                declic = 0;}
-            else {i++;}
+        BefehleWortAusgabe.setText("Hallo " + spielerListe.elementAt(SpielerIndex).getName());
+        if ((spielerListe.size() - 1) >= SpielerIndex && letzteRunde == true) {
+            if (SpielerIndex == (spielerListe.size() - 1)) {
+                letzteRunde = false;
+            } else {
+                SpielerIndex++;
+            }
 
 
         }
         else {befehlWindow(event);}
     }
-
-
-    //Method um den Wort zu zeigen oder nicht wen er gegeben ist
-    public void switchToShow(ActionEvent event) throws IOException {
-        if (i > 0) {
-
-            if (swich == false) {
-                WortAusgabe.setText(printLabelWort + "\n  Wenn du es gesehen hast press den Button unten recht um es zu verstecken");
-                HideWord.setText("click to hide");
-            } else {
-                WortAusgabe.setText("");
-                HideWord.setText("click to show");
-            }
-
-            swich = !swich;
-        }
-    }
-
 
     public void befehlWindow(ActionEvent event) throws IOException {
         Parent befehlParent = FXMLLoader.load(getClass().getResource("AnfangRundeBefehl.fxml"));
@@ -272,11 +209,137 @@ public class Controller {
     }
 
 
-        public static Vector<Spieler> getSpielerListe() {
-            return spielerListe;
+    //Method um den Wort zu zeigen oder nicht wen er gegeben ist
+    public void switchToShow(ActionEvent event) throws IOException {
+        if (SpielerIndex > 0) {
+
+            if (swich == false) {
+                WortAusgabe.setText(printLabelWort + "\n  Wenn du es gesehen hast press den Button unten recht um es zu verstecken");
+                HideWord.setText("click to hide");
+            } else {
+                WortAusgabe.setText("");
+                HideWord.setText("click to show");
+            }
+            swich = !swich;
         }
-        public static void setSpielerListe(Vector<Spieler> spielerListe) {
-            Controller.spielerListe = spielerListe;
+    }
+
+
+
+    //Ende der Runde, Wechseln zur Wahl-Ansicht
+    public void switchToVote(ActionEvent event) throws IOException {
+        Parent spielParent = FXMLLoader.load(getClass().getResource("wahl.fxml"));
+        Scene spielScene = new Scene(spielParent);
+        //get stage info
+        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        window.setScene(spielScene);
+        window.setTitle("Ende der Runde - Wahl");
+        window.show();
+    }
+
+    //Tabelle der lebendigen Spieler neu Anzeigen
+    @FXML
+    void setupTableViewVote(ActionEvent event) {
+        //display in der Tabelle
+        tableViewSpieler.setItems(showLebendigeSpieler());
+        //Initialisierung der Tabelle
+        nrTableView.setCellValueFactory(new PropertyValueFactory<Spieler, Integer>("spielerNr"));
+        nameTableView.setCellValueFactory(new PropertyValueFactory<Spieler, String>("name"));
+        tableViewSpieler.setItems(showLebendigeSpieler());
+    }
+
+    //Spieler wählen und entfernen
+    @FXML
+    void spielerAusschliessen(ActionEvent event) throws IOException {
+        Spieler entfernt = tableViewSpieler.getSelectionModel().getSelectedItem();
+        entfernt.setStatus(false); //der Spieler wird ausgeschlossen
+        System.out.println("voted out: " + entfernt.getName() + "- Rolle: " + Spieler.rolleName(entfernt.getRolle())); //debug
+
+        if (entfernt.getRolle() == 2) {
+
+            Parent spielParent = FXMLLoader.load(getClass().getResource("MrWhite.fxml"));
+            Scene spielScene = new Scene(spielParent);
+
+            //get stage info
+            Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            window.setScene(spielScene);
+            window.setTitle("UnderCover");
+            window.show(); }
+        else{
+            Parent spielParent = FXMLLoader.load(getClass().getResource("AnfangRundeBefehl.fxml"));
+            Scene spielScene = new Scene(spielParent);
+
+            //get stage info
+            Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            window.setScene(spielScene);
+            window.setTitle("UnderCover");
+            window.show(); }
+
+
+    }
+
+    //Zeige an, welche Spieler noch spielen
+    public ObservableList<Spieler> showLebendigeSpieler(){
+        ObservableList<Spieler> list2 = FXCollections.observableArrayList();
+        for (int i = 0; i < spielerListe.size(); i++) {
+            if (spielerListe.elementAt(i).getStatus() == true) {
+                list2.add(spielerListe.elementAt(i));
+            }
+        }
+        return list2;
+
+    }
+    //ENDE WAHL
+
+    // getter + setter für den Zugang zur Spieler Liste
+    public static Vector<Spieler> getSpielerListe() {
+        return spielerListe;
+    }
+
+    public static void setSpielerListe(Vector<Spieler> spielerListe) {
+        Controller.spielerListe = spielerListe;
+    }
+
+    //ENDE WAHL8
+    @FXML
+    public void valid(ActionEvent event) throws IOException {
+
+        System.out.println(printLabelWort);
+        if (Input.getText().equalsIgnoreCase(temp)) {
+            Parent spielParent = FXMLLoader.load(getClass().getResource("Win.fxml"));
+            Scene spielScene = new Scene(spielParent);
+            Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            window.setScene(spielScene);
+            window.setTitle("UnderCover");
+            window.show();
+        }
+         else {
+            System.out.println(WortReserve.CitizenWort[WortRandom]);
+
         }
 
+
+
+    }
+    @FXML
+    public void newgame(ActionEvent event) throws IOException{
+
+
+
+        Parent spielParent = FXMLLoader.load(getClass().getResource("hauptmenue.fxml"));
+        Scene spielScene = new Scene(spielParent);
+
+        //get stage info
+        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        window.setScene(spielScene);
+        window.setTitle("UnderCover");
+        window.show();
+
+
+    }
+@FXML
+    public void exit(ActionEvent event)throws IOException{
+
+        Platform.exit();
+    }
 }
