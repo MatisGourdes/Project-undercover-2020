@@ -12,16 +12,17 @@ package Hauptmenue;
 
 
             rolleVerteilung();
+            System.out.println(Controller.getSpielerListe().size());//ca c'est bon
 
-            while(zahlGeteilteteRolle<Controller.getSpielerListe().size()){
+            while(zahlGeteilteteRolle<Controller.getSpielerListe().size()){//ca c'est bon
 
-                for (int j=0; j<Controller.getSpielerListe().size();j++) {
+                for (int j=0; j<Controller.getSpielerListe().size();j++) {//ca c'est bon
 
-                    if(Controller.getSpielerListe().elementAt(j).getRolle()==4) {
-                        rolle = (int) (Math.random()* variabelRandom);
+                    if(Controller.getSpielerListe().elementAt(j).getRolle()==4) {//ca c'est bon
+                        rolle = (int) (Math.random()* variabelRandom);//ca c'est bon
 
 
-                        if(rolle ==0 && zahlCitizen<citizen ) {
+                        if(rolle ==0 && zahlCitizen<citizen ) {//ca c'est bon
                             zahlCitizen++;
                             Controller.getSpielerListe().elementAt(j).setRolle(rolle);
                             zahlGeteilteteRolle++;
@@ -45,9 +46,6 @@ package Hauptmenue;
                 }
 
 
-            }
-            for (int i=0; i<Controller.getSpielerListe().size();i++) {
-                System.out.println("spieler " + (i+1)+"  " + Controller.getSpielerListe().elementAt(i).getRolle());
             }
 
         }
