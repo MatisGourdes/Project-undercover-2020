@@ -35,8 +35,8 @@ public class Controller {
     private TableColumn<Spieler, String> nameTableView;
 
     private double anzahlSpieler;
-    private static int spielerNr = 1;
-
+    private int spielerNr = 1;
+    private int spielerZahl = 0;
     //Liste aller Spieler
     static Vector<Spieler> spielerListe = new Vector<Spieler>();
 
@@ -46,6 +46,9 @@ public class Controller {
 
     int i = 0;
     boolean swich = false;
+    boolean  inOrdnung = true;
+    boolean inOrdnung1 = true;
+    boolean bob = false;
 
     int declic = 1;
 
@@ -106,30 +109,70 @@ public class Controller {
 
     // Anzahl Spieler eingeben
     public void save(ActionEvent event) throws IOException{
-        anzahlSpieler = Integer.parseInt(eingabeAnzahlSpieler.getText());
-        eingabeAnzahlSpieler.setDisable(true);
-        speichern.setText("gespeichert !");
-        speichern.setDisable(true);
-        spielerNrLabel.setText("Spieler 1:");
-        addPlayerBtn.setDisable(false);
-        //initialise colonnes tableviewSpieler
-        nrTableView.setCellValueFactory(new PropertyValueFactory<Spieler, Integer>("spielerNr"));
-        nameTableView.setCellValueFactory(new PropertyValueFactory<Spieler, String>("name"));
+        try{
+            anzahlSpieler = Integer.parseInt(eingabeAnzahlSpieler.getText());
+            eingabeAnzahlSpieler.setDisable(true);
+            speichern.setText("gespeichert !");
+            speichern.setDisable(true);
+            spielerNrLabel.setText("Spieler 1:");
+            addPlayerBtn.setDisable(false);
+            //initialise colonnes tableviewSpieler
+            nrTableView.setCellValueFactory(new PropertyValueFactory<Spieler, Integer>("spielerNr"));
+            nameTableView.setCellValueFactory(new PropertyValueFactory<Spieler, String>("name"));
+        }
+        catch (NumberFormatException e){
+            eingabeAnzahlSpieler.clear();
+            System.out.println("Sie müssen eine Zahl eingeben, Ohne Buchstabe!!");
+        }
     }
 
 
 
     // Spieler hinzufügen
     public void addPlayer(ActionEvent event) throws IOException {
-        Spieler temp = new Spieler(spielerNr, eingabeName.getText(), true, 0, new Button());
-        spielerListe.add(temp);
 
-        if (spielerNr < anzahlSpieler) {
-            eingabeName.clear();
-            spielerNrLabel.setText("Spieler " + String.valueOf(spielerNr + 1) + ":");
+        if(spielerZahl < anzahlSpieler) {
+            System.out.println(spielerZahl );
 
+            if ("".contentEquals(eingabeName.getText())){
+                System.out.println("Sie müssen eine Name eingeben");
+                inOrdnung = false;
+                eingabeName.clear();
+            }
+            else{
+                inOrdnung = true;
+            }
+
+            if (spielerZahl>=1) {
+                for (int i = 0; i < spielerZahl; i++) {
+
+                    if (spielerListe.elementAt(i).getName().contentEquals(eingabeName.getText())) {
+                        System.out.println("Schon eingegeben");
+                        eingabeName.clear();
+                        inOrdnung1 = false;
+
+                    }
+
+                    else {
+                        inOrdnung1 = true;
+
+                    }
+                }
+            }
+
+            if (inOrdnung == true  && inOrdnung1 ==true){
+                Spieler temp = new Spieler(spielerNr, eingabeName.getText(), true, 4, new Button());
+                spielerListe.add(temp);
+                spielerNrLabel.setText("Spieler " + String.valueOf(spielerNr + 1) + ":");
+                eingabeName.clear();
+                spielerNr++;
+                spielerZahl++;
+            }
         }
-        else {
+
+
+
+        if (spielerZahl >= anzahlSpieler){
             addPlayerBtn.setDisable(true);
             eingabeName.setDisable(true);
             spielerNrLabel.setText("Tip top");
@@ -137,9 +180,9 @@ public class Controller {
                 System.out.println(spielerListe.elementAt(i).getSpielerNr() + ": " +
                         spielerListe.elementAt(i).getName() + " " + Spieler.rolleName(spielerListe.elementAt(i).getRolle()));
             }
-            // RolleZuweisung.randomRolle();
+            RolleZuweisung.randomRolle();
         }
-        spielerNr++;
+
 
         //debug
   //display in der Tabelle
