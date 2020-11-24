@@ -20,9 +20,6 @@ import java.util.Vector;
 
 public class Controller {
     @FXML
-    private Button addPlayerBtn = new Button();//Spieler addieren
-
-    @FXML
     private TextField Input;
     @FXML
     private TextField eingabeName; //Name des Spielers eingeben
@@ -33,6 +30,8 @@ public class Controller {
     @FXML
     private Button speichern = new Button(); //Speichern der Spieleranzahl
     @FXML
+    private Button addPlayerBtn = new Button();//Spieler addieren
+    @FXML
     private TableView<Spieler> tableViewSpieler; //Tabelle zur Anzeige der Spielers
     @FXML
     private TableColumn<Spieler, Integer> nrTableView; //Anzeige des Spielernummers in der Tabelle
@@ -41,17 +40,20 @@ public class Controller {
 
     private double anzahlSpieler; //Anzahl Spieler
     private static int spielerNr = 1; //Variable für die Nummerierung der Spieler
+    private int spielerZahl = 0;
     private static Vector<Spieler> spielerListe = new Vector<Spieler>(); //Vektor zur Speicherung aller Spieler inkl. Daten
 
     //commenter
     String printLabelWort;
-    String wort;
 
 
     static int WortRandom = (int)(Math.random() * 10);// Hier die Nummer muss geändert sein falls wir mehr Wörter in der liste schreiben
     private static String temp = WortReserve.CitizenWort[WortRandom];
     int i = 0;
     boolean swich = false;
+    boolean  inOrdnung = true;
+    boolean inOrdnung1 = true;
+
 
     int declic = 1;
     @FXML
@@ -103,29 +105,72 @@ public class Controller {
         window.setScene(spielScene);
         window.setTitle("Init");
         window.show();
-
     }
 
     // Anzahl Spieler eingeben
-    public void save(ActionEvent event) throws IOException {
-        anzahlSpieler = Integer.parseInt(eingabeAnzahlSpieler.getText());
-        eingabeAnzahlSpieler.setDisable(true);
-        speichern.setText("gespeichert !");
-        speichern.setDisable(true);
-        spielerNrLabel.setText("Spieler 1:");
-        addPlayerBtn.setDisable(false);
-        //Initialisierung der Spalten für die Tableview
-        nrTableView.setCellValueFactory(new PropertyValueFactory<Spieler, Integer>("spielerNr"));
-        nameTableView.setCellValueFactory(new PropertyValueFactory<Spieler, String>("name"));
+    public void save(ActionEvent event) throws IOException{
+        try{
+            anzahlSpieler = Integer.parseInt(eingabeAnzahlSpieler.getText());
+            eingabeAnzahlSpieler.setDisable(true);
+            speichern.setText("gespeichert !");
+            speichern.setDisable(true);
+            spielerNrLabel.setText("Spieler 1:");
+            addPlayerBtn.setDisable(false);
+            //initialise colonnes tableviewSpieler
+            nrTableView.setCellValueFactory(new PropertyValueFactory<Spieler, Integer>("spielerNr"));
+            nameTableView.setCellValueFactory(new PropertyValueFactory<Spieler, String>("name"));
+        }
+        catch (NumberFormatException e){
+            eingabeAnzahlSpieler.clear();
+            System.out.println("Sie müssen eine Zahl eingeben, Ohne Buchstabe!!");
+        }
     }
 
 
 
     // Spieler hinzufügen
     public void addPlayer(ActionEvent event) throws IOException {
-        Spieler temp = new Spieler(spielerNr, eingabeName.getText(), true, 4);
-        spielerListe.add(temp);
 
+//Lucas
+        if(spielerZahl < anzahlSpieler) {
+            System.out.println(spielerZahl );
+
+            if ("".contentEquals(eingabeName.getText())){
+                System.out.println("Sie müssen eine Name eingeben");
+                inOrdnung = false;
+                eingabeName.clear();
+            }
+            else{
+                inOrdnung = true;
+            }
+
+            if (spielerZahl>=1) {
+                for (int i = 0; i < spielerZahl; i++) {
+
+                    if (spielerListe.elementAt(i).getName().contentEquals(eingabeName.getText())) {
+                        System.out.println("Schon eingegeben");
+                        eingabeName.clear();
+                        inOrdnung1 = false;
+
+                    }
+
+                    else {
+                        inOrdnung1 = true;
+
+                    }
+                }
+            }
+
+            if (inOrdnung == true  && inOrdnung1 ==true){
+                Spieler temp = new Spieler(spielerNr, eingabeName.getText(), true, 4);
+                spielerListe.add(temp);
+                spielerNrLabel.setText("Spieler " + String.valueOf(spielerNr + 1) + ":");
+                eingabeName.clear();
+                spielerNr++;
+                spielerZahl++;
+            }
+        }
+        //fin Lucas
         if (spielerNr < anzahlSpieler) {
             eingabeName.clear();
             spielerNrLabel.setText("Spieler " + (spielerNr + 1) + ":");
@@ -141,7 +186,7 @@ public class Controller {
             }
             RolleZuweisung.randomRolle(); //Zuweisung der Rollen zu jeden eingetragenen Spieler
         }
-        spielerNr++;
+
 
         //display in der Tabelle
         tableViewSpieler.setItems(showSpieler());
@@ -195,8 +240,6 @@ public class Controller {
             } else {
                 i++;
             }
-
-
         }
         else {befehlWindow(event);}
     }
@@ -306,9 +349,8 @@ public class Controller {
     //ENDE WAHL8
     @FXML
     public void valid(ActionEvent event) throws IOException {
-        wort = Input.getText();
         System.out.println(printLabelWort);
-        if (wort.equalsIgnoreCase(temp)) {
+        if (Input.getText().equalsIgnoreCase(temp)) {
             Parent spielParent = FXMLLoader.load(getClass().getResource("Win.fxml"));
             Scene spielScene = new Scene(spielParent);
             Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
