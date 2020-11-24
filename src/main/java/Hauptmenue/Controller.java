@@ -164,7 +164,7 @@ public class Controller {
         }
 
 //Alle Spieler wurden eingetragen
-          if (spielerZahl >= anzahlSpieler) {
+        if (spielerZahl >= anzahlSpieler) {
             addPlayerBtn.setDisable(true);
             eingabeName.setDisable(true);
             spielerNrLabel.setText("Tip top");
@@ -289,26 +289,31 @@ public class Controller {
         System.out.println("voted out: " + entfernt.getName() + "- Rolle: " + Spieler.rolleName(entfernt.getRolle())); //debug
 
         if (entfernt.getRolle() == 2) {
-
             Parent spielParent = FXMLLoader.load(getClass().getResource("MrWhite.fxml"));
             Scene spielScene = new Scene(spielParent);
-
-            //get stage info
             Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
             window.setScene(spielScene);
-            window.setTitle("UnderCover");
-            window.show(); }
+            window.setTitle("Mr White");
+            window.show();
+        }
+        //Test si il reste que des citizen
+        else if(testCitizen() == true){
+            Parent spielParent = FXMLLoader.load(getClass().getResource("CitizenGewinnen.fxml"));
+        Scene spielScene = new Scene(spielParent);
+        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        window.setScene(spielScene);
+        window.setTitle("gg citizen");
+        window.show();
+    }
+
         else{
             Parent spielParent = FXMLLoader.load(getClass().getResource("AnfangRundeBefehl.fxml"));
             Scene spielScene = new Scene(spielParent);
-
-            //get stage info
             Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
             window.setScene(spielScene);
-            window.setTitle("UnderCover");
-            window.show(); }
-
-
+            window.setTitle("Spielen");
+            window.show();
+        }
     }
 
     //Zeige an, welche Spieler noch spielen
@@ -324,16 +329,9 @@ public class Controller {
     }
     //ENDE WAHL
 
-    // getter + setter für den Zugang zur Spieler Liste
-    public static Vector<Spieler> getSpielerListe() {
-        return spielerListe;
-    }
 
-    public static void setSpielerListe(Vector<Spieler> spielerListe) {
-        Controller.spielerListe = spielerListe;
-    }
 
-    //ENDE WAHL8
+    //mr white
     @FXML
     public void valid(ActionEvent event) throws IOException {
         System.out.println(printLabelWort);
@@ -345,27 +343,47 @@ public class Controller {
             window.setTitle("UnderCover");
             window.show();
         }
-         else {
-            System.out.println(WortReserve.CitizenWort[WortRandom]);
+        else {
+            //retour début runde
+            befehlWindow(event);
         }
-
-
-
     }
+
     @FXML
     public void newgame(ActionEvent event) throws IOException{
         Parent spielParent = FXMLLoader.load(getClass().getResource("hauptmenue.fxml"));
         Scene spielScene = new Scene(spielParent);
-
-        //get stage info
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
         window.setScene(spielScene);
-        window.setTitle("UnderCover");
+        window.setTitle("Hauptmenü");
         window.show();
     }
-@FXML
-    public void exit(ActionEvent event)throws IOException{
 
+    @FXML
+    public void exit(ActionEvent event)throws IOException{
         Platform.exit();
+    }
+
+    public boolean testCitizen() {
+        boolean boolCitizen = false;
+        int summeRollen = 0;
+        for(int i = 0; i< spielerListe.size(); i++) {
+            summeRollen += spielerListe.elementAt(i).getRolle();
+        }
+        if(summeRollen != 0){
+            boolCitizen = false;
+        }
+        else {
+            boolCitizen = true;
+        }
+        return boolCitizen;
+    }
+
+    // getter + setter für den Zugang zur Spieler Liste
+    public static Vector<Spieler> getSpielerListe() {
+        return spielerListe;
+    }
+    public static void setSpielerListe(Vector<Spieler> spielerListe) {
+        Controller.spielerListe = spielerListe;
     }
 }
