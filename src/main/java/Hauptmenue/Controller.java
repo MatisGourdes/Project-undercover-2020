@@ -49,8 +49,8 @@ public class Controller {
     String wort;
 
 
-    int WortRandom = (int) (Math.random() * 10);// Hier die Nummer muss geändert sein falls wir mehr Wörter in der liste schreiben
-
+    static int WortRandom = (int)(Math.random() * 10);// Hier die Nummer muss geändert sein falls wir mehr Wörter in der liste schreiben
+    private static String temp = WortReserve.CitizenWort[WortRandom];
     int i = 0;
     boolean swich = false;
 
@@ -311,11 +311,9 @@ public class Controller {
 
         wort = Input.getText();
         System.out.println(printLabelWort);
-        if (wort.equalsIgnoreCase(WortReserve.CitizenWort[WortRandom])) {
+        if (wort.equalsIgnoreCase(temp)) {
             Parent spielParent = FXMLLoader.load(getClass().getResource("Win.fxml"));
             Scene spielScene = new Scene(spielParent);
-
-            //get stage info
             Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
             window.setScene(spielScene);
             window.setTitle("UnderCover");
