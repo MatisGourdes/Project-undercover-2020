@@ -11,8 +11,10 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.KeyCombination;
 import javafx.stage.Stage;
 
+import javax.swing.*;
 import java.io.IOException;
 import java.util.Vector;
 
@@ -43,12 +45,15 @@ public class Controller {
 
     //commenter
     String printLabelWort;
-    int SpielerIndex = 0;
-    boolean swich = false;
+    String wort;
+
 
     static int WortRandom = (int)(Math.random() * 10);// Hier die Nummer muss geändert sein falls wir mehr Wörter in der liste schreiben
     private static String temp = WortReserve.CitizenWort[WortRandom];
+    int i = 0;
+    boolean swich = false;
 
+    int declic = 1;
     @FXML
     private Label befehlAnfang;
     @FXML
@@ -167,14 +172,12 @@ public class Controller {
     //Programm to give the word
     public void SwitchToNextPLayer(ActionEvent event) throws IOException {
 
-        boolean letzteRunde = true;
-
         btnWorter.setText("Nächste Spieler");
         WortAusgabe.setText("");
         HideWord.setText("click to show");
         swich = false;
 
-        switch (spielerListe.elementAt(SpielerIndex).getRolle()) {
+        switch (spielerListe.elementAt(i).getRolle()) {
             case 0:
                 printLabelWort = WortReserve.CitizenWort[WortRandom];
                 break;
@@ -185,12 +188,12 @@ public class Controller {
                 printLabelWort = "Du bist Mr White, versuch dich nicht auffallen lassen  ";
                 break;
         }
-        BefehleWortAusgabe.setText("Hallo " + spielerListe.elementAt(SpielerIndex).getName());
-        if ((spielerListe.size() - 1) >= SpielerIndex && letzteRunde == true) {
-            if (SpielerIndex == (spielerListe.size() - 1)) {
-                letzteRunde = false;
+        BefehleWortAusgabe.setText("Hallo " + spielerListe.elementAt(i).getName());
+        if ((spielerListe.size() - 1) >= i && declic == 1) {
+            if (i == (spielerListe.size() - 1)) {
+                declic = 0;
             } else {
-                SpielerIndex++;
+                i++;
             }
 
 
@@ -211,7 +214,7 @@ public class Controller {
 
     //Method um den Wort zu zeigen oder nicht wen er gegeben ist
     public void switchToShow(ActionEvent event) throws IOException {
-        if (SpielerIndex > 0) {
+        if (i > 0) {
 
             if (swich == false) {
                 WortAusgabe.setText(printLabelWort + "\n  Wenn du es gesehen hast press den Button unten recht um es zu verstecken");
@@ -304,8 +307,9 @@ public class Controller {
     @FXML
     public void valid(ActionEvent event) throws IOException {
 
+        wort = Input.getText();
         System.out.println(printLabelWort);
-        if (Input.getText().equalsIgnoreCase(temp)) {
+        if (wort.equalsIgnoreCase(temp)) {
             Parent spielParent = FXMLLoader.load(getClass().getResource("Win.fxml"));
             Scene spielScene = new Scene(spielParent);
             Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
