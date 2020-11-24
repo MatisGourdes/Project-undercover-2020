@@ -63,6 +63,7 @@ public class Controller {
     public void initialize(){
         addPlayerBtn.setDisable(true);
 
+
     }
 
 
@@ -157,6 +158,7 @@ public class Controller {
         window.setScene(WortAusgabeScene);
         window.setTitle("WortAusgabe");
         window.show();
+
     }
 
 
@@ -203,7 +205,6 @@ public class Controller {
 
     //Method um den Wort zu zeigen oder nicht wen er gegeben ist
     public void switchToShow(ActionEvent event) throws IOException {
-
         if (i > 0) {
 
             if (swich == false) {
