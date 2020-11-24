@@ -6,7 +6,7 @@
 <?import javafx.scene.text.*?>
 
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="Hauptmenue.MrWhiteWord">
+      fx:controller="Hauptmenue.Controller">
    <children>
       <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Mr White geben Sie Ihr Wort ein" textAlignment="CENTER" >
          <VBox.margin>
@@ -25,7 +25,7 @@
             </TextField>
          </children>
       </HBox>
-      <Button fx:id="btn" onAction="#test" mnemonicParsing="false" prefHeight="40.0" prefWidth="150.0" text="Bestätigen" textAlignment="CENTER">
+      <Button fx:id="btn" onAction="#valid" mnemonicParsing="false" prefHeight="40.0" prefWidth="150.0" text="Bestätigen" textAlignment="CENTER">
          <VBox.margin>
             <Insets left="225.0" top="50.0" />
          </VBox.margin>
