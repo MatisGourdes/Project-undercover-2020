@@ -44,8 +44,6 @@ public class Controller {
 
     //commenter
     String printLabelWort;
-
-
     static int WortRandom = (int)(Math.random() * 10);// Hier die Nummer muss geändert sein falls wir mehr Wörter in der liste schreiben
     private static String temp = WortReserve.CitizenWort[WortRandom];
     int i = 0;
@@ -165,10 +163,8 @@ public class Controller {
             }
         }
 
-        //fin Lucas
-        //début Théo
-
-        else {
+//Alle Spieler wurden eingetragen
+          if (spielerZahl >= anzahlSpieler) {
             addPlayerBtn.setDisable(true);
             eingabeName.setDisable(true);
             spielerNrLabel.setText("Tip top");
@@ -179,7 +175,6 @@ public class Controller {
             }
             RolleZuweisung.randomRolle(); //Zuweisung der Rollen zu jeden eingetragenen Spieler
         }
-
 
         //display in der Tabelle
         tableViewSpieler.setItems(showSpieler());
