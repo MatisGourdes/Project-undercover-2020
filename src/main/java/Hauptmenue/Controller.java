@@ -45,7 +45,6 @@ public class Controller {
 
     //commenter
     String printLabelWort;
-    String wort;
 
 
     static int WortRandom = (int)(Math.random() * 10);// Hier die Nummer muss geändert sein falls wir mehr Wörter in der liste schreiben
@@ -307,9 +306,8 @@ public class Controller {
     @FXML
     public void valid(ActionEvent event) throws IOException {
 
-        wort = Input.getText();
         System.out.println(printLabelWort);
-        if (wort.equalsIgnoreCase(temp)) {
+        if (Input.getText().equalsIgnoreCase(temp)) {
             Parent spielParent = FXMLLoader.load(getClass().getResource("Win.fxml"));
             Scene spielScene = new Scene(spielParent);
             Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
