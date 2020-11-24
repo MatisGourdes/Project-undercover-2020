@@ -10,13 +10,14 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.KeyCombination;
 import javafx.stage.Stage;
 import java.io.IOException;
 import java.util.Vector;
 
 public class Controller {
     @FXML
-    private Button addPlayerBtn = new Button(); //Spieler addieren
+    private TextField Input;
     @FXML
     private TextField eingabeName; //Name des Spielers eingeben
     @FXML
@@ -38,9 +39,14 @@ public class Controller {
 
     //commenter
     String printLabelWort;
-    int WortRandom = (int) (Math.random() * 10);// Hier die Nummer muss geändert sein falls wir mehr Wörter in der liste schreiben
+    String wort;
+
+
+    static int WortRandom = (int)(Math.random() * 10);// Hier die Nummer muss geändert sein falls wir mehr Wörter in der liste schreiben
+    private static String temp = WortReserve.CitizenWort[WortRandom];
     int i = 0;
     boolean swich = false;
+
     int declic = 1;
     @FXML
     private Label befehlAnfang;
@@ -94,7 +100,7 @@ public class Controller {
     }
 
     // Anzahl Spieler eingeben
-    public void save(ActionEvent event) throws IOException{
+    public void save(ActionEvent event) throws IOException {
         anzahlSpieler = Integer.parseInt(eingabeAnzahlSpieler.getText());
         eingabeAnzahlSpieler.setDisable(true);
         speichern.setText("gespeichert !");
@@ -141,6 +147,7 @@ public class Controller {
             list.add(spielerListe.elementAt(i));
         }
         return list;
+
     }
 
     //Wechseln zur Wortsausgabe für jeden Spieler
@@ -151,7 +158,6 @@ public class Controller {
         window.setScene(WortAusgabeScene);
         window.setTitle("WortAusgabe");
         window.show();
-
     }
 
 
@@ -198,6 +204,7 @@ public class Controller {
 
     //Method um den Wort zu zeigen oder nicht wen er gegeben ist
     public void switchToShow(ActionEvent event) throws IOException {
+
         if (i > 0) {
 
             if (swich == false) {
@@ -217,6 +224,7 @@ public class Controller {
     public void switchToVote(ActionEvent event) throws IOException {
         Parent spielParent = FXMLLoader.load(getClass().getResource("wahl.fxml"));
         Scene spielScene = new Scene(spielParent);
+        //get stage info
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
         window.setScene(spielScene);
         window.setTitle("Ende der Runde - Wahl");
@@ -238,6 +246,30 @@ public class Controller {
     @FXML
     void spielerAusschliessen(ActionEvent event) {
         Spieler entfernt = tableViewSpieler.getSelectionModel().getSelectedItem();
+
+        entfernt.setStatus(false);
+        System.out.println("voted out: " + entfernt.getName() + "- Rolle: " + Spieler.rolleName(entfernt.getRolle()));
+        if (entfernt.getRolle() == 2) {
+
+            Parent spielParent = FXMLLoader.load(getClass().getResource("MrWhite.fxml"));
+            Scene spielScene = new Scene(spielParent);
+
+            //get stage info
+            Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            window.setScene(spielScene);
+            window.setTitle("UnderCover");
+            window.show(); }
+        else{
+            Parent spielParent = FXMLLoader.load(getClass().getResource("AnfangRundeBefehl.fxml"));
+            Scene spielScene = new Scene(spielParent);
+
+            //get stage info
+            Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            window.setScene(spielScene);
+            window.setTitle("UnderCover");
+            window.show(); }
+
+
         entfernt.setStatus(false); //der Spieler wird ausgeschlossen
         System.out.println("voted out: " + entfernt.getName() + "- Rolle: " + Spieler.rolleName(entfernt.getRolle())); //debug
     }
@@ -252,9 +284,7 @@ public class Controller {
         }
         return list2;
     }
-    //ENDE WAHL
-
-    // getter + setter für den Zugang zur Spieler Liste
+    // getter + setter pour accéder à la liste de joueurs (vecteur)
     public static Vector<Spieler> getSpielerListe() {
         return spielerListe;
     }
@@ -262,4 +292,47 @@ public class Controller {
         Controller.spielerListe = spielerListe;
     }
 
+    //ENDE WAHL8
+    @FXML
+    public void valid(ActionEvent event) throws IOException {
+
+        wort = Input.getText();
+        System.out.println(printLabelWort);
+        if (wort.equalsIgnoreCase(temp)) {
+            Parent spielParent = FXMLLoader.load(getClass().getResource("Win.fxml"));
+            Scene spielScene = new Scene(spielParent);
+            Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            window.setScene(spielScene);
+            window.setTitle("UnderCover");
+            window.show();
+        }
+         else {
+            System.out.println(WortReserve.CitizenWort[WortRandom]);
+
+        }
+
+
+
+    }
+    @FXML
+    public void newgame(ActionEvent event) throws IOException{
+
+
+
+        Parent spielParent = FXMLLoader.load(getClass().getResource("hauptmenue.fxml"));
+        Scene spielScene = new Scene(spielParent);
+
+        //get stage info
+        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        window.setScene(spielScene);
+        window.setTitle("UnderCover");
+        window.show();
+
+
+    }
+@FXML
+    public void exit(ActionEvent event)throws IOException{
+
+        Platform.exit();
+    }
 }

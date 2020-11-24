@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: White;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="Hauptmenue.Controller">
+   <children>
+      <Pane layoutX="85.0" prefHeight="400.0" prefWidth="400.0" style="-fx-background-color: White;" AnchorPane.leftAnchor="85.0">
+         <children>
+            <ImageView fitHeight="269.0" fitWidth="210.0" layoutX="97.0" layoutY="-4.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@MrWhite.png" />
+               </image>
+            </ImageView>
+            <Text layoutX="100.0" layoutY="287.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MrWhite hat gewonnen">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Text>
+            <Button layoutX="143.0" layoutY="324.0" mnemonicParsing="false" text="Neu Spielen" onAction="#newgame">
+               <font>
+                  <Font name="Helvetica" size="15.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
+      <Button layoutX="514.0" layoutY="356.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="85.0" text="Exit Game" onAction="#exit" fx:id="exitg"/>
+   </children>
+</AnchorPane>
