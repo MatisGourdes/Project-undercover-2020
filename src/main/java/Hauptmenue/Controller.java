@@ -411,18 +411,19 @@ public class Controller {
     private boolean testUndercover() {
         boolean boolCitizen = false;
         double summeRollen = 0;
+        int SpielerAmLeben=0;
         for(int i = 0; i< spielerListe.size(); i++) {
+            if(spielerListe.elementAt(i).getStatus()==true){
+                SpielerAmLeben++;
             if(spielerListe.elementAt(i).getRolle()==1){
                 summeRollen += 1 ;
-            }
+            }}
         }
-        summeRollen = summeRollen/spielerListe.size();
+        summeRollen = summeRollen/ SpielerAmLeben;
         if(summeRollen == 1)
         {boolCitizen = true;}
 
-        else{boolCitizen = false;
-            System.out.println("Somme du nbre d'undercover/Nbre: "+summeRollen);
-        System.out.println("Test Undercover négatif");}
+        else{boolCitizen = false; }
 
         return boolCitizen;
     }
@@ -432,19 +433,20 @@ public class Controller {
         boolean boolCitizen = false;
         int summeRollen = 0;
         for(int i = 0; i< spielerListe.size(); i++) {
+            if(spielerListe.elementAt(i).getStatus()==true){
             summeRollen += spielerListe.elementAt(i).getRolle();
-        }
+        }}
         if(summeRollen == 0){
             boolCitizen = true;
 
         }
         else {
             boolCitizen = false;
-            System.out.println("Somme des rolles additionnées: "+ summeRollen);
-            System.out.println("Test Citizen négatif");
+
         }
         return boolCitizen;
     }
+
 
     // getter + setter für den Zugang zur Spieler Liste
     public static Vector<Spieler> getSpielerListe() {
