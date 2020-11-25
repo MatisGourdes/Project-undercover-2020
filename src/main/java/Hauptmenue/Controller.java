@@ -303,6 +303,7 @@ public class Controller {
     void setupTableViewVote(ActionEvent event) {
         //display in der Tabelle
         tableViewSpieler.setItems(showLebendigeSpieler());
+        tableViewSpieler.setPlaceholder(new Label("Keine Dataien"));
         //Initialisierung der Tabelle
         nrTableView.setCellValueFactory(new PropertyValueFactory<Spieler, Integer>("spielerNr"));
         nameTableView.setCellValueFactory(new PropertyValueFactory<Spieler, String>("name"));

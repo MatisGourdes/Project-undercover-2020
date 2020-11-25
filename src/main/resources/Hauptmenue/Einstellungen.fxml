@@ -24,11 +24,10 @@
       <TextField fx:id="wortCitizen" layoutX="148.0" layoutY="164.0" prefHeight="25.0" prefWidth="107.0" />
       <TextField fx:id="wortUndercover" layoutX="275.0" layoutY="164.0" prefHeight="25.0" prefWidth="126.0" />
       <Button fx:id="neuesWortBestaetigen" layoutX="427.0" layoutY="164.0" mnemonicParsing="false" onAction="#woerterAddieren" text="Bestätigen" />
-      <TableView layoutX="121.0" layoutY="215.0" prefHeight="146.0" prefWidth="382.0">
+      <TableView fx:id="tableViewWoerter" layoutX="121.0" layoutY="215.0" prefHeight="146.0" prefWidth="382.0">
         <columns>
-          <TableColumn prefWidth="25.0" />
-          <TableColumn prefWidth="181.0" text="Citizen" />
-            <TableColumn prefWidth="175.0" text="Undercover" />
+          <TableColumn fx:id="spalteCitizen" prefWidth="185.0" text="Citizen" />
+            <TableColumn fx:id="spalteUndercover" prefWidth="196.0" text="Undercover" />
         </columns>
       </TableView>
       <Button fx:id="backToHauptmenueBtn" layoutX="442.0" layoutY="10.0" mnemonicParsing="false" onAction="#switchToHauptmenue" text="Zurück zum Hauptmenü" />

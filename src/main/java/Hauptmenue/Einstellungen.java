@@ -1,14 +1,17 @@
 package Hauptmenue;
 
+import javafx.beans.property.ReadOnlyObjectWrapper;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
 import java.io.FileWriter;
@@ -25,15 +28,17 @@ public class Einstellungen {
     @FXML
     private Label aktuelleVarUndercover;
     @FXML
-    private Button woerterListeAnzeigenBtn;
-    @FXML
     private TextField wortCitizen;
     @FXML
     private TextField wortUndercover;
     @FXML
     private Button neuesWortBestaetigen;
     @FXML
-    private Button backToHauptmenueBtn;
+    private TableColumn<String, String> spalteCitizen;
+    @FXML
+    private TableColumn<String, String> spalteUndercover;
+    @FXML
+    private TableView<String> tableViewWoerter;
 
     // Zurück zum Hauptmenü
     @FXML
@@ -65,7 +70,31 @@ public class Einstellungen {
     //aktuelle Wörterliste anzeigen
     @FXML
     void woerterListeAnzeigen(ActionEvent event) {
+        WortReserve.readFile();
+      //  spalteCitizen.setCellValueFactory(cellData ->
+        //      new ReadOnlyObjectWrapper<>(showWoerterCitizen()));
+       // spalteUndercover.setCellValueFactory(cellData ->
+       //         new SimpleStringProperty(new String("13")));
 
+       //tableViewWoerter.getItems().addAll("data1", "data2");
+
+    }
+
+    //display in der ersten Spalte
+    private ObservableList<String> showWoerterCitizen(){
+        ObservableList<String> listCitizen = FXCollections.observableArrayList();
+        for (int i = 0; i < WortReserve.woerterListe.size(); i +=2) {
+            listCitizen.add(WortReserve.woerterListe.elementAt(i));
+        }
+        return listCitizen;
+    }
+    //display in der zweiten Spalte
+    private ObservableList<String> showWoerterUndercover(){
+        ObservableList<String> listUndercover = FXCollections.observableArrayList();
+        for (int i = 1; i < WortReserve.woerterListe.size(); i +=2) {
+            listUndercover.add(WortReserve.woerterListe.elementAt(i));
+        }
+        return listUndercover;
     }
 
 }
