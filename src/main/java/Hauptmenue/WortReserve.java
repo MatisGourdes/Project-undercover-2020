@@ -1,12 +1,32 @@
 package Hauptmenue;
 
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.Vector;
+
 public class WortReserve {
 
-   public static String CitizenWort[]={ "Tomate","Paris","Baum","Blume","Berliner Mauer","Theater","Wespe","Weihnachtsmann","Segeln","Nemo"};
+public static Vector<String> woerterListe = new Vector<>();
 
-//10 Wörter
+    public static void readFile(){
+        //speichert alle Wörter der txt-Datei in einem Vektor
+        try (
+                FileReader f = new FileReader("src\\main\\resources\\Hauptmenue\\woerterDatenBank")) {
+            char c[] = new char[10000];
+            f.read(c);
+            String s = new String(c);
+            String[] result = s.split("\n|;");
 
-    public static String UndercoverWort[]= {"kirschtomate","New York","Tannenbaum","Rose","Chinesische Mauer","Oper","Biene","Jesus","Meer","Willy"};
-
-
+            for (int i = 0; i < result.length; i++) {
+                woerterListe.add(result[i]);
+                f.close();
+            }
+        }
+        catch (IOException e) {
+            System.err.println("Fehler beim Einlesen der Datei.");
+            System.err.println(e.getMessage());
+        }
+    }
 }
+
+
