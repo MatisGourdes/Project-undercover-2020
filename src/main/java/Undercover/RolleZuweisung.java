@@ -1,4 +1,4 @@
-package Hauptmenue;
+package Undercover;
 
 public class RolleZuweisung {
     static int citizen, undercover, mrWhite, rolle;

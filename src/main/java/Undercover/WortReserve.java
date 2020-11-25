@@ -1,4 +1,4 @@
-package Hauptmenue;
+package Undercover;
 
 import java.io.FileReader;
 import java.io.IOException;
@@ -11,7 +11,7 @@ public static Vector<String> woerterListe = new Vector<>();
     public static void readFile(){
         //speichert alle Wörter der txt-Datei in einem Vektor
         try (
-                FileReader f = new FileReader("src\\main\\resources\\Hauptmenue\\woerterDatenBank")) {
+                FileReader f = new FileReader("src\\main\\resources\\Undercover\\woerterDatenBank")) {
             char c[] = new char[10000];
             f.read(c);
             String s = new String(c);
