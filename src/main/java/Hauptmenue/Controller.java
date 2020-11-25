@@ -334,7 +334,7 @@ public class Controller {
                     Scene spielScene = new Scene(spielParent);
                     Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
                     window.setScene(spielScene);
-                    window.setTitle("gg Undercover");
+                    window.setTitle("WIN !!!!!");
                     window.show();
                 }
                 else if(testCitizen() == true){
@@ -342,14 +342,14 @@ public class Controller {
                     Scene spielScene = new Scene(spielParent);
                     Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
                     window.setScene(spielScene);
-                    window.setTitle("gg Citizen");
+                    window.setTitle("WIN !!!!!");
                     window.show();
                 }
                 else { Parent spielParent = FXMLLoader.load(getClass().getResource("AnfangRundeBefehl.fxml"));
                     Scene spielScene = new Scene(spielParent);
                     Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
                     window.setScene(spielScene);
-                    window.setTitle("Spielen");
+                    window.setTitle("Wer ist dran?");
                     window.show();}
             }
 
@@ -380,11 +380,11 @@ public class Controller {
     public void valid(ActionEvent event) throws IOException {
         System.out.println(printLabelWort);
         if (Input.getText().equalsIgnoreCase(wortCitizen)) {
-            Parent spielParent = FXMLLoader.load(getClass().getResource("Win.fxml"));
+            Parent spielParent = FXMLLoader.load(getClass().getResource("MrWhiteGewinnen.fxml"));
             Scene spielScene = new Scene(spielParent);
             Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
             window.setScene(spielScene);
-            window.setTitle("UnderCover");
+            window.setTitle("WIN !!!");
             window.show();
         }
         else {
