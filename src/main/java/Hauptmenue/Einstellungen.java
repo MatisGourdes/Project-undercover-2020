@@ -20,14 +20,6 @@ import java.io.IOException;
 public class Einstellungen {
 
     @FXML
-    private TextField neuerWertMrWhite;
-    @FXML
-    private TextField neuerWertUndercover;
-    @FXML
-    private Label aktuelleVarMrWhite;
-    @FXML
-    private Label aktuelleVarUndercover;
-    @FXML
     private TextField wortCitizen;
     @FXML
     private TextField wortUndercover;

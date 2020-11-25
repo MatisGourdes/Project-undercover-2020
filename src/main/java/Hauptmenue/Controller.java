@@ -180,12 +180,13 @@ public class Controller {
             addPlayerBtn.setDisable(true);
             eingabeName.setDisable(true);
             spielerNrLabel.setText("Tip top");
+            RolleZuweisung.randomRolle();
             //debug
             for (int i = 0; i < spielerListe.size(); i++) {
                 System.out.println(spielerListe.elementAt(i).getSpielerNr() + ": " +
                         spielerListe.elementAt(i).getName() + " " + Spieler.rolleName(spielerListe.elementAt(i).getRolle()));
             }
-            RolleZuweisung.randomRolle(); //Zuweisung der Rollen zu jeden eingetragenen Spieler
+           //Zuweisung der Rollen zu jeden eingetragenen Spieler
         }
 
         //display in der Tabelle
