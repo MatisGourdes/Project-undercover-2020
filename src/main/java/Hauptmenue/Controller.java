@@ -56,7 +56,7 @@ public class Controller {
 
     int declic = 1;
     @FXML
-    private Label befehlAnfang;
+    private Label befehlAusgabe;
     @FXML
     private Label WortAusgabe;
     @FXML
@@ -258,7 +258,7 @@ public class Controller {
     }
 
     public void befehlWindow(ActionEvent event) throws IOException {
-        Parent befehlParent = FXMLLoader.load(getClass().getResource("AnfangRundeBefehl.fxml"));
+        Parent befehlParent = FXMLLoader.load(getClass().getResource("RundeBefehl.fxml"));
         Scene befehlScene = new Scene(befehlParent);
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
         window.setScene(befehlScene);
@@ -266,7 +266,9 @@ public class Controller {
         window.show();
 
     }
-
+    public void SwitchtoShowBefehle(ActionEvent event) throws IOException {
+        befehlAusgabe.setText("Player 2 fängt an");// Hier noch Random
+    }
 
     //Method um den Wort zu zeigen oder nicht wen er gegeben ist
     public void switchToShow(ActionEvent event) throws IOException {
@@ -312,7 +314,8 @@ public class Controller {
     @FXML
     void spielerAusschliessen(ActionEvent event) throws IOException {
         Spieler entfernt = tableViewSpieler.getSelectionModel().getSelectedItem();
-        entfernt.setStatus(false); //der Spieler wird ausgeschlossen
+        entfernt.setStatus(false);
+        //der Spieler wird ausgeschlossen
         System.out.println("voted out: " + entfernt.getName() + "- Rolle: " + Spieler.rolleName(entfernt.getRolle())); //debug
 
         if (entfernt.getRolle() == 2) {
@@ -322,26 +325,43 @@ public class Controller {
             window.setScene(spielScene);
             window.setTitle("Mr White");
             window.show();
-        }
-        //Test si il reste que des citizen
-        else if(testCitizen() == true){
-            Parent spielParent = FXMLLoader.load(getClass().getResource("CitizenGewinnen.fxml"));
-            Scene spielScene = new Scene(spielParent);
-            Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            window.setScene(spielScene);
-            window.setTitle("gg citizen");
-            window.show();
-        }
-
-        else{
-            Parent spielParent = FXMLLoader.load(getClass().getResource("AnfangRundeBefehl.fxml"));
-            Scene spielScene = new Scene(spielParent);
-            Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            window.setScene(spielScene);
-            window.setTitle("Spielen");
-            window.show();
+        } else {  finishTest(event);
         }
     }
+
+        public void finishTest(ActionEvent event) throws IOException {
+            //Test si il reste que des citizen
+
+                if(testUndercover() == true) {
+                    Parent spielParent = FXMLLoader.load(getClass().getResource("UndercoverGewinnen.fxml"));
+                    Scene spielScene = new Scene(spielParent);
+                    Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                    window.setScene(spielScene);
+                    window.setTitle("WIN !!!!!");
+                    window.show();
+                }
+                else if(testCitizen() == true){
+                    Parent spielParent = FXMLLoader.load(getClass().getResource("CitizenGewinnen.fxml"));
+                    Scene spielScene = new Scene(spielParent);
+                    Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                    window.setScene(spielScene);
+                    window.setTitle("WIN !!!!!");
+                    window.show();
+                }
+                else { Parent spielParent = FXMLLoader.load(getClass().getResource("RundeBefehl.fxml"));
+                    Scene spielScene = new Scene(spielParent);
+                    Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                    window.setScene(spielScene);
+                    window.setTitle("Wer ist dran?");
+                    window.show();}
+            }
+
+
+
+
+
+
+
 
     //Zeige an, welche Spieler noch spielen
     public ObservableList<Spieler> showLebendigeSpieler(){
@@ -363,16 +383,15 @@ public class Controller {
     public void valid(ActionEvent event) throws IOException {
         System.out.println(printLabelWort);
         if (Input.getText().equalsIgnoreCase(wortCitizen)) {
-            Parent spielParent = FXMLLoader.load(getClass().getResource("Win.fxml"));
+            Parent spielParent = FXMLLoader.load(getClass().getResource("MrWhiteGewinnen.fxml"));
             Scene spielScene = new Scene(spielParent);
             Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
             window.setScene(spielScene);
-            window.setTitle("UnderCover");
+            window.setTitle("WIN !!!");
             window.show();
         }
         else {
-            //retour début runde
-            befehlWindow(event);
+            finishTest(event);
         }
     }
 
@@ -391,20 +410,46 @@ public class Controller {
         Platform.exit();
     }
 
+
+    private boolean testUndercover() {
+        boolean boolCitizen = false;
+        double summeRollen = 0;
+        int SpielerAmLeben=0;
+        for(int i = 0; i< spielerListe.size(); i++) {
+            if(spielerListe.elementAt(i).getStatus()==true){
+                SpielerAmLeben++;
+            if(spielerListe.elementAt(i).getRolle()==1){
+                summeRollen += 1 ;
+            }}
+        }
+        summeRollen = summeRollen/ SpielerAmLeben;
+        if(summeRollen == 1)
+        {boolCitizen = true;}
+
+        else{boolCitizen = false; }
+
+        return boolCitizen;
+    }
+
+
     public boolean testCitizen() {
         boolean boolCitizen = false;
         int summeRollen = 0;
         for(int i = 0; i< spielerListe.size(); i++) {
+            if(spielerListe.elementAt(i).getStatus()==true){
             summeRollen += spielerListe.elementAt(i).getRolle();
-        }
-        if(summeRollen != 0){
-            boolCitizen = false;
+        }}
+        if(summeRollen == 0){
+            boolCitizen = true;
+
         }
         else {
-            boolCitizen = true;
+            boolCitizen = false;
+
         }
         return boolCitizen;
     }
+
 
     // getter + setter für den Zugang zur Spieler Liste
     public static Vector<Spieler> getSpielerListe() {
