@@ -311,7 +311,8 @@ public class Controller {
     @FXML
     void spielerAusschliessen(ActionEvent event) throws IOException {
         Spieler entfernt = tableViewSpieler.getSelectionModel().getSelectedItem();
-        entfernt.setStatus(false); //der Spieler wird ausgeschlossen
+        entfernt.setStatus(false);
+        //der Spieler wird ausgeschlossen
         System.out.println("voted out: " + entfernt.getName() + "- Rolle: " + Spieler.rolleName(entfernt.getRolle())); //debug
 
         if (entfernt.getRolle() == 2) {
@@ -321,26 +322,43 @@ public class Controller {
             window.setScene(spielScene);
             window.setTitle("Mr White");
             window.show();
+        } else {  finishTest(event);
         }
-        //Test si il reste que des citizen
-        else if(testCitizen() == true){
-            Parent spielParent = FXMLLoader.load(getClass().getResource("CitizenGewinnen.fxml"));
-        Scene spielScene = new Scene(spielParent);
-        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        window.setScene(spielScene);
-        window.setTitle("gg citizen");
-        window.show();
     }
 
-        else{
-            Parent spielParent = FXMLLoader.load(getClass().getResource("AnfangRundeBefehl.fxml"));
-            Scene spielScene = new Scene(spielParent);
-            Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            window.setScene(spielScene);
-            window.setTitle("Spielen");
-            window.show();
-        }
-    }
+        public void finishTest(ActionEvent event) throws IOException {
+            //Test si il reste que des citizen
+
+                if(testUndercover() == true) {
+                    Parent spielParent = FXMLLoader.load(getClass().getResource("UndercoverGewinnen.fxml"));
+                    Scene spielScene = new Scene(spielParent);
+                    Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                    window.setScene(spielScene);
+                    window.setTitle("gg Undercover");
+                    window.show();
+                }
+                else if(testCitizen() == true){
+                    Parent spielParent = FXMLLoader.load(getClass().getResource("CitizenGewinnen.fxml"));
+                    Scene spielScene = new Scene(spielParent);
+                    Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                    window.setScene(spielScene);
+                    window.setTitle("gg Citizen");
+                    window.show();
+                }
+                else { Parent spielParent = FXMLLoader.load(getClass().getResource("AnfangRundeBefehl.fxml"));
+                    Scene spielScene = new Scene(spielParent);
+                    Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                    window.setScene(spielScene);
+                    window.setTitle("Spielen");
+                    window.show();}
+            }
+
+
+
+
+
+
+
 
     //Zeige an, welche Spieler noch spielen
     public ObservableList<Spieler> showLebendigeSpieler(){
@@ -370,8 +388,7 @@ public class Controller {
             window.show();
         }
         else {
-            //retour début runde
-            befehlWindow(event);
+            finishTest(event);
         }
     }
 
@@ -390,17 +407,41 @@ public class Controller {
         Platform.exit();
     }
 
+
+    private boolean testUndercover() {
+        boolean boolCitizen = false;
+        double summeRollen = 0;
+        for(int i = 0; i< spielerListe.size(); i++) {
+            if(spielerListe.elementAt(i).getRolle()==1){
+                summeRollen += 1 ;
+            }
+        }
+        summeRollen = summeRollen/spielerListe.size();
+        if(summeRollen == 1)
+        {boolCitizen = true;}
+
+        else{boolCitizen = false;
+            System.out.println("Somme du nbre d'undercover/Nbre: "+summeRollen);
+        System.out.println("Test Undercover négatif");}
+
+        return boolCitizen;
+    }
+
+
     public boolean testCitizen() {
         boolean boolCitizen = false;
         int summeRollen = 0;
         for(int i = 0; i< spielerListe.size(); i++) {
             summeRollen += spielerListe.elementAt(i).getRolle();
         }
-        if(summeRollen != 0){
-            boolCitizen = false;
+        if(summeRollen == 0){
+            boolCitizen = true;
+
         }
         else {
-            boolCitizen = true;
+            boolCitizen = false;
+            System.out.println("Somme des rolles additionnées: "+ summeRollen);
+            System.out.println("Test Citizen négatif");
         }
         return boolCitizen;
     }
