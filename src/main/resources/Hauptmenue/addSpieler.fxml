@@ -22,5 +22,6 @@
         </TableView>
       <Button fx:id="startingGame" layoutX="247.0" layoutY="332.0" mnemonicParsing="false" onAction="#startGame" prefHeight="40.0" prefWidth="106.0" text="Start Game" />
       <Label layoutX="33.0" layoutY="32.0" prefHeight="25.0" prefWidth="98.0" text="Wie viel sind sie?" />
+      <Button layoutX="435.0" layoutY="207.0" mnemonicParsing="false" onAction="#spielerListeLeeren" text="ALLE RAUS " />
     </children>
 </AnchorPane>

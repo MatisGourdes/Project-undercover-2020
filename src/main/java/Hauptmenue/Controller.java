@@ -131,7 +131,7 @@ public class Controller {
         }
         catch (NumberFormatException e){
             eingabeAnzahlSpieler.clear();
-            System.out.println("Sie müssen eine Zahl eingeben, Ohne Buchstabe!!");
+            System.out.println("Sie müssen eine Zahl eingeben, Ohne Buchstabe!!");//debug
         }
     }
 
@@ -186,7 +186,7 @@ public class Controller {
                 System.out.println(spielerListe.elementAt(i).getSpielerNr() + ": " +
                         spielerListe.elementAt(i).getName() + " " + Spieler.rolleName(spielerListe.elementAt(i).getRolle()));
             }
-           //Zuweisung der Rollen zu jeden eingetragenen Spieler
+            //Zuweisung der Rollen zu jeden eingetragenen Spieler
         }
 
         //display in der Tabelle
@@ -200,6 +200,19 @@ public class Controller {
             list.add(spielerListe.elementAt(i));
         }
         return list;
+    }
+
+    @FXML
+    void spielerListeLeeren(ActionEvent event) {
+        speichern.setDisable(false);
+        speichern.setText("Speichern");
+        eingabeAnzahlSpieler.setDisable(false);
+        eingabeName.setDisable(false);
+        spielerListe.clear();
+        anzahlSpieler = 0;
+        spielerNr = 1;
+        spielerZahl = 0;
+        tableViewSpieler.setItems(showSpieler());
     }
 
 
@@ -330,38 +343,32 @@ public class Controller {
         }
     }
 
-        public void finishTest(ActionEvent event) throws IOException {
-            //Test si il reste que des citizen
+    public void finishTest(ActionEvent event) throws IOException {
+        //Test si il reste que des citizen
 
-                if(testUndercover() == true) {
-                    Parent spielParent = FXMLLoader.load(getClass().getResource("UndercoverGewinnen.fxml"));
-                    Scene spielScene = new Scene(spielParent);
-                    Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
-                    window.setScene(spielScene);
-                    window.setTitle("WIN !!!!!");
-                    window.show();
-                }
-                else if(testCitizen() == true){
-                    Parent spielParent = FXMLLoader.load(getClass().getResource("CitizenGewinnen.fxml"));
-                    Scene spielScene = new Scene(spielParent);
-                    Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
-                    window.setScene(spielScene);
-                    window.setTitle("WIN !!!!!");
-                    window.show();
-                }
-                else { Parent spielParent = FXMLLoader.load(getClass().getResource("RundeBefehl.fxml"));
-                    Scene spielScene = new Scene(spielParent);
-                    Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
-                    window.setScene(spielScene);
-                    window.setTitle("Wer ist dran?");
-                    window.show();}
-            }
-
-
-
-
-
-
+        if(testUndercover() == true) {
+            Parent spielParent = FXMLLoader.load(getClass().getResource("UndercoverGewinnen.fxml"));
+            Scene spielScene = new Scene(spielParent);
+            Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            window.setScene(spielScene);
+            window.setTitle("WIN !!!!!");
+            window.show();
+        }
+        else if(testCitizen() == true){
+            Parent spielParent = FXMLLoader.load(getClass().getResource("CitizenGewinnen.fxml"));
+            Scene spielScene = new Scene(spielParent);
+            Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            window.setScene(spielScene);
+            window.setTitle("WIN !!!!!");
+            window.show();
+        }
+        else { Parent spielParent = FXMLLoader.load(getClass().getResource("RundeBefehl.fxml"));
+            Scene spielScene = new Scene(spielParent);
+            Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            window.setScene(spielScene);
+            window.setTitle("Wer ist dran?");
+            window.show();}
+    }
 
 
     //Zeige an, welche Spieler noch spielen
@@ -419,9 +426,9 @@ public class Controller {
         for(int i = 0; i< spielerListe.size(); i++) {
             if(spielerListe.elementAt(i).getStatus()==true){
                 SpielerAmLeben++;
-            if(spielerListe.elementAt(i).getRolle()==1){
-                summeRollen += 1 ;
-            }}
+                if(spielerListe.elementAt(i).getRolle()==1){
+                    summeRollen += 1 ;
+                }}
         }
         summeRollen = summeRollen/ SpielerAmLeben;
         if(summeRollen == 1)
@@ -438,8 +445,8 @@ public class Controller {
         int summeRollen = 0;
         for(int i = 0; i< spielerListe.size(); i++) {
             if(spielerListe.elementAt(i).getStatus()==true){
-            summeRollen += spielerListe.elementAt(i).getRolle();
-        }}
+                summeRollen += spielerListe.elementAt(i).getRolle();
+            }}
         if(summeRollen == 0){
             boolCitizen = true;
 
