@@ -56,7 +56,7 @@ public class Controller {
 
     int declic = 1;
     @FXML
-    private Label befehlAnfang;
+    private Label befehlAusgabe;
     @FXML
     private Label WortAusgabe;
     @FXML
@@ -258,7 +258,7 @@ public class Controller {
     }
 
     public void befehlWindow(ActionEvent event) throws IOException {
-        Parent befehlParent = FXMLLoader.load(getClass().getResource("AnfangRundeBefehl.fxml"));
+        Parent befehlParent = FXMLLoader.load(getClass().getResource("RundeBefehl.fxml"));
         Scene befehlScene = new Scene(befehlParent);
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
         window.setScene(befehlScene);
@@ -266,7 +266,9 @@ public class Controller {
         window.show();
 
     }
-
+    public void SwitchtoShowBefehle(ActionEvent event) throws IOException {
+        befehlAusgabe.setText("Player 2 fängt an");// Hier noch Random
+    }
 
     //Method um den Wort zu zeigen oder nicht wen er gegeben ist
     public void switchToShow(ActionEvent event) throws IOException {
@@ -345,7 +347,7 @@ public class Controller {
                     window.setTitle("WIN !!!!!");
                     window.show();
                 }
-                else { Parent spielParent = FXMLLoader.load(getClass().getResource("AnfangRundeBefehl.fxml"));
+                else { Parent spielParent = FXMLLoader.load(getClass().getResource("RundeBefehl.fxml"));
                     Scene spielScene = new Scene(spielParent);
                     Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
                     window.setScene(spielScene);
