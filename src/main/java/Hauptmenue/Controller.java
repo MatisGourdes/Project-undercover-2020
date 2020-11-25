@@ -349,6 +349,26 @@ public class Controller {
                     window.setTitle("WIN !!!!!");
                     window.show();
                 }
+                else if(test2Spieler() == true){
+                    for(int i = 0; i< spielerListe.size(); i++) {
+                        if(spielerListe.elementAt(i).getStatus()==true){
+                            if(spielerListe.elementAt(i).getRolle()==1){
+                                Parent spielParent = FXMLLoader.load(getClass().getResource("UndercoverGewinnen.fxml"));
+                                Scene spielScene = new Scene(spielParent);
+                                Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                                window.setScene(spielScene);
+                                window.setTitle("WIN !!!!!");
+                                window.show();}
+                            else if(spielerListe.elementAt(i).getRolle()==2){
+                                Parent spielParent = FXMLLoader.load(getClass().getResource("MrWhiteGewinnen.fxml"));
+                                Scene spielScene = new Scene(spielParent);
+                                Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                                window.setScene(spielScene);
+                                window.setTitle("WIN !!!");
+                                window.show();
+                        }}
+
+                }}
                 else { Parent spielParent = FXMLLoader.load(getClass().getResource("RundeBefehl.fxml"));
                     Scene spielScene = new Scene(spielParent);
                     Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -451,7 +471,23 @@ public class Controller {
         return boolCitizen;
     }
 
+    public boolean test2Spieler() {
+        boolean boolCitizen = false;
+        int spielerAmLeben = 0;
+        for(int i = 0; i< spielerListe.size(); i++) {
+            if(spielerListe.elementAt(i).getStatus()==true){
+                spielerAmLeben ++;
+            }}
+        if( spielerAmLeben == 2){
+            boolCitizen = true;
 
+        }
+        else {
+            boolCitizen = false;
+
+        }
+        return boolCitizen;
+    }
     // getter + setter für den Zugang zur Spieler Liste
     public static Vector<Spieler> getSpielerListe() {
         return spielerListe;
