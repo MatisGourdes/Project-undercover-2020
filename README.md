@@ -147,7 +147,7 @@ Priorisierung:  1 = Basis‐Merkmal
 | 11. *Verschiedene Wörter* | Als Spieler möchte ich jedes neuen Spiel ein anderes Wort, sodass ich mehrmals mit verschiedenen Wörter spielen kann. | 2 | 3 Stunden | Mehr als 30 verschiedene Wörter|
 
 ### Klassendiagramm (latest update: release_v1.0_MVP)
-![Diagramm Klassen](https://github.com/MatisGourdes/Project-undercover-2020/blob/release_v1.0_MVP/Documentation/Klassendiagramm_MVP.uml)
+![Diagramm Klassen](https://github.com/MatisGourdes/Project-undercover-2020/blob/release_v1.0_MVP/Documentation/Klassendiagramm%20MVP.png)
 
 
 ## 7. Documentation Sprint 1
