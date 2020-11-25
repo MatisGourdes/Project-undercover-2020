@@ -15,6 +15,7 @@ import javafx.scene.input.KeyCombination;
 import javafx.stage.Stage;
 import javax.swing.*;
 import java.io.IOException;
+import java.util.Random;
 import java.util.Vector;
 
 public class Controller {
@@ -44,8 +45,9 @@ public class Controller {
 
     //commenter
     String printLabelWort;
-    static int WortRandom = (int)(Math.random() * 10);// Hier die Nummer muss geändert sein falls wir mehr Wörter in der liste schreiben
-    private static String temp = WortReserve.CitizenWort[WortRandom];
+    static int WortRandom;
+    private static String wortCitizen = " ";
+    private static String wortUndercover = " ";
     int i = 0;
     boolean swich = false;
     boolean  inOrdnung = true;
@@ -72,6 +74,17 @@ public class Controller {
     }
 
 
+    // Wechseln zu Einstellungen View
+    @FXML
+    public void switchToEinstellungen(ActionEvent event) throws IOException {
+        Parent spielParent = FXMLLoader.load(getClass().getResource("Einstellungen.fxml"));
+        Scene spielScene = new Scene(spielParent);
+        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        window.setScene(spielScene);
+        window.setTitle("Einstellungen");
+        window.show();
+    }
+
     // Wechseln zu Spielregeln View
     @FXML
     public void switchToSpielregeln(ActionEvent event) throws IOException {
@@ -81,7 +94,6 @@ public class Controller {
         window.setTitle("Spielregeln");
         window.show();
     }
-
 
     //Zeige die Mindmap
     @FXML
@@ -94,10 +106,10 @@ public class Controller {
     }
 
     // Wechseln zu Spiel View
+    @FXML
     public void switchToSpiel(ActionEvent event) throws IOException {
         Parent spielParent = FXMLLoader.load(getClass().getResource("addSpieler.fxml"));
         Scene spielScene = new Scene(spielParent);
-        //get stage info
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
         window.setScene(spielScene);
         window.setTitle("Init");
@@ -164,7 +176,7 @@ public class Controller {
         }
 
 //Alle Spieler wurden eingetragen
-          if (spielerZahl >= anzahlSpieler) {
+        if (spielerZahl >= anzahlSpieler) {
             addPlayerBtn.setDisable(true);
             eingabeName.setDisable(true);
             spielerNrLabel.setText("Tip top");
@@ -197,6 +209,20 @@ public class Controller {
         window.setScene(WortAusgabeScene);
         window.setTitle("WortAusgabe");
         window.show();
+        //Suchen eines Wortes
+        WortReserve.readFile();//Speichert alle Wörter der Textdatei im Vektor woerterListe
+        Random rand = new Random();
+        WortRandom = rand.nextInt(WortReserve.woerterListe.size()/4)*2;//Generiert ein zufällige gerade Zahl
+        wortCitizen = WortReserve.woerterListe.elementAt(WortRandom);//speichert das zu erratende Wort
+        wortUndercover = WortReserve.woerterListe.elementAt(WortRandom+1);
+        //debug
+        for(int i = 0; i < WortReserve.woerterListe.size(); i++){
+            System.out.println(i + " " + WortReserve.woerterListe.elementAt(i));
+        }
+        System.out.println("___ ");
+        System.out.println(wortCitizen);
+        System.out.println(wortUndercover);
+        System.out.println(WortRandom);
     }
 
 
@@ -211,10 +237,10 @@ public class Controller {
 
         switch (spielerListe.elementAt(i).getRolle()) {
             case 0:
-                printLabelWort = WortReserve.CitizenWort[WortRandom];
+                printLabelWort = wortCitizen;
                 break;
             case 1:
-                printLabelWort = WortReserve.UndercoverWort[WortRandom];
+                printLabelWort = wortUndercover;
                 break;
             case 2:
                 printLabelWort = "Du bist Mr White, versuch dich nicht auffallen lassen  ";
@@ -285,31 +311,54 @@ public class Controller {
     @FXML
     void spielerAusschliessen(ActionEvent event) throws IOException {
         Spieler entfernt = tableViewSpieler.getSelectionModel().getSelectedItem();
-        entfernt.setStatus(false); //der Spieler wird ausgeschlossen
+        entfernt.setStatus(false);
+        //der Spieler wird ausgeschlossen
         System.out.println("voted out: " + entfernt.getName() + "- Rolle: " + Spieler.rolleName(entfernt.getRolle())); //debug
 
         if (entfernt.getRolle() == 2) {
-
             Parent spielParent = FXMLLoader.load(getClass().getResource("MrWhite.fxml"));
             Scene spielScene = new Scene(spielParent);
-
-            //get stage info
             Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
             window.setScene(spielScene);
-            window.setTitle("UnderCover");
-            window.show(); }
-        else{
-            Parent spielParent = FXMLLoader.load(getClass().getResource("AnfangRundeBefehl.fxml"));
-            Scene spielScene = new Scene(spielParent);
-
-            //get stage info
-            Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            window.setScene(spielScene);
-            window.setTitle("UnderCover");
-            window.show(); }
-
-
+            window.setTitle("Mr White");
+            window.show();
+        } else {  finishTest(event);
+        }
     }
+
+        public void finishTest(ActionEvent event) throws IOException {
+            //Test si il reste que des citizen
+
+                if(testUndercover() == true) {
+                    Parent spielParent = FXMLLoader.load(getClass().getResource("UndercoverGewinnen.fxml"));
+                    Scene spielScene = new Scene(spielParent);
+                    Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                    window.setScene(spielScene);
+                    window.setTitle("gg Undercover");
+                    window.show();
+                }
+                else if(testCitizen() == true){
+                    Parent spielParent = FXMLLoader.load(getClass().getResource("CitizenGewinnen.fxml"));
+                    Scene spielScene = new Scene(spielParent);
+                    Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                    window.setScene(spielScene);
+                    window.setTitle("gg Citizen");
+                    window.show();
+                }
+                else { Parent spielParent = FXMLLoader.load(getClass().getResource("AnfangRundeBefehl.fxml"));
+                    Scene spielScene = new Scene(spielParent);
+                    Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                    window.setScene(spielScene);
+                    window.setTitle("Spielen");
+                    window.show();}
+            }
+
+
+
+
+
+
+
 
     //Zeige an, welche Spieler noch spielen
     public ObservableList<Spieler> showLebendigeSpieler(){
@@ -324,20 +373,13 @@ public class Controller {
     }
     //ENDE WAHL
 
-    // getter + setter für den Zugang zur Spieler Liste
-    public static Vector<Spieler> getSpielerListe() {
-        return spielerListe;
-    }
 
-    public static void setSpielerListe(Vector<Spieler> spielerListe) {
-        Controller.spielerListe = spielerListe;
-    }
 
-    //ENDE WAHL8
+    //mr white
     @FXML
     public void valid(ActionEvent event) throws IOException {
         System.out.println(printLabelWort);
-        if (Input.getText().equalsIgnoreCase(temp)) {
+        if (Input.getText().equalsIgnoreCase(wortCitizen)) {
             Parent spielParent = FXMLLoader.load(getClass().getResource("Win.fxml"));
             Scene spielScene = new Scene(spielParent);
             Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -345,27 +387,72 @@ public class Controller {
             window.setTitle("UnderCover");
             window.show();
         }
-         else {
-            System.out.println(WortReserve.CitizenWort[WortRandom]);
+        else {
+            finishTest(event);
         }
-
-
-
     }
+
     @FXML
     public void newgame(ActionEvent event) throws IOException{
         Parent spielParent = FXMLLoader.load(getClass().getResource("hauptmenue.fxml"));
         Scene spielScene = new Scene(spielParent);
-
-        //get stage info
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
         window.setScene(spielScene);
-        window.setTitle("UnderCover");
+        window.setTitle("Hauptmenü");
         window.show();
     }
-@FXML
-    public void exit(ActionEvent event)throws IOException{
 
+    @FXML
+    public void exit(ActionEvent event)throws IOException{
         Platform.exit();
+    }
+
+
+    private boolean testUndercover() {
+        boolean boolCitizen = false;
+        double summeRollen = 0;
+        int SpielerAmLeben=0;
+        for(int i = 0; i< spielerListe.size(); i++) {
+            if(spielerListe.elementAt(i).getStatus()==true){
+                SpielerAmLeben++;
+            if(spielerListe.elementAt(i).getRolle()==1){
+                summeRollen += 1 ;
+            }}
+        }
+        summeRollen = summeRollen/ SpielerAmLeben;
+        if(summeRollen == 1)
+        {boolCitizen = true;}
+
+        else{boolCitizen = false; }
+
+        return boolCitizen;
+    }
+
+
+    public boolean testCitizen() {
+        boolean boolCitizen = false;
+        int summeRollen = 0;
+        for(int i = 0; i< spielerListe.size(); i++) {
+            if(spielerListe.elementAt(i).getStatus()==true){
+            summeRollen += spielerListe.elementAt(i).getRolle();
+        }}
+        if(summeRollen == 0){
+            boolCitizen = true;
+
+        }
+        else {
+            boolCitizen = false;
+
+        }
+        return boolCitizen;
+    }
+
+
+    // getter + setter für den Zugang zur Spieler Liste
+    public static Vector<Spieler> getSpielerListe() {
+        return spielerListe;
+    }
+    public static void setSpielerListe(Vector<Spieler> spielerListe) {
+        Controller.spielerListe = spielerListe;
     }
 }
