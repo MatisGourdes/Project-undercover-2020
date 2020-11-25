@@ -10,6 +10,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+
+import java.io.FileWriter;
 import java.io.IOException;
 
 public class Einstellungen {
@@ -44,10 +46,20 @@ public class Einstellungen {
         window.show();
     }
 
-//Wörter für citizen und Undercover addieren
+    //Wörter für citizen und Undercover addieren
     @FXML
     void woerterAddieren(ActionEvent event) {
-
+        try (FileWriter w = new FileWriter("src\\main\\resources\\Hauptmenue\\woerterDatenBank", true)) {
+            String eingabe = wortCitizen.getText() + ";" + wortUndercover.getText();
+            w.write("\r" + eingabe);
+        }
+        catch (IOException e) {
+            System.err.println("Fehler beim Schreiben in der Datei.");
+            System.err.println(e.getMessage());
+        }
+        wortUndercover.clear();
+        wortCitizen.clear();
+        neuesWortBestaetigen.setText("gespeichert!");
     }
 
     //aktuelle Wörterliste anzeigen
