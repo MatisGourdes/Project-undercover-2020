@@ -301,6 +301,7 @@ public class Controller {
     void setupTableViewVote(ActionEvent event) {
         //display in der Tabelle
         tableViewSpieler.setItems(showLebendigeSpieler());
+        tableViewSpieler.setPlaceholder(new Label("Keine Dataien"));
         //Initialisierung der Tabelle
         nrTableView.setCellValueFactory(new PropertyValueFactory<Spieler, Integer>("spielerNr"));
         nameTableView.setCellValueFactory(new PropertyValueFactory<Spieler, String>("name"));
@@ -325,12 +326,12 @@ public class Controller {
         //Test si il reste que des citizen
         else if(testCitizen() == true){
             Parent spielParent = FXMLLoader.load(getClass().getResource("CitizenGewinnen.fxml"));
-        Scene spielScene = new Scene(spielParent);
-        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        window.setScene(spielScene);
-        window.setTitle("gg citizen");
-        window.show();
-    }
+            Scene spielScene = new Scene(spielParent);
+            Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            window.setScene(spielScene);
+            window.setTitle("gg citizen");
+            window.show();
+        }
 
         else{
             Parent spielParent = FXMLLoader.load(getClass().getResource("AnfangRundeBefehl.fxml"));
