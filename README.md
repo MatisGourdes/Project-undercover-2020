@@ -180,6 +180,7 @@ Diesbezüglich haben wir uns im Laufe dieses Sprints damit befasst, eine *Rollez
 
     public static void randomRolle() {
         rolleVerteilung();
+        //willkürliche Zuweisung der Rollen in Betrachtung auf Anfangsbedingungen
         while (zahlGeteilteteRolle < Controller.getSpielerListe().size()) {
             for (int j = 0; j < Controller.getSpielerListe().size(); j++) {
                 if (Controller.getSpielerListe().elementAt(j).getRolle() == 4) {
@@ -196,15 +197,15 @@ Diesbezüglich haben wir uns im Laufe dieses Sprints damit befasst, eine *Rollez
                         zahlMrWhite++;
                         Controller.getSpielerListe().elementAt(j).setRolle(rolle);
                         zahlGeteilteteRolle++;
-                    }}}}
-    
+                    }}}}}
+    //Bestimmung der Anzahl von Citizen und Undercover
     public static void rolleVerteilung() {
         zahlMrWhite();
         citizen = (int) ((Controller.getSpielerListe().size() - mrWhite) * 0.8);
         undercover = Controller.getSpielerListe().size() - mrWhite - citizen;
         System.out.println("Citizen: " + citizen + "  Undercover: " + undercover + " MrWhite: " + mrWhite);
     }
-    
+    // Berechnung der Anzahl von Mr White bzg. der Anzahl Gesamtspieler
     public static void zahlMrWhite() {
         if(4<=Controller.getSpielerListe().size() &&  Controller.getSpielerListe().size()  <=6) {
             mrWhite = (int) (Math.random()*2);
