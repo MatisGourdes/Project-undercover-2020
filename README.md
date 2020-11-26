@@ -179,7 +179,7 @@ Für jede Szene wurde eine FXML-Datei mit SceneBuilder editiert, welche zu einem
 ### Klassendiagramm
 ![Klassendiagramm Sprint 1:](https://github.com/MatisGourdes/Project-undercover-2020/blob/release_v0.3_WortAusgabe%2BclassSpieler/Documentation/Klassendiagramm_sprint1.png)
 ### Wichtiger Code snippets
-Wichtig ist es in unser Programm, dass die Zuweisung der Rollen zu jedem Spieler zufällig stattfindet. Ausserdem muss man dafür sorgen, dass am Anfang des Spiels ein Citizen beginnt, sonst würde das Spiel nicht funktionnieren. Ferner muss bei einem neuen Spiel die Zuweisung erneut stattfinden, damit die Spieler eine neue Rolle bekommen.
+Wichtig ist es in unser Programm, dass die Zuweisung der Rollen zu jedem Spieler zufällig stattfindet. Ferner muss bei einem neuen Spiel die Zuweisung erneut stattfinden, damit die Spieler eine neue Rolle bekommen.
 Diesbezüglich haben wir uns im Laufe dieses Sprints damit befasst, eine *Rollezuweisung* Klasse zu programmieren, die all diese Anforderungen berücksichtigt. Hier ein Überblick darauf:
 
     public static void randomRolle() {
