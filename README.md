@@ -12,18 +12,20 @@ Team: Theo Portmann, Michael Schaetzel, Lucas Lagel, Maxime Roellinger, Gourdes 
 
 4. [Timeline](https://github.com/MatisGourdes/Project-undercover-2020#4-timeline)
 
-5. [Diagramm Klassen](https://github.com/MatisGourdes/Project-undercover-2020#5-diagramm-klassen) 
+5. [User Stories](https://github.com/MatisGourdes/Project-undercover-2020#5-user-stories)
 
-6. [User Stories](https://github.com/MatisGourdes/Project-undercover-2020#6-user-stories)
+6. [Build Anleitung](https://github.com/MatisGourdes/Project-undercover-2020#6-build-anleitung) 
 
-7. [Dokumentation Sprint 1](https://github.com/MatisGourdes/Project-undercover-2020#7-documentation-sprint-1)
+7. [Das Programm](https://github.com/MatisGourdes/Project-undercover-2020#7-das-programm)
+
+8. [Dokumentation Sprint 1](https://github.com/MatisGourdes/Project-undercover-2020#8-documentation-sprint-1)
 - [Taskliste der User Stories](https://github.com/MatisGourdes/Project-undercover-2020#--taskliste-der-user-stories)
 - [Anreicherung der User Stories]()
 - [UML Package, Klassen- und Sequenzdiagramme]()
 - [Dokumentation wichtiger Code Snippets]()
 - [Testfaelle bedingt durch Aktzeptanzkriterium]()
 
-8. [Dokumentatin Sprint 2](https://github.com/MatisGourdes/Project-undercover-2020#8-documentation-sprint-2)
+9. [Dokumentatin Sprint 2](https://github.com/MatisGourdes/Project-undercover-2020#9-documentation-sprint-2)
 - [Taskliste der User Stories (mit Schätzung)]()
 - [Anreicherung der User Stories]()
 - [UML Package, Klassen- und Sequenzdiagramme]()
@@ -105,7 +107,26 @@ Solange keines der untenstehenden Ereignisse vorkommt, geht es in der nächsten 
 | Sprint 1 | 20.11.2020 - 04.12.2020 | 04.12.2020 | Umsetzung MVP |
 | Sprint 2 | 04.12.2020 - 15.12.2020 | 15.12.2020 | Umsetzung Ausbaustufen |
 
-## 5. Build Anleitung
+## 5. User Stories
+Priorisierung:  1 = Basis‐Merkmal
+                2 = Leistungs‐Merkmal
+                3 = Begeisterungs‐Merkmal
+                
+| Name | User Story | Priorisierung | Story Points | Akzeptanzkriterium |
+|:----------:|:---------------------:|:---------------:|:---------:|:-----:|
+| 1. *Spiel Regeln erklären* | Als Spieler möchte ich die Spiel Regeln sehen können. Wenn ich auf den Hauptmenü bin. | 2 | 2 Stunden | Die Spiel Regeln sind verfügbar |
+| 2. *Hauptmenü Seite* | Als Spieler möchte ich ein Hauptmenü haben, damit ich das Spiel starten kann. | 1 | 3 Stunden | Vom Hauptmenü den Spiel starten können |
+| 3. *Mitspielerzahl wählen* | Als Spieler, möchte ich die Anzahl  Spieler und den Namen jedes Mitspielers einstellen können, um eine Runde zu erstellen. | 2 | 4 Stunden | Von 4 bis 8 Spieler einstellen können |
+| 4. *Rolle zuteilen* | Als Spieler möchte ich eine Rolle zugewiesen werden (ohne es zu wissen), um eine Runde spielen zu können. | 1 | 5 Stunden | Jede Spieler kriegt eine Rolle |
+| 5. *Einleitung* | Als Spieler möchte ich wissen wer als nächstes dran kommt. Ich möchte auch dass der Computer erklärt an jeden Schritt was wir machen müssen. | 2 | 2 Stunden | Verständliche Anzeigen |
+| 6. *Wörterverteilung* | Als Spieler möchte ich ein Wort empfangen, um eine Runde spielen zu können. | 1 | 5 Stunden | Jeder Spieler bekommt ein Wort |
+| 7. *Wort eingeben* | Als Spieler möchte ich in jede runde ein Wort eingeben und dass er in einer Tabelle erscheint. | 3 | 4 Stunden | Textfeld + Anzeige |
+| 8. *Wahl eine Person zu entfernen* | Als Spieler möchte ich die Möglichkeit haben an jede Runde ein anderen Spieler zu wählen um den Entfernen. | 1 | 5 Stunden | Eine Person kann entfernt sein |
+| 9. *Wort raten* | Als Spieler(Mr White) möchte ich versuchen den Wort zu raten , wenn ich angeklagt wurde um eine Runde zu gewinnen. | 1 | 2 Stunden | Textfeld + Wort raten |
+| 10. *Spiel ende* | Als Spieler möchte ich wissen wer gewonnen hat und wieder auf den Hauptmenü kommen. | 3 | 4 Stunden | Scene mit Resultat und Hauptmenü Taste |
+| 11. *Verschiedene Wörter* | Als Spieler möchte ich jedes neuen Spiel ein anderes Wort, sodass ich mehrmals mit verschiedenen Wörter spielen kann. | 2 | 3 Stunden | Mehr als 30 verschiedene Wörter|
+
+## 6. Build Anleitung
 Git clone:  https://github.com/MatisGourdes/Project-undercover-2020
 In Git program: 
 1. Speichern Sie Ihre src Datei von Ihrem Git Projekt auf Ihre Rechner.
@@ -127,31 +148,15 @@ In Git program:
 - 6. Doppelklicken Sie auf  Undercoverlauncher.jar um den Software zu starten.
 
 
-## 6. User Stories
-Priorisierung:  1 = Basis‐Merkmal
-                2 = Leistungs‐Merkmal
-                3 = Begeisterungs‐Merkmal
-                
-| Name | User Story | Priorisierung | Story Points | Akzeptanzkriterium |
-|:----------:|:---------------------:|:---------------:|:---------:|:-----:|
-| 1. *Spiel Regeln erklären* | Als Spieler möchte ich die Spiel Regeln sehen können. Wenn ich auf den Hauptmenü bin. | 2 | 2 Stunden | Die Spiel Regeln sind verfügbar |
-| 2. *Hauptmenü Seite* | Als Spieler möchte ich ein Hauptmenü haben, damit ich das Spiel starten kann. | 1 | 3 Stunden | Vom Hauptmenü den Spiel starten können |
-| 3. *Mitspielerzahl wählen* | Als Spieler, möchte ich die Anzahl  Spieler und den Namen jedes Mitspielers einstellen können, um eine Runde zu erstellen. | 2 | 4 Stunden | Von 4 bis 8 Spieler einstellen können |
-| 4. *Rolle zuteilen* | Als Spieler möchte ich eine Rolle zugewiesen werden (ohne es zu wissen), um eine Runde spielen zu können. | 1 | 5 Stunden | Jede Spieler kriegt eine Rolle |
-| 5. *Einleitung* | Als Spieler möchte ich wissen wer als nächstes dran kommt. Ich möchte auch dass der Computer erklärt an jeden Schritt was wir machen müssen. | 2 | 2 Stunden | Verständliche Anzeigen |
-| 6. *Wörterverteilung* | Als Spieler möchte ich ein Wort empfangen, um eine Runde spielen zu können. | 1 | 5 Stunden | Jeder Spieler bekommt ein Wort |
-| 7. *Wort eingeben* | Als Spieler möchte ich in jede runde ein Wort eingeben und dass er in einer Tabelle erscheint. | 3 | 4 Stunden | Textfeld + Anzeige |
-| 8. *Wahl eine Person zu entfernen* | Als Spieler möchte ich die Möglichkeit haben an jede Runde ein anderen Spieler zu wählen um den Entfernen. | 1 | 5 Stunden | Eine Person kann entfernt sein |
-| 9. *Wort raten* | Als Spieler(Mr White) möchte ich versuchen den Wort zu raten , wenn ich angeklagt wurde um eine Runde zu gewinnen. | 1 | 2 Stunden | Textfeld + Wort raten |
-| 10. *Spiel ende* | Als Spieler möchte ich wissen wer gewonnen hat und wieder auf den Hauptmenü kommen. | 3 | 4 Stunden | Scene mit Resultat und Hauptmenü Taste |
-| 11. *Verschiedene Wörter* | Als Spieler möchte ich jedes neuen Spiel ein anderes Wort, sodass ich mehrmals mit verschiedenen Wörter spielen kann. | 2 | 3 Stunden | Mehr als 30 verschiedene Wörter|
 
-### Klassendiagramm (latest update: release_v1.0_MVP)
+## 7. Das Programm
+### Übersicht der Struktur des Programms
+### Ausführliches Klassendiagramm (latest update: release_v1.0_MVP)
 ![Diagramm Klassen](https://github.com/MatisGourdes/Project-undercover-2020/blob/release_v1.0_MVP/Documentation/Klassendiagramm%20MVP.png)
 
 
-## 7. Documentation Sprint 1
-### - Taskliste der User Stories 
+## 8. Documentation Sprint 1
+### Taskliste der User Stories 
 
 | 20.11.2020 - 04.12.2020 | Task | User Story | Zeitaufwandschätzung |
 |:---------:|:------------:|:------------:|:---------:|
@@ -166,8 +171,54 @@ Priorisierung:  1 = Basis‐Merkmal
 | Task 9 | Mr White will Wort eingeben (javafx) | User Story 9 | 1 Stunde |
 | Task 10 | Mr White gewinnt oder Spiel geht weiter | User Story 9 | 1 Stunde |
 
-## 8. Documentation Sprint 2
-### - Taskliste der User Stories 
+*Velocity: 20 Std*
+### Klassendiagramm
+![Klassendiagramm Sprint 1:](https://github.com/MatisGourdes/Project-undercover-2020/blob/release_v0.3_WortAusgabe%2BclassSpieler/Documentation/Klassendiagramm_sprint1.png)
+### Wichtiger Code snippets
+Wichtig ist es in unser Programm, dass die Zuweisung der Rollen zu jedem Spieler zufällig stattfindet. Ausserdem muss man dafür sorgen, dass am Anfang des Spiels ein Citizen beginnt, sonst würde das Spiel nicht funktionnieren. Ferner muss bei einem neuen Spiel die Zuweisung erneut stattfinden, damit die Spieler eine neue Rolle bekommen.
+Diesbezüglich haben wir uns im Laufe dieses Sprints damit befasst, eine *Rollezuweisung* Klasse zu programmieren, die all diese Anforderungen berücksichtigt. Hier ein Überblick darauf:
+
+    public static void randomRolle() {
+        rolleVerteilung();
+        //willkürliche Zuweisung der Rollen in Betrachtung auf Anfangsbedingungen
+        while (zahlGeteilteteRolle < Controller.getSpielerListe().size()) {
+            for (int j = 0; j < Controller.getSpielerListe().size(); j++) {
+                if (Controller.getSpielerListe().elementAt(j).getRolle() == 4) {
+                    rolle = (int) (Math.random() * variabelRandom);
+                    if (rolle == 0 && zahlCitizen < citizen) {
+                        zahlCitizen++;
+                        Controller.getSpielerListe().elementAt(j).setRolle(rolle);
+                        zahlGeteilteteRolle++;
+                    } else if (rolle == 1 && zahlUndercover < undercover) {
+                        zahlUndercover++;
+                        Controller.getSpielerListe().elementAt(j).setRolle(rolle);
+                        zahlGeteilteteRolle++;
+                    } else if (rolle == 2 && zahlMrWhite < mrWhite) {
+                        zahlMrWhite++;
+                        Controller.getSpielerListe().elementAt(j).setRolle(rolle);
+                        zahlGeteilteteRolle++;
+                    }}}}}
+    //Bestimmung der Anzahl von Citizen und Undercover
+    public static void rolleVerteilung() {
+        zahlMrWhite();
+        citizen = (int) ((Controller.getSpielerListe().size() - mrWhite) * 0.8);
+        undercover = Controller.getSpielerListe().size() - mrWhite - citizen;
+        System.out.println("Citizen: " + citizen + "  Undercover: " + undercover + " MrWhite: " + mrWhite);
+    }
+    // Berechnung der Anzahl von Mr White bzg. der Anzahl Gesamtspieler
+    public static void zahlMrWhite() {
+        if(4<=Controller.getSpielerListe().size() &&  Controller.getSpielerListe().size()  <=6) {
+            mrWhite = (int) (Math.random()*2);
+        }
+        else if (7<=Controller.getSpielerListe().size() &&  Controller.getSpielerListe().size()  <=10) {
+            mrWhite = (int) (Math.random()*3);
+        }
+    }
+
+### Testfälle
+
+## 9. Documentation Sprint 2
+### Taskliste der User Stories 
 | 04.12.2020 - 15.12.2020 | Task | User Story | Zeitaufwandsschätzung |
 |:---------:|:------------:|:------------:|:---------:|
 | Task 11 | Regeln Schreiben | User Story 1 | 1/2 Stunde |
@@ -184,3 +235,4 @@ Priorisierung:  1 = Basis‐Merkmal
 | Task 22 | Eine Wörter Liste machen | User Story 11 | 1 Stunde |
 | Task 23 | Text datei einlesen um an Jede Runde ein anderes Wort zu haben | User Story 11 | 2 Stunde |
 
+*Velocity: 19 Std*
