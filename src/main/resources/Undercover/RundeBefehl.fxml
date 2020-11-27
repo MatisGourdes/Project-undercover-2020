@@ -3,7 +3,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Hauptmenue.Controller">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Undercover.Controller">
    <children>
       <Label fx:id="befehlAusgabe" alignment="CENTER" contentDisplay="CENTER" layoutX="138.0" layoutY="59.0" prefHeight="217.0" prefWidth="324.0" />
       <Button fx:id="sRegeln" layoutX="504.0" layoutY="361.0" mnemonicParsing="false" onAction="#switchToSpielregeln" text="Spiel Regeln" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="14.0" />

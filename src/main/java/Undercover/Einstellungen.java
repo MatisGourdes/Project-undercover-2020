@@ -1,7 +1,5 @@
-package Hauptmenue;
+package Undercover;
 
-import javafx.beans.property.ReadOnlyObjectWrapper;
-import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -11,7 +9,6 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
 import java.io.FileWriter;
@@ -46,7 +43,7 @@ public class Einstellungen {
     //Wörter für citizen und Undercover addieren
     @FXML
     void woerterAddieren(ActionEvent event) {
-        try (FileWriter w = new FileWriter("src\\main\\resources\\Hauptmenue\\woerterDatenBank", true)) {
+        try (FileWriter w = new FileWriter("src\\main\\resources\\Undercover\\woerterDatenBank", true)) {
             String eingabe = wortCitizen.getText() + ";" + wortUndercover.getText();
             w.write("\r" + eingabe);
         }
