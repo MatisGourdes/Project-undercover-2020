@@ -40,7 +40,7 @@ Zeitspanne der Bearbeitung: Herbstsemester 2020.
 ## 2. Einleitung
 ### Ziele
 Das Ziel mit diesem Projekt ist es, als Studierende, unsere Kenntnisse in Programmierung anzuwenden und als Team den Vincent-Driessen Workflow (mittels Jira und GitHub) auszuüben.
-Demzufolge haben wir uns entschlossen, ein Spiel zu programmieren: Undercover.
+Demzufolge haben wir uns entschlossen, ein Spiel zu programmieren: presentation.
 
 ### Anforderungen
 - Die Programmierung soll in JAVA erfolgen mittels Eclipse und IntelliJ, mit grafischen Benutzerinterface mittels JavaFx. 
@@ -64,18 +64,18 @@ Das MVP besteht also aus : *(siehe User Stories mit Priorisierung 1)*
 
 ## 3. Das Spiel
 
-Undercover ist ein Multiplayer-Spiel, bei welchem jedem Spieler einer der folgenden Rollen zugewiesen wird:
+presentation ist ein Multiplayer-Spiel, bei welchem jedem Spieler einer der folgenden Rollen zugewiesen wird:
 
 - "**Citizen**" : der Spieler bekommt ein Wort, das auch die anderen Citizen bekommen. 
-- "**Undercover**" : der Undercover bekommt auch ein Wort, welches aber ein Synonym des Worts der Citizen.
+- "**presentation**" : der presentation bekommt auch ein Wort, welches aber ein Synonym des Worts der Citizen.
 - "**Mr White**" : bekommt kein Wort. Der Mr White muss das Wort der Citizen erraten und versuchen, sich in die Masse zu verbergen.
 
 
-Bemerkenswert können sich Citizen und Undercover voneinander nicht unterscheiden; sie haben zwar ein Wort bekommen, wissen aber nicht, ob es das zu erratende Wort ist.
+Bemerkenswert können sich Citizen und presentation voneinander nicht unterscheiden; sie haben zwar ein Wort bekommen, wissen aber nicht, ob es das zu erratende Wort ist.
 Jeder Spieler wird nacheinander ein Synonym seines Worts geben, hier müssen die Mr White ein Wort finden, welches sich daran genug annähert, damit die anderen nicht erraten, dass sie keine Wörter bekommen haben. 
-Am Ende jeder Runde dürfen alle Spieler miteinander diskutieren und wählen, wer vom Spiel ausgeschlossen werden muss. Das Ziel der Citizen ist es, alle Undercover und alle Mr White vom Spiel zu entfernen.
+Am Ende jeder Runde dürfen alle Spieler miteinander diskutieren und wählen, wer vom Spiel ausgeschlossen werden muss. Das Ziel der Citizen ist es, alle presentation und alle Mr White vom Spiel zu entfernen.
 Das Gewinn sichern sich die Mr White, wenn sie - *als sie ausgeschlossen werden* - das Wort der Citizen erraten.
-Die Undercover gewinnen, wenn nur noch Undercover spielen und alle anderen ausgeschlossen wurden.
+Die presentation gewinnen, wenn nur noch presentation spielen und alle anderen ausgeschlossen wurden.
 
 
 **So verläuft das Spiel:**
@@ -93,8 +93,8 @@ Den Namen der ausgeschlossenen Person wird im Computer eingetippt, seine Rolle w
 Solange keines der untenstehenden Ereignisse vorkommt, geht es in der nächsten Runde mit derselben Vorgehensweise.
 
 **Ende des Spiels:**
-- Citizen gewinnen, wenn es nur noch Citizen gibt. (es wird anfangs bekannt gegeben, wie viel Undercover und Mr White im Spiel sind)
-- Undercover gewinnen, wenn es nur noch Undercover gibt.
+- Citizen gewinnen, wenn es nur noch Citizen gibt. (es wird anfangs bekannt gegeben, wie viel presentation und Mr White im Spiel sind)
+- presentation gewinnen, wenn es nur noch presentation gibt.
 - Mr White gewinnen, wenn sie das Wort der Citizen erraten. Dies darf nur geschehen, nachdem sie ausgeschlossen wurden.
 
 ### Visuelle Darstellung des Spielvorgangs:
@@ -133,10 +133,10 @@ In Git program:
 2. Löschen Sie Ihre src Datei von Ihrem Git Projekt.
 3. Fügen Sie die pom.xml Datei mit dem geeignete Initialisierung in das Git Projekt.
 4. Fügen Sie die src Ordner von einem Maven Projekt in das Git Projekt.
-5. Klicken Sie auf den rechten Maus Taste in "Undercover": ->Configure ->Convert to Maven.
+5. Klicken Sie auf den rechten Maus Taste in "presentation": ->Configure ->Convert to Maven.
 6. Fügen Sie Ihre eigene Package in das Ordner src/main/java.
-7. Klicken Sie auf den rechten Maus Taste in "Undercover": ->Run as ->Maven clean.
-8. Klicken Sie auf den rechten Maus Taste in "Undercover": ->Run as ->Maven install.
+7. Klicken Sie auf den rechten Maus Taste in "presentation": ->Run as ->Maven clean.
+8. Klicken Sie auf den rechten Maus Taste in "presentation": ->Run as ->Maven install.
 9. Prüfen Sie in das Ordner "target" ob Sie eine Datei .jar haben.
 
 - Oder
@@ -202,12 +202,12 @@ Diesbezüglich haben wir uns im Laufe dieses Sprints damit befasst, eine *Rollez
                         Controller.getSpielerListe().elementAt(j).setRolle(rolle);
                         zahlGeteilteteRolle++;
                     }}}}}
-    //Bestimmung der Anzahl von Citizen und Undercover
+    //Bestimmung der Anzahl von Citizen und presentation
     public static void rolleVerteilung() {
         zahlMrWhite();
         citizen = (int) ((Controller.getSpielerListe().size() - mrWhite) * 0.8);
         undercover = Controller.getSpielerListe().size() - mrWhite - citizen;
-        System.out.println("Citizen: " + citizen + "  Undercover: " + undercover + " MrWhite: " + mrWhite);
+        System.out.println("Citizen: " + citizen + "  presentation: " + undercover + " MrWhite: " + mrWhite);
     }
     // Berechnung der Anzahl von Mr White bzg. der Anzahl Gesamtspieler
     public static void zahlMrWhite() {
