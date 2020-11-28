@@ -7,6 +7,7 @@ public class Spieler {
     private boolean status;
     private int rolle, spielerNr;
 
+    //Konstruktor Spieler, der alle Infos beinhaltet
     public Spieler(int spielerNr, String name, boolean status, int rolle){
         this.spielerNr = spielerNr;
         this.name = name;
@@ -15,7 +16,8 @@ public class Spieler {
         rolleName(this.rolle);
     }
 
-public static String rolleName(int rolle){
+    //Methode für die Rückgabe der Rolle des Spielers als String anstatt von Integer
+    public static String rolleName(int rolle){
         String Rolle ="";
         switch (rolle){
             case 0:
@@ -29,8 +31,9 @@ public static String rolleName(int rolle){
                 break;
         }
         return Rolle;
-}
+    }
 
+    //Getter + Setter für den Zugriff auf die Infos der jeweiligen Spieler
     public int getSpielerNr() { return spielerNr; }
 
     public String getName() {

@@ -3,12 +3,12 @@ package domain;
 import presentation.Controller;
 
 public class RolleZuweisung {
-    static int citizen, undercover, mrWhite, rolle;
-    static int zahlCitizen = 0;
-    static int zahlUndercover = 0;
-    static int zahlMrWhite = 0;
-    static int zahlGeteilteteRolle = 0;
-    static int variabelRandom = 3;
+    private static int citizen, undercover, mrWhite, rolle;
+    private static int zahlCitizen = 0;
+    private static int zahlUndercover = 0;
+    private static int zahlMrWhite = 0;
+    private static int zahlGeteilteteRolle = 0;
+    private static int variabelRandom = 3;
 
     public static void randomRolle() {
         rolleVerteilung();
@@ -19,40 +19,37 @@ public class RolleZuweisung {
                 if (Controller.getSpielerListe().elementAt(j).getRolle() == 4) {
                     rolle = (int) (Math.random() * variabelRandom);
 
-
                     if (rolle == 0 && zahlCitizen < citizen) {
                         zahlCitizen++;
                         Controller.getSpielerListe().elementAt(j).setRolle(rolle);
                         zahlGeteilteteRolle++;
-                    } else if (rolle == 1 && zahlUndercover < undercover) {
+                    }
+                    else if (rolle == 1 && zahlUndercover < undercover) {
                         zahlUndercover++;
                         Controller.getSpielerListe().elementAt(j).setRolle(rolle);
                         zahlGeteilteteRolle++;
-                    } else if (rolle == 2 && zahlMrWhite < mrWhite) {
+                    }
+                    else if (rolle == 2 && zahlMrWhite < mrWhite) {
                         zahlMrWhite++;
                         Controller.getSpielerListe().elementAt(j).setRolle(rolle);
                         zahlGeteilteteRolle++;
                     }
                 }
-
             }
-
-
         }
 
     }
 
 
-    public static void rolleVerteilung() {
+    private static void rolleVerteilung() {
         zahlMrWhite();
         citizen = (int) ((Controller.getSpielerListe().size() - mrWhite) * 0.8);
         undercover = Controller.getSpielerListe().size() - mrWhite - citizen;
-
-        System.out.println("Citizen: " + citizen + "  Undercover: " + undercover + " MrWhite: " + mrWhite);
+        System.out.println("Citizen: " + citizen + "  Undercover: " + undercover + " MrWhite: " + mrWhite);//debug
     }
 
 
-    public static void zahlMrWhite() {
+    private static void zahlMrWhite() {
         if(4<=Controller.getSpielerListe().size() &&  Controller.getSpielerListe().size()  <=6) {
             mrWhite = (int) (Math.random()*2);
         }

@@ -6,6 +6,7 @@ import java.util.Vector;
 
 public class WortReserve {
 
+    //Vektor, der alle Wörter beinhaltet
 public static Vector<String> woerterListe = new Vector<>();
 
     public static void readFile(){

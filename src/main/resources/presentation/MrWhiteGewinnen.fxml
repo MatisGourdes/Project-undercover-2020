@@ -19,7 +19,7 @@
                   <Font size="20.0" />
                </font>
             </Text>
-            <Button layoutX="168.0" layoutY="319.0" mnemonicParsing="false" onAction="#newgame" text="Neu Spielen">
+            <Button layoutX="168.0" layoutY="319.0" mnemonicParsing="false" onAction="#neuesSpiel" text="Neu Spielen">
                <font>
                   <Font name="Helvetica" size="15.0" />
                </font>

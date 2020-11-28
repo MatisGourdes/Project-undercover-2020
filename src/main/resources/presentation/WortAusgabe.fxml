@@ -5,7 +5,7 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.Controller">
    <children>
-      <Button fx:id="btnWorter" layoutX="232.0" layoutY="150.0" mnemonicParsing="false" onAction="#SwitchToNextPLayer" prefHeight="64.0" prefWidth="137.0" text="Starten" />
+      <Button fx:id="btnWorter" layoutX="232.0" layoutY="150.0" mnemonicParsing="false" onAction="#ausgabeWoerter" prefHeight="64.0" prefWidth="137.0" text="Starten" />
       <Label fx:id="BefehleWortAusgabe" alignment="CENTER" contentDisplay="CENTER" layoutX="157.0" layoutY="77.0" prefHeight="64.0" prefWidth="286.0" text="Ich werde ihnen ihre Rolle geben" AnchorPane.topAnchor="77.0" />
       <Label fx:id="WortAusgabe" alignment="CENTER" contentDisplay="CENTER" layoutX="91.0" layoutY="222.0" prefHeight="64.0" prefWidth="440.0" />
       <Button fx:id="HideWord" layoutX="233.0" layoutY="295.0" mnemonicParsing="false" onAction="#switchToShow" prefHeight="25.0" prefWidth="137.0" text=" " />
