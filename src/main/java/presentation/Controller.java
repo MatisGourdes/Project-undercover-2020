@@ -272,7 +272,7 @@ public class Controller {
         }
     }
 //Fenster zur Ausgabe der Wörter am Beginn des Spiels
-    public void befehlWindow(ActionEvent event) throws IOException {
+    private void befehlWindow(ActionEvent event) throws IOException {
         Parent befehlParent = FXMLLoader.load(getClass().getResource("RundeBefehl.fxml"));
         Scene befehlScene = new Scene(befehlParent);
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -313,7 +313,7 @@ public class Controller {
 
     //Tabelle der lebendigen Spieler neu Anzeigen
     @FXML
-    void setupTableViewVote(ActionEvent event) {
+    private void setupTableViewVote(ActionEvent event) {
         //display in der Tabelle
         tableViewSpieler.setItems(showLebendigeSpieler());
         tableViewSpieler.setPlaceholder(new Label("Keine Dataien"));
@@ -325,7 +325,7 @@ public class Controller {
 
     //Spieler wählen und entfernen
     @FXML
-    void spielerAusschliessen(ActionEvent event) throws IOException {
+    private void spielerAusschliessen(ActionEvent event) throws IOException {
         Spieler entfernt = tableViewSpieler.getSelectionModel().getSelectedItem();
         entfernt.setStatus(false);
         //der Spieler wird ausgeschlossen
@@ -346,7 +346,7 @@ public class Controller {
 
 
     //Überprüfe, ob nur noch Citizen Leben
-    public void finishTest(ActionEvent event) throws IOException {
+    private void finishTest(ActionEvent event) throws IOException {
 
         if(testUndercover() == true) {
             Parent spielParent = FXMLLoader.load(getClass().getResource("UndercoverGewinnen.fxml"));
@@ -407,7 +407,7 @@ public class Controller {
 
     //Mr White versucht das Wort zu erraten
     @FXML
-    public void valid(ActionEvent event) throws IOException {
+    private void valid(ActionEvent event) throws IOException {
         System.out.println(printLabelWort);
         if (Input.getText().equalsIgnoreCase(wortCitizen)) {
             Parent spielParent = FXMLLoader.load(getClass().getResource("MrWhiteGewinnen.fxml"));
@@ -423,7 +423,7 @@ public class Controller {
     }
 
     @FXML
-    public void neuesSpiel(ActionEvent event) throws IOException{
+    private void neuesSpiel(ActionEvent event) throws IOException{
         //reset Aller Variablen
         spielerListe.clear();
         anzahlSpieler = 0;
@@ -441,7 +441,7 @@ public class Controller {
 
     //Java-Fenster quittieren
     @FXML
-    public void exit(ActionEvent event)throws IOException{
+    private void exit(ActionEvent event)throws IOException{
         Platform.exit();
     }
 
@@ -467,7 +467,7 @@ public class Controller {
     }
 
 
-    public boolean testCitizen() {
+    private boolean testCitizen() {
         boolean boolCitizen = false;
         int summeRollen = 0;
         for(int i = 0; i< spielerListe.size(); i++) {
@@ -484,7 +484,7 @@ public class Controller {
         }
         return boolCitizen;
     }
-    public boolean test2Spieler() {
+    private boolean test2Spieler() {
         boolean boolCitizen = false;
         int spielerAmLeben = 0;
         for(int i = 0; i< spielerListe.size(); i++) {
