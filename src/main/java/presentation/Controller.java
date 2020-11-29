@@ -53,7 +53,7 @@ public class Controller {
     @FXML
     private TextField Input;
 
-    private double anzahlSpieler; //Anzahl Spieler
+    private int anzahlSpieler; //Anzahl Spieler
     private static int spielerNr = 1; //Variable für die Nummerierung der Spieler
     private static Vector<Spieler> spielerListe = new Vector<Spieler>(); //Vektor zur Speicherung aller Spieler inkl. Daten
     private boolean korrekteEingabeName1 = true; //Variablen zur Überprüfung der Eingabe des Namens
@@ -348,7 +348,7 @@ public class Controller {
     //Überprüfe, ob nur noch Citizen Leben
     private void finishTest(ActionEvent event) throws IOException {
 
-        if(testUndercover() == true) {
+        if(domain.winCondition.testUndercover() == true) {
             Parent spielParent = FXMLLoader.load(getClass().getResource("UndercoverGewinnen.fxml"));
             Scene spielScene = new Scene(spielParent);
             Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -356,7 +356,7 @@ public class Controller {
             window.setTitle("WIN !!!!!");
             window.show();
         }
-        else if(testCitizen() == true){
+        else if(domain.winCondition.testCitizen() == true){
             Parent spielParent = FXMLLoader.load(getClass().getResource("CitizenGewinnen.fxml"));
             Scene spielScene = new Scene(spielParent);
             Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -364,7 +364,7 @@ public class Controller {
             window.setTitle("WIN !!!!!");
             window.show();
         }
-        else if(test2Spieler() == true){
+        else if(domain.winCondition.test2Spieler() == true){
             for(int i = 0; i< spielerListe.size(); i++) {
                 if(spielerListe.elementAt(i).getStatus()==true){
                     if(spielerListe.elementAt(i).getRolle()==1){
@@ -444,65 +444,6 @@ public class Controller {
     private void exit(ActionEvent event)throws IOException{
         Platform.exit();
     }
-
-
-    private boolean testUndercover() {
-        boolean boolCitizen = false;
-        double summeRollen = 0;
-        int SpielerAmLeben=0;
-        for(int i = 0; i< spielerListe.size(); i++) {
-            if(spielerListe.elementAt(i).getStatus()==true){
-                SpielerAmLeben++;
-                if(spielerListe.elementAt(i).getRolle()==1){
-                    summeRollen += 1 ;
-                }}
-        }
-        summeRollen = summeRollen/ SpielerAmLeben;
-        if(summeRollen == 1)
-        {boolCitizen = true;}
-
-        else{boolCitizen = false; }
-
-        return boolCitizen;
-    }
-
-
-    private boolean testCitizen() {
-        boolean boolCitizen = false;
-        int summeRollen = 0;
-        for(int i = 0; i< spielerListe.size(); i++) {
-            if(spielerListe.elementAt(i).getStatus()==true){
-                summeRollen += spielerListe.elementAt(i).getRolle();
-            }}
-        if(summeRollen == 0){
-            boolCitizen = true;
-
-        }
-        else {
-            boolCitizen = false;
-
-        }
-        return boolCitizen;
-    }
-    private boolean test2Spieler() {
-        boolean boolCitizen = false;
-        int spielerAmLeben = 0;
-        for(int i = 0; i< spielerListe.size(); i++) {
-            if(spielerListe.elementAt(i).getStatus()==true){
-                spielerAmLeben ++;
-            }}
-        if( spielerAmLeben == 2){
-            boolCitizen = true;
-
-        }
-        else {
-            boolCitizen = false;
-
-        }
-        return boolCitizen;
-    }
-
-
 
     // getter + setter für den Zugang zur Spieler Liste
     public static Vector<Spieler> getSpielerListe() {
