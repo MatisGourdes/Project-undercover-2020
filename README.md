@@ -154,13 +154,13 @@ In Git program:
 
 Für jede Szene wurde eine FXML-Datei mit SceneBuilder editiert, welche mit einem Hauptcontroller namens *Controller* verbunden wird. Dieser Controller ist im Kern unseres Programms, er bedient alle Funktionen des GUI und wechselt Szenen je nach dem, welcher Schritt als nächstes vorkommt. Ferner nimmt der Controller zugriff auf externe Informationen, wie den Konstruktor *Spieler* für die herstellung zusätzlicher Spielern, oder auf die Klasse *WortReserve* für das Auslesen der Wörter aus der .txt-Datei. Die Zuweisung der Rollen erfolgt auch extern, da die Funktionsweise etwa komplexer ist. Mehr Informationen dazu sind in der Dokumentation des Sprints 1 zu finden. Im Sprint 2 wurde die Klasse *Einstellungen* addiert, damit zusätzliche Wörter hinzugefügt werden können.
 
-### Übersicht der Struktur des Programms
-### Ausführliches Klassendiagramm (latest update: release_v1.0_MVP)
+### 7.1 Übersicht der Struktur des Programms
+### 7.2 Ausführliches Klassendiagramm (latest update: release_v1.0_MVP)
 ![Diagramm Klassen](https://github.com/MatisGourdes/Project-undercover-2020/blob/release_v1.0_MVP/Documentation/Klassendiagramm%20MVP.png)
 
 
 ## 8. Documentation Sprint 1
-### Taskliste der User Stories 
+### 8.1 Taskliste der User Stories 
 
 | 20.11.2020 - 04.12.2020 | Task | User Story | Zeitaufwandschätzung |
 |:---------:|:------------:|:------------:|:---------:|
@@ -176,9 +176,9 @@ Für jede Szene wurde eine FXML-Datei mit SceneBuilder editiert, welche mit eine
 | Task 10 | Mr White gewinnt oder Spiel geht weiter | User Story 9 | 1 Stunde |
 
 *Velocity: 20 Std*
-### Klassendiagramm
+### 8.2 Klassendiagramm
 ![Klassendiagramm Sprint 1:](https://github.com/MatisGourdes/Project-undercover-2020/blob/release_v0.3_WortAusgabe%2BclassSpieler/Documentation/Klassendiagramm_sprint1.png)
-### Wichtiger Code snippets
+### 8.3 Wichtige Code snippets
 Wichtig ist es in unser Programm, dass die Zuweisung der Rollen zu jedem Spieler zufällig stattfindet. Ferner muss bei einem neuen Spiel die Zuweisung erneut stattfinden, damit die Spieler eine neue Rolle bekommen.
 Diesbezüglich haben wir uns im Laufe dieses Sprints damit befasst, eine *Rollezuweisung* Klasse zu programmieren, die all diese Anforderungen berücksichtigt. Hier ein Überblick darauf:
 
@@ -219,10 +219,10 @@ Diesbezüglich haben wir uns im Laufe dieses Sprints damit befasst, eine *Rollez
         }
     }
 
-### Testfälle
+### 8.4 Testfälle
 
 ## 9. Documentation Sprint 2
-### Taskliste der User Stories 
+### 9.1 Taskliste der User Stories 
 | 04.12.2020 - 15.12.2020 | Task | User Story | Zeitaufwandsschätzung |
 |:---------:|:------------:|:------------:|:---------:|
 | Task 11 | Regeln Schreiben | User Story 1 | 1/2 Stunde |
@@ -240,3 +240,7 @@ Diesbezüglich haben wir uns im Laufe dieses Sprints damit befasst, eine *Rollez
 | Task 23 | Text datei einlesen um an Jede Runde ein anderes Wort zu haben | User Story 11 | 2 Stunde |
 
 *Velocity: 19 Std*
+
+### 9.2 Klassendiagramm
+### 9.3 Wichtige Code-snippets
+### 9.4 Testfälle
