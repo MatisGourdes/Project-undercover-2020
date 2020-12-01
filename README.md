@@ -112,7 +112,7 @@ Priorisierung:  1 = Basis‐Merkmal
                 2 = Leistungs‐Merkmal
                 3 = Begeisterungs‐Merkmal
                 
-| Name | User Story | Priorisierung | Story Points | Akzeptanzkriterium |
+| Name | User Story | Priorisierung | Story Points | Akzeptanzkriterium (DoD)|
 |:----------:|:---------------------:|:---------------:|:---------:|:-----:|
 | 1. *Spiel Regeln erklären* | Als Spieler möchte ich die Spiel Regeln sehen können. Wenn ich auf den Hauptmenü bin. | 2 | 2 Stunden | Die Spiel Regeln sind verfügbar |
 | 2. *Hauptmenü Seite* | Als Spieler möchte ich ein Hauptmenü haben, damit ich das Spiel starten kann. | 1 | 3 Stunden | Vom Hauptmenü den Spiel starten können |
@@ -220,6 +220,10 @@ Diesbezüglich haben wir uns im Laufe dieses Sprints damit befasst, eine *Rollez
     }
 
 ### 8.4 Testfälle
+### 8.5 Fazit und Retrospektive
+Alle Tasks wurden gemäss der Akzeptanzkriterien (*siehe 5. User Stories*) erfolgreich durchgesetzt und die wichtigsten Bestandteile des Spiels sind funktionsfähig. Das MVP konnte ohne grosse Hindernisse erstellt werden, selbst es wenn noch viel Raum für Verbesserungen gibt. Die Benutzeroberfläche ist noch primitiv und unklar, während das Programm selbst optimiert werden kann und die FXML-Bestandteile von den Java-Klassen noch getrennt werden müssen. Jedoch haben wir bereits einige Tasks vom Sprint 2 erledigt, wie zum Beispiel die Möglichkeit Wörter aus einer Text-Datei einzulesen bzw. in der Datei zu schreiben, weil es an diesem Zeitpunkt der Programmierung am sinnvollsten war.
+
+Zur Umsetzung des Sprints 2 wurden bereits grundlegene Bausteine gelegt, dazu müssen meistens Optimierungen durchgeführt werden. Das Ziel für den 2. Sprint ist es, dass das Spiel einerseits reibungslos und intuitiv wirkt und andererseits, begeisterungs-Funktionalitäten zu implementieren, um die Erfahrung zu bessern.
 
 ## 9. Documentation Sprint 2
 ### 9.1 Taskliste der User Stories 
@@ -232,7 +236,7 @@ Diesbezüglich haben wir uns im Laufe dieses Sprints damit befasst, eine *Rollez
 | Task 15 | Task 14 Javafx implementierung auf den Hauptmenü | User Story 3 | 2 Stunden |
 | Task 16 | Befehle/ Einleitungen in eine Klasse Schreiben | User Story 5 | 1 Stunde |
 | Task 17 | Befehle in Javafx implementieren | User Story 5 | 1 Stunde |
-| Task 18 | Vector Programm der die Eingegebene Wörter speichert | User Story 7 | 2 Stunden |
+| Task 18 | Vektor zur Speicherung und Ausgabe der Wörter | User Story 7 | 2 Stunden |
 | Task 19 | Tabelle mit alle eingegebene Wörter (javafx) | User Story 7 | 2 Stunden |
 | Task 20 | Javafx Spiel ende Seite | User Story 10 | 2 Stunden |
 | Task 21 | Programm um zu anzeigen wer gewonnen hat | User Story 10 | 2 Stunden |
@@ -244,3 +248,4 @@ Diesbezüglich haben wir uns im Laufe dieses Sprints damit befasst, eine *Rollez
 ### 9.2 Klassendiagramm
 ### 9.3 Wichtige Code-snippets
 ### 9.4 Testfälle
+### 9.5 Fazit und Retrospektive
