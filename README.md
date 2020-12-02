@@ -177,16 +177,25 @@ Für jede Szene wurde eine FXML-Datei mit SceneBuilder editiert, welche mit eine
 
 *Velocity: 20 Std*
 
-Task 1:. Ein controller muss erstellt werden. Er soll den Start des Spiels ermöglichen und zu den Regeln führen, wenn die Spieler es wollen.
-Task 2:. Ein fxml-datei soll erstellt werden, um den Spiel vor zu stellen. Er soll mit dem Controller verbunden sein.
-Task 3:. Die Klasse RolleZuweisung soll erstellt werden, um zu jede Spieler eine Rolle zufällig zuweisen, d.h. entweder MrWhite, Undercover oder Citizen. 
-Task 4:. In Abhängigkeit von den Spielerzhal soll mehr oder weniger MrWhite erstellt werden (zwischen 0 und 4 MrWhite). Es soll immer mehr Citizen als Undercover und MrWhite geben.
-Task 5:. Ein fxml-datei soll erstellt werden, um zu jeder Spieler sein Wort zu teilen. Die Mitspielern sollen nicht das Wort von den ander sehen.
-Task 6:. Eine klasse soll erstellt werden und mit dem fxml der 5. Task verbunden sein. In diese Klasse soll zufällig zwei Wörter, die Synonyme sind, wählen (ein für die Undercover und den anderen für die Citizen. Nur Citizen und UNdercover sollen einen Wort empfangen.
-Task 7:. Ein fxml-datei soll erstellt werden, um ein Spieler zu entfernen. Eine Liste mit allen lebendigen Spieler soll gezeigt werden. Der Name des Spielers, der entfernt werden soll, muss in der Liste gewählt werden können.
-Task 8:. Hier soll der Status (tot oder lebendig) der Spieler geändert werden, wenn er von den anderen gewählt wurde. 
-Task 9:.  Ein fxml-datei soll erstellt werden, um zu den MrWhite die Chance geben, das Wort von den Citizen zu raten als er entfernt wurde.
-Task 10:. Hier muss getestet werden, ob der MrWhite das richtigen Wort erraten hat oder nicht. Wenn ja, hat MrWhite das Spiel gewonnen. Wenn nein soll den Spiel weiter laufen.
+Task 1: Ein controller muss erstellt werden. Er soll den Start des Spiels ermöglichen und zu den Regeln führen, wenn die Spieler es wollen.
+
+Task 2: Ein fxml-datei soll erstellt werden, um den Spiel vor zu stellen. Er soll mit dem Controller verbunden sein.
+
+Task 3: Die Klasse RolleZuweisung soll erstellt werden, um zu jede Spieler eine Rolle zufällig zuweisen, d.h. entweder MrWhite, Undercover oder Citizen. 
+
+Task 4: In Abhängigkeit von den Spielerzhal soll mehr oder weniger MrWhite erstellt werden (zwischen 0 und 4 MrWhite). Es soll immer mehr Citizen als Undercover und MrWhite geben.
+
+Task 5: Ein fxml-datei soll erstellt werden, um zu jeder Spieler sein Wort zu teilen. Die Mitspielern sollen nicht das Wort von den ander sehen.
+
+Task 6: Eine klasse soll erstellt werden und mit dem fxml der 5. Task verbunden sein. In diese Klasse soll zufällig zwei Wörter, die Synonyme sind, wählen (ein für die Undercover und den anderen für die Citizen. Nur Citizen und UNdercover sollen einen Wort empfangen.
+
+Task 7: Ein fxml-datei soll erstellt werden, um ein Spieler zu entfernen. Eine Liste mit allen lebendigen Spieler soll gezeigt werden. Der Name des Spielers, der entfernt werden soll, muss in der Liste gewählt werden können.
+
+Task 8: Hier soll der Status (tot oder lebendig) der Spieler geändert werden, wenn er von den anderen gewählt wurde. 
+
+Task 9:  Ein fxml-datei soll erstellt werden, um zu den MrWhite die Chance geben, das Wort von den Citizen zu raten als er entfernt wurde.
+
+Task 10: Hier muss getestet werden, ob der MrWhite das richtigen Wort erraten hat oder nicht. Wenn ja, hat MrWhite das Spiel gewonnen. Wenn nein soll den Spiel weiter laufen.
 
 ### 8.2 Klassendiagramm
 ![Klassendiagramm Sprint 1:](https://github.com/MatisGourdes/Project-undercover-2020/blob/release_v0.3_WortAusgabe%2BclassSpieler/Documentation/Klassendiagramm_sprint1.png)
