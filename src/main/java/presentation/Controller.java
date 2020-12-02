@@ -292,7 +292,7 @@ public class Controller {
         }
 
         else if (spielerListe.elementAt(anfaenger).getRolle() != 2 || spielerListe.elementAt(anfaenger).getStatus()) {
-            befehlAusgabe.setText("Player " + spielerListe.elementAt(anfaenger).getName() + " fängt an");// Hier noch Random
+            befehlAusgabe.setText("Player " + spielerListe.elementAt(anfaenger).getName() + " fängt an!");// Hier noch Random
         }
 
     }
@@ -301,12 +301,12 @@ public class Controller {
     public void switchToShow(ActionEvent event) throws IOException {
         if (spielerWortAusgabe > 0) {
             if (wortAngezeigt == false) {
-                WortAusgabe.setText(printLabelWort + "\n  Wenn du es gesehen hast press den Button unten recht um es zu verstecken");
-                HideWord.setText("click to hide");
+                WortAusgabe.setText(printLabelWort + "\n  Wenn du es gesehen hast press den Button unten \n um es zu verstecken!");
+                HideWord.setText("Click to hide");
             }
             else {
                 WortAusgabe.setText("");
-                HideWord.setText("click to show");
+                HideWord.setText("Click to show");
             }
             wortAngezeigt = !wortAngezeigt;
         }
@@ -384,7 +384,7 @@ public class Controller {
                         Scene spielScene = new Scene(spielParent);
                         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
                         window.setScene(spielScene);
-                        window.setTitle("WIN !!!!!");
+                        window.setTitle("WIN !!!");
                         window.show();}
                     else if(spielerListe.elementAt(i).getRolle()==2){
                         Parent spielParent = FXMLLoader.load(getClass().getResource("MrWhiteGewinnen.fxml"));
@@ -400,7 +400,7 @@ public class Controller {
             Scene spielScene = new Scene(spielParent);
             Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
             window.setScene(spielScene);
-            window.setTitle("Wer ist dran?");
+            window.setTitle("Wer ist dran ?");
             window.show();}
     }
 
