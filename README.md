@@ -241,6 +241,18 @@ Diesbezüglich haben wir uns im Laufe dieses Sprints damit befasst, eine *Rollez
     }
 
 ### 8.4 Testfälle
+Testfall #1: Überprüfung der korrekten Zuweisung der Rollen (Methode *Rollezuweisung* und Speicherung im Konstruktor *Spieler*):
+
+    RolleZuweisung.randomRolle();
+    assertNotSame(testSpieler.getRolle(), 4);
+    
+Testfall #2: Überprüfung der Ausschliessung eines Spielers (Status wird auf "false" gesetzt):
+
+    testSpieler.setStatus(false);
+    assertEquals(new Spieler(1, "Test", false, 4).getRolle(), testSpieler.getRolle());    
+    
+Testfall #3:
+        
 ### 8.5 Fazit und Retrospektive
 Alle Tasks wurden gemäss der Akzeptanzkriterien (*siehe 5. User Stories*) erfolgreich durchgesetzt und die wichtigsten Bestandteile des Spiels sind funktionsfähig. Das MVP konnte ohne grosse Hindernisse erstellt werden, selbst es wenn noch viel Raum für Verbesserungen gibt. Die Benutzeroberfläche ist noch primitiv und unklar, während das Programm selbst optimiert werden kann und die FXML-Bestandteile von den Java-Klassen noch getrennt werden müssen. Jedoch haben wir bereits einige Tasks vom Sprint 2 erledigt, wie zum Beispiel die Möglichkeit Wörter aus einer Text-Datei einzulesen bzw. in der Datei zu schreiben, weil es an diesem Zeitpunkt der Programmierung am sinnvollsten war.
 
