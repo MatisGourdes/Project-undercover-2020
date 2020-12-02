@@ -7,12 +7,12 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.Controller">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" stylesheets="@theme.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.Controller">
     <children>
         <Button fx:id="addPlayerBtn" layoutX="487.0" layoutY="61.0" mnemonicParsing="false" onAction="#addPlayer" prefHeight="25.0" prefWidth="83.0" text="Add" />
         <TextField fx:id="eingabeName" layoutX="325.0" layoutY="61.0" onAction="#addPlayer" promptText="SpielerName" />
         <Label fx:id="spielerNrLabel" layoutX="325.0" layoutY="36.0" prefHeight="17.0" prefWidth="83.0" text="Spieler Nr" />
-        <TextField fx:id="eingabeAnzahlSpieler" layoutX="33.0" layoutY="61.0" onAction="#save" prefHeight="25.0" prefWidth="158.0" promptText="Min.: 4" />
+        <TextField fx:id="eingabeAnzahlSpieler" layoutX="33.0" layoutY="61.0" onAction="#save" prefHeight="21.0" prefWidth="157.0" promptText="Min.: 4" />
         <Button fx:id="speichern" layoutX="203.0" layoutY="61.0" mnemonicParsing="false" onAction="#save" prefHeight="17.0" prefWidth="83.0" text="Speichern" />
         <TableView fx:id="tableViewSpieler" layoutX="177.0" layoutY="113.0" prefHeight="200.0" prefWidth="247.0">
             <columns>
