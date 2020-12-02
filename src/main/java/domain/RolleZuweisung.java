@@ -4,13 +4,15 @@ import presentation.Controller;
 
 public class RolleZuweisung {
     private static int citizen, undercover, mrWhite, rolle;
-    private static int zahlCitizen = 0;
-    private static int zahlUndercover = 0;
-    private static int zahlMrWhite = 0;
-    private static int zahlGeteilteteRolle = 0;
-    private static int variabelRandom = 3;
+    private static int zahlCitizen, variabelRandom, zahlUndercover, zahlMrWhite, zahlGeteilteteRolle;
 
     public static void randomRolle() {
+        zahlCitizen = 0;
+        zahlUndercover = 0;
+        zahlMrWhite = 0;
+        zahlGeteilteteRolle = 0;
+        variabelRandom = 3;
+
         rolleVerteilung();
         while (zahlGeteilteteRolle < Controller.getSpielerListe().size()) {
 
