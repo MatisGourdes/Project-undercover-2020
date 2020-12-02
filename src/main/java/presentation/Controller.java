@@ -151,7 +151,7 @@ public class Controller {
             else{
                 korrekteEingabeName1 = true;
             }
-            if (spielerListe.size()>0) {
+            if (spielerListe.size()>=0) {
                 for (int i = 0; i < showLebendigeSpieler().size(); i++) {
 
                     if (spielerListe.elementAt(i).getName().contentEquals(eingabeName.getText())) {
