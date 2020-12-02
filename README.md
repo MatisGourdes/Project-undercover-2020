@@ -176,6 +176,27 @@ Für jede Szene wurde eine FXML-Datei mit SceneBuilder editiert, welche mit eine
 | Task 10 | Mr White gewinnt oder Spiel geht weiter | User Story 9 | 1 Stunde |
 
 *Velocity: 20 Std*
+
+Task 1: Ein controller muss erstellt werden. Er soll den Start des Spiels ermöglichen und zu den Regeln führen, wenn die Spieler es wollen.
+
+Task 2: Ein fxml-datei soll erstellt werden, um den Spiel vor zu stellen. Er soll mit dem Controller verbunden sein.
+
+Task 3: Die Klasse RolleZuweisung soll erstellt werden, um zu jede Spieler eine Rolle zufällig zuweisen, d.h. entweder MrWhite, Undercover oder Citizen. 
+
+Task 4: In Abhängigkeit von den Spielerzhal soll mehr oder weniger MrWhite erstellt werden (zwischen 0 und 4 MrWhite). Es soll immer mehr Citizen als Undercover und MrWhite geben.
+
+Task 5: Ein fxml-datei soll erstellt werden, um zu jeder Spieler sein Wort zu teilen. Die Mitspielern sollen nicht das Wort von den ander sehen.
+
+Task 6: Eine klasse soll erstellt werden und mit dem fxml der 5. Task verbunden sein. In diese Klasse soll zufällig zwei Wörter, die Synonyme sind, wählen (ein für die Undercover und den anderen für die Citizen. Nur Citizen und UNdercover sollen einen Wort empfangen.
+
+Task 7: Ein fxml-datei soll erstellt werden, um ein Spieler zu entfernen. Eine Liste mit allen lebendigen Spieler soll gezeigt werden. Der Name des Spielers, der entfernt werden soll, muss in der Liste gewählt werden können.
+
+Task 8: Hier soll der Status (tot oder lebendig) der Spieler geändert werden, wenn er von den anderen gewählt wurde. 
+
+Task 9:  Ein fxml-datei soll erstellt werden, um zu den MrWhite die Chance geben, das Wort von den Citizen zu raten als er entfernt wurde.
+
+Task 10: Hier muss getestet werden, ob der MrWhite das richtigen Wort erraten hat oder nicht. Wenn ja, hat MrWhite das Spiel gewonnen. Wenn nein soll den Spiel weiter laufen.
+
 ### 8.2 Klassendiagramm
 ![Klassendiagramm Sprint 1:](https://github.com/MatisGourdes/Project-undercover-2020/blob/release_v0.3_WortAusgabe%2BclassSpieler/Documentation/Klassendiagramm_sprint1.png)
 ### 8.3 Wichtige Code snippets
@@ -220,6 +241,18 @@ Diesbezüglich haben wir uns im Laufe dieses Sprints damit befasst, eine *Rollez
     }
 
 ### 8.4 Testfälle
+Testfall #1: Überprüfung der korrekten Zuweisung der Rollen (Methode *Rollezuweisung* und Speicherung im Konstruktor *Spieler*):
+
+    RolleZuweisung.randomRolle();
+    assertNotSame(testSpieler.getRolle(), 4);
+    
+Testfall #2: Überprüfung der Ausschliessung eines Spielers (Status wird auf "false" gesetzt):
+
+    testSpieler.setStatus(false);
+    assertEquals(new Spieler(1, "Test", false, 4).getRolle(), testSpieler.getRolle());    
+    
+Testfall #3:
+        
 ### 8.5 Fazit und Retrospektive
 Alle Tasks wurden gemäss der Akzeptanzkriterien (*siehe 5. User Stories*) erfolgreich durchgesetzt und die wichtigsten Bestandteile des Spiels sind funktionsfähig. Das MVP konnte ohne grosse Hindernisse erstellt werden, selbst es wenn noch viel Raum für Verbesserungen gibt. Die Benutzeroberfläche ist noch primitiv und unklar, während das Programm selbst optimiert werden kann und die FXML-Bestandteile von den Java-Klassen noch getrennt werden müssen. Jedoch haben wir bereits einige Tasks vom Sprint 2 erledigt, wie zum Beispiel die Möglichkeit Wörter aus einer Text-Datei einzulesen bzw. in der Datei zu schreiben, weil es an diesem Zeitpunkt der Programmierung am sinnvollsten war.
 
