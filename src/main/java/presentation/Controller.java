@@ -282,7 +282,19 @@ public class Controller {
     }
 
     public void SwitchtoShowBefehle(ActionEvent event) throws IOException {
-        befehlAusgabe.setText("Player 2 fängt an");// Hier noch Random
+        int anfaenger = (int) (Math.random()*showLebendigeSpieler().size());
+
+        if (spielerListe.elementAt(anfaenger).getRolle() == 2 || !spielerListe.elementAt(anfaenger).getStatus()){
+            while (spielerListe.elementAt(anfaenger).getRolle() == 2 || !spielerListe.elementAt(anfaenger).getStatus()) {
+                anfaenger = (int) (Math.random() *  showLebendigeSpieler().size());
+            }
+            befehlAusgabe.setText("Player " + spielerListe.elementAt(anfaenger).getName() + " fängt an");
+        }
+
+        else if (spielerListe.elementAt(anfaenger).getRolle() != 2 || spielerListe.elementAt(anfaenger).getStatus()) {
+            befehlAusgabe.setText("Player " + spielerListe.elementAt(anfaenger).getName() + " fängt an");// Hier noch Random
+        }
+
     }
 
     //Wort ein- oder ausblenden
