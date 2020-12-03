@@ -12,7 +12,7 @@ public class spielerTest extends TestCase {
     //Überprüfe das Wechsel "Spieler ist am Leben/ Tod"
     public void testStatus() throws Exception {
         testSpieler.setStatus(false);
-        assertEquals(new Spieler(1, "Test", false, 4).getRolle(), testSpieler.getRolle());
+        assertEquals(new Spieler(1, "Test", false, 4).getStatus(), testSpieler.getStatus());
     }
 
     //Überprüfe die Zuweisung des Spielernummern
