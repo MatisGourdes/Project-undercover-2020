@@ -150,7 +150,7 @@ In Git program:
 
 
 ## 7. Das Programm
-  Da die Natur des Endprodukts ein Spiel ist, hat die grafische Benutzeroberfläche (GUI) in unserem Programm vorherrschende Stellung. Damit das Projekt ein Erfolg ist, war es uns wichtig, dass die Spieler intuitiv mit unserer GUI interagieren können, damit sie für jeden verständlich ist und, dass das Spiel reibungslos verlaufen kann. Dementsprechend wurde viel Zeit darin investiert, diese GUI zu entwickeln mit SceneBuilder.
+  Da die Natur des Endprodukts ein Spiel ist, hat die grafische Benutzeroberfläche (GUI) in unserem Programm vorherrschende Stellung. Damit das Projekt ein Erfolg ist, war es uns wichtig, dass die Spieler intuitiv mit unserer GUI interagieren können, damit sie für jeden verständlich ist und, dass das Spiel reibungslos verlaufen kann. Dementsprechend wurde viel Zeit darin investiert, diese GUI mit SceneBuilder zu entwickeln.
 
 Für jede Szene wurde eine FXML-Datei mit SceneBuilder editiert, welche mit einem Hauptcontroller namens *Controller* verbunden wird. Dieser Controller ist im Kern unseres Programms, er bedient alle Funktionen des GUI und wechselt Szenen je nach dem, welcher Schritt als nächstes vorkommt. Ferner nimmt der Controller zugriff auf externe Informationen, wie den Konstruktor *Spieler* für die herstellung zusätzlicher Spielern, oder auf die Klasse *WortReserve* für das Auslesen der Wörter aus der .txt-Datei. Die Zuweisung der Rollen erfolgt auch extern, da die Funktionsweise etwa komplexer ist. Mehr Informationen dazu sind in der Dokumentation des Sprints 1 zu finden. Im Sprint 2 wurde die Klasse *Einstellungen* addiert, damit zusätzliche Wörter hinzugefügt werden können.
 
@@ -177,25 +177,25 @@ Für jede Szene wurde eine FXML-Datei mit SceneBuilder editiert, welche mit eine
 
 *Velocity: 20 Std*
 
-Task 1: Ein controller muss erstellt werden. Er soll den Start des Spiels ermöglichen und zu den Regeln führen, wenn die Spieler es wollen.
+Task 1: Ein Kontroller muss erstellt werden. Er soll den Start des Spiels ermöglichen und die Spielregeln anbieten.
 
-Task 2: Ein fxml-datei soll erstellt werden, um den Spiel vor zu stellen. Er soll mit dem Controller verbunden sein.
+Task 2: Eine fxml-Datei soll erstellt werden, um den Spiel vorzustellen. Er soll mit dem Kontroller verbunden sein.
 
-Task 3: Die Klasse RolleZuweisung soll erstellt werden, um zu jede Spieler eine Rolle zufällig zuweisen, d.h. entweder MrWhite, Undercover oder Citizen. 
+Task 3: Die Klasse RolleZuweisung soll erstellt werden, um jeden Spieler eine Rolle zufällig zuzuweisen, d.h. entweder MrWhite, Undercover oder Citizen. 
 
-Task 4: In Abhängigkeit von den Spielerzhal soll mehr oder weniger MrWhite erstellt werden (zwischen 0 und 4 MrWhite). Es soll immer mehr Citizen als Undercover und MrWhite geben.
+Task 4: In Abhängigkeit von der Spieleranzahl soll mehr oder weniger MrWhite erstellt werden (zwischen 0 und 4 MrWhite). Es soll immer mehr Citizen als Undercover und MrWhite geben.
 
-Task 5: Ein fxml-datei soll erstellt werden, um zu jeder Spieler sein Wort zu teilen. Die Mitspielern sollen nicht das Wort von den ander sehen.
+Task 5: Eine fxml-Datei soll erstellt werden, damit jeder Spieler sein zugehöriges Wort bekommt. Die Mitspielern sollen nicht das Wort von den Anderen sehen.
 
-Task 6: Eine klasse soll erstellt werden und mit dem fxml der 5. Task verbunden sein. In diese Klasse soll zufällig zwei Wörter, die Synonyme sind, wählen (ein für die Undercover und den anderen für die Citizen. Nur Citizen und UNdercover sollen einen Wort empfangen.
+Task 6: Eine Klasse soll erstellt werden und mit der fxml-Datei der 5. Task verbunden sein. In diese Klasse sollen zwei synonyme Wörter zufällig ausgesucht werden (ein für die Undercover und ein wieteres für die Citizen). Nur Citizen und Undercover sollen ein Wort empfangen.
 
-Task 7: Ein fxml-datei soll erstellt werden, um ein Spieler zu entfernen. Eine Liste mit allen lebendigen Spieler soll gezeigt werden. Der Name des Spielers, der entfernt werden soll, muss in der Liste gewählt werden können.
+Task 7: Ein fxml-Datei soll erstellt werden, um ein Spieler zu entfernen. Eine Liste mit allen lebendigen Spieler soll gezeigt werden. Der Name des Spielers, der entfernt werden soll, muss in der Liste gewählt werden können.
 
-Task 8: Hier soll der Status (tot oder lebendig) der Spieler geändert werden, wenn er von den anderen gewählt wurde. 
+Task 8: Hier soll der Status (tot oder lebendig) der Spielern geändert werden können, wenn er von den Anderen ausgeschlossen wurde. 
 
-Task 9:  Ein fxml-datei soll erstellt werden, um zu den MrWhite die Chance geben, das Wort von den Citizen zu raten als er entfernt wurde.
+Task 9:  Ein fxml-Datei soll erstellt werden, um den MrWhite die Chance zu geben, das Wort von den Citizen zu raten, als er entfernt wurde.
 
-Task 10: Hier muss getestet werden, ob der MrWhite das richtigen Wort erraten hat oder nicht. Wenn ja, hat MrWhite das Spiel gewonnen. Wenn nein soll den Spiel weiter laufen.
+Task 10: Hier muss getestet werden, ob der MrWhite das richtig Wort erraten hat oder nicht. Wenn ja, hat MrWhite das Spiel gewonnen. Wenn nein, soll das Spiel weiter laufen.
 
 ### 8.2 Klassendiagramm
 ![Klassendiagramm Sprint 1:](https://github.com/MatisGourdes/Project-undercover-2020/blob/release_v0.3_WortAusgabe%2BclassSpieler/Documentation/Klassendiagramm_sprint1.png)
@@ -241,7 +241,7 @@ Diesbezüglich haben wir uns im Laufe dieses Sprints damit befasst, eine *Rollez
     }
 
 ### 8.4 Testfälle
-Testfall #1: Überprüfung der korrekten Zuweisung der Rollen (Methode *Rollezuweisung* und Speicherung im Konstruktor *Spieler*):
+Testfall #1: Überprüfung der korrekten Zuweisung der Rollen (Methode *Rollezuweisung* und Eintragung im Konstruktor *Spieler*):
 
     RolleZuweisung.randomRolle();
     assertNotSame(testSpieler.getRolle(), 4);
@@ -249,9 +249,8 @@ Testfall #1: Überprüfung der korrekten Zuweisung der Rollen (Methode *Rollezuw
 Testfall #2: Überprüfung der Ausschliessung eines Spielers (Status wird auf "false" gesetzt):
 
     testSpieler.setStatus(false);
-    assertEquals(new Spieler(1, "Test", false, 4).getRolle(), testSpieler.getRolle());    
+    assertEquals(new Spieler(1, "Test", false, 4).getStatus(), testSpieler.getStatus());    
     
-Testfall #3:
         
 ### 8.5 Fazit und Retrospektive
 Alle Tasks wurden gemäss der Akzeptanzkriterien (*siehe 5. User Stories*) erfolgreich durchgesetzt und die wichtigsten Bestandteile des Spiels sind funktionsfähig. Das MVP konnte ohne grosse Hindernisse erstellt werden, selbst es wenn noch viel Raum für Verbesserungen gibt. Die Benutzeroberfläche ist noch primitiv und unklar, während das Programm selbst optimiert werden kann und die FXML-Bestandteile von den Java-Klassen noch getrennt werden müssen. Jedoch haben wir bereits einige Tasks vom Sprint 2 erledigt, wie zum Beispiel die Möglichkeit Wörter aus einer Text-Datei einzulesen bzw. in der Datei zu schreiben, weil es an diesem Zeitpunkt der Programmierung am sinnvollsten war.
