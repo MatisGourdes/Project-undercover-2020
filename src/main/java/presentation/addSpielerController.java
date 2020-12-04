@@ -24,6 +24,9 @@ public class addSpielerController extends Controller{
 
 
 
+    static int WortRandom; //Variable für die Bestimmung des Wortes aus der Text-Datei
+    public static String wortCitizen = " "; //Speicherung der Wörter
+    public static String wortUndercover = " ";
     private static int spielerNr = 1; //Variable für die Nummerierung der Spieler
     public boolean korrekteEingabeName1 = true; //Variablen zur Überprüfung der Eingabe des Namens
     private boolean korrekteEingabeName2 = true;
@@ -102,6 +105,7 @@ public class addSpielerController extends Controller{
 
 
 
+
     //das Spiel beginnt
     public void startGame(ActionEvent event) throws IOException {
         Parent WortAusgabeParent = FXMLLoader.load(getClass().getResource("WortAusgabe.fxml"));// Hier werden die Spieler Namen gefragt
@@ -160,6 +164,13 @@ public class addSpielerController extends Controller{
         tableViewSpieler.setItems(showSpieler());
         showLebendigeSpieler().clear();
         showSpieler().clear();
+    }
+    public static String getWortCitizen() {
+        return wortCitizen;
+    }
+
+    public static String getWortUndercover() {
+        return wortUndercover;
     }
 
 }
