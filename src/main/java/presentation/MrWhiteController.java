@@ -31,7 +31,7 @@ public class MrWhiteController extends Controller {
             window.show();
         }
         else {
-            Controller.finishTest(event);
+            TestSpielFertig.finishTest(event);
         }
     }
 }
