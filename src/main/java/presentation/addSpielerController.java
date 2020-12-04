@@ -39,7 +39,8 @@ public class addSpielerController extends Controller{
     private TextField eingabeName; //Name des Spielers eingeben
     @FXML
     private Button speichern = new Button(); //Speichern der Spieleranzahl
-
+    @FXML
+    private Label spielerNrLabel; //Label für die Anzeige des Spielers, als er sein Name eingibt
 
 
     //Ein Spieler wird addiert, wenn auf Btn "add" gedrückt wird
