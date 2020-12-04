@@ -122,8 +122,6 @@ public class Controller {
     }
 
 
-
-
     public void SwitchtoShowBefehle(ActionEvent event) throws IOException {
         int anfaenger = (int) (Math.random() * showLebendigeSpieler().size());
 
@@ -139,7 +137,6 @@ public class Controller {
     }
 
 
-
     //Ende der Runde, Wechseln zur Wahl-Ansicht
     public void switchToVote(ActionEvent event) throws IOException {
         Parent spielParent = FXMLLoader.load(getClass().getResource("wahl.fxml"));
@@ -150,13 +147,6 @@ public class Controller {
         window.setTitle("Ende der Runde - Wahl");
         window.show();
     }
-
-
-
-
-
-
-
 
     @FXML
     private void neuesSpiel(ActionEvent event) throws IOException {
