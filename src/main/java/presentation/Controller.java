@@ -38,14 +38,7 @@ public class Controller {
     public TableColumn<Spieler, String> nameTableView; //Anzeige des Namens der Spieler
     @FXML
     private Label befehlAusgabe;
-    @FXML
-    private Label WortAusgabe;
-    @FXML
-    private Label BefehleWortAusgabe;
-    @FXML
-    private Button HideWord;
-    @FXML
-    private Button btnWorter;
+
 
 
     public int anzahlSpieler; //Anzahl Spieler
@@ -54,10 +47,9 @@ public class Controller {
 
     private static Vector<Spieler> spielerListe = new Vector<Spieler>(); //Vektor zur Speicherung aller Spieler inkl. Daten
 
-    private int spielerWortAusgabe = 0;//Variablen für die Anzeige der Wörter zu den Spielern
-    private boolean wortAngezeigt = false;
-    private String printLabelWort;
-    private int declic = 1; //??
+
+
+
 
 
     public void initialize() {
@@ -119,46 +111,9 @@ public class Controller {
     }
 
 
-    //Ausgabe der Wörter zu jedem Spieler
-    public void ausgabeWoerter(ActionEvent event) throws IOException {
 
-        btnWorter.setText("Nächster Spieler");
-        WortAusgabe.setText("");
-        HideWord.setText("click to show");
-        wortAngezeigt = false;
 
-        switch (spielerListe.elementAt(spielerWortAusgabe).getRolle()) {
-            case 0:
-                printLabelWort = addSpielerController.getWortCitizen();
-                break;
-            case 1:
-                printLabelWort = addSpielerController.getWortUndercover();
-                break;
-            case 2:
-                printLabelWort = "Du bist Mr White, versuch dich nicht auffallen zu lassen";
-                break;
-        }
-        BefehleWortAusgabe.setText("Hallo " + spielerListe.elementAt(spielerWortAusgabe).getName());
-        if ((spielerListe.size() - 1) >= spielerWortAusgabe && declic == 1) {
-            if (spielerWortAusgabe == (spielerListe.size() - 1)) {
-                declic = 0;
-            } else {
-                spielerWortAusgabe++;
-            }
-        } else {
-            befehlWindow(event);
-        }
-    }
 
-    //Fenster zur Ausgabe der Wörter am Beginn des Spiels
-    private void befehlWindow(ActionEvent event) throws IOException {
-        Parent befehlParent = FXMLLoader.load(getClass().getResource("RundeBefehl.fxml"));
-        Scene befehlScene = new Scene(befehlParent);
-        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        window.setScene(befehlScene);
-        window.setTitle("Wer fängt an?");
-        window.show();
-    }
 
     public void SwitchtoShowBefehle(ActionEvent event) throws IOException {
         int anfaenger = (int) (Math.random() * showLebendigeSpieler().size());
@@ -174,19 +129,7 @@ public class Controller {
 
     }
 
-    //Wort ein- oder ausblenden
-    public void switchToShow(ActionEvent event) throws IOException {
-        if (spielerWortAusgabe > 0) {
-            if (wortAngezeigt == false) {
-                WortAusgabe.setText(printLabelWort + "\n  Wenn du es gesehen hast press den Button unten \n um es zu verstecken!");
-                HideWord.setText("Click to hide");
-            } else {
-                WortAusgabe.setText("");
-                HideWord.setText("Click to show");
-            }
-            wortAngezeigt = !wortAngezeigt;
-        }
-    }
+
 
     //Ende der Runde, Wechseln zur Wahl-Ansicht
     public void switchToVote(ActionEvent event) throws IOException {
