@@ -22,24 +22,21 @@ import java.util.Vector;
 
 public class Controller {
 
+
+
     @FXML
-    private TextField eingabeName; //Name des Spielers eingeben
+    public Label spielerNrLabel; //Label für die Anzeige des Spielers, als er sein Name eingibt
     @FXML
-    private Label spielerAnzahlLabel; //Label für die Anzeige des Spielers, als er sein Name eingibt
-    @FXML
-    private Label spielerNrLabel; //Label für die Anzeige des Spielers, als er sein Name eingibt
-    @FXML
-    private TextField eingabeAnzahlSpieler; //Eingabe der Anzahl Mitspielern
-    @FXML
-    private Button speichern = new Button(); //Speichern der Spieleranzahl
+    public TextField eingabeAnzahlSpieler; //Eingabe der Anzahl Mitspielern
+
     @FXML
     private Button addPlayerBtn = new Button();//Spieler addieren
     @FXML
-    private TableView<Spieler> tableViewSpieler; //Tabelle zur Anzeige der Spielers
+    public TableView<Spieler> tableViewSpieler; //Tabelle zur Anzeige der Spielers
     @FXML
-    private TableColumn<Spieler, Integer> nrTableView; //Anzeige des Spielernummers in der Tabelle
+    public TableColumn<Spieler, Integer> nrTableView; //Anzeige des Spielernummers in der Tabelle
     @FXML
-    private TableColumn<Spieler, String> nameTableView; //Anzeige des Namens der Spieler
+    public TableColumn<Spieler, String> nameTableView; //Anzeige des Namens der Spieler
     @FXML
     private Label befehlAusgabe;
     @FXML
@@ -53,14 +50,15 @@ public class Controller {
     @FXML
     private TextField Input;
 
-    private int anzahlSpieler; //Anzahl Spieler
-    private static int spielerNr = 1; //Variable für die Nummerierung der Spieler
+    public int anzahlSpieler; //Anzahl Spieler
+    public int spielerNr = 1; //Variable für die Nummerierung der Spieler
+
+
     private static Vector<Spieler> spielerListe = new Vector<Spieler>(); //Vektor zur Speicherung aller Spieler inkl. Daten
-    private boolean korrekteEingabeName1 = true; //Variablen zur Überprüfung der Eingabe des Namens
-    private boolean korrekteEingabeName2 = true;
+
     static int WortRandom; //Variable für die Bestimmung des Wortes aus der Text-Datei
-    private static String wortCitizen = " "; //Speicherung der Wörter
-    private static String wortUndercover = " ";
+    public static String wortCitizen = " "; //Speicherung der Wörter
+    public static String wortUndercover = " ";
     private int spielerWortAusgabe = 0;//Variablen für die Anzeige der Wörter zu den Spielern
     private boolean wortAngezeigt = false;
     private String printLabelWort;
@@ -117,78 +115,6 @@ public class Controller {
         window.show();
     }
 
-    // Anzahl Spieler wird gespeichert, wenn auf Btn "speichern" gedrückt wird
-    public void save(ActionEvent event) throws IOException{
-        try{
-            anzahlSpieler = Integer.parseInt(eingabeAnzahlSpieler.getText());
-            eingabeAnzahlSpieler.setDisable(true);
-            speichern.setText("gespeichert !");
-            speichern.setDisable(true);
-            spielerNrLabel.setText("Spieler 1:");
-            addPlayerBtn.setDisable(false);
-            //Initialisierung der Tableview für die Anzeige der Spieler
-            nrTableView.setCellValueFactory(new PropertyValueFactory<Spieler, Integer>("spielerNr"));
-            nameTableView.setCellValueFactory(new PropertyValueFactory<Spieler, String>("name"));
-        }
-        //Meldung, falls eine inkorrekte Eingabe gegeben wurde
-        catch (NumberFormatException e){
-            eingabeAnzahlSpieler.clear();
-            spielerAnzahlLabel.setText("Geben Sie eine Zahl ein.");
-        }
-    }
-
-
-    //Ein Spieler wird addiert, wenn auf Btn "add" gedrückt wird
-    public void addPlayer(ActionEvent event) throws IOException {
-
-//Überprüfung der Angabe (Leere Eingabe, Name des Spielers bereits existierend)
-        if(showLebendigeSpieler().size() < anzahlSpieler) {
-            if ("".contentEquals(eingabeName.getText())){
-                spielerNrLabel.setText("Sie müssen einen Namen eingeben");
-                korrekteEingabeName1 = false;
-                eingabeName.clear();
-            }
-            else{
-                korrekteEingabeName1 = true;
-            }
-            if (spielerListe.size()>0) {
-                for (int i = 0; i < showLebendigeSpieler().size(); i++) {
-
-                    if (spielerListe.elementAt(i).getName().contentEquals(eingabeName.getText())) {
-                        spielerNrLabel.setText("Schon vorhanden !");
-                        eingabeName.clear();
-                        korrekteEingabeName2 = false;
-                    }
-                    else {
-                        korrekteEingabeName2 = true;
-                    }
-                }
-            }
-            //Falls die Eingabe korrekt ist wird den Namen gespeichert
-            if (korrekteEingabeName1 == true  && korrekteEingabeName2 == true){
-                Spieler temp = new Spieler(spielerNr, eingabeName.getText(), true, 4);
-                spielerListe.add(temp);
-                spielerNrLabel.setText("Spieler " + (spielerNr + 1) + ":");
-                eingabeName.clear();
-                spielerNr++;
-            }
-        }
-
-//Alle Spieler wurden eingetragen
-        if (showLebendigeSpieler().size() >= anzahlSpieler) {
-            addPlayerBtn.setDisable(true);
-            eingabeName.setDisable(true);
-            spielerNrLabel.setText("Tip top");
-            RolleZuweisung.randomRolle();
-            //debug : zeige alle Spieler inkl. Rolle in der Konsole
-            for (int i = 0; i < spielerListe.size(); i++) {
-                System.out.println(spielerListe.elementAt(i).getSpielerNr() + ": " +
-                        spielerListe.elementAt(i).getName() + " " + Spieler.rolleName(spielerListe.elementAt(i).getRolle()));
-            }
-        }
-        //display in der Tabelle
-        tableViewSpieler.setItems(showSpieler());
-    }
 
     //display in der Tabelle
     public ObservableList<Spieler> showSpieler(){
@@ -197,45 +123,6 @@ public class Controller {
             list.add(spielerListe.elementAt(i));
         }
         return list;
-    }
-
-    @FXML
-    void spielerListeLeeren(ActionEvent event) {
-        speichern.setDisable(false);
-        speichern.setText("Speichern");
-        eingabeAnzahlSpieler.setDisable(false);
-        eingabeName.setDisable(false);
-        spielerListe.clear();
-        anzahlSpieler = 0;
-        spielerNr = 1;
-        tableViewSpieler.setItems(showSpieler());
-        showLebendigeSpieler().clear();
-        showSpieler().clear();
-    }
-
-    //das Spiel beginnt
-    public void startGame(ActionEvent event) throws IOException {
-        Parent WortAusgabeParent = FXMLLoader.load(getClass().getResource("WortAusgabe.fxml"));// Hier werden die Spieler Namen gefragt
-        Scene WortAusgabeScene = new Scene(WortAusgabeParent);
-        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        window.setScene(WortAusgabeScene);
-        window.setTitle("WortAusgabe");
-        window.show();
-        //Suchen eines Wortes
-        WortReserve.readFile();//Speichert alle Wörter der Textdatei im Vektor woerterListe
-        Random rand = new Random();
-        WortRandom = rand.nextInt(WortReserve.woerterListe.size()/4)*2; // Generiert ein zufällige gerade Zahl
-        wortCitizen = WortReserve.woerterListe.elementAt(WortRandom); // speichert das zu erratende Wort
-        wortUndercover = WortReserve.woerterListe.elementAt(WortRandom+1); // speichert das Wort der Undercover
-
-        //debug: Anzeige der Liste aller Wörter
-        for(int i = 0; i < WortReserve.woerterListe.size(); i++){
-            System.out.println(i + " " + WortReserve.woerterListe.elementAt(i));
-        }
-        System.out.println("___ ");
-        System.out.println(wortCitizen);
-        System.out.println(wortUndercover);
-        System.out.println(WortRandom);
     }
 
 
