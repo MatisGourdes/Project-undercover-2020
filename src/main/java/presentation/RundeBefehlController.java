@@ -27,9 +27,9 @@ public class RundeBefehlController extends Controller implements Initializable {
             while (Controller.getSpielerListe().elementAt(anfaenger).getRolle() == 2 || !getSpielerListe().elementAt(anfaenger).getStatus()) {
                 anfaenger = (int) (Math.random() * showLebendigeSpieler().size());
             }
-            befehlAusgabe.setText("Player " + getSpielerListe().elementAt(anfaenger).getName() + " fängt an");
+            befehlAusgabe.setText(getSpielerListe().elementAt(anfaenger).getName() + " fängt an");
         } else if (getSpielerListe().elementAt(anfaenger).getRolle() != 2 || getSpielerListe().elementAt(anfaenger).getStatus()) {
-            befehlAusgabe.setText("Player " +getSpielerListe().elementAt(anfaenger).getName() + " fängt an!");
+            befehlAusgabe.setText(getSpielerListe().elementAt(anfaenger).getName() + " fängt an");
         }
     }
 
