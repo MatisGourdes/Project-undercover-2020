@@ -103,8 +103,8 @@ public class Controller {
     //display in der Tabelle
     public ObservableList<Spieler> showSpieler() {
         ObservableList<Spieler> list = FXCollections.observableArrayList();
-        for (int i = 0; i < spielerListe.size(); i++) {
-            list.add(spielerListe.elementAt(i));
+        for (int i = 0; i < getSpielerListe().size(); i++) {
+            list.add(getSpielerListe().elementAt(i));
         }
         return list;
     }
