@@ -1,34 +1,51 @@
 package presentation;
 
 import domain.WortReserve;
+import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
 import java.io.FileWriter;
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
-public class Einstellungen {
+public class Einstellungen extends WortReserve implements Initializable {
 
     @FXML
     private TextField wortCitizen;
     @FXML
     private TextField wortUndercover;
     @FXML
-    private Button neuesWortBestaetigen;
+    private TableColumn spalteCitizen = new TableColumn ("Wort Citizen");
     @FXML
-    private TableColumn<String, String> spalteCitizen;
+    private TableColumn spalteUndercover = new TableColumn ("Wort Undercover");
     @FXML
-    private TableColumn<String, String> spalteUndercover;
-    @FXML
-    private TableView<String> tableViewWoerter;
+    private TableView<Wort> tableViewWoerter;
+    private ObservableList<Wort> wortObs = FXCollections.observableArrayList();
+
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        spalteCitizen.setCellValueFactory(new PropertyValueFactory<Wort, String>("wortC"));
+        spalteUndercover.setCellValueFactory(new PropertyValueFactory<Wort, String>("wortU"));
+        readFile();
+        //Eintrag der Wörter in einer ObservableList
+        for (int j = 0; j < woerterListe.size(); j += 2) {
+            tableViewWoerter.getItems().add(new Wort(woerterListe.elementAt(j), woerterListe.elementAt(j + 1)));
+        }
+    }
+
 
     // Zurück zum Hauptmenü
     @FXML
@@ -52,39 +69,37 @@ public class Einstellungen {
             System.err.println("Fehler beim Schreiben in der Datei.");
             System.err.println(e.getMessage());
         }
+
+        //anzeigen in der Tabelle
+        Wort temp = new Wort(wortCitizen.getText(), wortUndercover.getText());
+        tableViewWoerter.getItems().add(temp);
         wortUndercover.clear();
         wortCitizen.clear();
-        neuesWortBestaetigen.setText("gespeichert!");
     }
 
-    //aktuelle Wörterliste anzeigen
-    @FXML
-    void woerterListeAnzeigen(ActionEvent event) {
-        WortReserve.readFile();
-      //  spalteCitizen.setCellValueFactory(cellData ->
-        //      new ReadOnlyObjectWrapper<>(showWoerterCitizen()));
-       // spalteUndercover.setCellValueFactory(cellData ->
-       //         new SimpleStringProperty(new String("13")));
-
-       //tableViewWoerter.getItems().addAll("data1", "data2");
-
-    }
-
-    //display in der ersten Spalte
-    private ObservableList<String> showWoerterCitizen(){
-        ObservableList<String> listCitizen = FXCollections.observableArrayList();
-        for (int i = 0; i < WortReserve.woerterListe.size(); i +=2) {
-            listCitizen.add(WortReserve.woerterListe.elementAt(i));
+    //Methode zur speicherung der Wörter für die Tableview
+    public static class Wort{
+        private String wortC, wortU;
+        public String getWortC(){
+            return wortC;
         }
-        return listCitizen;
-    }
-    //display in der zweiten Spalte
-    private ObservableList<String> showWoerterUndercover(){
-        ObservableList<String> listUndercover = FXCollections.observableArrayList();
-        for (int i = 1; i < WortReserve.woerterListe.size(); i +=2) {
-            listUndercover.add(WortReserve.woerterListe.elementAt(i));
+        public String getWortU(){
+            return wortU;
         }
-        return listUndercover;
+
+        public void setWortC(String wortC) {
+            this.wortC = wortC;
+        }
+
+        public void setWortU(String wortU) {
+            this.wortU = wortU;
+        }
+
+        public Wort(String wortC, String wortU){
+            super();
+            this.wortC = wortC;
+            this.wortU = wortU;
+        }
     }
 
 }

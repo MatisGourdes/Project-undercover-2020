@@ -120,6 +120,10 @@ public class addSpielerController extends Controller{
             eingabeAnzahlSpieler.clear();
             spielerAnzahlLabel.setText("Geben Sie eine Zahl ein.");
         }
+        getSpielerListe().removeAllElements();
+        spielerNr = 1;
+        showLebendigeSpieler().clear();
+        showSpieler().clear();
     }
 
     @FXML

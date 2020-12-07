@@ -110,7 +110,7 @@ public class Controller {
     @FXML
     public void neuesSpiel(ActionEvent event) throws IOException {
         //reset Aller Variablen
-        spielerListe.clear();
+        spielerListe.removeAllElements();
         anzahlSpieler = 0;
         spielerNr = 1;
         showLebendigeSpieler().clear();
@@ -130,13 +130,8 @@ public class Controller {
         Platform.exit();
     }
 
-    // getter + setter für den Zugang zur Spieler Liste
+    // getterfür den Zugang zur Spieler Liste
     public static Vector<Spieler> getSpielerListe() {
         return spielerListe;
     }
-
-    public static void setSpielerListe(Vector<Spieler> spielerListe) {
-        Controller.spielerListe = spielerListe;
-    }
-
 }

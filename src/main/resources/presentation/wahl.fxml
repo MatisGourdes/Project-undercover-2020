@@ -5,15 +5,14 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" stylesheets="@theme.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.wahlController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" stylesheets="@theme.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.wahlController">
     <children>
-        <Button fx:id="spielerAusschliessenBtn" layoutX="254.0" layoutY="207.0" mnemonicParsing="false" onAction="#spielerAusschliessen" text="Eliminieren" />
-        <TableView fx:id="tableViewSpieler" layoutX="36.0" layoutY="120.0" prefHeight="200.0" prefWidth="200.0">
+        <Button fx:id="spielerAusschliessenBtn" layoutX="367.0" layoutY="186.0" mnemonicParsing="false" onAction="#spielerAusschliessen" text="Eliminieren" />
+        <TableView fx:id="tableViewSpieler" layoutX="130.0" layoutY="48.0" prefHeight="303.0" prefWidth="209.0">
             <columns>
                 <TableColumn fx:id="nrTableView" prefWidth="75.0" text="Spieler Nr" />
                 <TableColumn fx:id="nameTableView" prefWidth="123.33334350585938" text="Name" />
             </columns>
         </TableView>
-      <Button layoutX="274.0" layoutY="152.0" mnemonicParsing="false" onAction="#setupTableViewVote" text="Spieler anzeigen" />
     </children>
 </AnchorPane>
