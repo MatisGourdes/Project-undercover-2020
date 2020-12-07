@@ -32,13 +32,13 @@ public class RundeBefehlController extends Controller{
     public void SwitchtoShowBefehle(ActionEvent event) throws IOException {
         int anfaenger = (int) (Math.random() * showLebendigeSpieler().size());
 
-        if (Controller.getSpielerListe().elementAt(anfaenger).getRolle() == 2 || !Controller.getSpielerListe().elementAt(anfaenger).getStatus()) {
-            while (Controller.getSpielerListe().elementAt(anfaenger).getRolle() == 2 || !Controller.getSpielerListe().elementAt(anfaenger).getStatus()) {
+        if (getSpielerListe().elementAt(anfaenger).getRolle() == 2 || !getSpielerListe().elementAt(anfaenger).getStatus()) {
+            while (Controller.getSpielerListe().elementAt(anfaenger).getRolle() == 2 || !getSpielerListe().elementAt(anfaenger).getStatus()) {
                 anfaenger = (int) (Math.random() * showLebendigeSpieler().size());
             }
-            befehlAusgabe.setText("Player " + Controller.getSpielerListe().elementAt(anfaenger).getName() + " fängt an");
-        } else if (Controller.getSpielerListe().elementAt(anfaenger).getRolle() != 2 || Controller.getSpielerListe().elementAt(anfaenger).getStatus()) {
-            befehlAusgabe.setText("Player " +Controller.getSpielerListe().elementAt(anfaenger).getName() + " fängt an!");
+            befehlAusgabe.setText("Player " + getSpielerListe().elementAt(anfaenger).getName() + " fängt an");
+        } else if (getSpielerListe().elementAt(anfaenger).getRolle() != 2 || getSpielerListe().elementAt(anfaenger).getStatus()) {
+            befehlAusgabe.setText("Player " +getSpielerListe().elementAt(anfaenger).getName() + " fängt an!");
         }
 
     }

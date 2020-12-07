@@ -46,7 +46,7 @@ public class addSpielerController extends Controller{
 
 //Überprüfung der Angabe (Leere Eingabe, Name des Spielers bereits existierend)
         if(showLebendigeSpieler().size() < anzahlSpieler) {
-            if ("".contentEquals(eingabeName.getText())){
+            if ("".contentEquals(eingabeName.getText()) || " ".contentEquals(eingabeName.getText())){
                 spielerNrLabel.setText("Sie müssen einen Namen eingeben");
                 korrekteEingabeName1 = false;
                 eingabeName.clear();
@@ -138,18 +138,20 @@ public class addSpielerController extends Controller{
 
     //das Spiel beginnt
     public void startGame(ActionEvent event) throws IOException {
-        Parent WortAusgabeParent = FXMLLoader.load(getClass().getResource("WortAusgabe.fxml"));
-        Scene WortAusgabeScene = new Scene(WortAusgabeParent);
-        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        window.setScene(WortAusgabeScene);
-        window.setTitle("WortAusgabe");
-        window.show();
-        //Suchen eines Wortes
-        WortReserve.readFile();//Speichert alle Wörter der Textdatei im Vektor woerterListe
-        Random rand = new Random();
-        WortRandom = rand.nextInt(WortReserve.woerterListe.size()/4)*2; // Generiert ein zufällige gerade Zahl
-        wortCitizen = WortReserve.woerterListe.elementAt(WortRandom); // speichert das zu erratende Wort
-        wortUndercover = WortReserve.woerterListe.elementAt(WortRandom+1); // speichert das Wort der Undercover
+        if (getSpielerListe().size()==anzahlSpieler) {
+            Parent WortAusgabeParent = FXMLLoader.load(getClass().getResource("WortAusgabe.fxml"));
+            Scene WortAusgabeScene = new Scene(WortAusgabeParent);
+            Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            window.setScene(WortAusgabeScene);
+            window.setTitle("WortAusgabe");
+            window.show();
+            //Suchen eines Wortes
+            WortReserve.readFile();//Speichert alle Wörter der Textdatei im Vektor woerterListe
+            Random rand = new Random();
+            WortRandom = rand.nextInt(WortReserve.woerterListe.size() / 4) * 2; // Generiert ein zufällige gerade Zahl
+            wortCitizen = WortReserve.woerterListe.elementAt(WortRandom); // speichert das zu erratende Wort
+            wortUndercover = WortReserve.woerterListe.elementAt(WortRandom + 1); // speichert das Wort der Undercover
+        }
 
         //debug: Anzeige der Liste aller Wörter
         for(int i = 0; i < WortReserve.woerterListe.size(); i++){

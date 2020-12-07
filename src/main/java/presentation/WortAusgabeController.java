@@ -76,9 +76,6 @@ public class WortAusgabeController extends Controller{
         }
     }
 
-
-
-
     //Fenster zur Ausgabe der Wörter am Beginn des Spiels
     private void befehlWindow(ActionEvent event) throws IOException {
         Parent befehlParent = FXMLLoader.load(getClass().getResource("RundeBefehl.fxml"));
@@ -88,7 +85,4 @@ public class WortAusgabeController extends Controller{
         window.setTitle("Wer fängt an?");
         window.show();
     }
-
-
-
 }
