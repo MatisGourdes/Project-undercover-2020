@@ -24,36 +24,22 @@ public class Controller {
 
     @FXML
     public TableView<Spieler> tableViewSpieler; //Tabelle zur Anzeige der Spielers
-
     @FXML
     public TextField eingabeAnzahlSpieler; //Eingabe der Anzahl Mitspielern
-
     @FXML
     private Button addPlayerBtn = new Button();//Spieler addieren
-
     @FXML
     public TableColumn<Spieler, Integer> nrTableView; //Anzeige des Spielernummers in der Tabelle
     @FXML
     public TableColumn<Spieler, String> nameTableView; //Anzeige des Namens der Spieler
-    @FXML
-    private Label befehlAusgabe;
-
-
 
     public int anzahlSpieler; //Anzahl Spieler
     public int spielerNr = 1; //Variable für die Nummerierung der Spieler
-
-
     private static Vector<Spieler> spielerListe = new Vector<Spieler>(); //Vektor zur Speicherung aller Spieler inkl. Daten
-
-
-
-
 
 
     public void initialize() {
         addPlayerBtn.setDisable(true);//Spieler darf erst addiert werden, wenn die Anzahl Spieler eingegeben wurde
-
     }
 
 
@@ -120,43 +106,6 @@ public class Controller {
         return list2;
 
     }
-
-
-
-
-    public void SwitchtoShowBefehle(ActionEvent event) throws IOException {
-        int anfaenger = (int) (Math.random() * showLebendigeSpieler().size());
-
-        if (spielerListe.elementAt(anfaenger).getRolle() == 2 || !spielerListe.elementAt(anfaenger).getStatus()) {
-            while (spielerListe.elementAt(anfaenger).getRolle() == 2 || !spielerListe.elementAt(anfaenger).getStatus()) {
-                anfaenger = (int) (Math.random() * showLebendigeSpieler().size());
-            }
-            befehlAusgabe.setText("Player " + spielerListe.elementAt(anfaenger).getName() + " fängt an");
-        } else if (spielerListe.elementAt(anfaenger).getRolle() != 2 || spielerListe.elementAt(anfaenger).getStatus()) {
-            befehlAusgabe.setText("Player " + spielerListe.elementAt(anfaenger).getName() + " fängt an!");// Hier noch Random
-        }
-
-    }
-
-
-
-    //Ende der Runde, Wechseln zur Wahl-Ansicht
-    public void switchToVote(ActionEvent event) throws IOException {
-        Parent spielParent = FXMLLoader.load(getClass().getResource("wahl.fxml"));
-        Scene spielScene = new Scene(spielParent);
-        //get stage info
-        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        window.setScene(spielScene);
-        window.setTitle("Ende der Runde - Wahl");
-        window.show();
-
-
-}
-
-
-
-
-
 
     @FXML
     public void neuesSpiel(ActionEvent event) throws IOException {

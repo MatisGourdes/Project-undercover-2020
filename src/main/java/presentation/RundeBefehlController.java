@@ -28,6 +28,7 @@ public class RundeBefehlController extends Controller{
         window.show();
     }
 
+
     public void SwitchtoShowBefehle(ActionEvent event) throws IOException {
         int anfaenger = (int) (Math.random() * showLebendigeSpieler().size());
 
@@ -37,7 +38,7 @@ public class RundeBefehlController extends Controller{
             }
             befehlAusgabe.setText("Player " + Controller.getSpielerListe().elementAt(anfaenger).getName() + " fängt an");
         } else if (Controller.getSpielerListe().elementAt(anfaenger).getRolle() != 2 || Controller.getSpielerListe().elementAt(anfaenger).getStatus()) {
-            befehlAusgabe.setText("Player " +Controller.getSpielerListe().elementAt(anfaenger).getName() + " fängt an!");// Hier noch Random
+            befehlAusgabe.setText("Player " +Controller.getSpielerListe().elementAt(anfaenger).getName() + " fängt an!");
         }
 
     }

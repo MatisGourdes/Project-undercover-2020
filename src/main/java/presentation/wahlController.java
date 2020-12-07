@@ -51,8 +51,4 @@ public class wahlController extends Controller{
         nameTableView.setCellValueFactory(new PropertyValueFactory<Spieler, String>("name"));
         tableViewSpieler.setItems(showLebendigeSpieler());
     }
-
-
-
-
 }

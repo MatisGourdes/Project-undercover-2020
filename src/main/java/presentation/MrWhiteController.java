@@ -12,9 +12,6 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class MrWhiteController extends Controller {
-
-
-
     @FXML
     private TextField Input;
 
@@ -31,7 +28,7 @@ public class MrWhiteController extends Controller {
             window.show();
         }
         else {
-            TestSpielFertig.finishTest(event);
+            TestSpielFertig.finishTest(event); //Überprüfung, ob Mr White gewonnen haben
         }
     }
 }
