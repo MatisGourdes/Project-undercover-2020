@@ -11,8 +11,8 @@ public static Vector<String> woerterListe = new Vector<>();
 
     public static void readFile(){
         //speichert alle Wörter der txt-Datei in einem Vektor
-        try (
-                FileReader f = new FileReader("src/main/resources/domain/woerterDatenBank")) {
+        String path = System.getProperty("user.dir") + "/src/main/resources/domain/woerterDatenBank";
+        try (FileReader f = new FileReader(path)) {
             char c[] = new char[10000];
             f.read(c);
             String s = new String(c);
