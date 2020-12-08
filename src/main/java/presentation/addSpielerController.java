@@ -142,7 +142,7 @@ public class addSpielerController extends Controller{
 
     //das Spiel beginnt
     public void startGame(ActionEvent event) throws IOException {
-        if (getSpielerListe().size()==anzahlSpieler) {
+        if (getSpielerListe().size()==anzahlSpieler && getSpielerListe().size() != 0) {
             Parent WortAusgabeParent = FXMLLoader.load(getClass().getResource("WortAusgabe.fxml"));
             Scene WortAusgabeScene = new Scene(WortAusgabeParent);
             Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
