@@ -130,7 +130,7 @@ public class Controller {
         Platform.exit();
     }
 
-    // getterfür den Zugang zur Spieler Liste
+    // getter für den Zugang zur Spieler Liste
     public static Vector<Spieler> getSpielerListe() {
         return spielerListe;
     }

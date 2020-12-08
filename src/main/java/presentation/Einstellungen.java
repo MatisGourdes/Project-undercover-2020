@@ -37,13 +37,18 @@ public class Einstellungen extends WortReserve implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        int j = 0;
+        wortObs.removeAll();
         spalteCitizen.setCellValueFactory(new PropertyValueFactory<Wort, String>("wortC"));
         spalteUndercover.setCellValueFactory(new PropertyValueFactory<Wort, String>("wortU"));
         readFile();
+
         //Eintrag der Wörter in einer ObservableList
-        for (int j = 0; j < woerterListe.size(); j += 2) {
-            tableViewWoerter.getItems().add(new Wort(woerterListe.elementAt(j), woerterListe.elementAt(j + 1)));
+        while (j < woerterListe.size()-1){
+            wortObs.add(new Wort(woerterListe.elementAt(j), woerterListe.elementAt(j + 1)));
+            j +=2;
         }
+        tableViewWoerter.setItems(wortObs);
     }
 
 
@@ -62,8 +67,8 @@ public class Einstellungen extends WortReserve implements Initializable {
     @FXML
     void woerterAddieren(ActionEvent event) {
         try (FileWriter w = new FileWriter("src/main/resources/domain/woerterDatenBank", true)) {
-            String eingabe = wortCitizen.getText() + ";" + wortUndercover.getText();
-            w.write("\r" + eingabe);
+            String eingabe = wortCitizen.getText() + ";" + wortUndercover.getText() + "\n";
+            w.write(eingabe);
         }
         catch (IOException e) {
             System.err.println("Fehler beim Schreiben in der Datei.");
@@ -75,6 +80,8 @@ public class Einstellungen extends WortReserve implements Initializable {
         tableViewWoerter.getItems().add(temp);
         wortUndercover.clear();
         wortCitizen.clear();
+        //update Liste der Wörter
+        readFile();
     }
 
     //Methode zur speicherung der Wörter für die Tableview

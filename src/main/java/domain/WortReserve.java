@@ -10,9 +10,10 @@ public class WortReserve {
 public static Vector<String> woerterListe = new Vector<>();
 
     public static void readFile(){
+        woerterListe.clear();
         //speichert alle Wörter der txt-Datei in einem Vektor
         String path = System.getProperty("user.dir") + "\\src\\main\\resources\\domain\\woerterDatenBank";
-        System.out.println(path);
+        //System.out.println(path);
         try (FileReader f = new FileReader(path)) {
             char c[] = new char[10000];
             f.read(c);
@@ -20,8 +21,10 @@ public static Vector<String> woerterListe = new Vector<>();
             String[] result = s.split("\n|;");
 
             for (int i = 0; i < result.length; i++) {
-                woerterListe.add(result[i]);
-                f.close();
+                if (!result[i].equals("") && result[i] != null){
+                    woerterListe.add(result[i]);
+                    f.close();
+                }
             }
         }
         catch (IOException e) {
