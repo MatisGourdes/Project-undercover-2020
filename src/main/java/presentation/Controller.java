@@ -39,7 +39,7 @@ public class Controller {
 
 
     public void initialize() {
-        addPlayerBtn.setDisable(true);//Spieler darf erst addiert werden, wenn die Anzahl Spieler eingegeben wurde
+            addPlayerBtn.setDisable(true);//Spieler darf erst addiert werden, wenn die Anzahl Spieler eingegeben wurde
     }
 
 
