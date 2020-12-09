@@ -104,16 +104,18 @@ public class addSpielerController extends Controller{
 
     // Anzahl Spieler wird gespeichert, wenn auf Btn "speichern" gedrückt wird
     public void save(ActionEvent event) throws IOException{
-        try{
+        try {
             anzahlSpieler = Integer.parseInt(eingabeAnzahlSpieler.getText());
             eingabeAnzahlSpieler.setDisable(true);
             speichern.setText("gespeichert !");
             speichern.setDisable(true);
             spielerNrLabel.setText("Spieler 1:");
             addPlayerBtn.setDisable(false);
+
             //Initialisierung der Tableview für die Anzeige der Spieler
             nrTableView.setCellValueFactory(new PropertyValueFactory<Spieler, Integer>("spielerNr"));
             nameTableView.setCellValueFactory(new PropertyValueFactory<Spieler, String>("name"));
+
         }
         //Meldung, falls eine inkorrekte Eingabe gegeben wurde
         catch (NumberFormatException e){
