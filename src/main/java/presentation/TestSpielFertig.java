@@ -11,18 +11,22 @@ import java.io.IOException;
 
 public class TestSpielFertig extends Controller{
 
+
     //Überprüfe, ob nur noch Citizen Leben
     public static void finishTest(ActionEvent event) throws IOException {
 
+
         if (domain.winCondition.testUndercover() == true) {
-            Parent spielParent = FXMLLoader.load(Controller.class.getResource("UndercoverGewinnen.fxml"));
+             WerGewinnt=1;//UNDERCOVER HABEN GEWONNEN
+            Parent spielParent = FXMLLoader.load(Controller.class.getResource("Gewinner.fxml"));
             Scene spielScene = new Scene(spielParent);
             Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
             window.setScene(spielScene);
             window.setTitle("WIN !!!!!");
             window.show();
         } else if (domain.winCondition.testCitizen() == true) {
-            Parent spielParent = FXMLLoader.load(Controller.class.getResource("CitizenGewinnen.fxml"));
+            WerGewinnt=0;//CITIZEN HABEN GEWONNEN
+            Parent spielParent = FXMLLoader.load(Controller.class.getResource("Gewinner.fxml"));
             Scene spielScene = new Scene(spielParent);
             Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
             window.setScene(spielScene);
@@ -32,14 +36,16 @@ public class TestSpielFertig extends Controller{
             for (int i = 0; i < getSpielerListe().size(); i++) {
                 if (getSpielerListe().elementAt(i).getStatus() == true) {
                     if (getSpielerListe().elementAt(i).getRolle() == 1) {
-                        Parent spielParent = FXMLLoader.load(Controller.class.getResource("UndercoverGewinnen.fxml"));
+                        WerGewinnt=1;//UNDERCOVER HABEN GEWONNEN
+                        Parent spielParent = FXMLLoader.load(Controller.class.getResource("Gewinner.fxml"));
                         Scene spielScene = new Scene(spielParent);
                         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
                         window.setScene(spielScene);
                         window.setTitle("WIN !!!");
                         window.show();
                     } else if (getSpielerListe().elementAt(i).getRolle() == 2) {
-                        Parent spielParent = FXMLLoader.load(Controller.class.getResource("MrWhiteGewinnen.fxml"));
+                        WerGewinnt=2;//MR WHITE HABEN GEWONNEN
+                        Parent spielParent = FXMLLoader.load(Controller.class.getResource("Gewinner.fxml"));
                         Scene spielScene = new Scene(spielParent);
                         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
                         window.setScene(spielScene);
@@ -57,5 +63,9 @@ public class TestSpielFertig extends Controller{
             window.setTitle("Wer ist dran ?");
             window.show();
         }
+    }
+
+    public void LaunchGewinner(){
+
     }
 }

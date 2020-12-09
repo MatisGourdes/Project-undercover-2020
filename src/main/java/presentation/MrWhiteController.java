@@ -20,7 +20,8 @@ public class MrWhiteController extends Controller {
     private void valid(ActionEvent event) throws IOException {
 
         if (Input.getText().equalsIgnoreCase(addSpielerController.getWortCitizen())) {
-            Parent spielParent = FXMLLoader.load(getClass().getResource("MrWhiteGewinnen.fxml"));
+            WerGewinnt=2;//MR WHITE HABEN GEWONNEN
+            Parent spielParent = FXMLLoader.load(getClass().getResource("Gewinner.fxml"));
             Scene spielScene = new Scene(spielParent);
             Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
             window.setScene(spielScene);
