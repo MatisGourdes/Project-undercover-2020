@@ -156,8 +156,10 @@ Für jede Szene wurde eine FXML-Datei mit SceneBuilder editiert, welche mit eine
 
 ### 7.1 Übersicht der Struktur des Programms
 ### 7.2 Ausführliches Klassendiagramm (latest update: release_v1.0_MVP)
-![Diagramm Klassen](https://github.com/MatisGourdes/Project-undercover-2020/blob/release_v1.0_MVP/Documentation/Klassendiagramm%20MVP.png)
+![Diagramm Klassen](https://github.com/MatisGourdes/Project-undercover-2020/blob/master/Documentation/KlassenDiagramm.png)
 
+### 7.3 UML Klassendiagramm
+![UML Diagramm](https://github.com/MatisGourdes/Project-undercover-2020/blob/release_v1.0_MVP/Documentation/Klassendiagramm%20MVP.png)
 
 ## 8. Documentation Sprint 1
 ### 8.1 Taskliste der User Stories 
@@ -278,6 +280,7 @@ Zur Umsetzung des Sprints 2 wurden bereits grundlegene Bausteine gelegt, dazu m�
 *Velocity: 19 Std*
 
 ### 9.2 Klassendiagramm
+
 ### 9.3 Wichtige Code-snippets
 ### 9.4 Testfälle
 ### 9.5 Fazit und Retrospektive
