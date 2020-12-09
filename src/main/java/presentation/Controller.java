@@ -20,7 +20,7 @@ import java.io.IOException;
 import java.util.Random;
 import java.util.Vector;
 
-public class Controller extends Einstellungen {
+public class Controller {
 
     @FXML
     public TableView<Spieler> tableViewSpieler; //Tabelle zur Anzeige der Spielers
