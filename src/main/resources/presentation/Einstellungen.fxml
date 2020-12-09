@@ -9,51 +9,56 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" stylesheets="@theme.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.Einstellungen">
    <children>
-      <HBox alignment="CENTER" layoutX="177.0" layoutY="81.0" prefHeight="39.0" prefWidth="423.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+      <VBox alignment="CENTER" layoutY="56.0" prefHeight="344.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="56.0">
          <children>
-            <FlowPane prefHeight="39.0" prefWidth="645.0">
+            <HBox alignment="CENTER" prefHeight="39.0" prefWidth="423.0">
                <children>
-                  <Label prefHeight="21.0" prefWidth="156.0" text="neues Wort addieren">
-                     <font>
-                        <Font size="10.0" />
-                     </font>
-                     <FlowPane.margin>
-                        <Insets bottom="10.0" left="25.0" right="10.0" top="10.0" />
-                     </FlowPane.margin>
-                  </Label>
-                  <TextField fx:id="wortCitizen" prefHeight="25.0" prefWidth="107.0" promptText="Wort für Citizen">
-                     <FlowPane.margin>
-                        <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
-                     </FlowPane.margin>
-                  </TextField>
-                  <TextField fx:id="wortUndercover" prefHeight="25.0" prefWidth="126.0" promptText="Wort für Undercover">
-                     <FlowPane.margin>
-                        <Insets left="10.0" />
-                     </FlowPane.margin>
-                  </TextField>
-                  <Button fx:id="neuesWortBestaetigen" mnemonicParsing="false" onAction="#woerterAddieren" prefHeight="28.0" prefWidth="77.0" text="speichern">
-                     <FlowPane.margin>
-                        <Insets left="30.0" />
-                     </FlowPane.margin>
-                  </Button>
+                  <FlowPane prefHeight="39.0" prefWidth="645.0">
+                     <children>
+                        <Label prefHeight="21.0" prefWidth="156.0" text="neues Wort addieren">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                           <FlowPane.margin>
+                              <Insets bottom="10.0" left="25.0" right="10.0" top="10.0" />
+                           </FlowPane.margin>
+                        </Label>
+                        <TextField fx:id="wortCitizen" prefHeight="25.0" prefWidth="107.0" promptText="Wort für Citizen">
+                           <FlowPane.margin>
+                              <Insets bottom="5.0" left="10.0" right="15.0" top="5.0" />
+                           </FlowPane.margin>
+                        </TextField>
+                        <TextField fx:id="wortUndercover" prefHeight="25.0" prefWidth="126.0" promptText="Wort für Undercover">
+                           <FlowPane.margin>
+                              <Insets left="10.0" />
+                           </FlowPane.margin>
+                        </TextField>
+                        <Button fx:id="neuesWortBestaetigen" mnemonicParsing="false" onAction="#woerterAddieren" prefHeight="28.0" prefWidth="77.0" text="speichern">
+                           <FlowPane.margin>
+                              <Insets left="30.0" />
+                           </FlowPane.margin>
+                        </Button>
+                     </children>
+                  </FlowPane>
                </children>
-            </FlowPane>
+            </HBox>
+            <HBox alignment="TOP_CENTER" prefHeight="278.0" prefWidth="491.0">
+               <children>
+                  <TableView fx:id="tableViewWoerter" prefHeight="265.0" prefWidth="385.0">
+                    <columns>
+                      <TableColumn fx:id="spalteCitizen" prefWidth="189.99994659423828" text="Citizen" />
+                        <TableColumn fx:id="spalteUndercover" prefWidth="191.3333740234375" text="Undercover" />
+                    </columns>
+                  </TableView>
+               </children>
+            </HBox>
          </children>
-      </HBox>
-      <HBox alignment="TOP_CENTER" layoutX="1.0" layoutY="120.0" prefHeight="278.0" prefWidth="491.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="125.0">
-         <children>
-            <TableView fx:id="tableViewWoerter" prefHeight="265.0" prefWidth="385.0">
-              <columns>
-                <TableColumn fx:id="spalteCitizen" prefWidth="189.99994659423828" text="Citizen" />
-                  <TableColumn fx:id="spalteUndercover" prefWidth="191.3333740234375" text="Undercover" />
-              </columns>
-            </TableView>
-         </children>
-      </HBox>
+      </VBox>
       <Button fx:id="backToHauptmenueBtn" layoutX="442.0" layoutY="10.0" mnemonicParsing="false" onAction="#switchToHauptmenue" text="Zurück zum Hauptmenü" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0" />
    </children>
 </AnchorPane>
