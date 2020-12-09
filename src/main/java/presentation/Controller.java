@@ -33,6 +33,7 @@ public class Controller {
     @FXML
     public TableColumn<Spieler, String> nameTableView; //Anzeige des Namens der Spieler
 
+
     public int anzahlSpieler; //Anzahl Spieler
     public int spielerNr = 1; //Variable für die Nummerierung der Spieler
     private static Vector<Spieler> spielerListe = new Vector<Spieler>(); //Vektor zur Speicherung aller Spieler inkl. Daten
