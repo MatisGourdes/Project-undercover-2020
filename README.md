@@ -119,7 +119,7 @@ Priorisierung:  1 = Basis‐Merkmal
 | 4. *Rolle zuteilen* | Als Spieler möchte ich eine Rolle zugewiesen werden (ohne es zu wissen), um eine Runde spielen zu können. | 1 | 5 Stunden | Jede Spieler kriegt eine Rolle |
 | 5. *Einleitung* | Als Spieler möchte ich wissen wer als nächstes dran kommt. Ich möchte auch dass der Computer erklärt an jeden Schritt was wir machen müssen. | 2 | 2 Stunden | Verständliche Anzeigen |
 | 6. *Wörterverteilung* | Als Spieler möchte ich ein Wort empfangen, um eine Runde spielen zu können. | 1 | 5 Stunden | Jeder Spieler bekommt ein Wort |
-| 7. *Wort eingeben* | Als Spieler möchte ich in jede runde ein Wort eingeben und dass er in einer Tabelle erscheint. | 3 | 4 Stunden | Textfeld + Anzeige |
+| 7. *Schönes Programm* | Als Spieler möchte ich dass der Programm angenehm ist und dass man schnell versteht wie es geht. | 3 | 4 Stunden | Ein css mit schöne farben und alles schön verständlich |
 | 8. *Wahl eine Person zu entfernen* | Als Spieler möchte ich die Möglichkeit haben an jede Runde ein anderen Spieler zu wählen um den Entfernen. | 1 | 5 Stunden | Eine Person kann entfernt sein |
 | 9. *Wort raten* | Als Spieler(Mr White) möchte ich versuchen den Wort zu raten , wenn ich angeklagt wurde um eine Runde zu gewinnen. | 1 | 2 Stunden | Textfeld + Wort raten |
 | 10. *Spiel ende* | Als Spieler möchte ich wissen wer gewonnen hat und wieder auf den Hauptmenü kommen. | 3 | 4 Stunden | Scene mit Resultat und Hauptmenü Taste |
@@ -269,8 +269,8 @@ Zur Umsetzung des Sprints 2 wurden bereits grundlegene Bausteine gelegt, dazu m�
 | Task 15 | Task 14 Javafx implementierung auf den Hauptmenü | User Story 3 | 2 Stunden |
 | Task 16 | Befehle/ Einleitungen in eine Klasse Schreiben | User Story 5 | 1 Stunde |
 | Task 17 | Befehle in Javafx implementieren | User Story 5 | 1 Stunde |
-| Task 18 | Vektor zur Speicherung und Ausgabe der Wörter | User Story 7 | 2 Stunden |
-| Task 19 | Tabelle mit alle eingegebene Wörter (javafx) | User Story 7 | 2 Stunden |
+| Task 18 | Ein css schreiben wo alle farben und Typographie definiert ist | User Story 7 | 2 Stunden |
+| Task 19 | Alle Tasten und Tabellen organisieren + Photo hinzufügen | User Story 7 | 2 Stunden |
 | Task 20 | Javafx Spiel ende Seite | User Story 10 | 2 Stunden |
 | Task 21 | Programm um zu anzeigen wer gewonnen hat | User Story 10 | 2 Stunden |
 | Task 22 | Eine Wörter Liste machen | User Story 11 | 1 Stunde |
@@ -279,7 +279,10 @@ Zur Umsetzung des Sprints 2 wurden bereits grundlegene Bausteine gelegt, dazu m�
 *Velocity: 19 Std*
 
 ### 9.2 Klassendiagramm
-
+Klassen Diagramm Package domain:
+![Klassendiagramm domain Sprint 2:](https://github.com/MatisGourdes/Project-undercover-2020/blob/master/Documentation/UML%20Diagramm%20Package%20domain%20.png)
+Klassen Diagramm Package presentation:
+![Klassendiagramm presentation Sprint 2:](https://github.com/MatisGourdes/Project-undercover-2020/blob/master/Documentation/UML%20Diagramm%20package%20presentation.png)
 ### 9.3 Wichtige Code-snippets
 ### 9.4 Testfälle
 ### 9.5 Fazit und Retrospektive
