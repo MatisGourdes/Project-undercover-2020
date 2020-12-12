@@ -13,7 +13,6 @@ public class Main extends Application {
         stage.setScene(new Scene(root, 500, 500));
         stage.setTitle("Undercover");
         stage.show();
-        stage.getScene().getStylesheets().add(getClass().getResource("theme.css").toExternalForm());
     }
 
     public static void main(String[] args) {
