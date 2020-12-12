@@ -33,13 +33,14 @@ public class Controller {
     @FXML
     public TableColumn<Spieler, String> nameTableView; //Anzeige des Namens der Spieler
 
+
     public int anzahlSpieler; //Anzahl Spieler
     public int spielerNr = 1; //Variable für die Nummerierung der Spieler
     private static Vector<Spieler> spielerListe = new Vector<Spieler>(); //Vektor zur Speicherung aller Spieler inkl. Daten
-
+    public static int WerGewinnt;
 
     public void initialize() {
-        addPlayerBtn.setDisable(true);//Spieler darf erst addiert werden, wenn die Anzahl Spieler eingegeben wurde
+            addPlayerBtn.setDisable(true);//Spieler darf erst addiert werden, wenn die Anzahl Spieler eingegeben wurde
     }
 
 
@@ -107,28 +108,9 @@ public class Controller {
 
     }
 
-    @FXML
-    public void neuesSpiel(ActionEvent event) throws IOException {
-        //reset Aller Variablen
-        spielerListe.removeAllElements();
-        anzahlSpieler = 0;
-        spielerNr = 1;
-        showLebendigeSpieler().clear();
-        showSpieler().clear();
-        //Zurück zum Hauptmenü
-        Parent spielParent = FXMLLoader.load(getClass().getResource("hauptmenue.fxml"));
-        Scene spielScene = new Scene(spielParent);
-        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        window.setScene(spielScene);
-        window.setTitle("Hauptmenü");
-        window.show();
-    }
 
-    //Java-Fenster quittieren
-    @FXML
-    private void exit(ActionEvent event) throws IOException {
-        Platform.exit();
-    }
+
+
 
     // getter für den Zugang zur Spieler Liste
     public static Vector<Spieler> getSpielerListe() {

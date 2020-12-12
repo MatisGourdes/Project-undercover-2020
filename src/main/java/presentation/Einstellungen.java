@@ -85,7 +85,7 @@ public class Einstellungen extends WortReserve implements Initializable {
     }
 
     //Methode zur speicherung der Wörter für die Tableview
-    public class Wort{
+    public static class Wort extends Controller {
         private String wortC, wortU;
         public String getWortC(){
             return wortC;
@@ -108,4 +108,5 @@ public class Einstellungen extends WortReserve implements Initializable {
             this.wortU = wortU;
         }
     }
+
 }

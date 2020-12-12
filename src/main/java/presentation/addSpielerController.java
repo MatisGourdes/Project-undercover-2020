@@ -104,21 +104,30 @@ public class addSpielerController extends Controller{
 
     // Anzahl Spieler wird gespeichert, wenn auf Btn "speichern" gedrückt wird
     public void save(ActionEvent event) throws IOException{
-        try{
+        try {
             anzahlSpieler = Integer.parseInt(eingabeAnzahlSpieler.getText());
-            eingabeAnzahlSpieler.setDisable(true);
-            speichern.setText("gespeichert !");
-            speichern.setDisable(true);
-            spielerNrLabel.setText("Spieler 1:");
-            addPlayerBtn.setDisable(false);
-            //Initialisierung der Tableview für die Anzeige der Spieler
-            nrTableView.setCellValueFactory(new PropertyValueFactory<Spieler, Integer>("spielerNr"));
-            nameTableView.setCellValueFactory(new PropertyValueFactory<Spieler, String>("name"));
+            if (anzahlSpieler>=4) {
+                eingabeAnzahlSpieler.setDisable(true);
+                speichern.setText("gespeichert !");
+                speichern.setDisable(true);
+                spielerNrLabel.setText("Spieler 1:");
+                addPlayerBtn.setDisable(false);
+                //Initialisierung der Tableview für die Anzeige der Spieler
+                nrTableView.setCellValueFactory(new PropertyValueFactory<Spieler, Integer>("spielerNr"));
+                nameTableView.setCellValueFactory(new PropertyValueFactory<Spieler, String>("name"));
+            }
+            else{
+                eingabeAnzahlSpieler.setDisable(false);
+                speichern.setDisable(false);
+                addPlayerBtn.setDisable(true);
+                eingabeAnzahlSpieler.clear();
+                spielerAnzahlLabel.setText("Sie müssen mehr als 4 sein");
+            }
         }
         //Meldung, falls eine inkorrekte Eingabe gegeben wurde
         catch (NumberFormatException e){
             eingabeAnzahlSpieler.clear();
-            spielerAnzahlLabel.setText("Geben Sie eine Zahl ein.");
+            spielerAnzahlLabel.setText("Geben Sie eine Zahl ein");
         }
         getSpielerListe().removeAllElements();
         spielerNr = 1;
