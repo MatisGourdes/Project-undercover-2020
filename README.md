@@ -31,6 +31,7 @@ Team: Theo Portmann, Michael Schaetzel, Lucas Lagel, Maxime Roellinger, Gourdes 
 - [UML Package, Klassen- und Sequenzdiagramme]()
 - [Dokumentation wichtiger Code Snippets]()
 - [Testfaelle bedingt durch Aktzeptanzkriterium]()
+- [Black Box Testing]()
 
 ## 1. Abstrakt
 Unser Team besteht aus Mechatronik-Trinational Studierenden. Im Rahmen des Moduls SWE und Informatik II entwickeln wir eine etwas komplexere Software, um den zuvor gelernten Stoff durch die Implementierung einer lauffähigen Applikation zu vertiefen. Dabei wird die Komplexität der Applikation abgestimmt auf die individuellen Vorkenntnisse der Studierenden. 
@@ -154,11 +155,12 @@ In Git program:
 Für jede Szene wurde eine FXML-Datei mit SceneBuilder editiert, welche mit einem Hauptcontroller namens *Controller* verbunden wird. Dieser Controller ist im Kern unseres Programms, er bedient alle Funktionen des GUI und wechselt Szenen je nach dem, welcher Schritt als nächstes vorkommt. Ferner nimmt der Controller zugriff auf externe Informationen, wie den Konstruktor *Spieler* für die herstellung zusätzlicher Spielern, oder auf die Klasse *WortReserve* für das Auslesen der Wörter aus der .txt-Datei. Die Zuweisung der Rollen erfolgt auch extern, da die Funktionsweise etwa komplexer ist. Mehr Informationen dazu sind in der Dokumentation des Sprints 1 zu finden. Im Sprint 2 wurde die Klasse *Einstellungen* addiert, damit zusätzliche Wörter hinzugefügt werden können.
 
 ### 7.1 Übersicht der Struktur des Programms
-### 7.2 Ausführliches Klassendiagramm (latest update: release_v1.0_MVP)
 ![Diagramm Klassen](https://github.com/MatisGourdes/Project-undercover-2020/blob/master/Documentation/KlassenDiagramm.png)
+### 7.2 Ausführliches Klassendiagramm
 
-### 7.3 UML Klassendiagramm
-![UML Diagramm](https://github.com/MatisGourdes/Project-undercover-2020/blob/release_v1.0_MVP/Documentation/Klassendiagramm%20MVP.png)
+### 7.3 Sequenz-Diagramm
+
+### 7.4 Package-Diagramm
 
 ## 8. Documentation Sprint 1
 ### 8.1 Taskliste der User Stories 
@@ -285,5 +287,32 @@ Klassen Diagramm Package domain:
 Klassen Diagramm Package presentation:
 ![Klassendiagramm presentation Sprint 2:](https://github.com/MatisGourdes/Project-undercover-2020/blob/master/Documentation/UML%20Diagramm%20package%20presentation.png)
 ### 9.3 Wichtige Code-snippets
+
+Eine der letzten User-Stories war die Möglichkeit für die Benutzer ihre eigene Wörter zur Liste zu addieren. Zu diesem Zweck mussten vorerst alle Wörter in einer .txt-Datei gespeichert werden, was im Sprint 1 erledigt wurde. Damit die hinzugefügte Wörter (für Citizen und Undercover) in einer TableView direkt angezeigt werden konnten, mussten sie in einem Konstruktor *Wort* gepeichert werden. Dieses begeisterungs-Merkmal ermöglicht eine unendliche Vielfalt von Wörter zu speichern und verlängert drastisch die Lebensdauer des Spiels.
+
+    @FXML
+    void woerterAddieren(ActionEvent event) {
+        try (FileWriter w = new FileWriter("src/main/resources/domain/woerterDatenBank", true)) {
+            String eingabe = wortCitizen.getText() + ";" + wortUndercover.getText() + "\n";
+            w.write(eingabe);
+        }
+        catch (IOException e) {
+            System.err.println("Fehler beim Schreiben in der Datei.");
+            System.err.println(e.getMessage());
+        }
+
+        //anzeigen in der Tabelle
+        Wort temp = new Wort(wortCitizen.getText(), wortUndercover.getText());
+        tableViewWoerter.getItems().add(temp);
+        wortUndercover.clear();
+        wortCitizen.clear();
+        //update Liste der Wörter
+        readFile();
+    }
+
 ### 9.4 Testfälle
+#### 9.4.1 Black Box testing
+![Wer bekommt ein Wort](https://github.com/MatisGourdes/Project-undercover-2020/blob/master/Documentation/WortVerteilung.PNG)
+
+![Wer darf das Wort erraten:](https://github.com/MatisGourdes/Project-undercover-2020/blob/331f47478602a9f6dfc6661f5cc3b579cc945786/Documentation/WortRaten.PNG)
 ### 9.5 Fazit und Retrospektive

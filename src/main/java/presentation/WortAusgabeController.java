@@ -22,11 +22,10 @@ public class WortAusgabeController extends Controller{
     @FXML
     private Button HideWord;
     @FXML
-    private Button btnWorter;
+    private Button NaechsterSpielerButton;
 
 
-
-    private int letzteRunde = 1; //
+    private int letzteRunde = 1; //Die Variabel ändert sich nur an die letzte Runde des for
     private boolean wortAngezeigt = false;
     private String printLabelWort;
     private int spielerWortAusgabe = 0;//Variablen für die Anzeige der Wörter zu den Spielern
@@ -34,7 +33,7 @@ public class WortAusgabeController extends Controller{
     //Ausgabe der Wörter zu jedem Spieler
     public void ausgabeWoerter(ActionEvent event) throws IOException {
 
-        btnWorter.setText("Nächster Spieler");
+        NaechsterSpielerButton.setText("Nächster Spieler");
         WortAusgabe.setText("");
         HideWord.setText("click to show");
         wortAngezeigt = false;
