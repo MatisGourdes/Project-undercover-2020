@@ -18,6 +18,7 @@ public class WortAusgabeControllerTest {
     Assertions.assertEquals(0,spieler1.getRolle());
     Assertions.assertEquals(1,spieler2.getRolle());
     Assertions.assertEquals(2,spieler3.getRolle());
+
 }
 
 
