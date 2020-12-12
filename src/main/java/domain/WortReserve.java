@@ -1,5 +1,6 @@
 package domain;
 
+import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Vector;
@@ -12,8 +13,10 @@ public static Vector<String> woerterListe = new Vector<>();
     public static void readFile(){
         woerterListe.clear();
         //speichert alle Wörter der txt-Datei in einem Vektor
-        String path = System.getProperty("user.dir") + "\\src\\main\\resources\\domain\\woerterDatenBank";
+        String path = System.getProperty("user.dir") + File.separator + "src"
+        + File.separator + "main" + File.separator + "resources" + File.separator + "domain" + File.separator + "woerterDatenBank";
         System.out.println("file read, path: " + path);
+
         try (FileReader f = new FileReader(path)) {
             char c[] = new char[10000];
             f.read(c);

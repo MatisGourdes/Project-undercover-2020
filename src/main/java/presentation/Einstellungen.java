@@ -15,6 +15,7 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.net.URL;
@@ -66,7 +67,9 @@ public class Einstellungen extends WortReserve implements Initializable {
     //Wörter für citizen und Undercover addieren
     @FXML
     void woerterAddieren(ActionEvent event) {
-        try (FileWriter w = new FileWriter("src/main/resources/domain/woerterDatenBank", true)) {
+        String path = System.getProperty("user.dir") + File.separator + "src"
+                + File.separator + "main" + File.separator + "resources" + File.separator + "domain" + File.separator + "woerterDatenBank";
+        try (FileWriter w = new FileWriter(path, true)) {
             String eingabe = wortCitizen.getText() + ";" + wortUndercover.getText() + "\n";
             w.write(eingabe);
         }
