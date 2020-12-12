@@ -13,7 +13,7 @@ public static Vector<String> woerterListe = new Vector<>();
         woerterListe.clear();
         //speichert alle Wörter der txt-Datei in einem Vektor
         String path = System.getProperty("user.dir") + "\\src\\main\\resources\\domain\\woerterDatenBank";
-        //System.out.println(path);
+        System.out.println(path);
         try (FileReader f = new FileReader(path)) {
             char c[] = new char[10000];
             f.read(c);
