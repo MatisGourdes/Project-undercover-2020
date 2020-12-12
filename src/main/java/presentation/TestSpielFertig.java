@@ -18,19 +18,19 @@ public class TestSpielFertig extends Controller{
 
         if (domain.winCondition.testUndercover() == true) {//Es bleiben Nur Undercover
              WerGewinnt=1;//UNDERCOVER HABEN GEWONNEN
-            LaunchGewinner(event);
+            LaunchGewinner(event);// Gewinner fxml datei starten
         } else if (domain.winCondition.testCitizen() == true) {// Es bleiben nur Citizen
             WerGewinnt=0;//CITIZEN HABEN GEWONNEN
-            LaunchGewinner(event);
+            LaunchGewinner(event);// Gewinner fxml datei starten
         } else if (domain.winCondition.test2Spieler() == true) {// Kontrolle um zu prüfen ob es nur noch 2 Personen gibt
             for (int i = 0; i < getSpielerListe().size(); i++) {
                 if (getSpielerListe().elementAt(i).getStatus() == true) {
                     if (getSpielerListe().elementAt(i).getRolle() == 1) {//Hier gibt es noch 1 Undercover im Spiel
                         WerGewinnt=1;//UNDERCOVER HABEN GEWONNEN
-                        LaunchGewinner(event);
+                        LaunchGewinner(event);// Gewinner fxml datei starten
                     } else if (getSpielerListe().elementAt(i).getRolle() == 2) {// Es gibt noch ein Mr White im Spiel
                         WerGewinnt=2;//MR WHITE HABEN GEWONNEN
-                        LaunchGewinner(event);
+                        LaunchGewinner(event);// Gewinner fxml datei starten
                     }
                 }
 
@@ -45,7 +45,7 @@ public class TestSpielFertig extends Controller{
         }
     }
 
-    public static void LaunchGewinner(ActionEvent event) throws IOException{
+    public static void LaunchGewinner(ActionEvent event) throws IOException{// Gewinner fxml datei wird hier gestartet
         Parent spielParent = FXMLLoader.load(Controller.class.getResource("Gewinner.fxml"));
         Scene spielScene = new Scene(spielParent);
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
