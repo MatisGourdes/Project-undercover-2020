@@ -312,4 +312,5 @@ Eine der letzten User-Stories war die Möglichkeit für die Benutzer ihre eigene
 
 ### 9.4 Testfälle
 #### 9.4.1 Black Box testing
+![Wer darf das Wort erraten:] (https://github.com/MatisGourdes/Project-undercover-2020/blob/331f47478602a9f6dfc6661f5cc3b579cc945786/Documentation/WortRaten.PNG)
 ### 9.5 Fazit und Retrospektive
