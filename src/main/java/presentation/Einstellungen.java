@@ -42,6 +42,13 @@ public class Einstellungen extends WortReserve implements Initializable {
         wortObs.removeAll();
         spalteCitizen.setCellValueFactory(new PropertyValueFactory<Wort, String>("wortC"));
         spalteUndercover.setCellValueFactory(new PropertyValueFactory<Wort, String>("wortU"));
+
+        try {
+            createWoerterListe();
+        }
+        catch (IOException e){
+            System.err.println("failed to initialize Word List");
+        }
         readFile();
 
         //Eintrag der Wörter in einer ObservableList
@@ -67,16 +74,8 @@ public class Einstellungen extends WortReserve implements Initializable {
     //Wörter für citizen und Undercover addieren
     @FXML
     void woerterAddieren(ActionEvent event) {
-        String path = System.getProperty("user.dir") + File.separator + "src"
-                + File.separator + "main" + File.separator + "resources" + File.separator + "domain" + File.separator + "woerterDatenBank";
-        try (FileWriter w = new FileWriter(path, true)) {
-            String eingabe = wortCitizen.getText() + ";" + wortUndercover.getText() + "\n";
-            w.write(eingabe);
-        }
-        catch (IOException e) {
-            System.err.println("Fehler beim Schreiben in der Datei.");
-            System.err.println(e.getMessage());
-        }
+        //speichere in der .txt-Datei
+        wortAddieren(wortCitizen.getText(), wortUndercover.getText());
 
         //anzeigen in der Tabelle
         Wort temp = new Wort(wortCitizen.getText(), wortUndercover.getText());
