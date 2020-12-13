@@ -128,23 +128,25 @@ Priorisierung:  1 = Basis‐Merkmal
 
 ## 6. Build Anleitung
 Git clone:  https://github.com/MatisGourdes/Project-undercover-2020
-####In einem IDE (hier IntelliJ): 
+
+#### In einem IDE (hier IntelliJ): 
 1. Laden Sie den Master als Zip-Datei aus dem Repo herunter, entpacken Sie ihn.
 2. In IntelliJ, klicken Sie auf *File* -> *New* -> *Project from existing Sources* und wählen Sie die entpackte Datei.
 3. Wählen Sie *Import project from external model* und klicken Sie auf *Maven*. Bestätigen Sie mittels *Finish*.
 4. Stellen Sie sicher, dass Ihre Umgebung auf Java 11 eingestellt ist.
 5. Überprüfen Sie ob Sources, Tests und Resources korrekt anerkannt sind unter *Project Structure* -> *Modules*.
 6. Im Terminal, lassen Sie folgenden Commands laufen:
+    ```
     mvn clean compile
     mvn clean package
     java -jar /shade/Projekt-Undercover-2020.jar
-
+    ```
 Alternativ können Sie ein Pull-Request erstellen und dann in IntelliJ ein neues Projekt aus *Version Control* erstellen.
 
-####Das Spiel ohne IDE laufen lassen:
+#### Das Spiel ohne IDE laufen lassen:
 1. Laden Sie den Master als Zip-Datei herunter und entpacken Sie ihn.
 2. Stellen Sie sicher, dass Sie auf Ihrem Rechner über eine aktuelle Version der Java-Umgebung verfügen.
-3. Im Verzeichnis *shade* finden Sie die Datei *Undercover-Projekt-2020.jar*, die Sie starten können. Viel Spass !
+3. Im Verzeichnis *shade* finden Sie die Datei **Undercover-Projekt-2020.jar**, die Sie starten können. Viel Spass !
 
 
 ## 7. Das Programm
@@ -203,7 +205,7 @@ Task 10: Hier muss getestet werden, ob der MrWhite das richtig Wort erraten hat 
 ### 8.3 Wichtige Code snippets
 Wichtig ist es in unser Programm, dass die Zuweisung der Rollen zu jedem Spieler zufällig stattfindet. Ferner muss bei einem neuen Spiel die Zuweisung erneut stattfinden, damit die Spieler eine neue Rolle bekommen.
 Diesbezüglich haben wir uns im Laufe dieses Sprints damit befasst, eine *Rollezuweisung* Klasse zu programmieren, die all diese Anforderungen berücksichtigt. Hier ein Überblick darauf:
-
+```
     public static void randomRolle() {
         rolleVerteilung();
         //willkürliche Zuweisung der Rollen in Betrachtung auf Anfangsbedingungen
@@ -240,18 +242,18 @@ Diesbezüglich haben wir uns im Laufe dieses Sprints damit befasst, eine *Rollez
             mrWhite = (int) (Math.random()*3);
         }
     }
-
+```
 ### 8.4 Testfälle
 Testfall #1: Überprüfung der korrekten Zuweisung der Rollen (Methode *Rollezuweisung* und Eintragung im Konstruktor *Spieler*):
-
+```
     RolleZuweisung.randomRolle();
     assertNotSame(testSpieler.getRolle(), 4);
-    
+``` 
 Testfall #2: Überprüfung der Ausschliessung eines Spielers (Status wird auf "false" gesetzt):
-
+```
     testSpieler.setStatus(false);
     assertEquals(new Spieler(1, "Test", false, 4).getStatus(), testSpieler.getStatus());    
-    
+```    
         
 ### 8.5 Fazit und Retrospektive
 Alle Tasks wurden gemäss der Akzeptanzkriterien (*siehe 5. User Stories*) erfolgreich durchgesetzt und die wichtigsten Bestandteile des Spiels sind funktionsfähig. Das MVP konnte ohne grosse Hindernisse erstellt werden, selbst es wenn noch viel Raum für Verbesserungen gibt. Die Benutzeroberfläche ist noch primitiv und unklar, während das Programm selbst optimiert werden kann und die FXML-Bestandteile von den Java-Klassen noch getrennt werden müssen. Jedoch haben wir bereits einige Tasks vom Sprint 2 erledigt, wie zum Beispiel die Möglichkeit Wörter aus einer Text-Datei einzulesen bzw. in der Datei zu schreiben, weil es an diesem Zeitpunkt der Programmierung am sinnvollsten war.
@@ -279,18 +281,18 @@ Zur Umsetzung des Sprints 2 wurden bereits grundlegene Bausteine gelegt, dazu m�
 *Velocity: 19 Std*
 
 ### 9.2 Klassendiagramm
-####Klassendiagramm Package domain:
+#### Klassendiagramm Package domain:
 
 ![Klassendiagramm domain Sprint 2:](https://github.com/MatisGourdes/Project-undercover-2020/blob/master/Documentation/UML%20Diagramm%20Package%20domain%20.png)
 
-####Klassendiagramm Package presentation:
+#### Klassendiagramm Package presentation:
 
 ![Klassendiagramm presentation Sprint 2:](https://github.com/MatisGourdes/Project-undercover-2020/blob/master/Documentation/UML%20Diagramm%20package%20presentation.png)
 
 ### 9.3 Wichtige Code-snippets
 
 Eine der letzten User-Stories war die Möglichkeit für die Benutzer ihre eigene Wörter zur Liste zu addieren. Zu diesem Zweck mussten vorerst alle Wörter in einer .txt-Datei gespeichert werden, was im Sprint 1 erledigt wurde. Damit die hinzugefügte Wörter (für Citizen und Undercover) in einer TableView direkt angezeigt werden konnten, mussten sie in einem Konstruktor *Wort* gepeichert werden. Dieses begeisterungs-Merkmal ermöglicht eine unendliche Vielfalt von Wörter zu speichern und verlängert drastisch die Lebensdauer des Spiels.
-
+```
         //speichert alle Wörter der txt-Datei in einem Vektor
         public static void readFile(){
             woerterListe.clear();
@@ -326,7 +328,7 @@ Eine der letzten User-Stories war die Möglichkeit für die Benutzer ihre eigene
                 System.err.println(e.getMessage());
             }
         }
-
+```
 ### 9.4 Testfälle
 #### 9.4.1 Black Box testing
 ![Wer bekommt ein Wort](https://github.com/MatisGourdes/Project-undercover-2020/blob/master/Documentation/WortVerteilung.PNG)
