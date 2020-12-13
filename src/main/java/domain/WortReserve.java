@@ -19,7 +19,7 @@ public class WortReserve {
     private static final String wortFilePath = wortVerzeichnisPath + File.separator + wortFileName;
 
     //Schreibe ursprüngliche Wörter - falls nicht bereits vorhanden -
-    public void createWoerterListe() throws IOException {
+    public static void createWoerterListe() throws IOException {
         createUserHomeFolder();
         if (new File(wortFilePath).isFile()) {
             LOG.info(wortFilePath + " already present, will not change the property file!");
@@ -27,7 +27,6 @@ public class WortReserve {
             LOG.info(wortFilePath + " property file NOT present, we will initialize the file with the properties from the resources");
             initWoerterListe("Paris;New York\nBerliner Mauer;\nChinesische Mauer\nTheater;Oper\nBaum;Tannenbaum\nNemo;Willy\n");
         }
-
     }
 
     //speichert alle Wörter der txt-Datei in einem Vektor
@@ -54,8 +53,6 @@ public class WortReserve {
         }
 
     }
-
-
     //Speichere das Wort in der Text-Datei
     public static void wortAddieren(String wortC,String wortU){
         try (FileWriter w = new FileWriter(wortFilePath, true)) {
@@ -69,7 +66,7 @@ public class WortReserve {
     }
 
     //Initialisierung der WoerterListe
-    public void initWoerterListe(String initWoerter) throws IOException {
+    protected static void initWoerterListe(String initWoerter) throws IOException {
 
         try{
             File outputStream = new File(wortFilePath);
@@ -84,7 +81,7 @@ public class WortReserve {
     }
 
     //erstelle - falls nötig - das Verzeichnis
-    private void createUserHomeFolder() throws IOException {
+    private static void createUserHomeFolder() throws IOException {
         File f=new File(wortVerzeichnisPath);
         if(!f.exists()) {
             boolean success = f.mkdir();

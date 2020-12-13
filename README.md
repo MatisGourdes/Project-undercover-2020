@@ -290,25 +290,41 @@ Klassen Diagramm Package presentation:
 
 Eine der letzten User-Stories war die Möglichkeit für die Benutzer ihre eigene Wörter zur Liste zu addieren. Zu diesem Zweck mussten vorerst alle Wörter in einer .txt-Datei gespeichert werden, was im Sprint 1 erledigt wurde. Damit die hinzugefügte Wörter (für Citizen und Undercover) in einer TableView direkt angezeigt werden konnten, mussten sie in einem Konstruktor *Wort* gepeichert werden. Dieses begeisterungs-Merkmal ermöglicht eine unendliche Vielfalt von Wörter zu speichern und verlängert drastisch die Lebensdauer des Spiels.
 
-    @FXML
-    void woerterAddieren(ActionEvent event) {
-        try (FileWriter w = new FileWriter("src/main/resources/domain/woerterDatenBank", true)) {
-            String eingabe = wortCitizen.getText() + ";" + wortUndercover.getText() + "\n";
-            w.write(eingabe);
+        //speichert alle Wörter der txt-Datei in einem Vektor
+        public static void readFile(){
+            woerterListe.clear();
+            System.out.println("file read, path: " + wortFilePath); //debug
+    
+            try (FileReader f = new FileReader(wortFilePath)) {
+                char c[] = new char[10000];
+                f.read(c);
+                String s = new String(c);
+                String[] result = s.split("\n|;");
+    
+                for (int i = 0; i < result.length; i++) {
+                    if (!result[i].equals("") && result[i] != null){
+                        woerterListe.add(result[i]);
+                        f.close();
+                    }
+                }
+            }
+            catch (IOException e) {
+                System.err.println("Fehler beim Einlesen der Datei.");
+                System.err.println(e.getMessage());
+            }
+    
         }
-        catch (IOException e) {
-            System.err.println("Fehler beim Schreiben in der Datei.");
-            System.err.println(e.getMessage());
+        //Speichere das Wort in der Text-Datei
+        public static void wortAddieren(String wortC,String wortU){
+            try (FileWriter w = new FileWriter(wortFilePath, true)) {
+                String eingabe = wortC + ";" + wortU + "\n";
+                w.write(eingabe);
+            }
+            catch (IOException e) {
+                System.err.println("Fehler beim Schreiben in der Datei.");
+                System.err.println(e.getMessage());
+            }
         }
-
-        //anzeigen in der Tabelle
-        Wort temp = new Wort(wortCitizen.getText(), wortUndercover.getText());
-        tableViewWoerter.getItems().add(temp);
-        wortUndercover.clear();
-        wortCitizen.clear();
-        //update Liste der Wörter
-        readFile();
-    }
 
 ### 9.4 Testfälle
 #### 9.4.1 Black Box testing

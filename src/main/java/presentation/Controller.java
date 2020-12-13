@@ -84,6 +84,8 @@ public class Controller {
         window.setScene(spielScene);
         window.setTitle("Undercover");
         window.show();
+        //Erstellung der Woerterliste
+        WortReserve.createWoerterListe();
     }
 
 
