@@ -128,25 +128,23 @@ Priorisierung:  1 = Basis‐Merkmal
 
 ## 6. Build Anleitung
 Git clone:  https://github.com/MatisGourdes/Project-undercover-2020
-In Git program: 
-1. Speichern Sie Ihre src Datei von Ihrem Git Projekt auf Ihre Rechner.
-2. Löschen Sie Ihre src Datei von Ihrem Git Projekt.
-3. Fügen Sie die pom.xml Datei mit dem geeignete Initialisierung in das Git Projekt.
-4. Fügen Sie die src Ordner von einem Maven Projekt in das Git Projekt.
-5. Klicken Sie auf den rechten Maus Taste in "Undercover": ->Configure ->Convert to Maven.
-6. Fügen Sie Ihre eigene Package in das Ordner src/main/java.
-7. Klicken Sie auf den rechten Maus Taste in "Undercover": ->Run as ->Maven clean.
-8. Klicken Sie auf den rechten Maus Taste in "Undercover": ->Run as ->Maven install.
-9. Prüfen Sie in das Ordner "target" ob Sie eine Datei .jar haben.
+####In einem IDE (hier IntelliJ): 
+1. Laden Sie den Master als Zip-Datei aus dem Repo herunter, entpacken Sie ihn.
+2. In IntelliJ, klicken Sie auf *File* -> *New* -> *Project from existing Sources* und wählen Sie die entpackte Datei.
+3. Wählen Sie *Import project from external model* und klicken Sie auf *Maven*. Bestätigen Sie mittels *Finish*.
+4. Stellen Sie sicher, dass Ihre Umgebung auf Java 11 eingestellt ist.
+5. Überprüfen Sie ob Sources, Tests und Resources korrekt anerkannt sind unter *Project Structure* -> *Modules*.
+6. Im Terminal, lassen Sie folgenden Commands laufen:
+    mvn clean compile
+    mvn clean package
+    java -jar /shade/Projekt-Undercover-2020.jar
 
-- Oder
-- 1. Gehen sie auf unsere Github repository.
-- 2. Speichern Sie die Datei auf Ihre Rechner.
-- 3. Entpacken Sie die Datei und Setzen sie an den gewünschten Ort. 
-- 4. Stellen Sie sicher, dass Sie eine javaFx Runtime-Umgebung haben.
-- 5. Doppelklicken Sie auf den Datei Paket
-- 6. Doppelklicken Sie auf  Undercoverlauncher.jar um den Software zu starten.
+Alternativ können Sie ein Pull-Request erstellen und dann in IntelliJ ein neues Projekt aus *Version Control* erstellen.
 
+####Das Spiel ohne IDE laufen lassen:
+1. Laden Sie den Master als Zip-Datei herunter und entpacken Sie ihn.
+2. Stellen Sie sicher, dass Sie auf Ihrem Rechner über eine aktuelle Version der Java-Umgebung verfügen.
+3. Im Verzeichnis *shade* finden Sie die Datei *Undercover-Projekt-2020.jar*, die Sie starten können. Viel Spass !
 
 
 ## 7. Das Programm
@@ -281,11 +279,14 @@ Zur Umsetzung des Sprints 2 wurden bereits grundlegene Bausteine gelegt, dazu m�
 *Velocity: 19 Std*
 
 ### 9.2 Klassendiagramm
-Klassen Diagramm Package domain:
+####Klassendiagramm Package domain:
+
 ![Klassendiagramm domain Sprint 2:](https://github.com/MatisGourdes/Project-undercover-2020/blob/master/Documentation/UML%20Diagramm%20Package%20domain%20.png)
 
-Klassen Diagramm Package presentation:
+####Klassendiagramm Package presentation:
+
 ![Klassendiagramm presentation Sprint 2:](https://github.com/MatisGourdes/Project-undercover-2020/blob/master/Documentation/UML%20Diagramm%20package%20presentation.png)
+
 ### 9.3 Wichtige Code-snippets
 
 Eine der letzten User-Stories war die Möglichkeit für die Benutzer ihre eigene Wörter zur Liste zu addieren. Zu diesem Zweck mussten vorerst alle Wörter in einer .txt-Datei gespeichert werden, was im Sprint 1 erledigt wurde. Damit die hinzugefügte Wörter (für Citizen und Undercover) in einer TableView direkt angezeigt werden konnten, mussten sie in einem Konstruktor *Wort* gepeichert werden. Dieses begeisterungs-Merkmal ermöglicht eine unendliche Vielfalt von Wörter zu speichern und verlängert drastisch die Lebensdauer des Spiels.
