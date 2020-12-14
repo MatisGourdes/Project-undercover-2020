@@ -17,21 +17,24 @@ Team: Theo Portmann, Michael Schaetzel, Lucas Lagel, Maxime Roellinger, Gourdes 
 6. [Build Anleitung](https://github.com/MatisGourdes/Project-undercover-2020#6-build-anleitung) 
 
 7. [Das Programm](https://github.com/MatisGourdes/Project-undercover-2020#7-das-programm)
+- [7.1 Übersicht der Struktur](https://github.com/MatisGourdes/Project-undercover-2020#71-%C3%BCbersicht-der-struktur-des-programms)
+- [7.2 Ausführliches Klassendiagramm](https://github.com/MatisGourdes/Project-undercover-2020#72-ausf%C3%BChrliches-klassendiagramm)
+- [7.3 Sequenzdiagramm](https://github.com/MatisGourdes/Project-undercover-2020#73-sequenz-diagramm)
+- [7.4 Package-Diagramm](https://github.com/MatisGourdes/Project-undercover-2020#74-package-diagramm)
 
 8. [Dokumentation Sprint 1](https://github.com/MatisGourdes/Project-undercover-2020#8-documentation-sprint-1)
-- [Taskliste der User Stories](https://github.com/MatisGourdes/Project-undercover-2020#--taskliste-der-user-stories)
-- [Anreicherung der User Stories]()
-- [UML Package, Klassen- und Sequenzdiagramme]()
-- [Dokumentation wichtiger Code Snippets]()
-- [Testfaelle bedingt durch Aktzeptanzkriterium]()
+- [8.1 Taskliste der User Stories](https://github.com/MatisGourdes/Project-undercover-2020#81-taskliste-der-user-stories)
+- [8.2 Klassendiagramm](https://github.com/MatisGourdes/Project-undercover-2020#82-klassendiagramm)
+- [8.3 Wichtige Code-Snippets](https://github.com/MatisGourdes/Project-undercover-2020#83-wichtige-code-snippets)
+- [8.4 Testfälle](https://github.com/MatisGourdes/Project-undercover-2020#84-testf%C3%A4lle)
+- [8.5 Retrospektive](https://github.com/MatisGourdes/Project-undercover-2020#85-fazit-und-retrospektive)
 
 9. [Dokumentation Sprint 2](https://github.com/MatisGourdes/Project-undercover-2020#9-documentation-sprint-2)
-- [Taskliste der User Stories (mit Schätzung)]()
-- [Anreicherung der User Stories]()
-- [UML Package, Klassen- und Sequenzdiagramme]()
-- [Dokumentation wichtiger Code Snippets]()
-- [Testfaelle bedingt durch Aktzeptanzkriterium]()
-- [Black Box Testing]()
+- [9.1 Taskliste der User Stories](https://github.com/MatisGourdes/Project-undercover-2020#91-taskliste-der-user-stories)
+- [9.2 Klassendiagramm](https://github.com/MatisGourdes/Project-undercover-2020#92-klassendiagramm)
+- [9.3 Wichtige Code-Snippets](https://github.com/MatisGourdes/Project-undercover-2020#93-wichtige-code-snippets)
+- [9.4 Testfälle](https://github.com/MatisGourdes/Project-undercover-2020#94-testf%C3%A4lle)
+- [9.5 Retrospektive](https://github.com/MatisGourdes/Project-undercover-2020#95-fazit-und-retrospektive)
 
 ## 1. Abstrakt
 Unser Team besteht aus Mechatronik-Trinational Studierenden. Im Rahmen des Moduls SWE und Informatik II entwickeln wir eine etwas komplexere Software, um den zuvor gelernten Stoff durch die Implementierung einer lauffähigen Applikation zu vertiefen. Dabei wird die Komplexität der Applikation abgestimmt auf die individuellen Vorkenntnisse der Studierenden. 
