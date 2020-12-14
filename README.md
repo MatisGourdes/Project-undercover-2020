@@ -139,7 +139,7 @@ Git clone:  https://github.com/MatisGourdes/Project-undercover-2020
 4. Stellen Sie sicher, dass Ihre Umgebung auf Java 11 eingestellt ist.
 5. Überprüfen Sie ob Sources, Tests und Resources korrekt anerkannt sind unter *Project Structure* -> *Modules*.
 6. Im Terminal, lassen Sie folgenden Commands laufen:
-    ```
+    ```Javascript
     mvn clean compile
     mvn clean package
     java -jar /shade/Projekt-Undercover-2020.jar
@@ -199,7 +199,7 @@ Task 7: Ein fxml-Datei soll erstellt werden, um ein Spieler zu entfernen. Eine L
 
 Task 8: Hier soll der Status (tot oder lebendig) der Spielern geändert werden können, wenn er von den Anderen ausgeschlossen wurde. 
 
-Task 9:  Ein fxml-Datei soll erstellt werden, um den MrWhite die Chance zu geben, das Wort von den Citizen zu raten, als er entfernt wurde.
+Task 9: Ein fxml-Datei soll erstellt werden, um den MrWhite die Chance zu geben, das Wort von den Citizen zu raten, als er entfernt wurde.
 
 Task 10: Hier muss getestet werden, ob der MrWhite das richtig Wort erraten hat oder nicht. Wenn ja, hat MrWhite das Spiel gewonnen. Wenn nein, soll das Spiel weiter laufen.
 
@@ -208,7 +208,7 @@ Task 10: Hier muss getestet werden, ob der MrWhite das richtig Wort erraten hat 
 ### 8.3 Wichtige Code snippets
 Wichtig ist es in unser Programm, dass die Zuweisung der Rollen zu jedem Spieler zufällig stattfindet. Ferner muss bei einem neuen Spiel die Zuweisung erneut stattfinden, damit die Spieler eine neue Rolle bekommen.
 Diesbezüglich haben wir uns im Laufe dieses Sprints damit befasst, eine *Rollezuweisung* Klasse zu programmieren, die all diese Anforderungen berücksichtigt. Hier ein Überblick darauf:
-```
+```Javascript
     public static void randomRolle() {
         rolleVerteilung();
         //willkürliche Zuweisung der Rollen in Betrachtung auf Anfangsbedingungen
@@ -248,12 +248,12 @@ Diesbezüglich haben wir uns im Laufe dieses Sprints damit befasst, eine *Rollez
 ```
 ### 8.4 Testfälle
 Testfall #1: Überprüfung der korrekten Zuweisung der Rollen (Methode *Rollezuweisung* und Eintragung im Konstruktor *Spieler*):
-```
+```Javascript
     RolleZuweisung.randomRolle();
     assertNotSame(testSpieler.getRolle(), 4);
 ``` 
 Testfall #2: Überprüfung der Ausschliessung eines Spielers (Status wird auf "false" gesetzt):
-```
+```Javascript
     testSpieler.setStatus(false);
     assertEquals(new Spieler(1, "Test", false, 4).getStatus(), testSpieler.getStatus());    
 ```    
@@ -283,31 +283,31 @@ Zur Umsetzung des Sprints 2 wurden bereits grundlegene Bausteine gelegt, dazu m�
 
 *Velocity: 19 Std*
 
-Task 11: Hier sollte die Regeln des Spiels so deutlich wie möglich geschrieben werden.
+Task 11: Hier sollen die Spielregeln so deutlich wie möglich geschrieben werden.
 
-Task 12: Weil die Regeln schwierig zu verstehen sind, wir haben beschlossen, dass ein diagramm wäre nützlich, um der Verlauf des Spiels noch deutlicher zu machen. In diese Task soll den Diagramm herstellt werden und soll in eine fxml-Datei und im Readme implementiert werden.
+Task 12: Weil die Regeln schwierig nachvollziehbar sind, haben wir beschlossen, dass ein Diagramm nützlich wäre, um den Verlauf des Spiels deutlicher zu machen. In dieser Task soll das Diagramm erstellt werden und soll in eine FXML-Datei und im Readme implementiert werden.
 
-Task 13: Die Regelen sollen in eine fxml-Dateil implementiert werden und zum Hauptmenue verbinden werden.
+Task 13: Die Regeln sollen in eine FXML-Datei implementiert werden und mit dem Hauptmenü verbunden werden.
 
-Task 14: Die Spieler sollen den Spielerzahl ändern können von (minimum 4 Spierl).
+Task 14: Der Benutzer soll die Spieleranzahl ändern können von (minimum 4 Spieler).
 
-Task 15: Die 14. Task soll mit einem fxml-Datei verbinden werden und dann auch mit dem Hauptmenue.
+Task 15: Die Task 14 soll mit einer FXML-Datei verbunden werden und dann auch mit dem Hauptmenü.
 
-Task 16: Auf jede window sollen zu den Spieler Befehle geben werden, um zu wissen wie den Spiel weiter läuft.
+Task 16: Bei jeder Ansicht sollen Befehle erscheinen, damit die Vorgehensweise deutlich erklärt wird.
 
-Task 17: Diese Befehle sollen mit javafx implementiert werden.
+Task 17: Diese Befehle sollen mit javaFx implementiert werden.
 
 Task 18: Eine CSS-Datei soll geschrieben werden, um den Spiel schöner und angenehmer zu machen.
 
-Task 19: Auf jeden window sollen den Tastn, Labeln und Tabellen organisiert werden, um den Spiel intuitiver zu machen. Fotos sollen auch hingefügt werden.
+Task 19: Bei jeder Szene müssen die *Label*, *Buttons* und *TableView* intuitiv gestaltet werden. Fotos sollen auch hingefügt werden.
 
-Task 20:Am Ende des Spiels soll mithilfe eine fxml-Datei gezeigt werden, wer gewonnen hat und was waren die Rolle von jeder Spieler.
+Task 20: Am Ende des Spiels soll mithilfe einer FXML-Datei gezeigt werden, wer gewonnen hat und was waren die Rolle von jedem Spieler.
 
-Task 21: Hier soll eine Funktion herstellt werden, um zu testen wer gewonnen hat.
+Task 21: Hier soll eine Funktion programmiert werden, um zu testen wer gewonnen hat.
 
-Task 22: Eine Text-Datei mit den Wörter für Citizen und Undercover soll herstellt werden. Hier soll auch die Möglichgkeit geben, Wörter in die Liste hinzufügen.
+Task 22: Eine Text-Datei mit den Wörter für Citizen und Undercover soll erstellt werden. Hier soll es auch die Möglichgkeit geben, Wörter in die Liste einzutragen.
 
-Task 23: Jede neue Runde soll einen neuen Wort im Text-Datei eingelesen werden und zur Citizen und Undercover geteilt werden.
+Task 23: Jedes neues Spiel soll ein neues Wort in der Text-Datei eingelesen werden und Citizen und Undercover mitgeteilt werden.
 
 
 ### 9.2 Klassendiagramm
@@ -322,7 +322,7 @@ Task 23: Jede neue Runde soll einen neuen Wort im Text-Datei eingelesen werden u
 ### 9.3 Wichtige Code-snippets
 
 Eine der letzten User-Stories war die Möglichkeit für die Benutzer ihre eigene Wörter zur Liste zu addieren. Zu diesem Zweck mussten vorerst alle Wörter in einer .txt-Datei gespeichert werden, was im Sprint 1 erledigt wurde. Damit die hinzugefügte Wörter (für Citizen und Undercover) in einer TableView direkt angezeigt werden konnten, mussten sie in einem Konstruktor *Wort* gepeichert werden. Dieses begeisterungs-Merkmal ermöglicht eine unendliche Vielfalt von Wörter zu speichern und verlängert drastisch die Lebensdauer des Spiels.
-```
+```Javascript
         //speichert alle Wörter der txt-Datei in einem Vektor
         public static void readFile(){
             woerterListe.clear();
@@ -365,3 +365,9 @@ Eine der letzten User-Stories war die Möglichkeit für die Benutzer ihre eigene
 
 ![Wer darf das Wort erraten:](https://github.com/MatisGourdes/Project-undercover-2020/blob/331f47478602a9f6dfc6661f5cc3b579cc945786/Documentation/WortRaten.PNG)
 ### 9.5 Fazit und Retrospektive
+Die Priorität in diesem Sprint war das MVP so zu erweitern, dass das Spiel intuitiv und angenehm wirkt. Zu diesem Zweck wurden Zugang zu den Spielregeln eingebaut, die Möglichkeit der Spieleranzahl zu ändern eingeführt und im Laufe des Spiels konkrete Befehle gegeben. Eine CSS-Datei wurde erstellt, damit das Format der FXML-Dateien einheitlich definiert ist, gemäss der geplanten Tasks.
+Schwierig war ein lauffähiges Package zu bekommen, da es eine .txt Datei mit den Wörter innerhalb des Verzeichnises des Users erstellt werden, falls nicht bereits vorhanden. Dabei waren sämtliche Unterschiede zwischen OS in Betrachtung zu nehmen, einerseits beim Überspringen einer Linie (hier wird einschliesslich ein *Line feed \n* hinzugefügt) und andererseits mit den Path, welches in Windows und MacOS unterschiedlich ist. Hier war die Nutzung der Funktion *File.separator* von grosser Hilfe. 
+
+Zur Verbesserung bzw. Erweiterung der Erfahrung könnte beispielsweise ein Leaderboard eingeführt werden, in welchem die Sieger jeweils eingetragen werden könnten. Ausserdem könnte auch die Liste der Spieler bei einem neuen Spiel behalten werden, damit jeder nicht erneut sein Namen eingeben muss. 
+
+Schlussendlich sind wir mit unserem Programm zufrieden, wir haben uns die verschiedenen Tools zur Umsetzung angeeignet (Maven, SceneBuilder, GitHub, Jira, Confluence), und konnten gemäss der erstellten User Stories das MVP umsetzen. Ferner haben wir im Laufe dieses Projekts gelernt wie man unser Produkt beschreibt, sei es mit UML-Dateien (Klassen-, Package- und Sequenzdiagramme) oder im Readme, damit es für jeden übersichtlich und verständlich ist.

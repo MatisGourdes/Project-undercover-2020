@@ -9,23 +9,11 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" stylesheets="@theme.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.RundeBefehlController">
    <children>
-      <Button fx:id="sRegeln" mnemonicParsing="false" onAction="#switchToSpielregeln" text="Spielrregeln" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="5.0" />
-      <HBox alignment="CENTER" prefHeight="400.0" prefWidth="600.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
-         <children>
-            <FlowPane accessibleRole="BUTTON" prefHeight="400.0" prefWidth="619.0">
-               <children>
-                  <Label fx:id="befehlAusgabe" alignment="CENTER" contentDisplay="CENTER" prefHeight="257.0" prefWidth="599.0" text="Um zu wissen wer beginnt ein Wort zu sagen hier clicken!!" textAlignment="CENTER" wrapText="true">
-                     <opaqueInsets>
-                        <Insets left="20.0" />
-                     </opaqueInsets>
-                  </Label>
-               </children>
-            </FlowPane>
-         </children>
-      </HBox>
+      <Button fx:id="spielRegel" mnemonicParsing="false" onAction="#switchToSpielregeln" text="Spiel Regeln" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="10.0" />
+      <HBox alignment="CENTER" layoutY="-3.0" prefHeight="237.0" prefWidth="600.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
       <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="250.0">
          <children>
-            <FlowPane columnHalignment="CENTER" prefHeight="100.0" prefWidth="635.0">
+            <FlowPane columnHalignment="CENTER" prefHeight="8.0" prefWidth="600.0">
                <children>
                   <Button mnemonicParsing="false" onAction="#switchToVote" prefHeight="34.0" prefWidth="100.0" text="Zu wahl gehen">
                      <opaqueInsets>
@@ -35,6 +23,19 @@
                         <Insets left="250.0" />
                      </FlowPane.margin>
                   </Button>
+               </children>
+            </FlowPane>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="223.0" prefWidth="600.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <FlowPane prefHeight="201.0" prefWidth="614.0">
+               <children>
+                  <Label fx:id="befehlAusgabe" alignment="CENTER" contentDisplay="CENTER" prefHeight="257.0" prefWidth="599.0" textAlignment="CENTER" wrapText="true">
+                     <opaqueInsets>
+                        <Insets left="20.0" />
+                     </opaqueInsets>
+                  </Label>
                </children>
             </FlowPane>
          </children>
