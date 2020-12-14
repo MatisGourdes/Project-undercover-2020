@@ -153,7 +153,7 @@ Alternativ können Sie ein Pull-Request erstellen und dann in IntelliJ ein neues
 ## 7. Das Programm
   Da die Natur des Endprodukts ein Spiel ist, hat die grafische Benutzeroberfläche (GUI) in unserem Programm vorherrschende Stellung. Damit das Projekt ein Erfolg ist, war es uns wichtig, dass die Spieler intuitiv mit unserer GUI interagieren können, damit sie für jeden verständlich ist und, dass das Spiel reibungslos verlaufen kann. Dementsprechend wurde viel Zeit darin investiert, diese GUI mit SceneBuilder zu entwickeln.
 
-Für jede Szene wurde eine FXML-Datei mit SceneBuilder editiert, welche mit einem Hauptcontroller namens *Controller* verbunden wird. Dieser Controller ist im Kern unseres Programms, er bedient alle Funktionen des GUI und wechselt Szenen je nach dem, welcher Schritt als nächstes vorkommt. Ferner nimmt der Controller zugriff auf externe Informationen, wie den Konstruktor *Spieler* für die herstellung zusätzlicher Spielern, oder auf die Klasse *WortReserve* für das Auslesen der Wörter aus der .txt-Datei. Die Zuweisung der Rollen erfolgt auch extern, da die Funktionsweise etwa komplexer ist. Mehr Informationen dazu sind in der Dokumentation des Sprints 1 zu finden. Im Sprint 2 wurde die Klasse *Einstellungen* addiert, damit zusätzliche Wörter hinzugefügt werden können.
+Für jede Szene wurde eine FXML-Datei mit SceneBuilder editiert, welche mit einem zugehörigen Controller verbunden wird. Dieser Controller ist im Kern unseres Programms, er bedient alle Funktionen des GUI und wechselt Szenen je nach dem, welcher Schritt als nächstes vorkommt. Ferner nimmt der Controller zugriff auf externe Informationen, wie den Konstruktor *Spieler* für die herstellung zusätzlicher Spielern, oder auf die Klasse *WortReserve* für das Auslesen der Wörter aus der .txt-Datei. Die Zuweisung der Rollen erfolgt auch extern, da die Funktionsweise etwa komplexer ist. Mehr Informationen dazu sind in der Dokumentation des Sprints 1 zu finden. Im Sprint 2 wurde die Klasse *Einstellungen* addiert, damit zusätzliche Wörter hinzugefügt werden können.
 
 ### 7.1 Übersicht der Struktur des Programms
 ![Diagramm Klassen](https://github.com/MatisGourdes/Project-undercover-2020/blob/master/Documentation/KlassenDiagramm.png)
@@ -162,7 +162,7 @@ Für jede Szene wurde eine FXML-Datei mit SceneBuilder editiert, welche mit eine
 ### 7.3 Sequenz-Diagramm
 ![Diagramm Sequenz](https://github.com/MatisGourdes/Project-undercover-2020/blob/master/Documentation/Sequenzdiagramm.png)
 ### 7.4 Package-Diagramm
-
+![Package-Diagramm](https://github.com/MatisGourdes/Project-undercover-2020/blob/master/Documentation/Package_Diagram.png)
 ## 8. Documentation Sprint 1
 ### 8.1 Task liste der User Stories 
 
