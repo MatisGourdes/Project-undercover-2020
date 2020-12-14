@@ -7,6 +7,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
@@ -18,6 +19,9 @@ public class RundeBefehlController extends Controller implements Initializable {
 
     @FXML
     private Label befehlAusgabe;
+
+
+
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {

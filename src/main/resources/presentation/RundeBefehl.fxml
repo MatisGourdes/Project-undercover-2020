@@ -9,10 +9,10 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" stylesheets="@theme.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.RundeBefehlController">
    <children>
-      <Button fx:id="sRegeln" mnemonicParsing="false" onAction="#switchToSpielregeln" text="Spiel Regeln" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="5.0" />
+      <Button fx:id="sRegeln" mnemonicParsing="false" onAction="#switchToSpielregeln" text="Spielrregeln" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="5.0" />
       <HBox alignment="CENTER" prefHeight="400.0" prefWidth="600.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
          <children>
-            <FlowPane prefHeight="400.0" prefWidth="619.0">
+            <FlowPane accessibleRole="BUTTON" prefHeight="400.0" prefWidth="619.0">
                <children>
                   <Label fx:id="befehlAusgabe" alignment="CENTER" contentDisplay="CENTER" prefHeight="257.0" prefWidth="599.0" text="Um zu wissen wer beginnt ein Wort zu sagen hier clicken!!" textAlignment="CENTER" wrapText="true">
                      <opaqueInsets>
