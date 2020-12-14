@@ -27,9 +27,9 @@ public class RundeBefehlController extends Controller implements Initializable {
             while (Controller.getSpielerListe().elementAt(anfaenger).getRolle() == 2 || !getSpielerListe().elementAt(anfaenger).getStatus()) {
                 anfaenger = (int) (Math.random() * showLebendigeSpieler().size());
             }
-            befehlAusgabe.setText(getSpielerListe().elementAt(anfaenger).getName() + " fängt an");
+            befehlAusgabe.setText(getSpielerListe().elementAt(anfaenger).getName() + " fängt an und sagt ein Wort.\n Ihr dreht dann in Uhrzeigersinn und jeder sagt ein Wort.\n \n Achten sie auf Jedes Wort! \n Es haben sich bestimmt Undercover und Mr White in eure Gruppe versteckt!! \n \uD83E\uDD20 ");
         } else if (getSpielerListe().elementAt(anfaenger).getRolle() != 2 || getSpielerListe().elementAt(anfaenger).getStatus()) {
-            befehlAusgabe.setText(getSpielerListe().elementAt(anfaenger).getName() + " fängt an");
+            befehlAusgabe.setText(getSpielerListe().elementAt(anfaenger).getName() + " fängt an und sagt ein Wort.\n Ihr dreht dann in Uhrzeigersinn und jeder sagt ein Wort.\n \n Achten sie auf Jedes Wort! \n Es haben sich bestimmt Undercover und Mr White in eure Gruppe versteckt!! \n \uD83E\uDD20 ");
         }
     }
 
