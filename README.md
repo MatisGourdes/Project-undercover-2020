@@ -174,11 +174,11 @@ Für jede Szene wurde eine FXML-Datei mit SceneBuilder editiert, welche mit eine
 | Task 2 | Javafx Seite Hauptmenü | User Story 2 | 2 Stunde |
 | Task 3 | Klasse Rollen | User Story 4 | 3 Stunden |
 | Task 4 | Zuweisung der Rolle zu ein Spieler | User Story 4 | 2 Stunden |
-| Task 5 | Javafx Jeder Spieler kriegt ein Wort | User Story 6 | 2 Stunden |
-| Task 6 | Programm um Wörter Austeilen | User Story 6 | 3 Stunden |
-| Task 7 | Auswahl ein Spieler zu entfernen(javafx) | User Story 8 | 2 Stunden |
-| Task 8 | Programm um eine Person zu Entfernen | User Story 8 | 3 Stunden |
-| Task 9 | Mr White will Wort eingeben (javafx) | User Story 9 | 1 Stunde |
+| Task 5 | Jeder Spieler kriegt ein Wort (Javafx) | User Story 6 | 2 Stunden |
+| Task 6 | Programm, um Wörter auszuteilen | User Story 6 | 3 Stunden |
+| Task 7 | Auswahl ein Spieler zu entfernen(Javafx) | User Story 8 | 2 Stunden |
+| Task 8 | Programm, um ein Spieler zu entfernen | User Story 8 | 3 Stunden |
+| Task 9 | Mr White will ein Wort eingeben (Javafx) | User Story 9 | 1 Stunde |
 | Task 10 | Mr White gewinnt oder Spiel geht weiter | User Story 9 | 1 Stunde |
 
 *Velocity: 20 Std*
@@ -272,14 +272,14 @@ Zur Umsetzung des Sprints 2 wurden bereits grundlegene Bausteine gelegt, dazu m�
 | Task 13 | Regeln auf den Hauptmenü implementieren | User Story 1 | 1 Stunde |
 | Task 14 | Anzahl der Spieler ändern | User Story 3 | 2 Stunden |
 | Task 15 | Task 14 Javafx implementierung auf den Hauptmenü | User Story 3 | 2 Stunden |
-| Task 16 | Befehle/ Einleitungen in eine Klasse Schreiben | User Story 5 | 1 Stunde |
+| Task 16 | Befehle/ Einleitungen in eine Klasse schreiben | User Story 5 | 1 Stunde |
 | Task 17 | Befehle in Javafx implementieren | User Story 5 | 1 Stunde |
-| Task 18 | Ein css schreiben wo alle farben und Typographie definiert ist | User Story 7 | 2 Stunden |
+| Task 18 | Ein CSS schreiben wo alle farben und Typographie definiert sind | User Story 7 | 2 Stunden |
 | Task 19 | Alle Tasten und Tabellen organisieren + Photo hinzufügen | User Story 7 | 2 Stunden |
-| Task 20 | Javafx Spiel ende Seite | User Story 10 | 2 Stunden |
+| Task 20 | Spielende Seite (Javafx)| User Story 10 | 2 Stunden |
 | Task 21 | Programm um zu anzeigen wer gewonnen hat | User Story 10 | 2 Stunden |
-| Task 22 | Eine Wörter Liste machen | User Story 11 | 1 Stunde |
-| Task 23 | Text datei einlesen um an Jede Runde ein anderes Wort zu haben | User Story 11 | 2 Stunde |
+| Task 22 | Eine Wörterliste machen | User Story 11 | 1 Stunde |
+| Task 23 | Text datei einlesen, um an jede Runde ein anderes Wort zu haben | User Story 11 | 2 Stunde |
 
 *Velocity: 19 Std*
 
