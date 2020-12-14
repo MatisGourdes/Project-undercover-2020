@@ -10,7 +10,11 @@ public class winCondition {
         int SpielerAmLeben=0;
         for(int i = 0; i< Controller.getSpielerListe().size(); i++) {
 
-
+            if(Controller.getSpielerListe().elementAt(i).getStatus()==true){
+                SpielerAmLeben++;
+                if(Controller.getSpielerListe().elementAt(i).getRolle()==1){
+                    summeRollen += 1 ;
+                }}
         }
         summeRollen = summeRollen/ SpielerAmLeben;
         if(summeRollen == 1)
