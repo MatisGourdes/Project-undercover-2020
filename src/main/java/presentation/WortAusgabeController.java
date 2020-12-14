@@ -34,8 +34,8 @@ public class WortAusgabeController extends Controller{
     public void ausgabeWoerter(ActionEvent event) throws IOException {
 
         NaechsterSpielerButton.setText("Nächster Spieler");
-        WortAusgabe.setText("");
-        HideWord.setText("click to show");
+        HideWord.setOpacity(1);
+        HideWord.setText("Anzeigen");
         wortAngezeigt = false;
 
         switch (Controller.getSpielerListe().elementAt(spielerWortAusgabe).getRolle()) {
@@ -66,10 +66,10 @@ public class WortAusgabeController extends Controller{
         if (spielerWortAusgabe > 0) {
             if (wortAngezeigt == false) {
                 WortAusgabe.setText(printLabelWort + "\n  Wenn du es gesehen hast press den Button unten \n um es zu verstecken!");
-                HideWord.setText("Click to hide");
+                HideWord.setText("Ausblenden");
             } else {
                 WortAusgabe.setText("");
-                HideWord.setText("Click to show");
+                HideWord.setText("Anzeigen");
             }
             wortAngezeigt = !wortAngezeigt;
         }
