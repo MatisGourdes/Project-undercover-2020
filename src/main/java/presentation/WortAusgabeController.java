@@ -22,11 +22,10 @@ public class WortAusgabeController extends Controller{
     @FXML
     private Button HideWord;
     @FXML
-    private Button btnWorter;
+    private Button NaechsterSpielerButton;
 
 
-
-    private int letzteRunde = 1; //
+    private int letzteRunde = 1; //Die Variabel ändert sich nur an die letzte Runde des for
     private boolean wortAngezeigt = false;
     private String printLabelWort;
     private int spielerWortAusgabe = 0;//Variablen für die Anzeige der Wörter zu den Spielern
@@ -34,9 +33,9 @@ public class WortAusgabeController extends Controller{
     //Ausgabe der Wörter zu jedem Spieler
     public void ausgabeWoerter(ActionEvent event) throws IOException {
 
-        btnWorter.setText("Nächster Spieler");
-        WortAusgabe.setText("");
-        HideWord.setText("click to show");
+        NaechsterSpielerButton.setText("Nächster Spieler");
+        HideWord.setOpacity(1);
+        HideWord.setText("Anzeigen");
         wortAngezeigt = false;
 
         switch (Controller.getSpielerListe().elementAt(spielerWortAusgabe).getRolle()) {
@@ -67,17 +66,14 @@ public class WortAusgabeController extends Controller{
         if (spielerWortAusgabe > 0) {
             if (wortAngezeigt == false) {
                 WortAusgabe.setText(printLabelWort + "\n  Wenn du es gesehen hast press den Button unten \n um es zu verstecken!");
-                HideWord.setText("Click to hide");
+                HideWord.setText("Ausblenden");
             } else {
                 WortAusgabe.setText("");
-                HideWord.setText("Click to show");
+                HideWord.setText("Anzeigen");
             }
             wortAngezeigt = !wortAngezeigt;
         }
     }
-
-
-
 
     //Fenster zur Ausgabe der Wörter am Beginn des Spiels
     private void befehlWindow(ActionEvent event) throws IOException {
@@ -88,7 +84,4 @@ public class WortAusgabeController extends Controller{
         window.setTitle("Wer fängt an?");
         window.show();
     }
-
-
-
 }

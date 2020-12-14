@@ -22,13 +22,11 @@ import java.util.Random;
 
 public class addSpielerController extends Controller{
 
-
-
-    static int WortRandom; //Variable für die Bestimmung des Wortes aus der Text-Datei
-    public static String wortCitizen = " "; //Speicherung der Wörter
-    public static String wortUndercover = " ";
+    private static int WortRandom; //Variable für die Bestimmung des Wortes aus der Text-Datei
+    private static String wortCitizen = " "; //Speicherung der Wörter
+    private static String wortUndercover = " ";
     private static int spielerNr = 1; //Variable für die Nummerierung der Spieler
-    public boolean korrekteEingabeName1 = true; //Variablen zur Überprüfung der Eingabe des Namens
+    private boolean korrekteEingabeName1 = true; //Variablen zur Überprüfung der Eingabe des Namens
     private boolean korrekteEingabeName2 = true;
 
     @FXML
@@ -48,7 +46,7 @@ public class addSpielerController extends Controller{
 
 //Überprüfung der Angabe (Leere Eingabe, Name des Spielers bereits existierend)
         if(showLebendigeSpieler().size() < anzahlSpieler) {
-            if ("".contentEquals(eingabeName.getText())){
+            if ("".contentEquals(eingabeName.getText()) || " ".contentEquals(eingabeName.getText())){
                 spielerNrLabel.setText("Sie müssen einen Namen eingeben");
                 korrekteEingabeName1 = false;
                 eingabeName.clear();
@@ -83,8 +81,8 @@ public class addSpielerController extends Controller{
         if (showLebendigeSpieler().size() >= anzahlSpieler) {
             addPlayerBtn.setDisable(true);
             eingabeName.setDisable(true);
-            spielerNrLabel.setText("Tip top");
-            RolleZuweisung.randomRolle();
+            spielerNrLabel.setText("Alle Spieler wurden eingetragen");
+            RolleZuweisung.randomRolle(); //Zuteilung der Rollen
             //debug : zeige alle Spieler inkl. Rolle in der Konsole
             for (int i = 0; i < getSpielerListe().size(); i++) {
                 System.out.println(getSpielerListe().elementAt(i).getSpielerNr() + ": " +
@@ -104,53 +102,37 @@ public class addSpielerController extends Controller{
         return list;
     }
 
-
-
-
-    //das Spiel beginnt
-    public void startGame(ActionEvent event) throws IOException {
-        Parent WortAusgabeParent = FXMLLoader.load(getClass().getResource("WortAusgabe.fxml"));// Hier werden die Spieler Namen gefragt
-        Scene WortAusgabeScene = new Scene(WortAusgabeParent);
-        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        window.setScene(WortAusgabeScene);
-        window.setTitle("WortAusgabe");
-        window.show();
-        //Suchen eines Wortes
-        WortReserve.readFile();//Speichert alle Wörter der Textdatei im Vektor woerterListe
-        Random rand = new Random();
-        WortRandom = rand.nextInt(WortReserve.woerterListe.size()/4)*2; // Generiert ein zufällige gerade Zahl
-        wortCitizen = WortReserve.woerterListe.elementAt(WortRandom); // speichert das zu erratende Wort
-        wortUndercover = WortReserve.woerterListe.elementAt(WortRandom+1); // speichert das Wort der Undercover
-
-        //debug: Anzeige der Liste aller Wörter
-        for(int i = 0; i < WortReserve.woerterListe.size(); i++){
-            System.out.println(i + " " + WortReserve.woerterListe.elementAt(i));
-        }
-        System.out.println("___ ");
-        System.out.println(wortCitizen);
-        System.out.println(wortUndercover);
-        System.out.println(WortRandom);
-    }
-
-
     // Anzahl Spieler wird gespeichert, wenn auf Btn "speichern" gedrückt wird
     public void save(ActionEvent event) throws IOException{
-        try{
+        try {
             anzahlSpieler = Integer.parseInt(eingabeAnzahlSpieler.getText());
-            eingabeAnzahlSpieler.setDisable(true);
-            speichern.setText("gespeichert !");
-            speichern.setDisable(true);
-            spielerNrLabel.setText("Spieler 1:");
-            addPlayerBtn.setDisable(false);
-            //Initialisierung der Tableview für die Anzeige der Spieler
-            nrTableView.setCellValueFactory(new PropertyValueFactory<Spieler, Integer>("spielerNr"));
-            nameTableView.setCellValueFactory(new PropertyValueFactory<Spieler, String>("name"));
+            if (anzahlSpieler>=4) {
+                eingabeAnzahlSpieler.setDisable(true);
+                speichern.setText("gespeichert !");
+                speichern.setDisable(true);
+                spielerNrLabel.setText("Spieler 1:");
+                addPlayerBtn.setDisable(false);
+                //Initialisierung der Tableview für die Anzeige der Spieler
+                nrTableView.setCellValueFactory(new PropertyValueFactory<Spieler, Integer>("spielerNr"));
+                nameTableView.setCellValueFactory(new PropertyValueFactory<Spieler, String>("name"));
+            }
+            else{
+                eingabeAnzahlSpieler.setDisable(false);
+                speichern.setDisable(false);
+                addPlayerBtn.setDisable(true);
+                eingabeAnzahlSpieler.clear();
+                spielerAnzahlLabel.setText("Sie müssen mehr als 4 sein");
+            }
         }
         //Meldung, falls eine inkorrekte Eingabe gegeben wurde
         catch (NumberFormatException e){
             eingabeAnzahlSpieler.clear();
-            spielerAnzahlLabel.setText("Geben Sie eine Zahl ein.");
+            spielerAnzahlLabel.setText("Geben Sie eine Zahl ein");
         }
+        getSpielerListe().removeAllElements();
+        spielerNr = 1;
+        showLebendigeSpieler().clear();
+        showSpieler().clear();
     }
 
     @FXML
@@ -166,10 +148,38 @@ public class addSpielerController extends Controller{
         showLebendigeSpieler().clear();
         showSpieler().clear();
     }
+
+    //das Spiel beginnt
+    public void startGame(ActionEvent event) throws IOException {
+        if (getSpielerListe().size()==anzahlSpieler && getSpielerListe().size() != 0) {
+            Parent WortAusgabeParent = FXMLLoader.load(getClass().getResource("WortAusgabe.fxml"));
+            Scene WortAusgabeScene = new Scene(WortAusgabeParent);
+            Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            window.setScene(WortAusgabeScene);
+            window.setTitle("WortAusgabe");
+            window.show();
+            //Suchen eines Wortes
+            WortReserve.readFile();//Speichert alle Wörter der Textdatei im Vektor woerterListe
+            Random rand = new Random();
+            WortRandom = rand.nextInt(WortReserve.woerterListe.size() / 4) * 2; // Generiert ein zufällige gerade Zahl
+            wortCitizen = WortReserve.woerterListe.elementAt(WortRandom); // speichert das zu erratende Wort
+            wortUndercover = WortReserve.woerterListe.elementAt(WortRandom + 1); // speichert das Wort der Undercover
+        }
+
+        //debug: Anzeige der Liste aller Wörter
+        for(int i = 0; i < WortReserve.woerterListe.size(); i++){
+            System.out.println(i + " " + WortReserve.woerterListe.elementAt(i));
+        }
+        System.out.println("___ ");
+        System.out.println(wortCitizen);
+        System.out.println(wortUndercover);
+        System.out.println(WortRandom);
+    }
+
+    //getter für den Zugriff auf dem Wort der Citizen bzw. der Undercover
     public static String getWortCitizen() {
         return wortCitizen;
     }
-
     public static String getWortUndercover() {
         return wortUndercover;
     }

@@ -26,6 +26,4 @@ public class spielerTest extends TestCase {
         }
         assertNotSame(testSpieler.getRolle(), 4);
     }
-
-
 }

@@ -11,9 +11,8 @@ public class Main extends Application {
     public void start(Stage stage) throws Exception {
         final Parent root = FXMLLoader.load(getClass().getResource("hauptmenue.fxml"));
         stage.setScene(new Scene(root, 500, 500));
-        stage.setTitle("Undercover Project");
+        stage.setTitle("Undercover");
         stage.show();
-        stage.getScene().getStylesheets().add(getClass().getResource("theme.css").toExternalForm());
     }
 
     public static void main(String[] args) {
