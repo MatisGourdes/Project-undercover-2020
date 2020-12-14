@@ -2,6 +2,7 @@ package domain;
 
 import junit.framework.TestCase;
 
+import org.junit.Assert;
 import org.junit.Test;
 import presentation.Controller;
 
@@ -13,25 +14,19 @@ public class winConditionTest extends TestCase {
 
 
 @Test
-    public void TtestUndercover() throws Exception {
-
-
-    boolean boolCitizen = false;
-    double summeRollen = 1;
-    int SpielerAmLeben = 1;
-
-
-    for(int i = 0; i< Controller.getSpielerListe().size(); i++) { }
-    summeRollen = summeRollen/ SpielerAmLeben;
-    if(summeRollen == 1)
-    {boolCitizen = true;}
-
-    else{boolCitizen = false; }
+public void TtestUndercover() {
 
 
 
 
-    assertTrue(boolCitizen);
+
+    System.out.println("This is the testcase in this class");
+    String str1="This is the testcase in this class";
+    assertEquals("This is the testcase in this class", str1);
+
+
+
+
 }
 
     @Test
