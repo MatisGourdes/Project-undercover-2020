@@ -364,10 +364,26 @@ Eine der letzten User-Stories war die Möglichkeit für die Benutzer ihre eigene
 ![Wer bekommt ein Wort](https://github.com/MatisGourdes/Project-undercover-2020/blob/master/Documentation/WortVerteilung.PNG)
 
 #### 9.4.2 JUnit
+FXML-Dateien lassen sich unserem Verständnis nach nicht (gut) testen, diesbezüglich testen wir hier noch Klassen aus dem Domain Package. Alle durchgeführten Tests liefern 100% coverage des Packages Domain und 8% des Packages Presentation. Insgesamt wird 38% des Programms getestet.
 
 Testfall #1
+```Javascript
+  @Test
+  public void testkillSomeone() // Test set statut false oder right ,  Test Funktion showLebendigeSpieler
+  {
+    Controller.getSpielerListe().clear();
+    Spieler spieler1 = new Spieler(1, "nameA", true, 0);
+    Spieler spieler2 = new Spieler(2, "nameB", true, 1);
+    presentation.Controller.getSpielerListe().add(spieler1);
+    presentation.Controller.getSpielerListe().add(spieler2);
+    spieler1.setStatus(false);
+    ObservableList<Spieler> list1 = FXCollections.observableArrayList();
+    list1.add(spieler2);
 
-Testfall #2
+    Assertions.assertEquals(list1, Controller.showLebendigeSpieler());
+  }
+
+```
 
 ![Wer darf das Wort erraten:](https://github.com/MatisGourdes/Project-undercover-2020/blob/331f47478602a9f6dfc6661f5cc3b579cc945786/Documentation/WortRaten.PNG)
 ### 9.5 Fazit und Retrospektive
