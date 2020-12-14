@@ -363,6 +363,8 @@ Eine der letzten User-Stories war die Möglichkeit für die Benutzer ihre eigene
 #### 9.4.1 Black Box testing
 ![Wer bekommt ein Wort](https://github.com/MatisGourdes/Project-undercover-2020/blob/master/Documentation/WortVerteilung.PNG)
 
+![Wer darf das Wort erraten:](https://github.com/MatisGourdes/Project-undercover-2020/blob/331f47478602a9f6dfc6661f5cc3b579cc945786/Documentation/WortRaten.PNG)
+
 #### 9.4.2 JUnit
 FXML-Dateien lassen sich unserem Verständnis nach nicht (gut) testen, diesbezüglich testen wir hier noch Klassen aus dem Domain Package. Alle durchgeführten Tests liefern 100% coverage des Packages Domain und 8% des Packages Presentation. Insgesamt wird 38% des Programms getestet.
 
@@ -385,7 +387,6 @@ Testfall #1
 
 ```
 
-![Wer darf das Wort erraten:](https://github.com/MatisGourdes/Project-undercover-2020/blob/331f47478602a9f6dfc6661f5cc3b579cc945786/Documentation/WortRaten.PNG)
 ### 9.5 Fazit und Retrospektive
 Die Priorität in diesem Sprint war das MVP so zu erweitern, dass das Spiel intuitiv und angenehm wirkt. Zu diesem Zweck wurden Zugang zu den Spielregeln eingebaut, die Möglichkeit der Spieleranzahl zu ändern eingeführt und im Laufe des Spiels konkrete Befehle gegeben. Eine CSS-Datei wurde erstellt, damit das Format der FXML-Dateien einheitlich definiert ist, gemäss der geplanten Tasks.
 Schwierig war ein lauffähiges Package zu bekommen, da es eine .txt Datei mit den Wörter innerhalb des Verzeichnises des Users erstellt werden, falls nicht bereits vorhanden. Dabei waren sämtliche Unterschiede zwischen OS in Betrachtung zu nehmen, einerseits beim Überspringen einer Linie (hier wird einschliesslich ein *Line feed \n* hinzugefügt) und andererseits mit den Path, welches in Windows und MacOS unterschiedlich ist. Hier war die Nutzung der Funktion *File.separator* von grosser Hilfe. 
