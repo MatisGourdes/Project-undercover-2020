@@ -12,7 +12,7 @@ public class WortReserve {
     //Vektor, der alle Wörter beinhaltet
     public static Vector<String> woerterListe = new Vector<>();
     //Variablen zur Erstellung des Verzeichnises + der Textdatei
-    private static final Logger LOG = LogManager.getLogger(woerterSpeichern.class);
+    private static final Logger LOG = LogManager.getLogger(WortReserve.class);
     private static final String wortFileName = "WoerterDatenbank.txt";
     private final static String wortVerzeichnis = "Woerter";
     private static final String wortVerzeichnisPath = System.getProperty("user.dir") + File.separator + wortVerzeichnis;
