@@ -110,5 +110,4 @@ public class Einstellungen extends WortReserve implements Initializable {
             this.wortU = wortU;
         }
     }
-
 }
