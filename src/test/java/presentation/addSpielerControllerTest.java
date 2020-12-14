@@ -23,83 +23,80 @@ class addSpielerControllerTest {
 
     @Test
     void testAddPlayer() throws Exception {
-        // Setup
+
         final ActionEvent event = new ActionEvent("o", null);
 
-        // Run the test
+
         addSpielerControllerUnderTest.addPlayer(event);
 
-        // Verify the results
     }
 
     @Test
     void testAddPlayer_ThrowsIOException() {
-        // Setup
+
         final ActionEvent event = new ActionEvent("o", null);
 
-        // Run the test
+
         assertThatThrownBy(() -> addSpielerControllerUnderTest.addPlayer(event)).isInstanceOf(IOException.class);
     }
 
     @Test
     void testShowSpieler() {
-        // Setup
 
-        // Run the test
         final ObservableList<Spieler> result = addSpielerControllerUnderTest.showSpieler();
 
-        // Verify the results
+
     }
 
     @Test
     void testSave() throws Exception {
-        // Setup
+
         final ActionEvent event = new ActionEvent("o", null);
 
-        // Run the test
+
         addSpielerControllerUnderTest.save(event);
 
-        // Verify the results
+
     }
 
     @Test
     void testSave_ThrowsIOException() {
-        // Setup
+
         final ActionEvent event = new ActionEvent("o", null);
 
-        // Run the test
+
         assertThatThrownBy(() -> addSpielerControllerUnderTest.save(event)).isInstanceOf(IOException.class);
     }
 
     @Test
     void testStartGame() throws Exception {
-        // Setup
+
         final ActionEvent event = new ActionEvent("o", null);
 
-        // Run the test
+
         addSpielerControllerUnderTest.startGame(event);
 
-        // Verify the results
+
     }
 
     @Test
     void testStartGame_ThrowsIOException() {
-        // Setup
+
         final ActionEvent event = new ActionEvent("o", null);
 
-        // Run the test
+
         assertThatThrownBy(() -> addSpielerControllerUnderTest.startGame(event)).isInstanceOf(IOException.class);
     }
 
     @Test
     void testSpielerListeLeeren() {
-        // Setup
+
         final ActionEvent event = new ActionEvent("o", null);
 
-        // Run the test
+
         addSpielerControllerUnderTest.spielerListeLeeren(event);
 
-        // Verify the results
+
     }
 
     @Test
