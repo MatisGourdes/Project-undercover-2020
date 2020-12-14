@@ -158,7 +158,7 @@ Für jede Szene wurde eine FXML-Datei mit SceneBuilder editiert, welche mit eine
 ### 7.1 Übersicht der Struktur des Programms
 ![Diagramm Klassen](https://github.com/MatisGourdes/Project-undercover-2020/blob/master/Documentation/KlassenDiagramm.png)
 ### 7.2 Ausführliches Klassendiagramm
-*siehe 9.2* [Dokumentation Sprint 2](https://github.com/MatisGourdes/Project-undercover-2020#9.2-Klassendiagramm)
+*siehe 9.2* [Dokumentation Sprint 2](https://github.com/MatisGourdes/Project-undercover-2020#92-klassendiagramm)
 ### 7.3 Sequenz-Diagramm
 ![Diagramm Sequenz](https://github.com/MatisGourdes/Project-undercover-2020/blob/master/Documentation/Sequenzdiagramm.png)
 ### 7.4 Package-Diagramm
