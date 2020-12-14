@@ -45,7 +45,7 @@ class MrWhiteControllerTest extends TestCase {
         Input.setText("ok");
 
         if (Input.getText().equalsIgnoreCase(addSpielerController.getWortCitizen())) {
-            Parent spielParent = FXMLLoader.load(getClass().getResource("MrWhiteGewinnen.fxml"));
+            Parent spielParent = FXMLLoader.load(getClass().getResource("Gewinner.fxml"));
 
             Scene spielScene = new Scene(spielParent);
             Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
