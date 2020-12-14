@@ -139,7 +139,7 @@ Git clone:  https://github.com/MatisGourdes/Project-undercover-2020
 4. Stellen Sie sicher, dass Ihre Umgebung auf Java 11 eingestellt ist.
 5. Überprüfen Sie ob Sources, Tests und Resources korrekt anerkannt sind unter *Project Structure* -> *Modules*.
 6. Im Terminal, lassen Sie folgenden Commands laufen:
-    ```
+    ```Javascript
     mvn clean compile
     mvn clean package
     java -jar /shade/Projekt-Undercover-2020.jar
@@ -199,7 +199,7 @@ Task 7: Ein fxml-Datei soll erstellt werden, um ein Spieler zu entfernen. Eine L
 
 Task 8: Hier soll der Status (tot oder lebendig) der Spielern geändert werden können, wenn er von den Anderen ausgeschlossen wurde. 
 
-Task 9:  Ein fxml-Datei soll erstellt werden, um den MrWhite die Chance zu geben, das Wort von den Citizen zu raten, als er entfernt wurde.
+Task 9: Ein fxml-Datei soll erstellt werden, um den MrWhite die Chance zu geben, das Wort von den Citizen zu raten, als er entfernt wurde.
 
 Task 10: Hier muss getestet werden, ob der MrWhite das richtig Wort erraten hat oder nicht. Wenn ja, hat MrWhite das Spiel gewonnen. Wenn nein, soll das Spiel weiter laufen.
 
@@ -208,7 +208,7 @@ Task 10: Hier muss getestet werden, ob der MrWhite das richtig Wort erraten hat 
 ### 8.3 Wichtige Code snippets
 Wichtig ist es in unser Programm, dass die Zuweisung der Rollen zu jedem Spieler zufällig stattfindet. Ferner muss bei einem neuen Spiel die Zuweisung erneut stattfinden, damit die Spieler eine neue Rolle bekommen.
 Diesbezüglich haben wir uns im Laufe dieses Sprints damit befasst, eine *Rollezuweisung* Klasse zu programmieren, die all diese Anforderungen berücksichtigt. Hier ein Überblick darauf:
-```
+```Javascript
     public static void randomRolle() {
         rolleVerteilung();
         //willkürliche Zuweisung der Rollen in Betrachtung auf Anfangsbedingungen
@@ -248,12 +248,12 @@ Diesbezüglich haben wir uns im Laufe dieses Sprints damit befasst, eine *Rollez
 ```
 ### 8.4 Testfälle
 Testfall #1: Überprüfung der korrekten Zuweisung der Rollen (Methode *Rollezuweisung* und Eintragung im Konstruktor *Spieler*):
-```
+```Javascript
     RolleZuweisung.randomRolle();
     assertNotSame(testSpieler.getRolle(), 4);
 ``` 
 Testfall #2: Überprüfung der Ausschliessung eines Spielers (Status wird auf "false" gesetzt):
-```
+```Javascript
     testSpieler.setStatus(false);
     assertEquals(new Spieler(1, "Test", false, 4).getStatus(), testSpieler.getStatus());    
 ```    
@@ -322,7 +322,7 @@ Task 23: Jede neue Runde soll einen neuen Wort im Text-Datei eingelesen werden u
 ### 9.3 Wichtige Code-snippets
 
 Eine der letzten User-Stories war die Möglichkeit für die Benutzer ihre eigene Wörter zur Liste zu addieren. Zu diesem Zweck mussten vorerst alle Wörter in einer .txt-Datei gespeichert werden, was im Sprint 1 erledigt wurde. Damit die hinzugefügte Wörter (für Citizen und Undercover) in einer TableView direkt angezeigt werden konnten, mussten sie in einem Konstruktor *Wort* gepeichert werden. Dieses begeisterungs-Merkmal ermöglicht eine unendliche Vielfalt von Wörter zu speichern und verlängert drastisch die Lebensdauer des Spiels.
-```
+```Javascript
         //speichert alle Wörter der txt-Datei in einem Vektor
         public static void readFile(){
             woerterListe.clear();
