@@ -36,7 +36,9 @@ public class WortAusgabeController extends Controller{
         NaechsterSpielerButton.setText("Nächster Spieler");
         HideWord.setOpacity(1);
         HideWord.setText("Anzeigen");
+        WortAusgabe.setText(" ");
         wortAngezeigt = false;
+
 
         switch (Controller.getSpielerListe().elementAt(spielerWortAusgabe).getRolle()) {
             case 0:
