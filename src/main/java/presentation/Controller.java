@@ -114,7 +114,6 @@ public class Controller {
 
 
 
-
     // getter für den Zugang zur Spieler Liste
     public static Vector<Spieler> getSpielerListe() {
         return spielerListe;
