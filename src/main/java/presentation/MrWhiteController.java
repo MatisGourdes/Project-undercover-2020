@@ -12,9 +12,6 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class MrWhiteController extends Controller {
-
-
-
     @FXML
     private TextField Input;
 
@@ -23,7 +20,8 @@ public class MrWhiteController extends Controller {
     private void valid(ActionEvent event) throws IOException {
 
         if (Input.getText().equalsIgnoreCase(addSpielerController.getWortCitizen())) {
-            Parent spielParent = FXMLLoader.load(getClass().getResource("MrWhiteGewinnen.fxml"));
+            WerGewinnt=2;//MR WHITE HABEN GEWONNEN
+            Parent spielParent = FXMLLoader.load(getClass().getResource("Gewinner.fxml"));
             Scene spielScene = new Scene(spielParent);
             Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
             window.setScene(spielScene);
@@ -31,7 +29,7 @@ public class MrWhiteController extends Controller {
             window.show();
         }
         else {
-            TestSpielFertig.finishTest(event);
+            TestSpielFertig.finishTest(event); //Überprüfung, ob Mr White gewonnen haben
         }
     }
 }

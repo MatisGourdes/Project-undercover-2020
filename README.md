@@ -17,20 +17,24 @@ Team: Theo Portmann, Michael Schaetzel, Lucas Lagel, Maxime Roellinger, Gourdes 
 6. [Build Anleitung](https://github.com/MatisGourdes/Project-undercover-2020#6-build-anleitung) 
 
 7. [Das Programm](https://github.com/MatisGourdes/Project-undercover-2020#7-das-programm)
+- [7.1 Übersicht der Struktur](https://github.com/MatisGourdes/Project-undercover-2020#71-%C3%BCbersicht-der-struktur-des-programms)
+- [7.2 Ausführliches Klassendiagramm](https://github.com/MatisGourdes/Project-undercover-2020#72-ausf%C3%BChrliches-klassendiagramm)
+- [7.3 Sequenzdiagramm](https://github.com/MatisGourdes/Project-undercover-2020#73-sequenz-diagramm)
+- [7.4 Package-Diagramm](https://github.com/MatisGourdes/Project-undercover-2020#74-package-diagramm)
 
 8. [Dokumentation Sprint 1](https://github.com/MatisGourdes/Project-undercover-2020#8-documentation-sprint-1)
-- [Taskliste der User Stories](https://github.com/MatisGourdes/Project-undercover-2020#--taskliste-der-user-stories)
-- [Anreicherung der User Stories]()
-- [UML Package, Klassen- und Sequenzdiagramme]()
-- [Dokumentation wichtiger Code Snippets]()
-- [Testfaelle bedingt durch Aktzeptanzkriterium]()
+- [8.1 Taskliste der User Stories](https://github.com/MatisGourdes/Project-undercover-2020#81-taskliste-der-user-stories)
+- [8.2 Klassendiagramm](https://github.com/MatisGourdes/Project-undercover-2020#82-klassendiagramm)
+- [8.3 Wichtige Code-Snippets](https://github.com/MatisGourdes/Project-undercover-2020#83-wichtige-code-snippets)
+- [8.4 Testfälle](https://github.com/MatisGourdes/Project-undercover-2020#84-testf%C3%A4lle)
+- [8.5 Retrospektive](https://github.com/MatisGourdes/Project-undercover-2020#85-fazit-und-retrospektive)
 
-9. [Dokumentatin Sprint 2](https://github.com/MatisGourdes/Project-undercover-2020#9-documentation-sprint-2)
-- [Taskliste der User Stories (mit Schätzung)]()
-- [Anreicherung der User Stories]()
-- [UML Package, Klassen- und Sequenzdiagramme]()
-- [Dokumentation wichtiger Code Snippets]()
-- [Testfaelle bedingt durch Aktzeptanzkriterium]()
+9. [Dokumentation Sprint 2](https://github.com/MatisGourdes/Project-undercover-2020#9-documentation-sprint-2)
+- [9.1 Taskliste der User Stories](https://github.com/MatisGourdes/Project-undercover-2020#91-taskliste-der-user-stories)
+- [9.2 Klassendiagramm](https://github.com/MatisGourdes/Project-undercover-2020#92-klassendiagramm)
+- [9.3 Wichtige Code-Snippets](https://github.com/MatisGourdes/Project-undercover-2020#93-wichtige-code-snippets)
+- [9.4 Testfälle](https://github.com/MatisGourdes/Project-undercover-2020#94-testf%C3%A4lle)
+- [9.5 Retrospektive](https://github.com/MatisGourdes/Project-undercover-2020#95-fazit-und-retrospektive)
 
 ## 1. Abstrakt
 Unser Team besteht aus Mechatronik-Trinational Studierenden. Im Rahmen des Moduls SWE und Informatik II entwickeln wir eine etwas komplexere Software, um den zuvor gelernten Stoff durch die Implementierung einer lauffähigen Applikation zu vertiefen. Dabei wird die Komplexität der Applikation abgestimmt auf die individuellen Vorkenntnisse der Studierenden. 
@@ -40,7 +44,7 @@ Zeitspanne der Bearbeitung: Herbstsemester 2020.
 ## 2. Einleitung
 ### Ziele
 Das Ziel mit diesem Projekt ist es, als Studierende, unsere Kenntnisse in Programmierung anzuwenden und als Team den Vincent-Driessen Workflow (mittels Jira und GitHub) auszuüben.
-Demzufolge haben wir uns entschlossen, ein Spiel zu programmieren: presentation.
+Demzufolge haben wir uns entschlossen, ein Spiel zu programmieren: Undercover.
 
 ### Anforderungen
 - Die Programmierung soll in JAVA erfolgen mittels Eclipse und IntelliJ, mit grafischen Benutzerinterface mittels JavaFx. 
@@ -64,18 +68,18 @@ Das MVP besteht also aus : *(siehe User Stories mit Priorisierung 1)*
 
 ## 3. Das Spiel
 
-presentation ist ein Multiplayer-Spiel, bei welchem jedem Spieler einer der folgenden Rollen zugewiesen wird:
+Undercover ist ein Multiplayer-Spiel, bei welchem jedem Spieler einer der folgenden Rollen zugewiesen wird:
 
 - "**Citizen**" : der Spieler bekommt ein Wort, das auch die anderen Citizen bekommen. 
-- "**presentation**" : der presentation bekommt auch ein Wort, welches aber ein Synonym des Worts der Citizen.
+- "**Undercover**" : der Undercover bekommt auch ein Wort, welches aber ein Synonym des Worts der Citizen.
 - "**Mr White**" : bekommt kein Wort. Der Mr White muss das Wort der Citizen erraten und versuchen, sich in die Masse zu verbergen.
 
 
-Bemerkenswert können sich Citizen und presentation voneinander nicht unterscheiden; sie haben zwar ein Wort bekommen, wissen aber nicht, ob es das zu erratende Wort ist.
+Bemerkenswert können sich Citizen und Undercover voneinander nicht unterscheiden; sie haben zwar ein Wort bekommen, wissen aber nicht, ob es das zu erratende Wort ist.
 Jeder Spieler wird nacheinander ein Synonym seines Worts geben, hier müssen die Mr White ein Wort finden, welches sich daran genug annähert, damit die anderen nicht erraten, dass sie keine Wörter bekommen haben. 
-Am Ende jeder Runde dürfen alle Spieler miteinander diskutieren und wählen, wer vom Spiel ausgeschlossen werden muss. Das Ziel der Citizen ist es, alle presentation und alle Mr White vom Spiel zu entfernen.
+Am Ende jeder Runde dürfen alle Spieler miteinander diskutieren und wählen, wer vom Spiel ausgeschlossen werden muss. Das Ziel der Citizen ist es, alle Undercover und alle Mr White vom Spiel zu entfernen.
 Das Gewinn sichern sich die Mr White, wenn sie - *als sie ausgeschlossen werden* - das Wort der Citizen erraten.
-Die presentation gewinnen, wenn nur noch presentation spielen und alle anderen ausgeschlossen wurden.
+Die Undercover gewinnen, wenn nur noch Undercover spielen und alle anderen ausgeschlossen wurden.
 
 
 **So verläuft das Spiel:**
@@ -88,13 +92,12 @@ Das Programm besagt, wer anfangen soll. Diese Person spricht dann als erstes, di
 
 Wenn jeder gesprochen hat und sein Wort im Programm eingegeben hat, ist die Runde zu Ende. Die Wahl beginnt.
 Die Spieler wissen anfangs nicht mit wem sie zusammenarbeiten müssen, alle diskutieren und entscheiden, wer entlassen wird.
-Den Namen der ausgeschlossenen Person wird im Computer eingetippt, seine Rolle wird bekannt gegeben. 
 
 Solange keines der untenstehenden Ereignisse vorkommt, geht es in der nächsten Runde mit derselben Vorgehensweise.
 
 **Ende des Spiels:**
-- Citizen gewinnen, wenn es nur noch Citizen gibt. (es wird anfangs bekannt gegeben, wie viel presentation und Mr White im Spiel sind)
-- presentation gewinnen, wenn es nur noch presentation gibt.
+- Citizen gewinnen, wenn es nur noch Citizen gibt. (es wird anfangs bekannt gegeben, wie viel Undercover und Mr White im Spiel sind)
+- Undercover gewinnen, wenn es nur noch Undercover gibt.
 - Mr White gewinnen, wenn sie das Wort der Citizen erraten. Dies darf nur geschehen, nachdem sie ausgeschlossen wurden.
 
 ### Visuelle Darstellung des Spielvorgangs:
@@ -120,7 +123,7 @@ Priorisierung:  1 = Basis‐Merkmal
 | 4. *Rolle zuteilen* | Als Spieler möchte ich eine Rolle zugewiesen werden (ohne es zu wissen), um eine Runde spielen zu können. | 1 | 5 Stunden | Jede Spieler kriegt eine Rolle |
 | 5. *Einleitung* | Als Spieler möchte ich wissen wer als nächstes dran kommt. Ich möchte auch dass der Computer erklärt an jeden Schritt was wir machen müssen. | 2 | 2 Stunden | Verständliche Anzeigen |
 | 6. *Wörterverteilung* | Als Spieler möchte ich ein Wort empfangen, um eine Runde spielen zu können. | 1 | 5 Stunden | Jeder Spieler bekommt ein Wort |
-| 7. *Wort eingeben* | Als Spieler möchte ich in jede runde ein Wort eingeben und dass er in einer Tabelle erscheint. | 3 | 4 Stunden | Textfeld + Anzeige |
+| 7. *Schönes Programm* | Als Spieler möchte ich dass der Programm angenehm ist und dass man schnell versteht wie es geht. | 3 | 4 Stunden | Ein css mit schöne farben und alles schön verständlich |
 | 8. *Wahl eine Person zu entfernen* | Als Spieler möchte ich die Möglichkeit haben an jede Runde ein anderen Spieler zu wählen um den Entfernen. | 1 | 5 Stunden | Eine Person kann entfernt sein |
 | 9. *Wort raten* | Als Spieler(Mr White) möchte ich versuchen den Wort zu raten , wenn ich angeklagt wurde um eine Runde zu gewinnen. | 1 | 2 Stunden | Textfeld + Wort raten |
 | 10. *Spiel ende* | Als Spieler möchte ich wissen wer gewonnen hat und wieder auf den Hauptmenü kommen. | 3 | 4 Stunden | Scene mit Resultat und Hauptmenü Taste |
@@ -128,37 +131,40 @@ Priorisierung:  1 = Basis‐Merkmal
 
 ## 6. Build Anleitung
 Git clone:  https://github.com/MatisGourdes/Project-undercover-2020
-In Git program: 
-1. Speichern Sie Ihre src Datei von Ihrem Git Projekt auf Ihre Rechner.
-2. Löschen Sie Ihre src Datei von Ihrem Git Projekt.
-3. Fügen Sie die pom.xml Datei mit dem geeignete Initialisierung in das Git Projekt.
-4. Fügen Sie die src Ordner von einem Maven Projekt in das Git Projekt.
-5. Klicken Sie auf den rechten Maus Taste in "presentation": ->Configure ->Convert to Maven.
-6. Fügen Sie Ihre eigene Package in das Ordner src/main/java.
-7. Klicken Sie auf den rechten Maus Taste in "presentation": ->Run as ->Maven clean.
-8. Klicken Sie auf den rechten Maus Taste in "presentation": ->Run as ->Maven install.
-9. Prüfen Sie in das Ordner "target" ob Sie eine Datei .jar haben.
 
-- Oder
-- 1. Gehen sie auf unsere Github repository.
-- 2. Speichern Sie die Datei auf Ihre Rechner.
-- 3. Entpacken Sie die Datei und Setzen sie an den gewünschten Ort. 
-- 4. Stellen Sie sicher, dass Sie eine javaFx Runtime-Umgebung haben.
-- 5. Doppelklicken Sie auf den Datei Paket
-- 6. Doppelklicken Sie auf  Undercoverlauncher.jar um den Software zu starten.
+#### In einem IDE (hier IntelliJ): 
+1. Laden Sie den Master als Zip-Datei aus dem Repo herunter, entpacken Sie ihn.
+2. In IntelliJ, klicken Sie auf *File* -> *New* -> *Project from existing Sources* und wählen Sie die entpackte Datei.
+3. Wählen Sie *Import project from external model* und klicken Sie auf *Maven*. Bestätigen Sie mittels *Finish*.
+4. Stellen Sie sicher, dass Ihre Umgebung auf Java 11 eingestellt ist.
+5. Überprüfen Sie ob Sources, Tests und Resources korrekt anerkannt sind unter *Project Structure* -> *Modules*.
+6. Im Terminal, lassen Sie folgenden Commands laufen:
+    ```
+    mvn clean compile
+    mvn clean package
+    java -jar /shade/Projekt-Undercover-2020.jar
+    ```
+Alternativ können Sie ein Pull-Request erstellen und dann in IntelliJ ein neues Projekt aus *Version Control* erstellen.
 
+#### Das Spiel ohne IDE laufen lassen:
+1. Laden Sie den Master als Zip-Datei herunter und entpacken Sie ihn.
+2. Stellen Sie sicher, dass Sie auf Ihrem Rechner über eine aktuelle Version der Java-Umgebung verfügen.
+3. Im Verzeichnis *shade* finden Sie die Datei **Undercover-Projekt-2020.jar**, die Sie starten können. Viel Spass !
 
 
 ## 7. Das Programm
   Da die Natur des Endprodukts ein Spiel ist, hat die grafische Benutzeroberfläche (GUI) in unserem Programm vorherrschende Stellung. Damit das Projekt ein Erfolg ist, war es uns wichtig, dass die Spieler intuitiv mit unserer GUI interagieren können, damit sie für jeden verständlich ist und, dass das Spiel reibungslos verlaufen kann. Dementsprechend wurde viel Zeit darin investiert, diese GUI mit SceneBuilder zu entwickeln.
 
-Für jede Szene wurde eine FXML-Datei mit SceneBuilder editiert, welche mit einem Hauptcontroller namens *Controller* verbunden wird. Dieser Controller ist im Kern unseres Programms, er bedient alle Funktionen des GUI und wechselt Szenen je nach dem, welcher Schritt als nächstes vorkommt. Ferner nimmt der Controller zugriff auf externe Informationen, wie den Konstruktor *Spieler* für die herstellung zusätzlicher Spielern, oder auf die Klasse *WortReserve* für das Auslesen der Wörter aus der .txt-Datei. Die Zuweisung der Rollen erfolgt auch extern, da die Funktionsweise etwa komplexer ist. Mehr Informationen dazu sind in der Dokumentation des Sprints 1 zu finden. Im Sprint 2 wurde die Klasse *Einstellungen* addiert, damit zusätzliche Wörter hinzugefügt werden können.
+Für jede Szene wurde eine FXML-Datei mit SceneBuilder editiert, welche mit einem zugehörigen Controller verbunden wird. Dieser Controller ist im Kern unseres Programms, er bedient alle Funktionen des GUI und wechselt Szenen je nach dem, welcher Schritt als nächstes vorkommt. Ferner nimmt der Controller zugriff auf externe Informationen, wie den Konstruktor *Spieler* für die herstellung zusätzlicher Spielern, oder auf die Klasse *WortReserve* für das Auslesen der Wörter aus der .txt-Datei. Die Zuweisung der Rollen erfolgt auch extern, da die Funktionsweise etwa komplexer ist. Mehr Informationen dazu sind in der Dokumentation des Sprints 1 zu finden. Im Sprint 2 wurde die Klasse *Einstellungen* addiert, damit zusätzliche Wörter hinzugefügt werden können.
 
 ### 7.1 Übersicht der Struktur des Programms
-### 7.2 Ausführliches Klassendiagramm (latest update: release_v1.0_MVP)
-![Diagramm Klassen](https://github.com/MatisGourdes/Project-undercover-2020/blob/release_v1.0_MVP/Documentation/Klassendiagramm%20MVP.png)
-
-
+![Diagramm Klassen](https://github.com/MatisGourdes/Project-undercover-2020/blob/master/Documentation/KlassenDiagramm.png)
+### 7.2 Ausführliches Klassendiagramm
+*siehe 9.2* ![Dokumentation Sprint 2](https://github.com/MatisGourdes/Project-undercover-2020#9.2-Klassendiagramm)
+### 7.3 Sequenz-Diagramm
+![Diagramm Sequenz](https://github.com/MatisGourdes/Project-undercover-2020/blob/master/Documentation/Sequenzdiagramm.png)
+### 7.4 Package-Diagramm
+![Package-Diagramm](https://github.com/MatisGourdes/Project-undercover-2020/blob/master/Documentation/Package_Diagram.png)
 ## 8. Documentation Sprint 1
 ### 8.1 Taskliste der User Stories 
 
@@ -202,7 +208,7 @@ Task 10: Hier muss getestet werden, ob der MrWhite das richtig Wort erraten hat 
 ### 8.3 Wichtige Code snippets
 Wichtig ist es in unser Programm, dass die Zuweisung der Rollen zu jedem Spieler zufällig stattfindet. Ferner muss bei einem neuen Spiel die Zuweisung erneut stattfinden, damit die Spieler eine neue Rolle bekommen.
 Diesbezüglich haben wir uns im Laufe dieses Sprints damit befasst, eine *Rollezuweisung* Klasse zu programmieren, die all diese Anforderungen berücksichtigt. Hier ein Überblick darauf:
-
+```
     public static void randomRolle() {
         rolleVerteilung();
         //willkürliche Zuweisung der Rollen in Betrachtung auf Anfangsbedingungen
@@ -223,12 +229,12 @@ Diesbezüglich haben wir uns im Laufe dieses Sprints damit befasst, eine *Rollez
                         Controller.getSpielerListe().elementAt(j).setRolle(rolle);
                         zahlGeteilteteRolle++;
                     }}}}}
-    //Bestimmung der Anzahl von Citizen und presentation
+    //Bestimmung der Anzahl von Citizen und Undercover
     public static void rolleVerteilung() {
         zahlMrWhite();
         citizen = (int) ((Controller.getSpielerListe().size() - mrWhite) * 0.8);
         undercover = Controller.getSpielerListe().size() - mrWhite - citizen;
-        System.out.println("Citizen: " + citizen + "  presentation: " + undercover + " MrWhite: " + mrWhite);
+        System.out.println("Citizen: " + citizen + "  Undercover: " + undercover + " MrWhite: " + mrWhite);
     }
     // Berechnung der Anzahl von Mr White bzg. der Anzahl Gesamtspieler
     public static void zahlMrWhite() {
@@ -239,18 +245,18 @@ Diesbezüglich haben wir uns im Laufe dieses Sprints damit befasst, eine *Rollez
             mrWhite = (int) (Math.random()*3);
         }
     }
-
+```
 ### 8.4 Testfälle
 Testfall #1: Überprüfung der korrekten Zuweisung der Rollen (Methode *Rollezuweisung* und Eintragung im Konstruktor *Spieler*):
-
+```
     RolleZuweisung.randomRolle();
     assertNotSame(testSpieler.getRolle(), 4);
-    
+``` 
 Testfall #2: Überprüfung der Ausschliessung eines Spielers (Status wird auf "false" gesetzt):
-
+```
     testSpieler.setStatus(false);
     assertEquals(new Spieler(1, "Test", false, 4).getStatus(), testSpieler.getStatus());    
-    
+```    
         
 ### 8.5 Fazit und Retrospektive
 Alle Tasks wurden gemäss der Akzeptanzkriterien (*siehe 5. User Stories*) erfolgreich durchgesetzt und die wichtigsten Bestandteile des Spiels sind funktionsfähig. Das MVP konnte ohne grosse Hindernisse erstellt werden, selbst es wenn noch viel Raum für Verbesserungen gibt. Die Benutzeroberfläche ist noch primitiv und unklar, während das Programm selbst optimiert werden kann und die FXML-Bestandteile von den Java-Klassen noch getrennt werden müssen. Jedoch haben wir bereits einige Tasks vom Sprint 2 erledigt, wie zum Beispiel die Möglichkeit Wörter aus einer Text-Datei einzulesen bzw. in der Datei zu schreiben, weil es an diesem Zeitpunkt der Programmierung am sinnvollsten war.
@@ -268,8 +274,8 @@ Zur Umsetzung des Sprints 2 wurden bereits grundlegene Bausteine gelegt, dazu m�
 | Task 15 | Task 14 Javafx implementierung auf den Hauptmenü | User Story 3 | 2 Stunden |
 | Task 16 | Befehle/ Einleitungen in eine Klasse Schreiben | User Story 5 | 1 Stunde |
 | Task 17 | Befehle in Javafx implementieren | User Story 5 | 1 Stunde |
-| Task 18 | Vektor zur Speicherung und Ausgabe der Wörter | User Story 7 | 2 Stunden |
-| Task 19 | Tabelle mit alle eingegebene Wörter (javafx) | User Story 7 | 2 Stunden |
+| Task 18 | Ein css schreiben wo alle farben und Typographie definiert ist | User Story 7 | 2 Stunden |
+| Task 19 | Alle Tasten und Tabellen organisieren + Photo hinzufügen | User Story 7 | 2 Stunden |
 | Task 20 | Javafx Spiel ende Seite | User Story 10 | 2 Stunden |
 | Task 21 | Programm um zu anzeigen wer gewonnen hat | User Story 10 | 2 Stunden |
 | Task 22 | Eine Wörter Liste machen | User Story 11 | 1 Stunde |
@@ -277,7 +283,85 @@ Zur Umsetzung des Sprints 2 wurden bereits grundlegene Bausteine gelegt, dazu m�
 
 *Velocity: 19 Std*
 
+Task 11: Hier sollte die Regeln des Spiels so deutlich wie möglich geschrieben werden.
+
+Task 12: Weil die Regeln schwierig zu verstehen sind, wir haben beschlossen, dass ein diagramm wäre nützlich, um der Verlauf des Spiels noch deutlicher zu machen. In diese Task soll den Diagramm herstellt werden und soll in eine fxml-Datei und im Readme implementiert werden.
+
+Task 13: Die Regelen sollen in eine fxml-Dateil implementiert werden und zum Hauptmenue verbinden werden.
+
+Task 14: Die Spieler sollen den Spielerzahl ändern können von (minimum 4 Spierl).
+
+Task 15: Die 14. Task soll mit einem fxml-Datei verbinden werden und dann auch mit dem Hauptmenue.
+
+Task 16: Auf jede window sollen zu den Spieler Befehle geben werden, um zu wissen wie den Spiel weiter läuft.
+
+Task 17: Diese Befehle sollen mit javafx implementiert werden.
+
+Task 18: Eine CSS-Datei soll geschrieben werden, um den Spiel schöner und angenehmer zu machen.
+
+Task 19: Auf jeden window sollen den Tastn, Labeln und Tabellen organisiert werden, um den Spiel intuitiver zu machen. Fotos sollen auch hingefügt werden.
+
+Task 20:Am Ende des Spiels soll mithilfe eine fxml-Datei gezeigt werden, wer gewonnen hat und was waren die Rolle von jeder Spieler.
+
+Task 21: Hier soll eine Funktion herstellt werden, um zu testen wer gewonnen hat.
+
+Task 22: Eine Text-Datei mit den Wörter für Citizen und Undercover soll herstellt werden. Hier soll auch die Möglichgkeit geben, Wörter in die Liste hinzufügen.
+
+Task 23: Jede neue Runde soll einen neuen Wort im Text-Datei eingelesen werden und zur Citizen und Undercover geteilt werden.
+
+
 ### 9.2 Klassendiagramm
+#### 9.2.1 Klassendiagramm Package domain:
+
+![Klassendiagramm domain Sprint 2:](https://github.com/MatisGourdes/Project-undercover-2020/blob/master/Documentation/UML%20Diagramm%20Package%20domain%20.png)
+
+#### 9.2.2 Klassendiagramm Package presentation:
+
+![Klassendiagramm presentation Sprint 2:](https://github.com/MatisGourdes/Project-undercover-2020/blob/master/Documentation/UML%20Diagramm%20package%20presentation.png)
+
 ### 9.3 Wichtige Code-snippets
+
+Eine der letzten User-Stories war die Möglichkeit für die Benutzer ihre eigene Wörter zur Liste zu addieren. Zu diesem Zweck mussten vorerst alle Wörter in einer .txt-Datei gespeichert werden, was im Sprint 1 erledigt wurde. Damit die hinzugefügte Wörter (für Citizen und Undercover) in einer TableView direkt angezeigt werden konnten, mussten sie in einem Konstruktor *Wort* gepeichert werden. Dieses begeisterungs-Merkmal ermöglicht eine unendliche Vielfalt von Wörter zu speichern und verlängert drastisch die Lebensdauer des Spiels.
+```
+        //speichert alle Wörter der txt-Datei in einem Vektor
+        public static void readFile(){
+            woerterListe.clear();
+            System.out.println("file read, path: " + wortFilePath); //debug
+    
+            try (FileReader f = new FileReader(wortFilePath)) {
+                char c[] = new char[10000];
+                f.read(c);
+                String s = new String(c);
+                String[] result = s.split("\n|;");
+    
+                for (int i = 0; i < result.length; i++) {
+                    if (!result[i].equals("") && result[i] != null){
+                        woerterListe.add(result[i]);
+                        f.close();
+                    }
+                }
+            }
+            catch (IOException e) {
+                System.err.println("Fehler beim Einlesen der Datei.");
+                System.err.println(e.getMessage());
+            }
+    
+        }
+        //Speichere das Wort in der Text-Datei
+        public static void wortAddieren(String wortC,String wortU){
+            try (FileWriter w = new FileWriter(wortFilePath, true)) {
+                String eingabe = wortC + ";" + wortU + "\n";
+                w.write(eingabe);
+            }
+            catch (IOException e) {
+                System.err.println("Fehler beim Schreiben in der Datei.");
+                System.err.println(e.getMessage());
+            }
+        }
+```
 ### 9.4 Testfälle
+#### 9.4.1 Black Box testing
+![Wer bekommt ein Wort](https://github.com/MatisGourdes/Project-undercover-2020/blob/master/Documentation/WortVerteilung.PNG)
+
+![Wer darf das Wort erraten:](https://github.com/MatisGourdes/Project-undercover-2020/blob/331f47478602a9f6dfc6661f5cc3b579cc945786/Documentation/WortRaten.PNG)
 ### 9.5 Fazit und Retrospektive
