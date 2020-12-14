@@ -12,10 +12,11 @@ public class ControllerTest extends TestCase {
   public void testGetSpielerListe()// Testen dass der Rolle der Liste derselbe wie der Rolle ist
 
   {
+    Controller.getSpielerListe().clear();
     Spieler spieler1 = new Spieler(1, "nameA", true, 0);
     presentation.Controller.getSpielerListe().add(spieler1);
 
-    Assertions.assertEquals(spieler1.getRolle(), Controller.getSpielerListe().elementAt(0).getRolle());
+    assertEquals(spieler1.getRolle(), Controller.getSpielerListe().elementAt(0).getRolle());
 
   }
 
