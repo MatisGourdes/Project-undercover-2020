@@ -1,6 +1,7 @@
 package domain;
 
 import junit.framework.TestCase;
+import org.junit.jupiter.api.Assertions;
 
 public class spielerTest extends TestCase {
     private Spieler testSpieler;
@@ -26,4 +27,7 @@ public class spielerTest extends TestCase {
         }
         assertNotSame(testSpieler.getRolle(), 4);
     }
+
+
+
 }

@@ -7,6 +7,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
@@ -18,6 +19,9 @@ public class RundeBefehlController extends Controller implements Initializable {
 
     @FXML
     private Label befehlAusgabe;
+
+
+
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -44,13 +48,5 @@ public class RundeBefehlController extends Controller implements Initializable {
         window.show();
     }
 
-    // Öffnet das Fenster der Spielregeln, wenn Button "Spielregeln" betätigt wird
-    @FXML
-    public void switchToSpielregeln(ActionEvent event) throws IOException {
-        Parent spielRegelnScene = FXMLLoader.load(getClass().getResource("spielRegeln.fxml"));
-        Stage window = new Stage();
-        window.setScene(new Scene(spielRegelnScene));
-        window.setTitle("Spielregeln");
-        window.show();
-    }
+
 }
