@@ -6,7 +6,7 @@ Team: Theo Portmann, Michael Schaetzel, Lucas Lagel, Maxime Roellinger, Gourdes 
 
 1. [Abstrakt](https://github.com/MatisGourdes/Project-undercover-2020#1-abstrakt)
 
-2. [Einleitung](https://github.com/MatisGourdes/Project-undercover-2020#2-einleitung)
+2. [Anforderungen](https://github.com/MatisGourdes/Project-undercover-2020#2-anforderungen)
 
 3. [Das Spiel](https://github.com/MatisGourdes/Project-undercover-2020#3-das-spiel)
 
@@ -16,26 +16,25 @@ Team: Theo Portmann, Michael Schaetzel, Lucas Lagel, Maxime Roellinger, Gourdes 
 
 6. [Build Anleitung](https://github.com/MatisGourdes/Project-undercover-2020#6-build-anleitung) 
 
-7. [Das Programm](https://github.com/MatisGourdes/Project-undercover-2020#7-das-programm)  
-    7.1 [Übersicht der Struktur des Programms](https://github.com/MatisGourdes/Project-undercover-2020#71-übersicht-der-struktur-des-programms)  
-    7.2 [Ausführliches Klassendiagramm](https://github.com/MatisGourdes/Project-undercover-2020#72-ausführliches-klassendiagramm)  
-    7.3 [Sequenz-Diagramm](https://github.com/MatisGourdes/Project-undercover-2020#73-sequenz-diagramm)  
-    7.4 [Package-Diagramm](https://github.com/MatisGourdes/Project-undercover-2020#74-package-diagramm)
-8. [Documentation Sprint 1](https://github.com/MatisGourdes/Project-undercover-2020#8-documentation-sprint-1)  
-    8.1 [Task liste der User Stories](https://github.com/MatisGourdes/Project-undercover-2020#81-taskliste-der-user-stories)  
-    8.2 [Klassendiagramm](https://github.com/MatisGourdes/Project-undercover-2020#82-klassendiagramm)  
-    8.3 [Wichtige Code snippets](https://github.com/MatisGourdes/Project-undercover-2020#83-wichtige-code-snippets)  
-    8.4 [Testfälle](https://github.com/MatisGourdes/Project-undercover-2020#84-testfälle)  
-    8.5 [Fazit und Retrospektive](https://github.com/MatisGourdes/Project-undercover-2020#85-fazit-und-retrospektive)
-9. [Dokumentation Sprint 2](https://github.com/MatisGourdes/Project-undercover-2020#9-documentation-sprint-2)  
-    9.1 [Task liste der User Stories](https://github.com/MatisGourdes/Project-undercover-2020#91-taskliste-der-user-stories)  
-    9.2 [Klassendiagramm](https://github.com/MatisGourdes/Project-undercover-2020#92-klassendiagramm)  
-    9.3 [Wichtige Code-snippets](https://github.com/MatisGourdes/Project-undercover-2020#93-wichtige-code-snippets)  
-    9.4 [Testfälle](https://github.com/MatisGourdes/Project-undercover-2020#94-testfälle)  
-    9.5 [Fazit und Retrospektive](https://github.com/MatisGourdes/Project-undercover-2020#95-fazit-und-retrospektive)
+7. [Das Programm](https://github.com/MatisGourdes/Project-undercover-2020#7-das-programm)
+
+8. [Dokumentation Sprint 1](https://github.com/MatisGourdes/Project-undercover-2020#8-documentation-sprint-1)
+- [Taskliste der User Stories](https://github.com/MatisGourdes/Project-undercover-2020#--taskliste-der-user-stories)
+- [Anreicherung der User Stories]()
+- [UML Package, Klassen- und Sequenzdiagramme]()
+- [Dokumentation wichtiger Code Snippets]()
+- [Testfaelle bedingt durch Aktzeptanzkriterium]()
+
+9. [Dokumentation Sprint 2](https://github.com/MatisGourdes/Project-undercover-2020#9-documentation-sprint-2)
+- [Taskliste der User Stories (mit Schätzung)]()
+- [Anreicherung der User Stories]()
+- [UML Package, Klassen- und Sequenzdiagramme]()
+- [Dokumentation wichtiger Code Snippets]()
+- [Testfaelle bedingt durch Aktzeptanzkriterium]()
+- [Black Box Testing]()
 
 ## 1. Abstrakt
-Unser Team besteht aus Mechatronik-Trinational studierenden. Im Rahmen des Moduls SWE und Informatik II entwickeln wir eine etwas komplexere Software, um den zuvor gelernten Stoff durch die Implementierung einer lauffähigen Applikation zu vertiefen. Dabei wird die Komplexität der Applikation abgestimmt auf die individuellen Vorkenntnisse der Studierenden. 
+Unser Team besteht aus Mechatronik-Trinational Studierenden. Im Rahmen des Moduls SWE und Informatik II entwickeln wir eine etwas komplexere Software, um den zuvor gelernten Stoff durch die Implementierung einer lauffähigen Applikation zu vertiefen. Dabei wird die Komplexität der Applikation abgestimmt auf die individuellen Vorkenntnisse der Studierenden. 
 Zeitspanne der Bearbeitung: Herbstsemester 2020.
 
 
@@ -158,13 +157,13 @@ Für jede Szene wurde eine FXML-Datei mit SceneBuilder editiert, welche mit eine
 ### 7.1 Übersicht der Struktur des Programms
 ![Diagramm Klassen](https://github.com/MatisGourdes/Project-undercover-2020/blob/master/Documentation/KlassenDiagramm.png)
 ### 7.2 Ausführliches Klassendiagramm
-*siehe 9.2* [Dokumentation Sprint 2](https://github.com/MatisGourdes/Project-undercover-2020#92-klassendiagramm)
+*siehe 9.2* ![Dokumentation Sprint 2](https://github.com/MatisGourdes/Project-undercover-2020#9.2-Klassendiagramm)
 ### 7.3 Sequenz-Diagramm
 ![Diagramm Sequenz](https://github.com/MatisGourdes/Project-undercover-2020/blob/master/Documentation/Sequenzdiagramm.png)
 ### 7.4 Package-Diagramm
 
 ## 8. Documentation Sprint 1
-### 8.1 Task liste der User Stories 
+### 8.1 Taskliste der User Stories 
 
 | 20.11.2020 - 04.12.2020 | Task | User Story | Zeitaufwandschätzung |
 |:---------:|:------------:|:------------:|:---------:|
@@ -262,7 +261,7 @@ Alle Tasks wurden gemäss der Akzeptanzkriterien (*siehe 5. User Stories*) erfol
 Zur Umsetzung des Sprints 2 wurden bereits grundlegene Bausteine gelegt, dazu müssen meistens Optimierungen durchgeführt werden. Das Ziel für den 2. Sprint ist es, dass das Spiel einerseits reibungslos und intuitiv wirkt und andererseits, begeisterungs-Funktionalitäten zu implementieren, um die Erfahrung zu bessern.
 
 ## 9. Documentation Sprint 2
-### 9.1 Task liste der User Stories 
+### 9.1 Taskliste der User Stories 
 | 04.12.2020 - 15.12.2020 | Task | User Story | Zeitaufwandsschätzung |
 |:---------:|:------------:|:------------:|:---------:|
 | Task 11 | Regeln Schreiben | User Story 1 | 1/2 Stunde |
@@ -280,6 +279,33 @@ Zur Umsetzung des Sprints 2 wurden bereits grundlegene Bausteine gelegt, dazu m�
 | Task 23 | Text datei einlesen um an Jede Runde ein anderes Wort zu haben | User Story 11 | 2 Stunde |
 
 *Velocity: 19 Std*
+
+Task 11: Hier sollte die Regeln des Spiels so deutlich wie möglich geschrieben werden.
+
+Task 12: Weil die Regeln schwierig zu verstehen sind, wir haben beschlossen, dass ein diagramm wäre nützlich, um der Verlauf des Spiels noch deutlicher zu machen. In diese Task soll den Diagramm herstellt werden und soll in eine fxml-Datei und im Readme implementiert werden.
+
+Task 13: Die Regelen sollen in eine fxml-Dateil implementiert werden und zum Hauptmenue verbinden werden.
+
+Task 14: Die Spieler sollen den Spielerzahl ändern können von (minimum 4 Spierl).
+
+Task 15: Die 14. Task soll mit einem fxml-Datei verbinden werden und dann auch mit dem Hauptmenue.
+
+Task 16: Auf jede window sollen zu den Spieler Befehle geben werden, um zu wissen wie den Spiel weiter läuft.
+
+Task 17: Diese Befehle sollen mit javafx implementiert werden.
+
+Task 18: Eine CSS-Datei soll geschrieben werden, um den Spiel schöner und angenehmer zu machen.
+
+Task 19: Auf jeden window sollen den Tastn, Labeln und Tabellen organisiert werden, um den Spiel intuitiver zu machen. Fotos sollen auch hingefügt werden.
+
+Task 20:Am Ende des Spiels soll mithilfe eine fxml-Datei gezeigt werden, wer gewonnen hat und was waren die Rolle von jeder Spieler.
+
+Task 21: Hier soll eine Funktion herstellt werden, um zu testen wer gewonnen hat.
+
+Task 22: Eine Text-Datei mit den Wörter für Citizen und Undercover soll herstellt werden. Hier soll auch die Möglichgkeit geben, Wörter in die Liste hinzufügen.
+
+Task 23: Jede neue Runde soll einen neuen Wort im Text-Datei eingelesen werden und zur Citizen und Undercover geteilt werden.
+
 
 ### 9.2 Klassendiagramm
 #### 9.2.1 Klassendiagramm Package domain:
