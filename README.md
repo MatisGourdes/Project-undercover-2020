@@ -6,7 +6,7 @@ Team: Theo Portmann, Michael Schaetzel, Lucas Lagel, Maxime Roellinger, Gourdes 
 
 1. [Abstrakt](https://github.com/MatisGourdes/Project-undercover-2020#1-abstrakt)
 
-2. [Anforderungen](https://github.com/MatisGourdes/Project-undercover-2020#2-anforderungen)
+2. [Einleitung](https://github.com/MatisGourdes/Project-undercover-2020#2-einleitung)
 
 3. [Das Spiel](https://github.com/MatisGourdes/Project-undercover-2020#3-das-spiel)
 
@@ -17,24 +17,25 @@ Team: Theo Portmann, Michael Schaetzel, Lucas Lagel, Maxime Roellinger, Gourdes 
 6. [Build Anleitung](https://github.com/MatisGourdes/Project-undercover-2020#6-build-anleitung) 
 
 7. [Das Programm](https://github.com/MatisGourdes/Project-undercover-2020#7-das-programm)
-
-8. [Dokumentation Sprint 1](https://github.com/MatisGourdes/Project-undercover-2020#8-documentation-sprint-1)
-- [Taskliste der User Stories](https://github.com/MatisGourdes/Project-undercover-2020#--taskliste-der-user-stories)
-- [Anreicherung der User Stories]()
-- [UML Package, Klassen- und Sequenzdiagramme]()
-- [Dokumentation wichtiger Code Snippets]()
-- [Testfaelle bedingt durch Aktzeptanzkriterium]()
-
-9. [Dokumentatin Sprint 2](https://github.com/MatisGourdes/Project-undercover-2020#9-documentation-sprint-2)
-- [Taskliste der User Stories (mit Schätzung)]()
-- [Anreicherung der User Stories]()
-- [UML Package, Klassen- und Sequenzdiagramme]()
-- [Dokumentation wichtiger Code Snippets]()
-- [Testfaelle bedingt durch Aktzeptanzkriterium]()
-- [Black Box Testing]()
+    7.1[Übersicht der Struktur des Programms](https://github.com/MatisGourdes/Project-undercover-2020#71-übersicht-der-struktur-des-programms)
+    7.2[Ausführliches Klassendiagramm](https://github.com/MatisGourdes/Project-undercover-2020#72-ausführliches-klassendiagramm)
+    7.3[Sequenz-Diagramm](https://github.com/MatisGourdes/Project-undercover-2020#73-sequenz-diagramm)
+    7.4[Package-Diagramm](https://github.com/MatisGourdes/Project-undercover-2020#74-package-diagramm)
+8. [Documentation Sprint 1](https://github.com/MatisGourdes/Project-undercover-2020#8-documentation-sprint-1)
+    8.1[Task liste der User Stories](https://github.com/MatisGourdes/Project-undercover-2020#81-taskliste-der-user-stories)
+    8.2[Klassendiagramm](https://github.com/MatisGourdes/Project-undercover-2020#82-klassendiagramm)
+    8.3[Wichtige Code snippets](https://github.com/MatisGourdes/Project-undercover-2020#83-wichtige-code-snippets)
+    8.4[Testfälle](https://github.com/MatisGourdes/Project-undercover-2020#84-testfälle)
+    8.5[Fazit und Retrospektive](https://github.com/MatisGourdes/Project-undercover-2020#85-fazit-und-retrospektive)
+9. [Dokumentation Sprint 2](https://github.com/MatisGourdes/Project-undercover-2020#9-documentation-sprint-2)
+    9.1[Task liste der User Stories](https://github.com/MatisGourdes/Project-undercover-2020#91-taskliste-der-user-stories)
+    9.2[Klassendiagramm](https://github.com/MatisGourdes/Project-undercover-2020#92-klassendiagramm)
+    9.3[Wichtige Code-snippets](https://github.com/MatisGourdes/Project-undercover-2020#93-wichtige-code-snippets)
+    9.4[Testfälle](https://github.com/MatisGourdes/Project-undercover-2020#94-testfälle)
+    9.5[Fazit und Retrospektive](https://github.com/MatisGourdes/Project-undercover-2020#95-fazit-und-retrospektive)
 
 ## 1. Abstrakt
-Unser Team besteht aus Mechatronik-Trinational Studierenden. Im Rahmen des Moduls SWE und Informatik II entwickeln wir eine etwas komplexere Software, um den zuvor gelernten Stoff durch die Implementierung einer lauffähigen Applikation zu vertiefen. Dabei wird die Komplexität der Applikation abgestimmt auf die individuellen Vorkenntnisse der Studierenden. 
+Unser Team besteht aus Mechatronik-Trinational studierenden. Im Rahmen des Moduls SWE und Informatik II entwickeln wir eine etwas komplexere Software, um den zuvor gelernten Stoff durch die Implementierung einer lauffähigen Applikation zu vertiefen. Dabei wird die Komplexität der Applikation abgestimmt auf die individuellen Vorkenntnisse der Studierenden. 
 Zeitspanne der Bearbeitung: Herbstsemester 2020.
 
 
@@ -128,25 +129,25 @@ Priorisierung:  1 = Basis‐Merkmal
 
 ## 6. Build Anleitung
 Git clone:  https://github.com/MatisGourdes/Project-undercover-2020
-In Git program: 
-1. Speichern Sie Ihre src Datei von Ihrem Git Projekt auf Ihre Rechner.
-2. Löschen Sie Ihre src Datei von Ihrem Git Projekt.
-3. Fügen Sie die pom.xml Datei mit dem geeignete Initialisierung in das Git Projekt.
-4. Fügen Sie die src Ordner von einem Maven Projekt in das Git Projekt.
-5. Klicken Sie auf den rechten Maus Taste in "Undercover": ->Configure ->Convert to Maven.
-6. Fügen Sie Ihre eigene Package in das Ordner src/main/java.
-7. Klicken Sie auf den rechten Maus Taste in "Undercover": ->Run as ->Maven clean.
-8. Klicken Sie auf den rechten Maus Taste in "Undercover": ->Run as ->Maven install.
-9. Prüfen Sie in das Ordner "target" ob Sie eine Datei .jar haben.
 
-- Oder
-- 1. Gehen sie auf unsere Github repository.
-- 2. Speichern Sie die Datei auf Ihre Rechner.
-- 3. Entpacken Sie die Datei und Setzen sie an den gewünschten Ort. 
-- 4. Stellen Sie sicher, dass Sie eine javaFx Runtime-Umgebung haben.
-- 5. Doppelklicken Sie auf den Datei Paket
-- 6. Doppelklicken Sie auf  Undercoverlauncher.jar um den Software zu starten.
+#### In einem IDE (hier IntelliJ): 
+1. Laden Sie den Master als Zip-Datei aus dem Repo herunter, entpacken Sie ihn.
+2. In IntelliJ, klicken Sie auf *File* -> *New* -> *Project from existing Sources* und wählen Sie die entpackte Datei.
+3. Wählen Sie *Import project from external model* und klicken Sie auf *Maven*. Bestätigen Sie mittels *Finish*.
+4. Stellen Sie sicher, dass Ihre Umgebung auf Java 11 eingestellt ist.
+5. Überprüfen Sie ob Sources, Tests und Resources korrekt anerkannt sind unter *Project Structure* -> *Modules*.
+6. Im Terminal, lassen Sie folgenden Commands laufen:
+    ```
+    mvn clean compile
+    mvn clean package
+    java -jar /shade/Projekt-Undercover-2020.jar
+    ```
+Alternativ können Sie ein Pull-Request erstellen und dann in IntelliJ ein neues Projekt aus *Version Control* erstellen.
 
+#### Das Spiel ohne IDE laufen lassen:
+1. Laden Sie den Master als Zip-Datei herunter und entpacken Sie ihn.
+2. Stellen Sie sicher, dass Sie auf Ihrem Rechner über eine aktuelle Version der Java-Umgebung verfügen.
+3. Im Verzeichnis *shade* finden Sie die Datei **Undercover-Projekt-2020.jar**, die Sie starten können. Viel Spass !
 
 
 ## 7. Das Programm
@@ -157,13 +158,13 @@ Für jede Szene wurde eine FXML-Datei mit SceneBuilder editiert, welche mit eine
 ### 7.1 Übersicht der Struktur des Programms
 ![Diagramm Klassen](https://github.com/MatisGourdes/Project-undercover-2020/blob/master/Documentation/KlassenDiagramm.png)
 ### 7.2 Ausführliches Klassendiagramm
-
+*siehe 9.2* ![Dokumentation Sprint 2](https://github.com/MatisGourdes/Project-undercover-2020#9.2-Klassendiagramm)
 ### 7.3 Sequenz-Diagramm
-
+![Diagramm Sequenz](https://github.com/MatisGourdes/Project-undercover-2020/blob/master/Documentation/Sequenzdiagramm.png)
 ### 7.4 Package-Diagramm
 
 ## 8. Documentation Sprint 1
-### 8.1 Taskliste der User Stories 
+### 8.1 Task liste der User Stories 
 
 | 20.11.2020 - 04.12.2020 | Task | User Story | Zeitaufwandschätzung |
 |:---------:|:------------:|:------------:|:---------:|
@@ -205,7 +206,7 @@ Task 10: Hier muss getestet werden, ob der MrWhite das richtig Wort erraten hat 
 ### 8.3 Wichtige Code snippets
 Wichtig ist es in unser Programm, dass die Zuweisung der Rollen zu jedem Spieler zufällig stattfindet. Ferner muss bei einem neuen Spiel die Zuweisung erneut stattfinden, damit die Spieler eine neue Rolle bekommen.
 Diesbezüglich haben wir uns im Laufe dieses Sprints damit befasst, eine *Rollezuweisung* Klasse zu programmieren, die all diese Anforderungen berücksichtigt. Hier ein Überblick darauf:
-
+```
     public static void randomRolle() {
         rolleVerteilung();
         //willkürliche Zuweisung der Rollen in Betrachtung auf Anfangsbedingungen
@@ -242,18 +243,18 @@ Diesbezüglich haben wir uns im Laufe dieses Sprints damit befasst, eine *Rollez
             mrWhite = (int) (Math.random()*3);
         }
     }
-
+```
 ### 8.4 Testfälle
 Testfall #1: Überprüfung der korrekten Zuweisung der Rollen (Methode *Rollezuweisung* und Eintragung im Konstruktor *Spieler*):
-
+```
     RolleZuweisung.randomRolle();
     assertNotSame(testSpieler.getRolle(), 4);
-    
+``` 
 Testfall #2: Überprüfung der Ausschliessung eines Spielers (Status wird auf "false" gesetzt):
-
+```
     testSpieler.setStatus(false);
     assertEquals(new Spieler(1, "Test", false, 4).getStatus(), testSpieler.getStatus());    
-    
+```    
         
 ### 8.5 Fazit und Retrospektive
 Alle Tasks wurden gemäss der Akzeptanzkriterien (*siehe 5. User Stories*) erfolgreich durchgesetzt und die wichtigsten Bestandteile des Spiels sind funktionsfähig. Das MVP konnte ohne grosse Hindernisse erstellt werden, selbst es wenn noch viel Raum für Verbesserungen gibt. Die Benutzeroberfläche ist noch primitiv und unklar, während das Programm selbst optimiert werden kann und die FXML-Bestandteile von den Java-Klassen noch getrennt werden müssen. Jedoch haben wir bereits einige Tasks vom Sprint 2 erledigt, wie zum Beispiel die Möglichkeit Wörter aus einer Text-Datei einzulesen bzw. in der Datei zu schreiben, weil es an diesem Zeitpunkt der Programmierung am sinnvollsten war.
@@ -261,7 +262,7 @@ Alle Tasks wurden gemäss der Akzeptanzkriterien (*siehe 5. User Stories*) erfol
 Zur Umsetzung des Sprints 2 wurden bereits grundlegene Bausteine gelegt, dazu müssen meistens Optimierungen durchgeführt werden. Das Ziel für den 2. Sprint ist es, dass das Spiel einerseits reibungslos und intuitiv wirkt und andererseits, begeisterungs-Funktionalitäten zu implementieren, um die Erfahrung zu bessern.
 
 ## 9. Documentation Sprint 2
-### 9.1 Taskliste der User Stories 
+### 9.1 Task liste der User Stories 
 | 04.12.2020 - 15.12.2020 | Task | User Story | Zeitaufwandsschätzung |
 |:---------:|:------------:|:------------:|:---------:|
 | Task 11 | Regeln Schreiben | User Story 1 | 1/2 Stunde |
@@ -281,15 +282,18 @@ Zur Umsetzung des Sprints 2 wurden bereits grundlegene Bausteine gelegt, dazu m�
 *Velocity: 19 Std*
 
 ### 9.2 Klassendiagramm
-Klassen Diagramm Package domain:
+#### 9.2.1 Klassendiagramm Package domain:
+
 ![Klassendiagramm domain Sprint 2:](https://github.com/MatisGourdes/Project-undercover-2020/blob/master/Documentation/UML%20Diagramm%20Package%20domain%20.png)
 
-Klassen Diagramm Package presentation:
+#### 9.2.2 Klassendiagramm Package presentation:
+
 ![Klassendiagramm presentation Sprint 2:](https://github.com/MatisGourdes/Project-undercover-2020/blob/master/Documentation/UML%20Diagramm%20package%20presentation.png)
+
 ### 9.3 Wichtige Code-snippets
 
 Eine der letzten User-Stories war die Möglichkeit für die Benutzer ihre eigene Wörter zur Liste zu addieren. Zu diesem Zweck mussten vorerst alle Wörter in einer .txt-Datei gespeichert werden, was im Sprint 1 erledigt wurde. Damit die hinzugefügte Wörter (für Citizen und Undercover) in einer TableView direkt angezeigt werden konnten, mussten sie in einem Konstruktor *Wort* gepeichert werden. Dieses begeisterungs-Merkmal ermöglicht eine unendliche Vielfalt von Wörter zu speichern und verlängert drastisch die Lebensdauer des Spiels.
-
+```
         //speichert alle Wörter der txt-Datei in einem Vektor
         public static void readFile(){
             woerterListe.clear();
@@ -325,7 +329,7 @@ Eine der letzten User-Stories war die Möglichkeit für die Benutzer ihre eigene
                 System.err.println(e.getMessage());
             }
         }
-
+```
 ### 9.4 Testfälle
 #### 9.4.1 Black Box testing
 ![Wer bekommt ein Wort](https://github.com/MatisGourdes/Project-undercover-2020/blob/master/Documentation/WortVerteilung.PNG)
