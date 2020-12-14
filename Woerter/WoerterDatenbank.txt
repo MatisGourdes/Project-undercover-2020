@@ -1,0 +1,10 @@
+Paris;New York
+Berliner Mauer;
+Chinesische Mauer
+Theater;Oper
+Baum;Tannenbaum
+Nemo;Willy
+wortC;wortU
+wortC;wortU
+wortC;wortU
+wortC;wortU

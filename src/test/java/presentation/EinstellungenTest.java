@@ -80,11 +80,6 @@ public void setUp() {
 
 }
     @Test
-    void switchToHauptmenue() {
-
-    }
-
-    @Test
     void woerterAddieren() {
         String WortC=wortCitizen.getText();
         String WortU=wortUndercover.getText();
@@ -116,15 +111,7 @@ public void setUp() {
             verifyThat(neuesWortBestaetigen, hasText("gespeichert"));
         }
 
-        @Test
-        void woerterListeAnzeigen () {
 
-
-
-            //display in der zweiten Spalte
-
-
-        }
 
     }
 
