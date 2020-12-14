@@ -7,6 +7,11 @@ public class RolleZuweisung {
     private static int zahlCitizen, variabelRandom, zahlUndercover, zahlMrWhite, zahlGeteilteteRolle;
 
     public static void randomRolle() {
+        /*In dieser Klasse sind die Rollen ausgeteilt:
+       Die Rollen müssen ganz zufällig sein aber es muss immer eine Mehrzahl von Citizen geben.
+
+        */
+
         zahlCitizen = 0;
         zahlUndercover = 0;
         zahlMrWhite = 0;

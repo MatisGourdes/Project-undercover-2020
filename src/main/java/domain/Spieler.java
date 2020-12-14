@@ -2,7 +2,14 @@ package domain;
 
 
 public class Spieler {
+    /*In dieser Klasse werden die Spieler erstellt.
+          Ein Spieler enthält dieser dateien:
+          - die SpielerNummer (0 für den ersten)
+          - den Namen vom Spieler
+          - den Status (true = am leben  False = gestorben)
+          - Die Rolle (O=Citizen   1=Undercover  2=Mr White)
 
+           */
     private String name;
     private boolean status;
     private int rolle, spielerNr;

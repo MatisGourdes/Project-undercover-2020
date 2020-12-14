@@ -3,9 +3,15 @@ package domain;
 import presentation.Controller;
 
 public class winCondition {
+     /*In dieser Klasse werd nach jeder Wahl getestet ob der Spiel Fertig ist:
+       Der Spiel ist Fertig falls:
+        - Alle Lebendige Spieler Undercover sind
+        - Alle Lebendige Spieler Citizen sind
+        - Falls es nur noch 2 lebendige Spieler gibt (Undercover oder Mr White Gewinnen gegen Citizen)
+        */
 
     public static boolean testUndercover() {
-        boolean boolCitizen = false;
+        boolean boolUndercover = false;
         double summeRollen = 0;
         int SpielerAmLeben=0;
         for(int i = 0; i< Controller.getSpielerListe().size(); i++) {
@@ -18,11 +24,11 @@ public class winCondition {
         }
         summeRollen = summeRollen/ SpielerAmLeben;
         if(summeRollen == 1)
-        {boolCitizen = true;}
+        {boolUndercover = true;}
 
-        else{boolCitizen = false; }
+        else{boolUndercover = false; }
 
-        return boolCitizen;
+        return boolUndercover;
     }
 
 

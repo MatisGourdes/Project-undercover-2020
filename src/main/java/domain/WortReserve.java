@@ -8,6 +8,11 @@ import java.io.FileWriter;
 import java.io.File;
 
 public class WortReserve {
+     /*In dieser Klasse ist die Wort Reserve Definiert:
+      beim Wort Eingeben in Einstellung muss man immer ein Wort für die Undercover und ein wort für die Citizen eingeben.
+      Diese Wörter sind in der Wörter Daten Bank Gespeichert.
+
+        */
 
     //Vektor, der alle Wörter beinhaltet
     public static Vector<String> woerterListe = new Vector<>();
