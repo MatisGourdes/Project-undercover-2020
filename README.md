@@ -25,7 +25,7 @@ Team: Theo Portmann, Michael Schaetzel, Lucas Lagel, Maxime Roellinger, Gourdes 
 - [Dokumentation wichtiger Code Snippets]()
 - [Testfaelle bedingt durch Aktzeptanzkriterium]()
 
-9. [Dokumentatin Sprint 2](https://github.com/MatisGourdes/Project-undercover-2020#9-documentation-sprint-2)
+9. [Dokumentation Sprint 2](https://github.com/MatisGourdes/Project-undercover-2020#9-documentation-sprint-2)
 - [Taskliste der User Stories (mit Schätzung)]()
 - [Anreicherung der User Stories]()
 - [UML Package, Klassen- und Sequenzdiagramme]()
@@ -157,7 +157,7 @@ Für jede Szene wurde eine FXML-Datei mit SceneBuilder editiert, welche mit eine
 ### 7.1 Übersicht der Struktur des Programms
 ![Diagramm Klassen](https://github.com/MatisGourdes/Project-undercover-2020/blob/master/Documentation/KlassenDiagramm.png)
 ### 7.2 Ausführliches Klassendiagramm
-
+*siehe 9.2* ![Dokumentation Sprint 2](https://github.com/MatisGourdes/Project-undercover-2020#9.2-Klassendiagramm)
 ### 7.3 Sequenz-Diagramm
 ![Diagramm Sequenz](https://github.com/MatisGourdes/Project-undercover-2020/blob/master/Documentation/Sequenzdiagramm.png)
 ### 7.4 Package-Diagramm
@@ -281,11 +281,11 @@ Zur Umsetzung des Sprints 2 wurden bereits grundlegene Bausteine gelegt, dazu m�
 *Velocity: 19 Std*
 
 ### 9.2 Klassendiagramm
-#### Klassendiagramm Package domain:
+#### 9.2.1 Klassendiagramm Package domain:
 
 ![Klassendiagramm domain Sprint 2:](https://github.com/MatisGourdes/Project-undercover-2020/blob/master/Documentation/UML%20Diagramm%20Package%20domain%20.png)
 
-#### Klassendiagramm Package presentation:
+#### 9.2.2 Klassendiagramm Package presentation:
 
 ![Klassendiagramm presentation Sprint 2:](https://github.com/MatisGourdes/Project-undercover-2020/blob/master/Documentation/UML%20Diagramm%20package%20presentation.png)
 
