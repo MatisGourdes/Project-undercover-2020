@@ -100,7 +100,7 @@ public class Controller {
     }
 
     //Zeige an, welche Spieler noch spielen
-    public ObservableList<Spieler> showLebendigeSpieler() {
+    public static ObservableList<Spieler> showLebendigeSpieler() {
         ObservableList<Spieler> list2 = FXCollections.observableArrayList();
         for (int i = 0; i < Controller.getSpielerListe().size(); i++) {
             if (Controller.getSpielerListe().elementAt(i).getStatus() == true) {
